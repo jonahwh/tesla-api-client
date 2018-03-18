@@ -1,0 +1,1675 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Tesla Model S JSON API
+  description: 'TODO: Add a description'
+host: owner-api.teslamotors.com
+basePath: /
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /oauth/token:
+    post:
+      description: |-
+        Performs the login. Takes in an plain text email and password, matching the owner's login information for [https://my.teslamotors.com/user/login](https://my.teslamotors.com/user/login).
+        Returns a `access_token` which is passed along as a header with all future requests to authenticate the user.
+        You must provide the `Authorization: Bearer {access_token}` header in all other requests.
+        The current client ID and secret are [available here](http://pastebin.com/YiLPDggh)
+      summary: Get an Access Token
+      tags:
+        - Authentication
+      operationId: CreateOauthToken
+      produces:
+        - application/json
+      parameters:
+        - name: body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/CreateAccessTokenRequest'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/CreateAccessTokenResponse'
+          examples:
+            application/json:
+              access_token: abc123
+              token_type: bearer
+              expires_in: 7776000
+              created_at: 1457385291
+              refresh_token: cba321
+  /api/1/vehicles:
+    get:
+      description: Retrieve a list of your owned vehicles (includes vehicles not yet shipped!)
+      summary: List all Vehicles
+      tags:
+        - Vehicles
+      operationId: GetVehicles
+      produces:
+        - application/json
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/GetVehiclesResponse'
+          examples:
+            application/json:
+              response:
+                - color: null
+                  display_name: null
+                  id: 321
+                  option_codes: 'MS01,RENA,TM00,DRLH,PF00,BT85,PBCW,RFPO,WT19,IBMB,IDPB,TR00,SU01,SC01,TP01,AU01,CH00,HP00,PA00,PS00,AD02,X020,X025,X001,X003,X007,X011,X013'
+                  user_id: 123
+                  vehicle_id: 1234567890
+                  vin: 5YJSA1CN5CFP01657
+                  tokens:
+                    - x
+                    - x
+                  state: online
+              count: 1
+  '/api/1/vehicles/{vehicle_id}':
+    get:
+      description: Retrieve a specific vehicle
+      summary: Retrieve a vehicle
+      tags:
+        - Vehicles
+      operationId: GetVehicle
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/VehicleResponse'
+          examples:
+            application/json:
+              response:
+                  color: null
+                  display_name: null
+                  id: 321
+                  option_codes: 'MS01,RENA,TM00,DRLH,PF00,BT85,PBCW,RFPO,WT19,IBMB,IDPB,TR00,SU01,SC01,TP01,AU01,CH00,HP00,PA00,PS00,AD02,X020,X025,X001,X003,X007,X011,X013'
+                  user_id: 123
+                  vehicle_id: 1234567890
+                  vin: 5YJSA1CN5CFP01657
+                  tokens:
+                    - x
+                    - x
+                  state: online
+  '/api/1/vehicles/{vehicle_id}/mobile_enabled':
+    get:
+      description: Determines if mobile access to the vehicle is enabled.
+      summary: Mobile Access
+      tags:
+        - Vehicles
+      operationId: GetVehicleMobileEnabled
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/MobileAccessResponse'
+          examples:
+            application/json:
+              response: true
+  '/api/1/vehicles/{vehicle_id}/data_request/charge_state':
+    get:
+      description: Returns the state of charge in the battery.
+      summary: Charge State
+      tags:
+        - Vehicles
+      operationId: GetVehicleChargeState
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/ChargeStateResponse'
+          examples:
+            application/json:
+              response:
+                charging_state: Complete
+                charge_to_max_range: false
+                max_range_charge_counter: 0
+                fast_charger_present: false
+                battery_range: 239.02
+                est_battery_range: 155.79
+                ideal_battery_range: 275.09
+                battery_level: 91
+                battery_current: -0.6
+                charge_starting_range: null
+                charge_starting_soc: null
+                charger_voltage: 0
+                charger_pilot_current: 40
+                charger_actual_current: 0
+                charger_power: 0
+                time_to_full_charge: null
+                charge_rate: -1
+                charge_port_door_open: true
+  '/api/1/vehicles/{vehicle_id}/data_request/climate_state':
+    get:
+      description: Returns the current temperature and climate control state.
+      summary: Climate Settings
+      tags:
+        - Vehicles
+      operationId: GetVehicleClimateState
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/ClimateSettingsResponse'
+          examples:
+            application/json:
+              response:
+                inside_temp: 17
+                outside_temp: 9.5
+                driver_temp_setting: 22.6
+                passenger_temp_setting: 22.6
+                is_auto_conditioning_on: false
+                is_front_defroster_on: null
+                is_rear_defroster_on: false
+                fan_status: 0
+  '/api/1/vehicles/{vehicle_id}/data_request/drive_state':
+    get:
+      description: Returns the driving and position state of the vehicle.
+      summary: Driving and Position
+      tags:
+        - Vehicles
+      operationId: GetVehicleDriveState
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/DriveStateResponse'
+          examples:
+            application/json:
+              response:
+                shift_state: null
+                speed: null
+                latitude: 33.794839
+                longitude: -84.401593
+                heading: 4
+                gps_as_of: 1359863204
+  '/api/1/vehicles/{vehicle_id}/data_request/gui_settings':
+    get:
+      description: 'Returns various information about the GUI settings of the car, such as unit format and range display.'
+      summary: GUI Settings
+      tags:
+        - Vehicles
+      operationId: GetVehilceGuiSettings
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/GuistateResponse'
+          examples:
+            application/json:
+              response:
+                gui_distance_units: mi/hr
+                gui_temperature_units: F
+                gui_charge_rate_units: mi/hr
+                gui_24_hour_time: false
+                gui_range_display: Rated
+  '/api/1/vehicles/{vehicle_id}/data_request/vehicle_state':
+    get:
+      description: 'Returns the vehicle''s physical state, such as which doors are open.'
+      summary: Vehicle State
+      tags:
+        - Vehicles
+      operationId: GetVehicleState
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/VehicleStateResponse'
+          examples:
+            application/json:
+              response:
+                df: false
+                dr: false
+                pf: false
+                pr: false
+                ft: false
+                rt: false
+                car_verson: 1.19.42
+                locked: true
+                sun_roof_installed: false
+                sun_roof_state: unknown
+                sun_roof_percent_open: 0
+                dark_rims: false
+                wheel_type: Base19
+                has_spoiler: false
+                roof_color: Colored
+                perf_config: Base
+  '/api/1/vehicles/{vehicle_id}/command/wake_up':
+    post:
+      description: Wakes up the car from the sleep state. Necessary to get some data from the car.
+      summary: Wake Up Car
+      tags:
+        - Vehicle Commands
+      operationId: WakeUpVehicle
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/WakeUpCarResponse'
+          examples:
+            application/json:
+              response:
+                result: true
+                reason: ''
+  '/api/1/vehicles/{vehicle_id}/command/set_valet_mode':
+    post:
+      description: |-
+        Sets valet mode on or off with a PIN to disable it from within the car. Reuses last PIN from previous valet session.
+        Valet Mode limits the car's top speed to 70MPH and 80kW of acceleration power. It also disables Homelink, Bluetooth and
+        Wifi settings, and the ability to disable mobile access to the car. It also hides your favorites, home, and work
+        locations in navigation.
+      summary: Set Valet Mode
+      tags:
+        - Vehicle Commands
+      operationId: ToggleValetMode
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+        - name: body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/SetValetRequest'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/SetValetModeResponse'
+          examples:
+            application/json:
+              response:
+                result: true
+                reason: ''
+  '/api/1/vehicles/{vehicle_id}/command/reset_valet_pin':
+    post:
+      description: 'Resets the PIN set for valet mode, if set.'
+      summary: Reset Valet PIN
+      tags:
+        - Vehicle Commands
+      operationId: ResetValetPin
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/ResetValetPinResponse'
+          examples:
+            application/json:
+              response:
+                result: true
+                reason: ''
+  '/api/1/vehicles/{vehicle_id}/command/charge_port_door_open':
+    post:
+      description: Opens the charge port. Does not close the charge port (for now...). This endpoint also unlocks the charge port if it's locked.
+      summary: Open Charge Port
+      tags:
+        - Vehicle Commands
+      operationId: ToggleChargePort
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/OpenChargePortResponse'
+          examples:
+            application/json:
+              response:
+                result: true
+                reason: ''
+  '/api/1/vehicles/{vehicle_id}/command/charge_standard':
+    post:
+      description: Set the charge mode to standard (90% under the new percentage system introduced in 4.5).
+      summary: Set Charge Limit to Standard
+      tags:
+        - Vehicle Commands
+      operationId: SendStandardChargeLimit
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/SetChargeLimitToStandardResponse'
+          examples:
+            application/json:
+              response:
+                result: false
+                reason: already_standard
+  '/api/1/vehicles/{vehicle_id}/command/charge_max_range':
+    post:
+      description: Set the charge mode to max range (100% under the new percentage system introduced in 4.5). Use sparingly!
+      summary: Set Charge Limit to Max Range
+      tags:
+        - Vehicle Commands
+      operationId: SetMaxChargeLimit
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/SetChargeLimitToMaxRangeResponse'
+          examples:
+            application/json:
+              response:
+                result: false
+                reason: already_max_range
+  '/api/1/vehicles/{vehicle_id}/command/set_charge_limit':
+    post:
+      description: Set the charge limit to a custom percentage.
+      summary: Set Charge Limit
+      tags:
+        - Vehicle Commands
+      operationId: SetChargeLimit
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+        - name: percent
+          in: path
+          required: true
+          type: number
+          format: double
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The percentage value
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/SetChargeLimitResponse'
+          examples:
+            application/json:
+              response:
+                result: true
+                reason: ''
+  '/api/1/vehicles/{vehicle_id}/command/charge_start':
+    post:
+      description: 'Start charging. Must be plugged in, have power available, and not have reached your charge limit.'
+      summary: Start Charging
+      tags:
+        - Vehicle Commands
+      operationId: StartCharge
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/StartChargingResponse'
+          examples:
+            application/json:
+              response:
+                result: true
+                reason: ''
+  '/api/1/vehicles/{vehicle_id}/command/charge_stop':
+    post:
+      description: Stop charging. Must already be charging.
+      summary: Stop Charging
+      tags:
+        - Vehicle Commands
+      operationId: StopCharge
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/StopChargingResponse'
+          examples:
+            application/json:
+              response:
+                result: true
+                reason: ''
+  '/api/1/vehicles/{vehicle_id}/command/flash_lights':
+    post:
+      description: Flash the lights once.
+      summary: Flash Lights
+      tags:
+        - Vehicle Commands
+      operationId: FlashLights
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/FlashLightsResponse'
+          examples:
+            application/json:
+              response:
+                result: true
+                reason: ''
+  '/api/1/vehicles/{vehicle_id}/command/honk_horn':
+    post:
+      description: Honk the horn once.
+      summary: Honk Horn
+      tags:
+        - Vehicle Commands
+      operationId: HonkHorn
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/HonkHornResponse'
+          examples:
+            application/json:
+              response:
+                result: true
+                reason: ''
+  '/api/1/vehicles/{vehicle_id}/command/door_unlock':
+    post:
+      description: Unlock the car's doors.
+      summary: Unlock Doors
+      tags:
+        - Vehicle Commands
+      operationId: UnlockDoors
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/UnlockDoorsResponse'
+          examples:
+            application/json:
+              response:
+                result: true
+                reason: ''
+  '/api/1/vehicles/{vehicle_id}/command/door_lock':
+    post:
+      description: Lock the car's doors.
+      summary: Lock Doors
+      tags:
+        - Vehicle Commands
+      operationId: LockDoors
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/LockDoorsResponse'
+          examples:
+            application/json:
+              response:
+                result: true
+                reason: ''
+  '/api/1/vehicles/{vehicle_id}/command/set_temps':
+    post:
+      description: Set the temperature target for the HVAC system.
+      summary: Set Temperature
+      tags:
+        - Vehicle Commands
+      operationId: SetTemperatures
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/SetTempsRequest'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/SetTemperatureResponse'
+          examples:
+            application/json:
+              response:
+                result: true
+                reason: ''
+  '/api/1/vehicles/{vehicle_id}/command/auto_conditioning_start':
+    post:
+      description: 'Start the climate control system. Will cool or heat automatically, depending on set temperature.'
+      summary: Start HVAC System
+      tags:
+        - Vehicle Commands
+      operationId: StartHVAC
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/StartHvacSystemResponse'
+          examples:
+            application/json:
+              response:
+                result: true
+                reason: ''
+  '/api/1/vehicles/{vehicle_id}/command/auto_conditioning_stop':
+    post:
+      description: Stop the climate control system.
+      summary: Stop HVAC System
+      tags:
+        - Vehicle Commands
+      operationId: StopHVAC
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/StopHvacSystemResponse'
+          examples:
+            application/json:
+              response:
+                result: true
+                reason: ''
+  '/api/1/vehicles/{vehicle_id}/command/sun_roof_control':
+    post:
+      description: 'Controls the car''s panoramic roof, if installed.'
+      summary: Move Pano Roof
+      tags:
+        - Vehicle Commands
+      operationId: OpenSunroof
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+        - name: body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/MovePanoRoofRequest'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/MovePanoRoofResponse'
+          examples:
+            application/json:
+              response:
+                result: true
+                reason: ''
+  '/api/1/vehicles/{vehicle_id}/command/remote_start_drive':
+    post:
+      description: Start the car for keyless driving. Must start driving within 2 minutes of issuing this request.
+      summary: Remote Start
+      tags:
+        - Vehicle Commands
+      operationId: RemoteStart
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+        - name: password
+          in: path
+          required: true
+          type: string
+          description: The password to the authenticated my.teslamotors.com account.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/RemoteStartResponse'
+          examples:
+            application/json:
+              response:
+                result: true
+                reason: ''
+  '/api/1/vehicles/{vehicle_id}/command/trunk_open':
+    post:
+      description: Open the trunk or frunk. Currently inoperable.
+      summary: Open Trunk/Frunk
+      tags:
+        - Vehicle Commands
+      operationId: OpenTrunk
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          exclusiveMaximum: false
+          exclusiveMinimum: false
+          description: The id of the Vehicle.
+        - name: which_trunk
+          in: query
+          required: true
+          type: string
+          description: The trunk to open. `rear` is the only one known currently.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/OpenTrunkResponse'
+          examples:
+            application/json:
+              response:
+                result: true
+                reason: ''
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /api/1/vehicles/1/command/trunk_open?which_trunk=rear
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: RAW
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers:
+              Content-Type: application/json
+            body: '{  "response": {    "result": true,    "reason": ""  }}'
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Open Trunk/Frunk1
+          x-testDescription: Open the trunk or frunk. Currently inoperable.
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+definitions:
+  CreateAccessTokenRequest:
+    title: Get an Access Token request
+    type: object
+    properties:
+      grant_type:
+        description: The type of oAuth grant. Always "password"
+        example: password
+        type: string
+      client_id:
+        description: The oAuth client ID
+        example: abc
+        type: string
+      client_secret:
+        description: The oAuth client secret
+        example: '123'
+        type: string
+      email:
+        description: The email for my.teslamotors.com
+        example: elon@teslamotors.com
+        type: string
+      password:
+        description: The password for my.teslamotors.com
+        example: edisonsux
+        type: string
+  CreateAccessTokenResponse:
+    title: Get an Access Token response
+    example:
+      access_token: abc123
+      token_type: bearer
+      expires_in: 7776000
+      created_at: 1457385291
+      refresh_token: cba321
+    type: object
+    properties:
+      access_token:
+        description: ''
+        example: abc123
+        type: string
+      token_type:
+        description: ''
+        example: bearer
+        type: string
+      expires_in:
+        description: ''
+        example: 7776000
+        type: integer
+        format: int32
+      created_at:
+        description: ''
+        example: 1457385291
+        type: integer
+        format: int32
+      refresh_token:
+        description: ''
+        example: cba321
+        type: string
+    required:
+      - access_token
+      - token_type
+      - expires_in
+      - created_at
+      - refresh_token
+  SetValetRequest:
+    title: Set Valet Mode
+    example:
+      'on': true
+      password: 1234
+    type: object
+    properties:
+      'on':
+        type: boolean
+        description: Whether to enable or disable valet mode.
+      password:
+        type: string
+        description: (optional) A 4 digit PIN code to unlock the car.
+  MovePanoRoofRequest:
+    title: Move Panoramic Roof
+    example:
+      state: 'vent'
+    type: object
+    properties:
+      state:      
+        enum:
+          - open
+          - close
+          - comfort
+          - vent
+          - move
+        x-enum-elements:
+          - name: open
+            description: ''
+          - name: close
+            description: ''
+          - name: comfort
+            description: ''
+          - name: vent
+            description: ''
+          - name: move
+            description: ''
+        type: string
+        description: 'The desired state of the panoramic roof. The approximate percent open values for each state are `open` = 100%, `close` = 0%, `comfort` = 80%, and `vent` = ~15%'
+      percent:
+        type: number
+        format: double
+        description: The percentage to move the roof to.
+  SetTempsRequest:
+    title: Set SetTemperatures
+    example:
+      driver_temp: 70.0
+      passenger_temp: 72.0
+    type: object
+    properties:
+      driver_temp:
+        type: number
+        format: double
+        description: The desired temperature on the driver's side in celcius.
+      passenger_temp:
+        type: number
+        format: double
+        description: The desired temperature on the passenger's side in celcius.
+  GetVehiclesResponse:
+    title: List all Vehicles response
+    example:
+      response:
+        - color: null
+          display_name: null
+          id: 321
+          option_codes: 'MS01,RENA,TM00,DRLH,PF00,BT85,PBCW,RFPO,WT19,IBMB,IDPB,TR00,SU01,SC01,TP01,AU01,CH00,HP00,PA00,PS00,AD02,X020,X025,X001,X003,X007,X011,X013'
+          user_id: 123
+          vehicle_id: 1234567890
+          vin: 5YJSA1CN5CFP01657
+          tokens:
+            - x
+            - x
+          state: online
+      count: 1
+    type: object
+    properties:
+      response:
+        description: ''
+        example:
+          - color: null
+            display_name: null
+            id: 321
+            option_codes: 'MS01,RENA,TM00,DRLH,PF00,BT85,PBCW,RFPO,WT19,IBMB,IDPB,TR00,SU01,SC01,TP01,AU01,CH00,HP00,PA00,PS00,AD02,X020,X025,X001,X003,X007,X011,X013'
+            user_id: 123
+            vehicle_id: 1234567890
+            vin: 5YJSA1CN5CFP01657
+            tokens:
+              - x
+              - x
+            state: online
+        type: array
+        items:
+          $ref: '#/definitions/Vehicle'
+      count:
+        description: ''
+        example: 1
+        type: integer
+        format: int32
+    required:
+      - response
+      - count
+  Vehicle:
+    properties:
+      color:
+        type: string
+      display_name:
+        type: string
+      id:
+        type: string
+      option_codes: 
+        type: string
+      vehicle_id:
+        type: string
+      vin:
+        type: string
+      tokens:
+        type: array
+        items:
+          type: string
+      state:
+        type: string
+  VehicleResponse:
+    properties:
+      response:
+        $ref: '#/definitions/Vehicle'
+  MobileAccessResponse:
+    title: Mobile Access response
+    example:
+      response: true
+    type: object
+    properties:
+      response:
+        description: ''
+        example: true
+        type: boolean
+    required:
+      - response
+  ChargeStateResponse:
+    title: Charge State response
+    example:
+      response:
+        charging_state: Complete
+        charge_to_max_range: false
+        max_range_charge_counter: 0
+        fast_charger_present: false
+        battery_range: 239.02
+        est_battery_range: 155.79
+        ideal_battery_range: 275.09
+        battery_level: 91
+        battery_current: -0.6
+        charge_starting_range: null
+        charge_starting_soc: null
+        charger_voltage: 0
+        charger_pilot_current: 40
+        charger_actual_current: 0
+        charger_power: 0
+        time_to_full_charge: null
+        charge_rate: -1
+        charge_port_door_open: true
+    type: object
+    properties:
+      response:
+        description: ''
+        example:
+          charging_state: Complete
+          charge_to_max_range: false
+          max_range_charge_counter: 0
+          fast_charger_present: false
+          battery_range: 239.02
+          est_battery_range: 155.79
+          ideal_battery_range: 275.09
+          battery_level: 91
+          battery_current: -0.6
+          charge_starting_range: null
+          charge_starting_soc: null
+          charger_voltage: 0
+          charger_pilot_current: 40
+          charger_actual_current: 0
+          charger_power: 0
+          time_to_full_charge: null
+          charge_rate: -1
+          charge_port_door_open: true
+        type: object
+    required:
+      - response
+  ClimateSettingsResponse:
+    title: Climate Settings response
+    example:
+      response:
+        inside_temp: 17
+        outside_temp: 9.5
+        driver_temp_setting: 22.6
+        passenger_temp_setting: 22.6
+        is_auto_conditioning_on: false
+        is_front_defroster_on: null
+        is_rear_defroster_on: false
+        fan_status: 0
+    type: object
+    properties:
+      response:
+        description: ''
+        example:
+          inside_temp: 17
+          outside_temp: 9.5
+          driver_temp_setting: 22.6
+          passenger_temp_setting: 22.6
+          is_auto_conditioning_on: false
+          is_front_defroster_on: null
+          is_rear_defroster_on: false
+          fan_status: 0
+        type: object
+    required:
+      - response
+  DriveStateResponse:
+    title: Driving and Position response
+    example:
+      response:
+        shift_state: null
+        speed: null
+        latitude: 33.794839
+        longitude: -84.401593
+        heading: 4
+        gps_as_of: 1359863204
+    type: object
+    properties:
+      response:
+        description: ''
+        example:
+          shift_state: null
+          speed: null
+          latitude: 33.794839
+          longitude: -84.401593
+          heading: 4
+          gps_as_of: 1359863204
+        type: object
+    required:
+      - response
+  GuistateResponse:
+    title: GUI Settings response
+    example:
+      response:
+        gui_distance_units: mi/hr
+        gui_temperature_units: F
+        gui_charge_rate_units: mi/hr
+        gui_24_hour_time: false
+        gui_range_display: Rated
+    type: object
+    properties:
+      response:
+        description: ''
+        example:
+          gui_distance_units: mi/hr
+          gui_temperature_units: F
+          gui_charge_rate_units: mi/hr
+          gui_24_hour_time: false
+          gui_range_display: Rated
+        type: object
+    required:
+      - response
+  VehicleStateResponse:
+    title: Vehicle State response
+    example:
+      response:
+        df: false
+        dr: false
+        pf: false
+        pr: false
+        ft: false
+        rt: false
+        car_verson: 1.19.42
+        locked: true
+        sun_roof_installed: false
+        sun_roof_state: unknown
+        sun_roof_percent_open: 0
+        dark_rims: false
+        wheel_type: Base19
+        has_spoiler: false
+        roof_color: Colored
+        perf_config: Base
+    type: object
+    properties:
+      response:
+        description: ''
+        example:
+          df: false
+          dr: false
+          pf: false
+          pr: false
+          ft: false
+          rt: false
+          car_verson: 1.19.42
+          locked: true
+          sun_roof_installed: false
+          sun_roof_state: unknown
+          sun_roof_percent_open: 0
+          dark_rims: false
+          wheel_type: Base19
+          has_spoiler: false
+          roof_color: Colored
+          perf_config: Base
+        type: object
+    required:
+      - response
+  WakeUpCarResponse:
+    title: Wake Up Car response
+    example:
+      response:
+        result: true
+        reason: ''
+    type: object
+    properties:
+      response:
+        description: ''
+        properties:
+          result:
+              type: boolean
+          reason:
+              type: string
+        example:
+          result: true
+          reason: ''
+        type: object
+    required:
+      - response
+  SetValetModeResponse:
+    title: Set Valet Mode response
+    example:
+      response:
+        result: true
+        reason: ''
+    type: object
+    properties:
+      response:
+        description: ''
+        properties:
+          result:
+              type: boolean
+          reason:
+              type: string
+        example:
+          result: true
+          reason: ''
+        type: object
+    required:
+      - response
+  ResetValetPinResponse:
+    title: Reset Valet PIN response
+    example:
+      response:
+        result: true
+        reason: ''
+    type: object
+    properties:
+      response:
+        description: ''
+        properties:
+          result:
+              type: boolean
+          reason:
+              type: string
+        example:
+          result: true
+          reason: ''
+        type: object
+    required:
+      - response
+  OpenChargePortResponse:
+    title: Open Charge Port response
+    example:
+      response:
+        result: true
+        reason: ''
+    type: object
+    properties:
+      response:
+        description: ''
+        properties:
+          result:
+              type: boolean
+          reason:
+              type: string
+        example:
+          result: true
+          reason: ''
+        type: object
+    required:
+      - response
+  SetChargeLimitToStandardResponse:
+    title: Set Charge Limit to Standard response
+    example:
+      response:
+        result: false
+        reason: already_standard
+    type: object
+    properties:
+      response:
+        description: ''
+        properties:
+          result:
+              type: boolean
+          reason:
+              type: string
+        example:
+          result: false
+          reason: already_standard
+        type: object
+    required:
+      - response
+  SetChargeLimitToMaxRangeResponse:
+    title: Set Charge Limit to Max Range response
+    example:
+      response:
+        result: false
+        reason: already_max_range
+    type: object
+    properties:
+      response:
+        description: ''
+        properties:
+          result:
+              type: boolean
+          reason:
+              type: string
+        example:
+          result: false
+          reason: already_max_range
+        type: object
+    required:
+      - response
+  SetChargeLimitResponse:
+    title: Set Charge Limit response
+    example:
+      response:
+        result: true
+        reason: ''
+    type: object
+    properties:
+      response:
+        description: ''
+        properties:
+          result:
+              type: boolean
+          reason:
+              type: string
+        example:
+          result: true
+          reason: ''
+        type: object
+    required:
+      - response
+  StartChargingResponse:
+    title: Start Charging response
+    example:
+      response:
+        result: true
+        reason: ''
+    type: object
+    properties:
+      response:
+        description: ''
+        properties:
+          result:
+              type: boolean
+          reason:
+              type: string
+        example:
+          result: true
+          reason: ''
+        type: object
+    required:
+      - response
+  StopChargingResponse:
+    title: Stop Charging response
+    example:
+      response:
+        result: true
+        reason: ''
+    type: object
+    properties:
+      response:
+        description: ''
+        properties:
+          result:
+              type: boolean
+          reason:
+              type: string
+        example:
+          result: true
+          reason: ''
+        type: object
+    required:
+      - response
+  FlashLightsResponse:
+    title: Flash Lights response
+    example:
+      response:
+        result: true
+        reason: ''
+    type: object
+    properties:
+      response:
+        description: ''
+        properties:
+          result:
+              type: boolean
+          reason:
+              type: string
+        example:
+          result: true
+          reason: ''
+        type: object
+    required:
+      - response
+  HonkHornResponse:
+    title: Honk Horn response
+    example:
+      response:
+        result: true
+        reason: ''
+    type: object
+    properties:
+      response:
+        description: ''
+        properties:
+          result:
+              type: boolean
+          reason:
+              type: string
+        example:
+          result: true
+          reason: ''
+        type: object
+    required:
+      - response
+  UnlockDoorsResponse:
+    title: Unlock Doors response
+    example:
+      response:
+        result: true
+        reason: ''
+    type: object
+    properties:
+      response:
+        description: ''
+        properties:
+          result:
+              type: boolean
+          reason:
+              type: string
+        example:
+          result: true
+          reason: ''
+        type: object
+    required:
+      - response
+  LockDoorsResponse:
+    title: Lock Doors response
+    example:
+      response:
+        result: true
+        reason: ''
+    type: object
+    properties:
+      response:
+        description: ''
+        properties:
+          result:
+              type: boolean
+          reason:
+              type: string
+        example:
+          result: true
+          reason: ''
+        type: object
+    required:
+      - response
+  SetTemperatureResponse:
+    title: Set Temperature response
+    example:
+      response:
+        result: true
+        reason: ''
+    type: object
+    properties:
+      response:
+        description: ''
+        properties:
+          result:
+              type: boolean
+          reason:
+              type: string
+        example:
+          result: true
+          reason: ''
+        type: object
+    required:
+      - response
+  StartHvacSystemResponse:
+    title: Start HVAC System response
+    example:
+      response:
+        result: true
+        reason: ''
+    type: object
+    properties:
+      response:
+        description: ''
+        properties:
+          result:
+              type: boolean
+          reason:
+              type: string
+        example:
+          result: true
+          reason: ''
+        type: object
+    required:
+      - response
+  StopHvacSystemResponse:
+    title: Stop HVAC System response
+    example:
+      response:
+        result: true
+        reason: ''
+    type: object
+    properties:
+      response:
+        description: ''
+        properties:
+          result:
+              type: boolean
+          reason:
+              type: string
+        example:
+          result: true
+          reason: ''
+        type: object
+    required:
+      - response
+  State:
+    title: state
+    example: open
+    x-enum-elements:
+      - name: open
+        description: ''
+      - name: close
+        description: ''
+      - name: comfort
+        description: ''
+      - name: vent
+        description: ''
+      - name: move
+        description: ''
+    type: string
+    enum:
+      - open
+      - close
+      - comfort
+      - vent
+      - move
+  MovePanoRoofResponse:
+    title: Move Pano Roof response
+    example:
+      response:
+        result: true
+        reason: ''
+    type: object
+    properties:
+      response:
+        description: ''
+        properties:
+          result:
+              type: boolean
+          reason:
+              type: string
+        example:
+          result: true
+          reason: ''
+        type: object
+    required:
+      - response
+  RemoteStartResponse:
+    title: Remote Start response
+    example:
+      response:
+        result: true
+        reason: ''
+    type: object
+    properties:
+      response:
+        description: ''
+        properties:
+          result:
+              type: boolean
+          reason:
+              type: string
+        example:
+          result: true
+          reason: ''
+        type: object
+    required:
+      - response
+  OpenTrunkResponse:
+    title: Open Trunk/Frunk response
+    example:
+      response:
+        result: true
+        reason: ''
+    type: object
+    properties:
+      response:
+        description: ''
+        properties:
+          result:
+              type: boolean
+          reason:
+              type: string
+        example:
+          result: true
+          reason: ''
+        type: object
+    required:
+      - response
