@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * SetValetRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-18T04:11:52.708-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-18T18:44:55.939-07:00")
 public class SetValetRequest {
   @SerializedName("on")
   private Boolean on = null;

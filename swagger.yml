@@ -502,14 +502,11 @@ paths:
           exclusiveMaximum: false
           exclusiveMinimum: false
           description: The id of the Vehicle.
-        - name: percent
-          in: path
+        - name: body
+          in: body
           required: true
-          type: number
-          format: double
-          exclusiveMaximum: false
-          exclusiveMinimum: false
-          description: The percentage value
+          schema:
+            $ref: '#/definitions/SetChargeLimitRequest'
       responses:
         '200':
           description: ''
@@ -1008,6 +1005,16 @@ definitions:
         type: number
         format: double
         description: The desired temperature on the passenger's side in celcius.
+  SetChargeLimitRequest:
+    title: Set Charge Limit
+    example:
+      percent: 80
+    type: object
+    properties:
+      percent:
+        type: number
+        format: double
+        description: Percentage to set Charge Limit to.
   GetVehiclesResponse:
     title: List all Vehicles response
     example:

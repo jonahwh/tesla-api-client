@@ -393,7 +393,7 @@ No authorization required
 
 <a name="setChargeLimit"></a>
 # **setChargeLimit**
-> SetChargeLimitResponse setChargeLimit(vehicleId, percent)
+> SetChargeLimitResponse setChargeLimit(vehicleId, body)
 
 Set Charge Limit
 
@@ -408,9 +408,9 @@ Set the charge limit to a custom percentage.
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
-Double percent = 3.4D; // Double | The percentage value
+SetChargeLimitRequest body = new SetChargeLimitRequest(); // SetChargeLimitRequest | 
 try {
-    SetChargeLimitResponse result = apiInstance.setChargeLimit(vehicleId, percent);
+    SetChargeLimitResponse result = apiInstance.setChargeLimit(vehicleId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#setChargeLimit");
@@ -423,7 +423,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vehicleId** | **String**| The id of the Vehicle. |
- **percent** | **Double**| The percentage value |
+ **body** | [**SetChargeLimitRequest**](SetChargeLimitRequest.md)|  |
 
 ### Return type
 

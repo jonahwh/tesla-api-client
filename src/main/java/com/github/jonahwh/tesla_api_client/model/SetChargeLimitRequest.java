@@ -24,51 +24,29 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * 
+ * SetChargeLimitRequest
  */
-@ApiModel(description = "")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-18T18:44:55.939-07:00")
-public class SetChargeLimitToStandardResponseResponse {
-  @SerializedName("result")
-  private Boolean result = null;
+public class SetChargeLimitRequest {
+  @SerializedName("percent")
+  private Double percent = null;
 
-  @SerializedName("reason")
-  private String reason = null;
-
-  public SetChargeLimitToStandardResponseResponse result(Boolean result) {
-    this.result = result;
+  public SetChargeLimitRequest percent(Double percent) {
+    this.percent = percent;
     return this;
   }
 
    /**
-   * Get result
-   * @return result
+   * Percentage to set Charge Limit to.
+   * @return percent
   **/
-  @ApiModelProperty(value = "")
-  public Boolean isResult() {
-    return result;
+  @ApiModelProperty(value = "Percentage to set Charge Limit to.")
+  public Double getPercent() {
+    return percent;
   }
 
-  public void setResult(Boolean result) {
-    this.result = result;
-  }
-
-  public SetChargeLimitToStandardResponseResponse reason(String reason) {
-    this.reason = reason;
-    return this;
-  }
-
-   /**
-   * Get reason
-   * @return reason
-  **/
-  @ApiModelProperty(value = "")
-  public String getReason() {
-    return reason;
-  }
-
-  public void setReason(String reason) {
-    this.reason = reason;
+  public void setPercent(Double percent) {
+    this.percent = percent;
   }
 
 
@@ -80,24 +58,22 @@ public class SetChargeLimitToStandardResponseResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SetChargeLimitToStandardResponseResponse setChargeLimitToStandardResponseResponse = (SetChargeLimitToStandardResponseResponse) o;
-    return Objects.equals(this.result, setChargeLimitToStandardResponseResponse.result) &&
-        Objects.equals(this.reason, setChargeLimitToStandardResponseResponse.reason);
+    SetChargeLimitRequest setChargeLimitRequest = (SetChargeLimitRequest) o;
+    return Objects.equals(this.percent, setChargeLimitRequest.percent);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(result, reason);
+    return Objects.hash(percent);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SetChargeLimitToStandardResponseResponse {\n");
+    sb.append("class SetChargeLimitRequest {\n");
     
-    sb.append("    result: ").append(toIndentedString(result)).append("\n");
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    sb.append("    percent: ").append(toIndentedString(percent)).append("\n");
     sb.append("}");
     return sb.toString();
   }

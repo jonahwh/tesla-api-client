@@ -17,6 +17,7 @@ import com.github.jonahwh.tesla_api_client.model.OpenChargePortResponse;
 import com.github.jonahwh.tesla_api_client.model.OpenTrunkResponse;
 import com.github.jonahwh.tesla_api_client.model.RemoteStartResponse;
 import com.github.jonahwh.tesla_api_client.model.ResetValetPinResponse;
+import com.github.jonahwh.tesla_api_client.model.SetChargeLimitRequest;
 import com.github.jonahwh.tesla_api_client.model.SetChargeLimitResponse;
 import com.github.jonahwh.tesla_api_client.model.SetChargeLimitToMaxRangeResponse;
 import com.github.jonahwh.tesla_api_client.model.SetChargeLimitToStandardResponse;
@@ -156,7 +157,7 @@ public interface VehicleCommandsApi {
    * Set Charge Limit
    * Set the charge limit to a custom percentage.
    * @param vehicleId The id of the Vehicle. (required)
-   * @param percent The percentage value (required)
+   * @param body  (required)
    * @return Call&lt;SetChargeLimitResponse&gt;
    */
   @Headers({
@@ -164,7 +165,7 @@ public interface VehicleCommandsApi {
   })
   @POST("api/1/vehicles/{vehicle_id}/command/set_charge_limit")
   Call<SetChargeLimitResponse> setChargeLimit(
-    @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Path("percent") Double percent
+    @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body SetChargeLimitRequest body
   );
 
   /**
