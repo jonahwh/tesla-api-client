@@ -1012,8 +1012,8 @@ definitions:
     type: object
     properties:
       percent:
-        type: number
-        format: double
+        type: integer
+        format: int32
         description: Percentage to set Charge Limit to.
   GetVehiclesResponse:
     title: List all Vehicles response

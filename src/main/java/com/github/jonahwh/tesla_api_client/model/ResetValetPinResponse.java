@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ResetValetPinResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-18T18:44:55.939-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-18T19:12:38.015-07:00")
 public class ResetValetPinResponse {
   @SerializedName("response")
   private WakeUpCarResponseResponse response = null;

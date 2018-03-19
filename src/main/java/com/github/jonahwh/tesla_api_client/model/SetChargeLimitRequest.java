@@ -26,12 +26,12 @@ import java.io.IOException;
 /**
  * SetChargeLimitRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-18T18:44:55.939-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-18T19:12:38.015-07:00")
 public class SetChargeLimitRequest {
   @SerializedName("percent")
-  private Double percent = null;
+  private Integer percent = null;
 
-  public SetChargeLimitRequest percent(Double percent) {
+  public SetChargeLimitRequest percent(Integer percent) {
     this.percent = percent;
     return this;
   }
@@ -41,11 +41,11 @@ public class SetChargeLimitRequest {
    * @return percent
   **/
   @ApiModelProperty(value = "Percentage to set Charge Limit to.")
-  public Double getPercent() {
+  public Integer getPercent() {
     return percent;
   }
 
-  public void setPercent(Double percent) {
+  public void setPercent(Integer percent) {
     this.percent = percent;
   }
 
