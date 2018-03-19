@@ -14,7 +14,6 @@
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
-import com.github.jonahwh.tesla_api_client.model.WakeUpCarResponseResponse;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,29 +24,29 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * OpenTrunkResponse
+ * RemoteStartRequest
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-18T19:37:30.758-07:00")
-public class OpenTrunkResponse {
-  @SerializedName("response")
-  private WakeUpCarResponseResponse response = null;
+public class RemoteStartRequest {
+  @SerializedName("password")
+  private String password = null;
 
-  public OpenTrunkResponse response(WakeUpCarResponseResponse response) {
-    this.response = response;
+  public RemoteStartRequest password(String password) {
+    this.password = password;
     return this;
   }
 
    /**
-   * Get response
-   * @return response
+   * The password to the authenticated my.teslamotors.com account.
+   * @return password
   **/
-  @ApiModelProperty(required = true, value = "")
-  public WakeUpCarResponseResponse getResponse() {
-    return response;
+  @ApiModelProperty(value = "The password to the authenticated my.teslamotors.com account.")
+  public String getPassword() {
+    return password;
   }
 
-  public void setResponse(WakeUpCarResponseResponse response) {
-    this.response = response;
+  public void setPassword(String password) {
+    this.password = password;
   }
 
 
@@ -59,22 +58,22 @@ public class OpenTrunkResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OpenTrunkResponse openTrunkResponse = (OpenTrunkResponse) o;
-    return Objects.equals(this.response, openTrunkResponse.response);
+    RemoteStartRequest remoteStartRequest = (RemoteStartRequest) o;
+    return Objects.equals(this.password, remoteStartRequest.password);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(response);
+    return Objects.hash(password);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OpenTrunkResponse {\n");
+    sb.append("class RemoteStartRequest {\n");
     
-    sb.append("    response: ").append(toIndentedString(response)).append("\n");
+    sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("}");
     return sb.toString();
   }

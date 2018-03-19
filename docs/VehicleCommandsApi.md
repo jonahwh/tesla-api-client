@@ -256,7 +256,7 @@ No authorization required
 
 <a name="remoteStart"></a>
 # **remoteStart**
-> RemoteStartResponse remoteStart(vehicleId, password)
+> RemoteStartResponse remoteStart(vehicleId, body)
 
 Remote Start
 
@@ -271,9 +271,9 @@ Start the car for keyless driving. Must start driving within 2 minutes of issuin
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
-String password = "password_example"; // String | The password to the authenticated my.teslamotors.com account.
+RemoteStartRequest body = new RemoteStartRequest(); // RemoteStartRequest | 
 try {
-    RemoteStartResponse result = apiInstance.remoteStart(vehicleId, password);
+    RemoteStartResponse result = apiInstance.remoteStart(vehicleId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#remoteStart");
@@ -286,7 +286,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vehicleId** | **String**| The id of the Vehicle. |
- **password** | **String**| The password to the authenticated my.teslamotors.com account. |
+ **body** | [**RemoteStartRequest**](RemoteStartRequest.md)|  |
 
 ### Return type
 

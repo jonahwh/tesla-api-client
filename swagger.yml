@@ -815,11 +815,11 @@ paths:
           exclusiveMaximum: false
           exclusiveMinimum: false
           description: The id of the Vehicle.
-        - name: password
-          in: path
+        - name: body
+          in: body
           required: true
-          type: string
-          description: The password to the authenticated my.teslamotors.com account.
+          schema:
+            $ref: '#/definitions/RemoteStartRequest'
       responses:
         '200':
           description: ''
@@ -1015,6 +1015,15 @@ definitions:
         type: integer
         format: int32
         description: Percentage to set Charge Limit to.
+  RemoteStartRequest:
+    title: Remote Start
+    example:
+      password: hunter2
+    type: object
+    properties:
+      password:
+        type: string
+        description: The password to the authenticated my.teslamotors.com account.
   GetVehiclesResponse:
     title: List all Vehicles response
     example:

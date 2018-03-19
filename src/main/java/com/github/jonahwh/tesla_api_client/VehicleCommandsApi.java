@@ -15,6 +15,7 @@ import com.github.jonahwh.tesla_api_client.model.MovePanoRoofRequest;
 import com.github.jonahwh.tesla_api_client.model.MovePanoRoofResponse;
 import com.github.jonahwh.tesla_api_client.model.OpenChargePortResponse;
 import com.github.jonahwh.tesla_api_client.model.OpenTrunkResponse;
+import com.github.jonahwh.tesla_api_client.model.RemoteStartRequest;
 import com.github.jonahwh.tesla_api_client.model.RemoteStartResponse;
 import com.github.jonahwh.tesla_api_client.model.ResetValetPinResponse;
 import com.github.jonahwh.tesla_api_client.model.SetChargeLimitRequest;
@@ -114,7 +115,7 @@ public interface VehicleCommandsApi {
    * Remote Start
    * Start the car for keyless driving. Must start driving within 2 minutes of issuing this request.
    * @param vehicleId The id of the Vehicle. (required)
-   * @param password The password to the authenticated my.teslamotors.com account. (required)
+   * @param body  (required)
    * @return Call&lt;RemoteStartResponse&gt;
    */
   @Headers({
@@ -122,7 +123,7 @@ public interface VehicleCommandsApi {
   })
   @POST("api/1/vehicles/{vehicle_id}/command/remote_start_drive")
   Call<RemoteStartResponse> remoteStart(
-    @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Path("password") String password
+    @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body RemoteStartRequest body
   );
 
   /**
