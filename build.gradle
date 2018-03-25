@@ -1,7 +1,10 @@
 apply plugin: 'idea'
 apply plugin: 'eclipse'
+apply plugin: 'maven'
+apply plugin: 'signing'
 
 group = 'com.github.jonahwh'
+archivesBaseName = 'tesla-api-client'
 version = '1.0.0'
 
 buildscript {
@@ -70,7 +73,7 @@ if(hasProperty('target') && target == 'android') {
     }
 
     artifacts {
-        archives sourcesJar
+        archives javadocJar, sourcesJar
     }
 
 } else {
@@ -90,6 +93,68 @@ if(hasProperty('target') && target == 'android') {
     task execute(type:JavaExec) {
        main = System.getProperty('mainClass')
        classpath = sourceSets.main.runtimeClasspath
+    }
+
+    task javadocJar(type: Jar) {
+        classifier = 'javadoc'
+        from javadoc
+    }
+
+    task sourcesJar(type: Jar) {
+        classifier = 'sources'
+        from sourceSets.main.allSource
+    }
+
+    artifacts {
+        archives javadocJar, sourcesJar
+    }
+
+    signing {
+        sign configurations.archives
+    }
+
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+                snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+                    authentication(userName: ossrhUsername, password: ossrhPassword)
+                }
+
+                repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                    authentication(userName: ossrhUsername, password: ossrhPassword)
+                }
+
+                pom.project {
+                    name 'Tesla API Client'
+                    packaging 'jar'
+                    description 'Unofficial Tesla Owner Java API Client'
+                    url 'https://github.com/jonahwh/tesla-api-client'
+
+                    scm {
+                        connection 'scm:git:git://github.com/jonahwh/tesla-api-client.git'
+                        developerConnection 'scm:git:ssh://github.com:jonahwh/tesla-api-client.git'
+                        url 'http://github.com/jonahwh/tesla-api-client/tree/master'
+                    }
+
+                    licenses {
+                        license {
+                            name 'Unlicense'
+                            url 'http://unlicense.org'
+                        }
+                    }
+
+                    developers {
+                        developer {
+                            id 'jonahwh'
+                            name 'Jonah Hirsch'
+                            email 'jonahwh@gmail.com'
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

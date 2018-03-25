@@ -24,10 +24,10 @@
 
     <developers>
         <developer>
-            <name>Swagger</name>
-            <email>apiteam@swagger.io</email>
-            <organization>Swagger</organization>
-            <organizationUrl>http://swagger.io</organizationUrl>
+            <name>Jonah Hirsch</name>
+            <email>jonahwh@gmail.com</email>
+            <organization>jonahwh</organization>
+            <organizationUrl>http://github.com/jonahwh</organizationUrl>
         </developer>
     </developers>
 

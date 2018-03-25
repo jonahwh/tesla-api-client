@@ -20,3 +20,4 @@ target
 .gradle
 build
 local.properties
+gradle.properties
