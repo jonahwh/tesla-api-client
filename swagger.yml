@@ -37,13 +37,6 @@ paths:
           description: ''
           schema:
             $ref: '#/definitions/CreateAccessTokenResponse'
-          examples:
-            application/json:
-              access_token: abc123
-              token_type: bearer
-              expires_in: 7776000
-              created_at: 1457385291
-              refresh_token: cba321
   /api/1/vehicles:
     get:
       description: Retrieve a list of your owned vehicles (includes vehicles not yet shipped!)
@@ -59,21 +52,6 @@ paths:
           description: ''
           schema:
             $ref: '#/definitions/GetVehiclesResponse'
-          examples:
-            application/json:
-              response:
-                - color: null
-                  display_name: null
-                  id: 321
-                  option_codes: 'MS01,RENA,TM00,DRLH,PF00,BT85,PBCW,RFPO,WT19,IBMB,IDPB,TR00,SU01,SC01,TP01,AU01,CH00,HP00,PA00,PS00,AD02,X020,X025,X001,X003,X007,X011,X013'
-                  user_id: 123
-                  vehicle_id: 1234567890
-                  vin: 5YJSA1CN5CFP01657
-                  tokens:
-                    - x
-                    - x
-                  state: online
-              count: 1
   '/api/1/vehicles/{vehicle_id}':
     get:
       description: Retrieve a specific vehicle
@@ -88,8 +66,6 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
       responses:
         '200':
@@ -124,17 +100,12 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
       responses:
         '200':
           description: ''
           schema:
             $ref: '#/definitions/MobileAccessResponse'
-          examples:
-            application/json:
-              response: true
   '/api/1/vehicles/{vehicle_id}/data_request/charge_state':
     get:
       description: Returns the state of charge in the battery.
@@ -149,35 +120,12 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
       responses:
         '200':
           description: ''
           schema:
             $ref: '#/definitions/ChargeStateResponse'
-          examples:
-            application/json:
-              response:
-                charging_state: Complete
-                charge_to_max_range: false
-                max_range_charge_counter: 0
-                fast_charger_present: false
-                battery_range: 239.02
-                est_battery_range: 155.79
-                ideal_battery_range: 275.09
-                battery_level: 91
-                battery_current: -0.6
-                charge_starting_range: null
-                charge_starting_soc: null
-                charger_voltage: 0
-                charger_pilot_current: 40
-                charger_actual_current: 0
-                charger_power: 0
-                time_to_full_charge: null
-                charge_rate: -1
-                charge_port_door_open: true
   '/api/1/vehicles/{vehicle_id}/data_request/climate_state':
     get:
       description: Returns the current temperature and climate control state.
@@ -192,25 +140,12 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
       responses:
         '200':
           description: ''
           schema:
             $ref: '#/definitions/ClimateSettingsResponse'
-          examples:
-            application/json:
-              response:
-                inside_temp: 17
-                outside_temp: 9.5
-                driver_temp_setting: 22.6
-                passenger_temp_setting: 22.6
-                is_auto_conditioning_on: false
-                is_front_defroster_on: null
-                is_rear_defroster_on: false
-                fan_status: 0
   '/api/1/vehicles/{vehicle_id}/data_request/drive_state':
     get:
       description: Returns the driving and position state of the vehicle.
@@ -225,23 +160,12 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
       responses:
         '200':
           description: ''
           schema:
             $ref: '#/definitions/DriveStateResponse'
-          examples:
-            application/json:
-              response:
-                shift_state: null
-                speed: null
-                latitude: 33.794839
-                longitude: -84.401593
-                heading: 4
-                gps_as_of: 1359863204
   '/api/1/vehicles/{vehicle_id}/data_request/gui_settings':
     get:
       description: 'Returns various information about the GUI settings of the car, such as unit format and range display.'
@@ -256,22 +180,12 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
       responses:
         '200':
           description: ''
           schema:
             $ref: '#/definitions/GuistateResponse'
-          examples:
-            application/json:
-              response:
-                gui_distance_units: mi/hr
-                gui_temperature_units: F
-                gui_charge_rate_units: mi/hr
-                gui_24_hour_time: false
-                gui_range_display: Rated
   '/api/1/vehicles/{vehicle_id}/data_request/vehicle_state':
     get:
       description: 'Returns the vehicle''s physical state, such as which doors are open.'
@@ -286,33 +200,12 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
       responses:
         '200':
           description: ''
           schema:
             $ref: '#/definitions/VehicleStateResponse'
-          examples:
-            application/json:
-              response:
-                df: false
-                dr: false
-                pf: false
-                pr: false
-                ft: false
-                rt: false
-                car_verson: 1.19.42
-                locked: true
-                sun_roof_installed: false
-                sun_roof_state: unknown
-                sun_roof_percent_open: 0
-                dark_rims: false
-                wheel_type: Base19
-                has_spoiler: false
-                roof_color: Colored
-                perf_config: Base
   '/api/1/vehicles/{vehicle_id}/command/wake_up':
     post:
       description: Wakes up the car from the sleep state. Necessary to get some data from the car.
@@ -327,19 +220,12 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
       responses:
         '200':
           description: ''
           schema:
             $ref: '#/definitions/WakeUpCarResponse'
-          examples:
-            application/json:
-              response:
-                result: true
-                reason: ''
   '/api/1/vehicles/{vehicle_id}/command/set_valet_mode':
     post:
       description: |-
@@ -358,8 +244,6 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
         - name: body
           in: body
@@ -372,11 +256,6 @@ paths:
           description: ''
           schema:
             $ref: '#/definitions/SetValetModeResponse'
-          examples:
-            application/json:
-              response:
-                result: true
-                reason: ''
   '/api/1/vehicles/{vehicle_id}/command/reset_valet_pin':
     post:
       description: 'Resets the PIN set for valet mode, if set.'
@@ -391,19 +270,12 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
       responses:
         '200':
           description: ''
           schema:
             $ref: '#/definitions/ResetValetPinResponse'
-          examples:
-            application/json:
-              response:
-                result: true
-                reason: ''
   '/api/1/vehicles/{vehicle_id}/command/charge_port_door_open':
     post:
       description: Opens the charge port. Does not close the charge port (for now...). This endpoint also unlocks the charge port if it's locked.
@@ -418,19 +290,12 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
       responses:
         '200':
           description: ''
           schema:
             $ref: '#/definitions/OpenChargePortResponse'
-          examples:
-            application/json:
-              response:
-                result: true
-                reason: ''
   '/api/1/vehicles/{vehicle_id}/command/charge_standard':
     post:
       description: Set the charge mode to standard (90% under the new percentage system introduced in 4.5).
@@ -445,19 +310,12 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
       responses:
         '200':
           description: ''
           schema:
             $ref: '#/definitions/SetChargeLimitToStandardResponse'
-          examples:
-            application/json:
-              response:
-                result: false
-                reason: already_standard
   '/api/1/vehicles/{vehicle_id}/command/charge_max_range':
     post:
       description: Set the charge mode to max range (100% under the new percentage system introduced in 4.5). Use sparingly!
@@ -472,19 +330,12 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
       responses:
         '200':
           description: ''
           schema:
             $ref: '#/definitions/SetChargeLimitToMaxRangeResponse'
-          examples:
-            application/json:
-              response:
-                result: false
-                reason: already_max_range
   '/api/1/vehicles/{vehicle_id}/command/set_charge_limit':
     post:
       description: Set the charge limit to a custom percentage.
@@ -499,8 +350,6 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
         - name: body
           in: body
@@ -512,11 +361,6 @@ paths:
           description: ''
           schema:
             $ref: '#/definitions/SetChargeLimitResponse'
-          examples:
-            application/json:
-              response:
-                result: true
-                reason: ''
   '/api/1/vehicles/{vehicle_id}/command/charge_start':
     post:
       description: 'Start charging. Must be plugged in, have power available, and not have reached your charge limit.'
@@ -531,19 +375,12 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
       responses:
         '200':
           description: ''
           schema:
             $ref: '#/definitions/StartChargingResponse'
-          examples:
-            application/json:
-              response:
-                result: true
-                reason: ''
   '/api/1/vehicles/{vehicle_id}/command/charge_stop':
     post:
       description: Stop charging. Must already be charging.
@@ -558,19 +395,12 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
       responses:
         '200':
           description: ''
           schema:
             $ref: '#/definitions/StopChargingResponse'
-          examples:
-            application/json:
-              response:
-                result: true
-                reason: ''
   '/api/1/vehicles/{vehicle_id}/command/flash_lights':
     post:
       description: Flash the lights once.
@@ -585,19 +415,12 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
       responses:
         '200':
           description: ''
           schema:
             $ref: '#/definitions/FlashLightsResponse'
-          examples:
-            application/json:
-              response:
-                result: true
-                reason: ''
   '/api/1/vehicles/{vehicle_id}/command/honk_horn':
     post:
       description: Honk the horn once.
@@ -612,19 +435,12 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
       responses:
         '200':
           description: ''
           schema:
             $ref: '#/definitions/HonkHornResponse'
-          examples:
-            application/json:
-              response:
-                result: true
-                reason: ''
   '/api/1/vehicles/{vehicle_id}/command/door_unlock':
     post:
       description: Unlock the car's doors.
@@ -639,19 +455,12 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
       responses:
         '200':
           description: ''
           schema:
             $ref: '#/definitions/UnlockDoorsResponse'
-          examples:
-            application/json:
-              response:
-                result: true
-                reason: ''
   '/api/1/vehicles/{vehicle_id}/command/door_lock':
     post:
       description: Lock the car's doors.
@@ -666,19 +475,12 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
       responses:
         '200':
           description: ''
           schema:
             $ref: '#/definitions/LockDoorsResponse'
-          examples:
-            application/json:
-              response:
-                result: true
-                reason: ''
   '/api/1/vehicles/{vehicle_id}/command/set_temps':
     post:
       description: Set the temperature target for the HVAC system.
@@ -693,8 +495,6 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
         - name: body
           in: body
@@ -706,11 +506,6 @@ paths:
           description: ''
           schema:
             $ref: '#/definitions/SetTemperatureResponse'
-          examples:
-            application/json:
-              response:
-                result: true
-                reason: ''
   '/api/1/vehicles/{vehicle_id}/command/auto_conditioning_start':
     post:
       description: 'Start the climate control system. Will cool or heat automatically, depending on set temperature.'
@@ -725,19 +520,12 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
       responses:
         '200':
           description: ''
           schema:
             $ref: '#/definitions/StartHvacSystemResponse'
-          examples:
-            application/json:
-              response:
-                result: true
-                reason: ''
   '/api/1/vehicles/{vehicle_id}/command/auto_conditioning_stop':
     post:
       description: Stop the climate control system.
@@ -752,19 +540,12 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
       responses:
         '200':
           description: ''
           schema:
             $ref: '#/definitions/StopHvacSystemResponse'
-          examples:
-            application/json:
-              response:
-                result: true
-                reason: ''
   '/api/1/vehicles/{vehicle_id}/command/sun_roof_control':
     post:
       description: 'Controls the car''s panoramic roof, if installed.'
@@ -779,8 +560,6 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
         - name: body
           in: body
@@ -793,11 +572,6 @@ paths:
           description: ''
           schema:
             $ref: '#/definitions/MovePanoRoofResponse'
-          examples:
-            application/json:
-              response:
-                result: true
-                reason: ''
   '/api/1/vehicles/{vehicle_id}/command/remote_start_drive':
     post:
       description: Start the car for keyless driving. Must start driving within 2 minutes of issuing this request.
@@ -812,8 +586,6 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
         - name: body
           in: body
@@ -825,11 +597,6 @@ paths:
           description: ''
           schema:
             $ref: '#/definitions/RemoteStartResponse'
-          examples:
-            application/json:
-              response:
-                result: true
-                reason: ''
   '/api/1/vehicles/{vehicle_id}/command/trunk_open':
     post:
       description: Open the trunk or frunk. Currently inoperable.
@@ -844,8 +611,6 @@ paths:
           in: path
           required: true
           type: string
-          exclusiveMaximum: false
-          exclusiveMinimum: false
           description: The id of the Vehicle.
         - name: which_trunk
           in: query
@@ -862,28 +627,6 @@ paths:
               response:
                 result: true
                 reason: ''
-      x-unitTests:
-        - request:
-            method: POST
-            uri: /api/1/vehicles/1/command/trunk_open?which_trunk=rear
-          expectedResponse:
-            x-allowExtraHeaders: true
-            x-bodyMatchMode: RAW
-            x-arrayOrderedMatching: false
-            x-arrayCheckCount: false
-            x-matchResponseSchema: true
-            headers:
-              Content-Type: application/json
-            body: '{  "response": {    "result": true,    "reason": ""  }}'
-          x-testShouldPass: true
-          x-testEnabled: true
-          x-testName: Open Trunk/Frunk1
-          x-testDescription: Open the trunk or frunk. Currently inoperable.
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
 definitions:
   CreateAccessTokenRequest:
     title: Get an Access Token request
@@ -966,7 +709,7 @@ definitions:
       state: 'vent'
     type: object
     properties:
-      state:      
+      state:
         enum:
           - open
           - close
@@ -1043,19 +786,6 @@ definitions:
     type: object
     properties:
       response:
-        description: ''
-        example:
-          - color: null
-            display_name: null
-            id: 321
-            option_codes: 'MS01,RENA,TM00,DRLH,PF00,BT85,PBCW,RFPO,WT19,IBMB,IDPB,TR00,SU01,SC01,TP01,AU01,CH00,HP00,PA00,PS00,AD02,X020,X025,X001,X003,X007,X011,X013'
-            user_id: 123
-            vehicle_id: 1234567890
-            vin: 5YJSA1CN5CFP01657
-            tokens:
-              - x
-              - x
-            state: online
         type: array
         items:
           $ref: '#/definitions/Vehicle'
@@ -1075,7 +805,7 @@ definitions:
         type: string
       id:
         type: string
-      option_codes: 
+      option_codes:
         type: string
       vehicle_id:
         type: string
@@ -1105,176 +835,308 @@ definitions:
       - response
   ChargeStateResponse:
     title: Charge State response
-    example:
-      response:
-        charging_state: Complete
-        charge_to_max_range: false
-        max_range_charge_counter: 0
-        fast_charger_present: false
-        battery_range: 239.02
-        est_battery_range: 155.79
-        ideal_battery_range: 275.09
-        battery_level: 91
-        battery_current: -0.6
-        charge_starting_range: null
-        charge_starting_soc: null
-        charger_voltage: 0
-        charger_pilot_current: 40
-        charger_actual_current: 0
-        charger_power: 0
-        time_to_full_charge: null
-        charge_rate: -1
-        charge_port_door_open: true
     type: object
     properties:
       response:
-        description: ''
-        example:
-          charging_state: Complete
-          charge_to_max_range: false
-          max_range_charge_counter: 0
-          fast_charger_present: false
-          battery_range: 239.02
-          est_battery_range: 155.79
-          ideal_battery_range: 275.09
-          battery_level: 91
-          battery_current: -0.6
-          charge_starting_range: null
-          charge_starting_soc: null
-          charger_voltage: 0
-          charger_pilot_current: 40
-          charger_actual_current: 0
-          charger_power: 0
-          time_to_full_charge: null
-          charge_rate: -1
-          charge_port_door_open: true
-        type: object
+        $ref: '#/definitions/ChargeState'
     required:
       - response
+  ChargeState:
+    type: object
+    properties:
+      charging_state:
+        type: string
+      fast_charger_type:
+         type: string
+      fast_charger_brand:
+        type: string
+      charge_limit_soc:
+        type: integer
+      charge_limit_soc_std:
+        type: integer
+      charge_limit_soc_min:
+        type: integer
+      charge_limit_soc_max:
+        type: integer
+      charge_to_max_range:
+        type: boolean
+      max_range_charge_counter:
+        type: integer
+      fast_charger_present:
+        type: boolean
+      battery_range:
+        type: number
+        format: double
+      est_battery_range:
+        type: number
+        format: double
+      ideal_battery_range:
+        type: number
+        format: double
+      battery_level:
+        type: integer
+      usable_battery_level:
+        type: integer
+      charge_energy_added:
+        type: number
+        format: double
+      charge_miles_added_rated:
+        type: number
+        format: double
+      charge_miles_added_ideal:
+        type: number
+        format: double
+      charger_voltage:
+        type: integer
+      charger_pilot_current:
+        type: integer
+      charger_actual_current:
+        type: integer
+      charger_power:
+        type: integer
+      time_to_full_charge:
+        type: number
+        format: double
+      trip_charging:
+        type: boolean
+      charge_rate:
+        type: number
+        format: double
+      charge_port_door_open:
+        type: boolean
+      conn_charge_cable:
+        type: string
+      scheduled_charging_start_time:
+        type: number
+        format: long
+      scheduled_charging_pending:
+        type: boolean
+      user_charge_enable_request:
+        type: boolean
+      charge_enable_request:
+        type: boolean
+      charger_phases:
+        type: integer
+      charge_port_latch:
+        type: string
+      charge_current_request:
+       type: integer
+      charge_current_request_max:
+        type: integer
+      managed_charging_active:
+        type: boolean
+      managed_charging_user_canceled:
+        type: boolean
+      managed_charging_start_time:
+        type: number
+        format: long
+      battery_heater_on:
+        type: boolean
+      not_enough_power_to_heat:
+        type: boolean
+      timestamp:
+        format: number
   ClimateSettingsResponse:
     title: Climate Settings response
-    example:
-      response:
-        inside_temp: 17
-        outside_temp: 9.5
-        driver_temp_setting: 22.6
-        passenger_temp_setting: 22.6
-        is_auto_conditioning_on: false
-        is_front_defroster_on: null
-        is_rear_defroster_on: false
-        fan_status: 0
     type: object
     properties:
       response:
-        description: ''
-        example:
-          inside_temp: 17
-          outside_temp: 9.5
-          driver_temp_setting: 22.6
-          passenger_temp_setting: 22.6
-          is_auto_conditioning_on: false
-          is_front_defroster_on: null
-          is_rear_defroster_on: false
-          fan_status: 0
-        type: object
+        $ref: '#/definitions/ClimateState'
     required:
       - response
+  ClimateState:
+      type: object
+      properties:
+        inside_temp:
+          type: number
+          format: double
+        outside_temp:
+          type: number
+          format: double
+        driver_temp_setting:
+          type: number
+          format: double
+        passenger_temp_setting:
+          type: number
+          format: double
+        left_temp_direction:
+          type: integer
+        right_temp_direction:
+          type: integer
+        is_front_defroster_on:
+          type: boolean
+        is_rear_defroster_on:
+          type: boolean
+        fan_status:
+          type: integer
+        is_climate_on:
+          type: boolean
+        min_avail_temp:
+          type: integer
+        max_avail_temp:
+          type: integer
+        seat_heater_left:
+          type: boolean
+        seat_heater_right:
+          type: boolean
+        seat_heater_rear_left:
+          type: boolean
+        seat_heater_rear_right:
+          type: boolean
+        seat_heater_rear_center:
+          type: boolean
+        seat_heater_rear_right_back:
+          type: integer
+        seat_heater_rear_left_back:
+          type: integer
+        battery_heater:
+          type: boolean
+        battery_heater_no_power:
+          type: boolean
+        steering_wheel_heater:
+          type: boolean
+        wiper_blade_heater:
+          type: boolean
+        side_mirror_heaters:
+          type: boolean
+        is_preconditioning:
+          type: boolean
+        smart_preconditioning:
+          type: boolean
+        is_auto_conditioning_on:
+          type: boolean
+        timestamp:
+          type: number
   DriveStateResponse:
     title: Driving and Position response
-    example:
-      response:
-        shift_state: null
-        speed: null
-        latitude: 33.794839
-        longitude: -84.401593
-        heading: 4
-        gps_as_of: 1359863204
     type: object
     properties:
       response:
-        description: ''
-        example:
-          shift_state: null
-          speed: null
-          latitude: 33.794839
-          longitude: -84.401593
-          heading: 4
-          gps_as_of: 1359863204
-        type: object
+        $ref: '#/definitions/DriveState'
     required:
       - response
+  DriveState:
+    type: object
+    properties:
+      shift_state:
+        type: string
+      speed:
+        type: number
+        format: double
+      power:
+        type: number
+        format: double
+      latitude:
+        type: number
+        format: double
+      longitude:
+        type: number
+        format: double
+      heading:
+        type: integer
+      gps_as_of:
+        type: number
+      native_location_supported:
+        type: integer
+      native_latitude:
+        type: number
+        format: double
+      native_longitude:
+        type: number
+        format: double
+      native_type:
+        type: string
+      timestamp:
+        type: number
   GuistateResponse:
     title: GUI Settings response
-    example:
-      response:
-        gui_distance_units: mi/hr
-        gui_temperature_units: F
-        gui_charge_rate_units: mi/hr
-        gui_24_hour_time: false
-        gui_range_display: Rated
     type: object
     properties:
       response:
-        description: ''
-        example:
-          gui_distance_units: mi/hr
-          gui_temperature_units: F
-          gui_charge_rate_units: mi/hr
-          gui_24_hour_time: false
-          gui_range_display: Rated
-        type: object
+        $ref: '#/definitions/GuiState'
     required:
       - response
+  GuiState:
+    type: object
+    properties:
+      gui_distance_units:
+        type: string
+      gui_temperature_units:
+        type: string
+      gui_charge_rate_units:
+        type: string
+      gui_24_hour_time:
+        type: boolean
+      gui_range_display:
+        type: string
+      timestamp:
+        type: number
   VehicleStateResponse:
     title: Vehicle State response
-    example:
-      response:
-        df: false
-        dr: false
-        pf: false
-        pr: false
-        ft: false
-        rt: false
-        car_verson: 1.19.42
-        locked: true
-        sun_roof_installed: false
-        sun_roof_state: unknown
-        sun_roof_percent_open: 0
-        dark_rims: false
-        wheel_type: Base19
-        has_spoiler: false
-        roof_color: Colored
-        perf_config: Base
     type: object
     properties:
       response:
-        description: ''
-        example:
-          df: false
-          dr: false
-          pf: false
-          pr: false
-          ft: false
-          rt: false
-          car_verson: 1.19.42
-          locked: true
-          sun_roof_installed: false
-          sun_roof_state: unknown
-          sun_roof_percent_open: 0
-          dark_rims: false
-          wheel_type: Base19
-          has_spoiler: false
-          roof_color: Colored
-          perf_config: Base
-        type: object
+        $ref: '#/definitions/VehicleState'
     required:
       - response
+  VehicleState:
+    type: object
+    properties:
+      api_version:
+        type: integer
+      autopark_state:
+        type: string
+      autopark_state_v2:
+        type: string
+      autopark_style:
+        type: string
+      calendar_supported:
+        type: boolean
+      car_version:
+        type: string
+      center_display_state:
+        type: integer
+      df:
+        type: integer
+      dr:
+        type: integer
+      ft:
+        type: integer
+      homelink_nearby:
+        type: boolean
+      last_autopark_error:
+        type: string
+      locked:
+        type: boolean
+      notifications_supported:
+        type: boolean
+      odometer:
+        type: number
+        format: double
+      parsed_calendar_supported:
+        type: boolean
+      pf:
+        type: integer
+      pr:
+        type: integer
+      remote_start:
+        type: boolean
+      remote_start_supported:
+        type: boolean
+      rt:
+        type: integer
+      sun_roof_percent_open:
+        type: integer
+      sun_roof_state:
+        type: string
+      timestamp:
+        type: number
+      valet_mode:
+        type: boolean
+      vehicle_name:
+        type: string
   WakeUpCarResponse:
     title: Wake Up Car response
-    example:
-      response:
-        result: true
-        reason: ''
     type: object
     properties:
       response:
@@ -1284,18 +1146,11 @@ definitions:
               type: boolean
           reason:
               type: string
-        example:
-          result: true
-          reason: ''
         type: object
     required:
       - response
   SetValetModeResponse:
     title: Set Valet Mode response
-    example:
-      response:
-        result: true
-        reason: ''
     type: object
     properties:
       response:
@@ -1305,18 +1160,11 @@ definitions:
               type: boolean
           reason:
               type: string
-        example:
-          result: true
-          reason: ''
         type: object
     required:
       - response
   ResetValetPinResponse:
     title: Reset Valet PIN response
-    example:
-      response:
-        result: true
-        reason: ''
     type: object
     properties:
       response:
@@ -1326,18 +1174,11 @@ definitions:
               type: boolean
           reason:
               type: string
-        example:
-          result: true
-          reason: ''
         type: object
     required:
       - response
   OpenChargePortResponse:
     title: Open Charge Port response
-    example:
-      response:
-        result: true
-        reason: ''
     type: object
     properties:
       response:
@@ -1347,18 +1188,11 @@ definitions:
               type: boolean
           reason:
               type: string
-        example:
-          result: true
-          reason: ''
         type: object
     required:
       - response
   SetChargeLimitToStandardResponse:
     title: Set Charge Limit to Standard response
-    example:
-      response:
-        result: false
-        reason: already_standard
     type: object
     properties:
       response:
@@ -1368,18 +1202,11 @@ definitions:
               type: boolean
           reason:
               type: string
-        example:
-          result: false
-          reason: already_standard
         type: object
     required:
       - response
   SetChargeLimitToMaxRangeResponse:
     title: Set Charge Limit to Max Range response
-    example:
-      response:
-        result: false
-        reason: already_max_range
     type: object
     properties:
       response:
@@ -1389,18 +1216,11 @@ definitions:
               type: boolean
           reason:
               type: string
-        example:
-          result: false
-          reason: already_max_range
         type: object
     required:
       - response
   SetChargeLimitResponse:
     title: Set Charge Limit response
-    example:
-      response:
-        result: true
-        reason: ''
     type: object
     properties:
       response:
@@ -1410,18 +1230,11 @@ definitions:
               type: boolean
           reason:
               type: string
-        example:
-          result: true
-          reason: ''
         type: object
     required:
       - response
   StartChargingResponse:
     title: Start Charging response
-    example:
-      response:
-        result: true
-        reason: ''
     type: object
     properties:
       response:
@@ -1431,18 +1244,11 @@ definitions:
               type: boolean
           reason:
               type: string
-        example:
-          result: true
-          reason: ''
         type: object
     required:
       - response
   StopChargingResponse:
     title: Stop Charging response
-    example:
-      response:
-        result: true
-        reason: ''
     type: object
     properties:
       response:
@@ -1452,18 +1258,11 @@ definitions:
               type: boolean
           reason:
               type: string
-        example:
-          result: true
-          reason: ''
         type: object
     required:
       - response
   FlashLightsResponse:
     title: Flash Lights response
-    example:
-      response:
-        result: true
-        reason: ''
     type: object
     properties:
       response:
@@ -1473,18 +1272,11 @@ definitions:
               type: boolean
           reason:
               type: string
-        example:
-          result: true
-          reason: ''
         type: object
     required:
       - response
   HonkHornResponse:
     title: Honk Horn response
-    example:
-      response:
-        result: true
-        reason: ''
     type: object
     properties:
       response:
@@ -1494,18 +1286,11 @@ definitions:
               type: boolean
           reason:
               type: string
-        example:
-          result: true
-          reason: ''
         type: object
     required:
       - response
   UnlockDoorsResponse:
     title: Unlock Doors response
-    example:
-      response:
-        result: true
-        reason: ''
     type: object
     properties:
       response:
@@ -1515,18 +1300,11 @@ definitions:
               type: boolean
           reason:
               type: string
-        example:
-          result: true
-          reason: ''
         type: object
     required:
       - response
   LockDoorsResponse:
     title: Lock Doors response
-    example:
-      response:
-        result: true
-        reason: ''
     type: object
     properties:
       response:
@@ -1536,18 +1314,11 @@ definitions:
               type: boolean
           reason:
               type: string
-        example:
-          result: true
-          reason: ''
         type: object
     required:
       - response
   SetTemperatureResponse:
     title: Set Temperature response
-    example:
-      response:
-        result: true
-        reason: ''
     type: object
     properties:
       response:
@@ -1557,18 +1328,11 @@ definitions:
               type: boolean
           reason:
               type: string
-        example:
-          result: true
-          reason: ''
         type: object
     required:
       - response
   StartHvacSystemResponse:
     title: Start HVAC System response
-    example:
-      response:
-        result: true
-        reason: ''
     type: object
     properties:
       response:
@@ -1578,18 +1342,11 @@ definitions:
               type: boolean
           reason:
               type: string
-        example:
-          result: true
-          reason: ''
         type: object
     required:
       - response
   StopHvacSystemResponse:
     title: Stop HVAC System response
-    example:
-      response:
-        result: true
-        reason: ''
     type: object
     properties:
       response:
@@ -1599,9 +1356,6 @@ definitions:
               type: boolean
           reason:
               type: string
-        example:
-          result: true
-          reason: ''
         type: object
     required:
       - response
@@ -1628,10 +1382,6 @@ definitions:
       - move
   MovePanoRoofResponse:
     title: Move Pano Roof response
-    example:
-      response:
-        result: true
-        reason: ''
     type: object
     properties:
       response:
@@ -1641,18 +1391,11 @@ definitions:
               type: boolean
           reason:
               type: string
-        example:
-          result: true
-          reason: ''
         type: object
     required:
       - response
   RemoteStartResponse:
     title: Remote Start response
-    example:
-      response:
-        result: true
-        reason: ''
     type: object
     properties:
       response:
@@ -1662,18 +1405,11 @@ definitions:
               type: boolean
           reason:
               type: string
-        example:
-          result: true
-          reason: ''
         type: object
     required:
       - response
   OpenTrunkResponse:
     title: Open Trunk/Frunk response
-    example:
-      response:
-        result: true
-        reason: ''
     type: object
     properties:
       response:
@@ -1683,9 +1419,6 @@ definitions:
               type: boolean
           reason:
               type: string
-        example:
-          result: true
-          reason: ''
         type: object
     required:
       - response
