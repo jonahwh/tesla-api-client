@@ -14,6 +14,7 @@
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
+import com.github.jonahwh.tesla_api_client.model.ClimateState;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,26 +27,26 @@ import java.io.IOException;
 /**
  * ClimateSettingsResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-18T19:37:30.758-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-25T15:58:56.308-07:00")
 public class ClimateSettingsResponse {
   @SerializedName("response")
-  private Object response = null;
+  private ClimateState response = null;
 
-  public ClimateSettingsResponse response(Object response) {
+  public ClimateSettingsResponse response(ClimateState response) {
     this.response = response;
     return this;
   }
 
    /**
-   * 
+   * Get response
    * @return response
   **/
-  @ApiModelProperty(example = "{\"inside_temp\":17,\"outside_temp\":9.5,\"driver_temp_setting\":22.6,\"passenger_temp_setting\":22.6,\"is_auto_conditioning_on\":false,\"is_front_defroster_on\":null,\"is_rear_defroster_on\":false,\"fan_status\":0}", required = true, value = "")
-  public Object getResponse() {
+  @ApiModelProperty(required = true, value = "")
+  public ClimateState getResponse() {
     return response;
   }
 
-  public void setResponse(Object response) {
+  public void setResponse(ClimateState response) {
     this.response = response;
   }
 

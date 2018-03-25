@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * GetVehiclesResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-18T19:37:30.758-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-25T15:58:56.308-07:00")
 public class GetVehiclesResponse {
   @SerializedName("response")
   private List<Vehicle> response = new ArrayList<Vehicle>();
@@ -48,10 +48,10 @@ public class GetVehiclesResponse {
   }
 
    /**
-   * 
+   * Get response
    * @return response
   **/
-  @ApiModelProperty(example = "[{\"color\":null,\"display_name\":null,\"id\":321,\"option_codes\":\"MS01,RENA,TM00,DRLH,PF00,BT85,PBCW,RFPO,WT19,IBMB,IDPB,TR00,SU01,SC01,TP01,AU01,CH00,HP00,PA00,PS00,AD02,X020,X025,X001,X003,X007,X011,X013\",\"user_id\":123,\"vehicle_id\":1234567890,\"vin\":\"5YJSA1CN5CFP01657\",\"tokens\":[\"x\",\"x\"],\"state\":\"online\"}]", required = true, value = "")
+  @ApiModelProperty(required = true, value = "")
   public List<Vehicle> getResponse() {
     return response;
   }

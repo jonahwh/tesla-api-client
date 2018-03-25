@@ -14,6 +14,7 @@
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
+import com.github.jonahwh.tesla_api_client.model.ChargeState;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,26 +27,26 @@ import java.io.IOException;
 /**
  * ChargeStateResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-18T19:37:30.758-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-25T15:58:56.308-07:00")
 public class ChargeStateResponse {
   @SerializedName("response")
-  private Object response = null;
+  private ChargeState response = null;
 
-  public ChargeStateResponse response(Object response) {
+  public ChargeStateResponse response(ChargeState response) {
     this.response = response;
     return this;
   }
 
    /**
-   * 
+   * Get response
    * @return response
   **/
-  @ApiModelProperty(example = "{\"charging_state\":\"Complete\",\"charge_to_max_range\":false,\"max_range_charge_counter\":0,\"fast_charger_present\":false,\"battery_range\":239.02,\"est_battery_range\":155.79,\"ideal_battery_range\":275.09,\"battery_level\":91,\"battery_current\":-0.6,\"charge_starting_range\":null,\"charge_starting_soc\":null,\"charger_voltage\":0,\"charger_pilot_current\":40,\"charger_actual_current\":0,\"charger_power\":0,\"time_to_full_charge\":null,\"charge_rate\":-1,\"charge_port_door_open\":true}", required = true, value = "")
-  public Object getResponse() {
+  @ApiModelProperty(required = true, value = "")
+  public ChargeState getResponse() {
     return response;
   }
 
-  public void setResponse(Object response) {
+  public void setResponse(ChargeState response) {
     this.response = response;
   }
 

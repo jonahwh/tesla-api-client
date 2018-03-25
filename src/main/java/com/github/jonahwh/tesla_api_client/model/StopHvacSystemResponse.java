@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * StopHvacSystemResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-18T19:37:30.758-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-25T15:58:56.308-07:00")
 public class StopHvacSystemResponse {
   @SerializedName("response")
   private WakeUpCarResponseResponse response = null;

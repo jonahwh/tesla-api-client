@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**response** | [**SetChargeLimitToMaxRangeResponseResponse**](SetChargeLimitToMaxRangeResponseResponse.md) |  | 
+**response** | [**WakeUpCarResponseResponse**](WakeUpCarResponseResponse.md) |  | 
 
 
 

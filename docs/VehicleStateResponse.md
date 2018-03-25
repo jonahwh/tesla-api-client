@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**response** | **Object** |  | 
+**response** | [**VehicleState**](VehicleState.md) |  | 
 
 
 

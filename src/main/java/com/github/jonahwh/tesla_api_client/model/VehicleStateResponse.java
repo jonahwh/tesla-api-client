@@ -14,6 +14,7 @@
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
+import com.github.jonahwh.tesla_api_client.model.VehicleState;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,26 +27,26 @@ import java.io.IOException;
 /**
  * VehicleStateResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-18T19:37:30.758-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-25T15:58:56.308-07:00")
 public class VehicleStateResponse {
   @SerializedName("response")
-  private Object response = null;
+  private VehicleState response = null;
 
-  public VehicleStateResponse response(Object response) {
+  public VehicleStateResponse response(VehicleState response) {
     this.response = response;
     return this;
   }
 
    /**
-   * 
+   * Get response
    * @return response
   **/
-  @ApiModelProperty(example = "{\"df\":false,\"dr\":false,\"pf\":false,\"pr\":false,\"ft\":false,\"rt\":false,\"car_verson\":\"1.19.42\",\"locked\":true,\"sun_roof_installed\":false,\"sun_roof_state\":\"unknown\",\"sun_roof_percent_open\":0,\"dark_rims\":false,\"wheel_type\":\"Base19\",\"has_spoiler\":false,\"roof_color\":\"Colored\",\"perf_config\":\"Base\"}", required = true, value = "")
-  public Object getResponse() {
+  @ApiModelProperty(required = true, value = "")
+  public VehicleState getResponse() {
     return response;
   }
 
-  public void setResponse(Object response) {
+  public void setResponse(VehicleState response) {
     this.response = response;
   }
 

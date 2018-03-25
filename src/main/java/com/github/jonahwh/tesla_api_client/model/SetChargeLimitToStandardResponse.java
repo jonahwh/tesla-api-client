@@ -14,7 +14,7 @@
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
-import com.github.jonahwh.tesla_api_client.model.SetChargeLimitToStandardResponseResponse;
+import com.github.jonahwh.tesla_api_client.model.WakeUpCarResponseResponse;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,12 +27,12 @@ import java.io.IOException;
 /**
  * SetChargeLimitToStandardResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-18T19:37:30.758-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-25T15:58:56.308-07:00")
 public class SetChargeLimitToStandardResponse {
   @SerializedName("response")
-  private SetChargeLimitToStandardResponseResponse response = null;
+  private WakeUpCarResponseResponse response = null;
 
-  public SetChargeLimitToStandardResponse response(SetChargeLimitToStandardResponseResponse response) {
+  public SetChargeLimitToStandardResponse response(WakeUpCarResponseResponse response) {
     this.response = response;
     return this;
   }
@@ -42,11 +42,11 @@ public class SetChargeLimitToStandardResponse {
    * @return response
   **/
   @ApiModelProperty(required = true, value = "")
-  public SetChargeLimitToStandardResponseResponse getResponse() {
+  public WakeUpCarResponseResponse getResponse() {
     return response;
   }
 
-  public void setResponse(SetChargeLimitToStandardResponseResponse response) {
+  public void setResponse(WakeUpCarResponseResponse response) {
     this.response = response;
   }
 

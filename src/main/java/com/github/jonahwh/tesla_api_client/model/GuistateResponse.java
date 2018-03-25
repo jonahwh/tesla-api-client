@@ -14,6 +14,7 @@
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
+import com.github.jonahwh.tesla_api_client.model.GuiState;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,26 +27,26 @@ import java.io.IOException;
 /**
  * GuistateResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-18T19:37:30.758-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-25T15:58:56.308-07:00")
 public class GuistateResponse {
   @SerializedName("response")
-  private Object response = null;
+  private GuiState response = null;
 
-  public GuistateResponse response(Object response) {
+  public GuistateResponse response(GuiState response) {
     this.response = response;
     return this;
   }
 
    /**
-   * 
+   * Get response
    * @return response
   **/
-  @ApiModelProperty(example = "{\"gui_distance_units\":\"mi/hr\",\"gui_temperature_units\":\"F\",\"gui_charge_rate_units\":\"mi/hr\",\"gui_24_hour_time\":false,\"gui_range_display\":\"Rated\"}", required = true, value = "")
-  public Object getResponse() {
+  @ApiModelProperty(required = true, value = "")
+  public GuiState getResponse() {
     return response;
   }
 
-  public void setResponse(Object response) {
+  public void setResponse(GuiState response) {
     this.response = response;
   }
 

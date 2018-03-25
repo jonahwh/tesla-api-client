@@ -14,6 +14,7 @@
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
+import com.github.jonahwh.tesla_api_client.model.DriveState;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,26 +27,26 @@ import java.io.IOException;
 /**
  * DriveStateResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-18T19:37:30.758-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-25T15:58:56.308-07:00")
 public class DriveStateResponse {
   @SerializedName("response")
-  private Object response = null;
+  private DriveState response = null;
 
-  public DriveStateResponse response(Object response) {
+  public DriveStateResponse response(DriveState response) {
     this.response = response;
     return this;
   }
 
    /**
-   * 
+   * Get response
    * @return response
   **/
-  @ApiModelProperty(example = "{\"shift_state\":null,\"speed\":null,\"latitude\":33.794839,\"longitude\":-84.401593,\"heading\":4,\"gps_as_of\":1359863204}", required = true, value = "")
-  public Object getResponse() {
+  @ApiModelProperty(required = true, value = "")
+  public DriveState getResponse() {
     return response;
   }
 
-  public void setResponse(Object response) {
+  public void setResponse(DriveState response) {
     this.response = response;
   }
 
