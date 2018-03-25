@@ -23,5 +23,14 @@ See [swagger.yml](swagger.yml) to view the Swagger document used to generate the
    ``` 
 5. The library will be built in `build/libs/`
    
+## Installation
+### Gradle
+    compile 'com.github.jonahwh:tesla-api-client:1.0.0'
 
-
+### Maven
+    <dependency>
+        <groupId>com.github.jonahwh</groupId>
+        <artifactId>tesla-api-client</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+    
