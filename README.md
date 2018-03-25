@@ -18,7 +18,6 @@ See [swagger.yml](swagger.yml) to view the Swagger document used to generate the
    This will generate the library.
 4. Build the library
    ```bash
-   cd tesla-api-client # or whatever you set the -o option to
    gradle assemble # or `chmod +x ./gradlew && ./gradlew assemble`
    ``` 
 5. The library will be built in `build/libs/`
