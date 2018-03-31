@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * SetChargeLimitResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-25T15:58:56.308-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-31T16:01:54.403-07:00")
 public class SetChargeLimitResponse {
   @SerializedName("response")
   private WakeUpCarResponseResponse response = null;

@@ -24,29 +24,29 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * RemoteStartRequest
+ * OpenTrunkRequest
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-31T16:01:54.403-07:00")
-public class RemoteStartRequest {
-  @SerializedName("password")
-  private String password = null;
+public class OpenTrunkRequest {
+  @SerializedName("which_trunk")
+  private String whichTrunk = null;
 
-  public RemoteStartRequest password(String password) {
-    this.password = password;
+  public OpenTrunkRequest whichTrunk(String whichTrunk) {
+    this.whichTrunk = whichTrunk;
     return this;
   }
 
    /**
-   * The password to the authenticated my.teslamotors.com account.
-   * @return password
+   * The trunk to open. &#x60;front&#x60; or &#x60;rear
+   * @return whichTrunk
   **/
-  @ApiModelProperty(value = "The password to the authenticated my.teslamotors.com account.")
-  public String getPassword() {
-    return password;
+  @ApiModelProperty(value = "The trunk to open. `front` or `rear")
+  public String getWhichTrunk() {
+    return whichTrunk;
   }
 
-  public void setPassword(String password) {
-    this.password = password;
+  public void setWhichTrunk(String whichTrunk) {
+    this.whichTrunk = whichTrunk;
   }
 
 
@@ -58,22 +58,22 @@ public class RemoteStartRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    RemoteStartRequest remoteStartRequest = (RemoteStartRequest) o;
-    return Objects.equals(this.password, remoteStartRequest.password);
+    OpenTrunkRequest openTrunkRequest = (OpenTrunkRequest) o;
+    return Objects.equals(this.whichTrunk, openTrunkRequest.whichTrunk);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(password);
+    return Objects.hash(whichTrunk);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class RemoteStartRequest {\n");
+    sb.append("class OpenTrunkRequest {\n");
     
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    sb.append("    whichTrunk: ").append(toIndentedString(whichTrunk)).append("\n");
     sb.append("}");
     return sb.toString();
   }

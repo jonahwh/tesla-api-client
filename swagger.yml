@@ -612,11 +612,11 @@ paths:
           required: true
           type: string
           description: The id of the Vehicle.
-        - name: which_trunk
-          in: query
+        - name: body
+          in: body
           required: true
-          type: string
-          description: The trunk to open. `rear` is the only one known currently.
+          schema:
+            $ref: '#/definitions/OpenTrunkRequest'
       responses:
         '200':
           description: ''
@@ -767,6 +767,12 @@ definitions:
       password:
         type: string
         description: The password to the authenticated my.teslamotors.com account.
+  OpenTrunkRequest:
+    type: object
+    properties:
+      which_trunk:
+        type: string
+        description: The trunk to open. `front` or `rear
   GetVehiclesResponse:
     title: List all Vehicles response
     example:

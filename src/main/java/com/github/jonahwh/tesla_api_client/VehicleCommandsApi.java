@@ -14,6 +14,7 @@ import com.github.jonahwh.tesla_api_client.model.LockDoorsResponse;
 import com.github.jonahwh.tesla_api_client.model.MovePanoRoofRequest;
 import com.github.jonahwh.tesla_api_client.model.MovePanoRoofResponse;
 import com.github.jonahwh.tesla_api_client.model.OpenChargePortResponse;
+import com.github.jonahwh.tesla_api_client.model.OpenTrunkRequest;
 import com.github.jonahwh.tesla_api_client.model.OpenTrunkResponse;
 import com.github.jonahwh.tesla_api_client.model.RemoteStartRequest;
 import com.github.jonahwh.tesla_api_client.model.RemoteStartResponse;
@@ -100,7 +101,7 @@ public interface VehicleCommandsApi {
    * Open Trunk/Frunk
    * Open the trunk or frunk. Currently inoperable.
    * @param vehicleId The id of the Vehicle. (required)
-   * @param whichTrunk The trunk to open. &#x60;rear&#x60; is the only one known currently. (required)
+   * @param body  (required)
    * @return Call&lt;OpenTrunkResponse&gt;
    */
   @Headers({
@@ -108,7 +109,7 @@ public interface VehicleCommandsApi {
   })
   @POST("api/1/vehicles/{vehicle_id}/command/trunk_open")
   Call<OpenTrunkResponse> openTrunk(
-    @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Query("which_trunk") String whichTrunk
+    @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body OpenTrunkRequest body
   );
 
   /**

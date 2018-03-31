@@ -209,7 +209,7 @@ No authorization required
 
 <a name="openTrunk"></a>
 # **openTrunk**
-> OpenTrunkResponse openTrunk(vehicleId, whichTrunk)
+> OpenTrunkResponse openTrunk(vehicleId, body)
 
 Open Trunk/Frunk
 
@@ -224,9 +224,9 @@ Open the trunk or frunk. Currently inoperable.
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
-String whichTrunk = "whichTrunk_example"; // String | The trunk to open. `rear` is the only one known currently.
+OpenTrunkRequest body = new OpenTrunkRequest(); // OpenTrunkRequest | 
 try {
-    OpenTrunkResponse result = apiInstance.openTrunk(vehicleId, whichTrunk);
+    OpenTrunkResponse result = apiInstance.openTrunk(vehicleId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#openTrunk");
@@ -239,7 +239,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vehicleId** | **String**| The id of the Vehicle. |
- **whichTrunk** | **String**| The trunk to open. &#x60;rear&#x60; is the only one known currently. |
+ **body** | [**OpenTrunkRequest**](OpenTrunkRequest.md)|  |
 
 ### Return type
 
