@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ChargeStateResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T23:11:34.231-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T23:26:45.585-07:00")
 public class ChargeStateResponse {
   @SerializedName("response")
   private ChargeState response = null;

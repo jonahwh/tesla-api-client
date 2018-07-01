@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * VehicleStateResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T23:11:34.231-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T23:26:45.585-07:00")
 public class VehicleStateResponse {
   @SerializedName("response")
   private VehicleState response = null;

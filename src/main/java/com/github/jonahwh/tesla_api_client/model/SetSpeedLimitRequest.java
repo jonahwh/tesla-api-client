@@ -26,12 +26,12 @@ import java.io.IOException;
 /**
  * SetSpeedLimitRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T23:11:34.231-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T23:26:45.585-07:00")
 public class SetSpeedLimitRequest {
   @SerializedName("limit_mph")
-  private String limitMph = null;
+  private Integer limitMph = null;
 
-  public SetSpeedLimitRequest limitMph(String limitMph) {
+  public SetSpeedLimitRequest limitMph(Integer limitMph) {
     this.limitMph = limitMph;
     return this;
   }
@@ -41,11 +41,11 @@ public class SetSpeedLimitRequest {
    * @return limitMph
   **/
   @ApiModelProperty(value = "The speed limit to set, in Miles per Hour")
-  public String getLimitMph() {
+  public Integer getLimitMph() {
     return limitMph;
   }
 
-  public void setLimitMph(String limitMph) {
+  public void setLimitMph(Integer limitMph) {
     this.limitMph = limitMph;
   }
 

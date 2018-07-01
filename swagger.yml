@@ -827,7 +827,8 @@ definitions:
         type: object
         properties:
           limit_mph:
-            type: string
+            type: integer
+            format: int32
             description: The speed limit to set, in Miles per Hour
   MovePanoRoofRequest:
     title: Move Panoramic Roof
