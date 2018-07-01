@@ -627,6 +627,114 @@ paths:
               response:
                 result: true
                 reason: ''
+  '/api/1/vehicles/{vehicle_id}/command/speed_limit_activate':
+      post:
+        description: |-
+          Activates Speed Limit
+        summary: Activate Speed Limit
+        tags:
+          - Vehicle Commands
+        operationId: ActivateSpeedLimit
+        produces:
+          - application/json
+        parameters:
+          - name: vehicle_id
+            in: path
+            required: true
+            type: string
+            description: The id of the Vehicle.
+          - name: body
+            in: body
+            required: true
+            description: ''
+            schema:
+              $ref: '#/definitions/SpeedLimitRequest'
+        responses:
+          '200':
+            description: ''
+            schema:
+              $ref: '#/definitions/SpeedLimitResponse'
+  '/api/1/vehicles/{vehicle_id}/command/speed_limit_deactivate':
+        post:
+          description: |-
+            Deactivates Speed Limit
+          summary: Deactivate Speed Limit
+          tags:
+            - Vehicle Commands
+          operationId: DeactivateSpeedLimit
+          produces:
+            - application/json
+          parameters:
+            - name: vehicle_id
+              in: path
+              required: true
+              type: string
+              description: The id of the Vehicle.
+            - name: body
+              in: body
+              required: true
+              description: ''
+              schema:
+                $ref: '#/definitions/SpeedLimitRequest'
+          responses:
+            '200':
+              description: ''
+              schema:
+                $ref: '#/definitions/SpeedLimitResponse'
+  '/api/1/vehicles/{vehicle_id}/command/speed_limit_set_limit':
+        post:
+          description: |-
+            Sets Speed Limit
+          summary: Set Speed Limit
+          tags:
+            - Vehicle Commands
+          operationId: SetSpeedLimit
+          produces:
+            - application/json
+          parameters:
+            - name: vehicle_id
+              in: path
+              required: true
+              type: string
+              description: The id of the Vehicle.
+            - name: body
+              in: body
+              required: true
+              description: ''
+              schema:
+                $ref: '#/definitions/SetSpeedLimitRequest'
+          responses:
+            '200':
+              description: ''
+              schema:
+                $ref: '#/definitions/SpeedLimitResponse'
+  '/api/1/vehicles/{vehicle_id}/command/speed_limit_clear_pin':
+        post:
+          description: |-
+            Clears Speed Limit Pin
+          summary: Clear Speed Limit Pin
+          tags:
+            - Vehicle Commands
+          operationId: ClearSpeedLimitPin
+          produces:
+            - application/json
+          parameters:
+            - name: vehicle_id
+              in: path
+              required: true
+              type: string
+              description: The id of the Vehicle.
+            - name: body
+              in: body
+              required: true
+              description: ''
+              schema:
+                $ref: '#/definitions/SpeedLimitRequest'
+          responses:
+            '200':
+              description: ''
+              schema:
+                $ref: '#/definitions/SpeedLimitResponse'
 definitions:
   CreateAccessTokenRequest:
     title: Get an Access Token request
@@ -703,6 +811,24 @@ definitions:
       password:
         type: string
         description: (optional) A 4 digit PIN code to unlock the car.
+  SpeedLimitRequest:
+      title: Speed Limit Request
+      example:
+        pin: 1234
+      type: object
+      properties:
+        pin:
+          type: string
+          description: The current, or if activating, new, speed limit PIN
+  SetSpeedLimitRequest:
+        title: Set Speed Limit Request
+        example:
+          limit_mph: 75
+        type: object
+        properties:
+          limit_mph:
+            type: string
+            description: The speed limit to set, in Miles per Hour
   MovePanoRoofRequest:
     title: Move Panoramic Roof
     example:
@@ -1169,6 +1295,20 @@ definitions:
         type: object
     required:
       - response
+  SpeedLimitResponse:
+      title: Speed Limit Response
+      type: object
+      properties:
+        response:
+          description: ''
+          properties:
+            result:
+                type: boolean
+            reason:
+                type: string
+          type: object
+      required:
+        - response
   ResetValetPinResponse:
     title: Reset Valet PIN response
     type: object

@@ -19,5 +19,6 @@ hs_err_pid*
 target
 .gradle
 build
-local.properties
+
 gradle.properties
+local.properties

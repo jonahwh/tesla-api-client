@@ -27,7 +27,7 @@ import java.math.BigDecimal;
 /**
  * ChargeState
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-31T16:01:54.403-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T23:11:34.231-07:00")
 public class ChargeState {
   @SerializedName("charging_state")
   private String chargingState = null;

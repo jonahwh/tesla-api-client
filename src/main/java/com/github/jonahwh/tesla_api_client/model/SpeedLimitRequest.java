@@ -14,7 +14,6 @@
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
-import com.github.jonahwh.tesla_api_client.model.WakeUpCarResponseResponse;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,29 +24,29 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * StopChargingResponse
+ * SpeedLimitRequest
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T23:11:34.231-07:00")
-public class StopChargingResponse {
-  @SerializedName("response")
-  private WakeUpCarResponseResponse response = null;
+public class SpeedLimitRequest {
+  @SerializedName("pin")
+  private String pin = null;
 
-  public StopChargingResponse response(WakeUpCarResponseResponse response) {
-    this.response = response;
+  public SpeedLimitRequest pin(String pin) {
+    this.pin = pin;
     return this;
   }
 
    /**
-   * Get response
-   * @return response
+   * The current, or if activating, new, speed limit PIN
+   * @return pin
   **/
-  @ApiModelProperty(required = true, value = "")
-  public WakeUpCarResponseResponse getResponse() {
-    return response;
+  @ApiModelProperty(value = "The current, or if activating, new, speed limit PIN")
+  public String getPin() {
+    return pin;
   }
 
-  public void setResponse(WakeUpCarResponseResponse response) {
-    this.response = response;
+  public void setPin(String pin) {
+    this.pin = pin;
   }
 
 
@@ -59,22 +58,22 @@ public class StopChargingResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    StopChargingResponse stopChargingResponse = (StopChargingResponse) o;
-    return Objects.equals(this.response, stopChargingResponse.response);
+    SpeedLimitRequest speedLimitRequest = (SpeedLimitRequest) o;
+    return Objects.equals(this.pin, speedLimitRequest.pin);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(response);
+    return Objects.hash(pin);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StopChargingResponse {\n");
+    sb.append("class SpeedLimitRequest {\n");
     
-    sb.append("    response: ").append(toIndentedString(response)).append("\n");
+    sb.append("    pin: ").append(toIndentedString(pin)).append("\n");
     sb.append("}");
     return sb.toString();
   }

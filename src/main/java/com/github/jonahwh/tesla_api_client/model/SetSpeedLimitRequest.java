@@ -14,7 +14,6 @@
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
-import com.github.jonahwh.tesla_api_client.model.WakeUpCarResponseResponse;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,29 +24,29 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * StopChargingResponse
+ * SetSpeedLimitRequest
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T23:11:34.231-07:00")
-public class StopChargingResponse {
-  @SerializedName("response")
-  private WakeUpCarResponseResponse response = null;
+public class SetSpeedLimitRequest {
+  @SerializedName("limit_mph")
+  private String limitMph = null;
 
-  public StopChargingResponse response(WakeUpCarResponseResponse response) {
-    this.response = response;
+  public SetSpeedLimitRequest limitMph(String limitMph) {
+    this.limitMph = limitMph;
     return this;
   }
 
    /**
-   * Get response
-   * @return response
+   * The speed limit to set, in Miles per Hour
+   * @return limitMph
   **/
-  @ApiModelProperty(required = true, value = "")
-  public WakeUpCarResponseResponse getResponse() {
-    return response;
+  @ApiModelProperty(value = "The speed limit to set, in Miles per Hour")
+  public String getLimitMph() {
+    return limitMph;
   }
 
-  public void setResponse(WakeUpCarResponseResponse response) {
-    this.response = response;
+  public void setLimitMph(String limitMph) {
+    this.limitMph = limitMph;
   }
 
 
@@ -59,22 +58,22 @@ public class StopChargingResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    StopChargingResponse stopChargingResponse = (StopChargingResponse) o;
-    return Objects.equals(this.response, stopChargingResponse.response);
+    SetSpeedLimitRequest setSpeedLimitRequest = (SetSpeedLimitRequest) o;
+    return Objects.equals(this.limitMph, setSpeedLimitRequest.limitMph);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(response);
+    return Objects.hash(limitMph);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StopChargingResponse {\n");
+    sb.append("class SetSpeedLimitRequest {\n");
     
-    sb.append("    response: ").append(toIndentedString(response)).append("\n");
+    sb.append("    limitMph: ").append(toIndentedString(limitMph)).append("\n");
     sb.append("}");
     return sb.toString();
   }

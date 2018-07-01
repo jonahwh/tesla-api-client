@@ -25,14 +25,14 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * StopChargingResponse
+ * SpeedLimitResponse
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-30T23:11:34.231-07:00")
-public class StopChargingResponse {
+public class SpeedLimitResponse {
   @SerializedName("response")
   private WakeUpCarResponseResponse response = null;
 
-  public StopChargingResponse response(WakeUpCarResponseResponse response) {
+  public SpeedLimitResponse response(WakeUpCarResponseResponse response) {
     this.response = response;
     return this;
   }
@@ -59,8 +59,8 @@ public class StopChargingResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    StopChargingResponse stopChargingResponse = (StopChargingResponse) o;
-    return Objects.equals(this.response, stopChargingResponse.response);
+    SpeedLimitResponse speedLimitResponse = (SpeedLimitResponse) o;
+    return Objects.equals(this.response, speedLimitResponse.response);
   }
 
   @Override
@@ -72,7 +72,7 @@ public class StopChargingResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StopChargingResponse {\n");
+    sb.append("class SpeedLimitResponse {\n");
     
     sb.append("    response: ").append(toIndentedString(response)).append("\n");
     sb.append("}");

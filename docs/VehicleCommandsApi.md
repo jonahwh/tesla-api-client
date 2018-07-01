@@ -4,6 +4,9 @@ All URIs are relative to *https://owner-api.teslamotors.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**activateSpeedLimit**](VehicleCommandsApi.md#activateSpeedLimit) | **POST** api/1/vehicles/{vehicle_id}/command/speed_limit_activate | Activate Speed Limit
+[**clearSpeedLimitPin**](VehicleCommandsApi.md#clearSpeedLimitPin) | **POST** api/1/vehicles/{vehicle_id}/command/speed_limit_clear_pin | Clear Speed Limit Pin
+[**deactivateSpeedLimit**](VehicleCommandsApi.md#deactivateSpeedLimit) | **POST** api/1/vehicles/{vehicle_id}/command/speed_limit_deactivate | Deactivate Speed Limit
 [**flashLights**](VehicleCommandsApi.md#flashLights) | **POST** api/1/vehicles/{vehicle_id}/command/flash_lights | Flash Lights
 [**honkHorn**](VehicleCommandsApi.md#honkHorn) | **POST** api/1/vehicles/{vehicle_id}/command/honk_horn | Honk Horn
 [**lockDoors**](VehicleCommandsApi.md#lockDoors) | **POST** api/1/vehicles/{vehicle_id}/command/door_lock | Lock Doors
@@ -14,6 +17,7 @@ Method | HTTP request | Description
 [**sendStandardChargeLimit**](VehicleCommandsApi.md#sendStandardChargeLimit) | **POST** api/1/vehicles/{vehicle_id}/command/charge_standard | Set Charge Limit to Standard
 [**setChargeLimit**](VehicleCommandsApi.md#setChargeLimit) | **POST** api/1/vehicles/{vehicle_id}/command/set_charge_limit | Set Charge Limit
 [**setMaxChargeLimit**](VehicleCommandsApi.md#setMaxChargeLimit) | **POST** api/1/vehicles/{vehicle_id}/command/charge_max_range | Set Charge Limit to Max Range
+[**setSpeedLimit**](VehicleCommandsApi.md#setSpeedLimit) | **POST** api/1/vehicles/{vehicle_id}/command/speed_limit_set_limit | Set Speed Limit
 [**setTemperatures**](VehicleCommandsApi.md#setTemperatures) | **POST** api/1/vehicles/{vehicle_id}/command/set_temps | Set Temperature
 [**startCharge**](VehicleCommandsApi.md#startCharge) | **POST** api/1/vehicles/{vehicle_id}/command/charge_start | Start Charging
 [**startHVAC**](VehicleCommandsApi.md#startHVAC) | **POST** api/1/vehicles/{vehicle_id}/command/auto_conditioning_start | Start HVAC System
@@ -24,6 +28,147 @@ Method | HTTP request | Description
 [**unlockDoors**](VehicleCommandsApi.md#unlockDoors) | **POST** api/1/vehicles/{vehicle_id}/command/door_unlock | Unlock Doors
 [**wakeUpVehicle**](VehicleCommandsApi.md#wakeUpVehicle) | **POST** api/1/vehicles/{vehicle_id}/command/wake_up | Wake Up Car
 
+
+<a name="activateSpeedLimit"></a>
+# **activateSpeedLimit**
+> SpeedLimitResponse activateSpeedLimit(vehicleId, body)
+
+Activate Speed Limit
+
+Activates Speed Limit
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+SpeedLimitRequest body = new SpeedLimitRequest(); // SpeedLimitRequest | 
+try {
+    SpeedLimitResponse result = apiInstance.activateSpeedLimit(vehicleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#activateSpeedLimit");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
+ **body** | [**SpeedLimitRequest**](SpeedLimitRequest.md)|  |
+
+### Return type
+
+[**SpeedLimitResponse**](SpeedLimitResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="clearSpeedLimitPin"></a>
+# **clearSpeedLimitPin**
+> SpeedLimitResponse clearSpeedLimitPin(vehicleId, body)
+
+Clear Speed Limit Pin
+
+Clears Speed Limit Pin
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+SpeedLimitRequest body = new SpeedLimitRequest(); // SpeedLimitRequest | 
+try {
+    SpeedLimitResponse result = apiInstance.clearSpeedLimitPin(vehicleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#clearSpeedLimitPin");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
+ **body** | [**SpeedLimitRequest**](SpeedLimitRequest.md)|  |
+
+### Return type
+
+[**SpeedLimitResponse**](SpeedLimitResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="deactivateSpeedLimit"></a>
+# **deactivateSpeedLimit**
+> SpeedLimitResponse deactivateSpeedLimit(vehicleId, body)
+
+Deactivate Speed Limit
+
+Deactivates Speed Limit
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+SpeedLimitRequest body = new SpeedLimitRequest(); // SpeedLimitRequest | 
+try {
+    SpeedLimitResponse result = apiInstance.deactivateSpeedLimit(vehicleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#deactivateSpeedLimit");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
+ **body** | [**SpeedLimitRequest**](SpeedLimitRequest.md)|  |
+
+### Return type
+
+[**SpeedLimitResponse**](SpeedLimitResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="flashLights"></a>
 # **flashLights**
@@ -473,6 +618,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SetChargeLimitToMaxRangeResponse**](SetChargeLimitToMaxRangeResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="setSpeedLimit"></a>
+# **setSpeedLimit**
+> SpeedLimitResponse setSpeedLimit(vehicleId, body)
+
+Set Speed Limit
+
+Sets Speed Limit
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+SetSpeedLimitRequest body = new SetSpeedLimitRequest(); // SetSpeedLimitRequest | 
+try {
+    SpeedLimitResponse result = apiInstance.setSpeedLimit(vehicleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#setSpeedLimit");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
+ **body** | [**SetSpeedLimitRequest**](SetSpeedLimitRequest.md)|  |
+
+### Return type
+
+[**SpeedLimitResponse**](SpeedLimitResponse.md)
 
 ### Authorization
 

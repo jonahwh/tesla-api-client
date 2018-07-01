@@ -23,10 +23,13 @@ import com.github.jonahwh.tesla_api_client.model.SetChargeLimitRequest;
 import com.github.jonahwh.tesla_api_client.model.SetChargeLimitResponse;
 import com.github.jonahwh.tesla_api_client.model.SetChargeLimitToMaxRangeResponse;
 import com.github.jonahwh.tesla_api_client.model.SetChargeLimitToStandardResponse;
+import com.github.jonahwh.tesla_api_client.model.SetSpeedLimitRequest;
 import com.github.jonahwh.tesla_api_client.model.SetTemperatureResponse;
 import com.github.jonahwh.tesla_api_client.model.SetTempsRequest;
 import com.github.jonahwh.tesla_api_client.model.SetValetModeResponse;
 import com.github.jonahwh.tesla_api_client.model.SetValetRequest;
+import com.github.jonahwh.tesla_api_client.model.SpeedLimitRequest;
+import com.github.jonahwh.tesla_api_client.model.SpeedLimitResponse;
 import com.github.jonahwh.tesla_api_client.model.StartChargingResponse;
 import com.github.jonahwh.tesla_api_client.model.StartHvacSystemResponse;
 import com.github.jonahwh.tesla_api_client.model.StopChargingResponse;
@@ -40,6 +43,51 @@ import java.util.List;
 import java.util.Map;
 
 public interface VehicleCommandsApi {
+  /**
+   * Activate Speed Limit
+   * Activates Speed Limit
+   * @param vehicleId The id of the Vehicle. (required)
+   * @param body  (required)
+   * @return Call&lt;SpeedLimitResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/command/speed_limit_activate")
+  Call<SpeedLimitResponse> activateSpeedLimit(
+    @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body SpeedLimitRequest body
+  );
+
+  /**
+   * Clear Speed Limit Pin
+   * Clears Speed Limit Pin
+   * @param vehicleId The id of the Vehicle. (required)
+   * @param body  (required)
+   * @return Call&lt;SpeedLimitResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/command/speed_limit_clear_pin")
+  Call<SpeedLimitResponse> clearSpeedLimitPin(
+    @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body SpeedLimitRequest body
+  );
+
+  /**
+   * Deactivate Speed Limit
+   * Deactivates Speed Limit
+   * @param vehicleId The id of the Vehicle. (required)
+   * @param body  (required)
+   * @return Call&lt;SpeedLimitResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/command/speed_limit_deactivate")
+  Call<SpeedLimitResponse> deactivateSpeedLimit(
+    @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body SpeedLimitRequest body
+  );
+
   /**
    * Flash Lights
    * Flash the lights once.
@@ -182,6 +230,21 @@ public interface VehicleCommandsApi {
   @POST("api/1/vehicles/{vehicle_id}/command/charge_max_range")
   Call<SetChargeLimitToMaxRangeResponse> setMaxChargeLimit(
     @retrofit2.http.Path("vehicle_id") String vehicleId
+  );
+
+  /**
+   * Set Speed Limit
+   * Sets Speed Limit
+   * @param vehicleId The id of the Vehicle. (required)
+   * @param body  (required)
+   * @return Call&lt;SpeedLimitResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/command/speed_limit_set_limit")
+  Call<SpeedLimitResponse> setSpeedLimit(
+    @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body SetSpeedLimitRequest body
   );
 
   /**
