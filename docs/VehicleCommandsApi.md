@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**honkHorn**](VehicleCommandsApi.md#honkHorn) | **POST** api/1/vehicles/{vehicle_id}/command/honk_horn | Honk Horn
 [**lockDoors**](VehicleCommandsApi.md#lockDoors) | **POST** api/1/vehicles/{vehicle_id}/command/door_lock | Lock Doors
 [**openSunroof**](VehicleCommandsApi.md#openSunroof) | **POST** api/1/vehicles/{vehicle_id}/command/sun_roof_control | Move Pano Roof
-[**openTrunk**](VehicleCommandsApi.md#openTrunk) | **POST** api/1/vehicles/{vehicle_id}/command/trunk_open | Open Trunk/Frunk
+[**openTrunk**](VehicleCommandsApi.md#openTrunk) | **POST** api/1/vehicles/{vehicle_id}/command/actuate_trunk | Open Trunk/Frunk
 [**remoteStart**](VehicleCommandsApi.md#remoteStart) | **POST** api/1/vehicles/{vehicle_id}/command/remote_start_drive | Remote Start
 [**resetValetPin**](VehicleCommandsApi.md#resetValetPin) | **POST** api/1/vehicles/{vehicle_id}/command/reset_valet_pin | Reset Valet PIN
 [**sendStandardChargeLimit**](VehicleCommandsApi.md#sendStandardChargeLimit) | **POST** api/1/vehicles/{vehicle_id}/command/charge_standard | Set Charge Limit to Standard

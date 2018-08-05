@@ -155,7 +155,7 @@ public interface VehicleCommandsApi {
   @Headers({
     "Content-Type:application/json"
   })
-  @POST("api/1/vehicles/{vehicle_id}/command/trunk_open")
+  @POST("api/1/vehicles/{vehicle_id}/command/actuate_trunk")
   Call<OpenTrunkResponse> openTrunk(
     @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body OpenTrunkRequest body
   );

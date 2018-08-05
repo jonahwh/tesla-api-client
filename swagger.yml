@@ -597,7 +597,7 @@ paths:
           description: ''
           schema:
             $ref: '#/definitions/RemoteStartResponse'
-  '/api/1/vehicles/{vehicle_id}/command/trunk_open':
+  '/api/1/vehicles/{vehicle_id}/command/actuate_trunk':
     post:
       description: Open the trunk or frunk. Currently inoperable.
       summary: Open Trunk/Frunk
