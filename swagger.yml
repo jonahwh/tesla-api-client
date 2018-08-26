@@ -1068,7 +1068,7 @@ definitions:
       not_enough_power_to_heat:
         type: boolean
       timestamp:
-        format: number
+        type: number
   ClimateSettingsResponse:
     title: Climate Settings response
     type: object

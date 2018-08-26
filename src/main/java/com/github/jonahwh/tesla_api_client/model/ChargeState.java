@@ -27,7 +27,7 @@ import java.math.BigDecimal;
 /**
  * ChargeState
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-26T13:53:41.154-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-26T14:50:58.179-07:00")
 public class ChargeState {
   @SerializedName("charging_state")
   private String chargingState = null;
@@ -148,6 +148,9 @@ public class ChargeState {
 
   @SerializedName("not_enough_power_to_heat")
   private Boolean notEnoughPowerToHeat = null;
+
+  @SerializedName("timestamp")
+  private BigDecimal timestamp = null;
 
   public ChargeState chargingState(String chargingState) {
     this.chargingState = chargingState;
@@ -869,6 +872,24 @@ public class ChargeState {
     this.notEnoughPowerToHeat = notEnoughPowerToHeat;
   }
 
+  public ChargeState timestamp(BigDecimal timestamp) {
+    this.timestamp = timestamp;
+    return this;
+  }
+
+   /**
+   * Get timestamp
+   * @return timestamp
+  **/
+  @ApiModelProperty(value = "")
+  public BigDecimal getTimestamp() {
+    return timestamp;
+  }
+
+  public void setTimestamp(BigDecimal timestamp) {
+    this.timestamp = timestamp;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -918,12 +939,13 @@ public class ChargeState {
         Objects.equals(this.managedChargingUserCanceled, chargeState.managedChargingUserCanceled) &&
         Objects.equals(this.managedChargingStartTime, chargeState.managedChargingStartTime) &&
         Objects.equals(this.batteryHeaterOn, chargeState.batteryHeaterOn) &&
-        Objects.equals(this.notEnoughPowerToHeat, chargeState.notEnoughPowerToHeat);
+        Objects.equals(this.notEnoughPowerToHeat, chargeState.notEnoughPowerToHeat) &&
+        Objects.equals(this.timestamp, chargeState.timestamp);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(chargingState, fastChargerType, fastChargerBrand, chargeLimitSoc, chargeLimitSocStd, chargeLimitSocMin, chargeLimitSocMax, chargeToMaxRange, maxRangeChargeCounter, fastChargerPresent, batteryRange, estBatteryRange, idealBatteryRange, batteryLevel, usableBatteryLevel, chargeEnergyAdded, chargeMilesAddedRated, chargeMilesAddedIdeal, chargerVoltage, chargerPilotCurrent, chargerActualCurrent, chargerPower, timeToFullCharge, tripCharging, chargeRate, chargePortDoorOpen, connChargeCable, scheduledChargingStartTime, scheduledChargingPending, userChargeEnableRequest, chargeEnableRequest, chargerPhases, chargePortLatch, chargeCurrentRequest, chargeCurrentRequestMax, managedChargingActive, managedChargingUserCanceled, managedChargingStartTime, batteryHeaterOn, notEnoughPowerToHeat);
+    return Objects.hash(chargingState, fastChargerType, fastChargerBrand, chargeLimitSoc, chargeLimitSocStd, chargeLimitSocMin, chargeLimitSocMax, chargeToMaxRange, maxRangeChargeCounter, fastChargerPresent, batteryRange, estBatteryRange, idealBatteryRange, batteryLevel, usableBatteryLevel, chargeEnergyAdded, chargeMilesAddedRated, chargeMilesAddedIdeal, chargerVoltage, chargerPilotCurrent, chargerActualCurrent, chargerPower, timeToFullCharge, tripCharging, chargeRate, chargePortDoorOpen, connChargeCable, scheduledChargingStartTime, scheduledChargingPending, userChargeEnableRequest, chargeEnableRequest, chargerPhases, chargePortLatch, chargeCurrentRequest, chargeCurrentRequestMax, managedChargingActive, managedChargingUserCanceled, managedChargingStartTime, batteryHeaterOn, notEnoughPowerToHeat, timestamp);
   }
 
 
@@ -972,6 +994,7 @@ public class ChargeState {
     sb.append("    managedChargingStartTime: ").append(toIndentedString(managedChargingStartTime)).append("\n");
     sb.append("    batteryHeaterOn: ").append(toIndentedString(batteryHeaterOn)).append("\n");
     sb.append("    notEnoughPowerToHeat: ").append(toIndentedString(notEnoughPowerToHeat)).append("\n");
+    sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -44,6 +44,7 @@ Name | Type | Description | Notes
 **managedChargingStartTime** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **batteryHeaterOn** | **Boolean** |  |  [optional]
 **notEnoughPowerToHeat** | **Boolean** |  |  [optional]
+**timestamp** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 
 
 
