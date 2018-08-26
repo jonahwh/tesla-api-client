@@ -1268,6 +1268,19 @@ definitions:
         type: boolean
       vehicle_name:
         type: string
+      speed_limit_mode:
+        type: object
+        properties:
+          active:
+            type: boolean
+          current_limit_mph:
+            type: integer
+          max_limit_mph:
+            type: integer
+          min_limit_mph:
+            type: integer
+          pin_code_set:
+            type: boolean
   WakeUpCarResponse:
     title: Wake Up Car response
     type: object

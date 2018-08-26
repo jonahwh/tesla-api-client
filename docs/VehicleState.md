@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **timestamp** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **valetMode** | **Boolean** |  |  [optional]
 **vehicleName** | **String** |  |  [optional]
+**speedLimitMode** | [**VehicleStateSpeedLimitMode**](VehicleStateSpeedLimitMode.md) |  |  [optional]
 
 
 

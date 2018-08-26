@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * SetChargeLimitRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-04T21:57:35.030-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-26T13:53:41.154-07:00")
 public class SetChargeLimitRequest {
   @SerializedName("percent")
   private Integer percent = null;

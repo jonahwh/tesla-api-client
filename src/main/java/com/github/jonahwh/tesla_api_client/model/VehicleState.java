@@ -14,6 +14,7 @@
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
+import com.github.jonahwh.tesla_api_client.model.VehicleStateSpeedLimitMode;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * VehicleState
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-04T21:57:35.030-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-26T13:53:41.154-07:00")
 public class VehicleState {
   @SerializedName("api_version")
   private Integer apiVersion = null;
@@ -106,6 +107,9 @@ public class VehicleState {
 
   @SerializedName("vehicle_name")
   private String vehicleName = null;
+
+  @SerializedName("speed_limit_mode")
+  private VehicleStateSpeedLimitMode speedLimitMode = null;
 
   public VehicleState apiVersion(Integer apiVersion) {
     this.apiVersion = apiVersion;
@@ -575,6 +579,24 @@ public class VehicleState {
     this.vehicleName = vehicleName;
   }
 
+  public VehicleState speedLimitMode(VehicleStateSpeedLimitMode speedLimitMode) {
+    this.speedLimitMode = speedLimitMode;
+    return this;
+  }
+
+   /**
+   * Get speedLimitMode
+   * @return speedLimitMode
+  **/
+  @ApiModelProperty(value = "")
+  public VehicleStateSpeedLimitMode getSpeedLimitMode() {
+    return speedLimitMode;
+  }
+
+  public void setSpeedLimitMode(VehicleStateSpeedLimitMode speedLimitMode) {
+    this.speedLimitMode = speedLimitMode;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -610,12 +632,13 @@ public class VehicleState {
         Objects.equals(this.sunRoofState, vehicleState.sunRoofState) &&
         Objects.equals(this.timestamp, vehicleState.timestamp) &&
         Objects.equals(this.valetMode, vehicleState.valetMode) &&
-        Objects.equals(this.vehicleName, vehicleState.vehicleName);
+        Objects.equals(this.vehicleName, vehicleState.vehicleName) &&
+        Objects.equals(this.speedLimitMode, vehicleState.speedLimitMode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(apiVersion, autoparkState, autoparkStateV2, autoparkStyle, calendarSupported, carVersion, centerDisplayState, df, dr, ft, homelinkNearby, lastAutoparkError, locked, notificationsSupported, odometer, parsedCalendarSupported, pf, pr, remoteStart, remoteStartSupported, rt, sunRoofPercentOpen, sunRoofState, timestamp, valetMode, vehicleName);
+    return Objects.hash(apiVersion, autoparkState, autoparkStateV2, autoparkStyle, calendarSupported, carVersion, centerDisplayState, df, dr, ft, homelinkNearby, lastAutoparkError, locked, notificationsSupported, odometer, parsedCalendarSupported, pf, pr, remoteStart, remoteStartSupported, rt, sunRoofPercentOpen, sunRoofState, timestamp, valetMode, vehicleName, speedLimitMode);
   }
 
 
@@ -650,6 +673,7 @@ public class VehicleState {
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("    valetMode: ").append(toIndentedString(valetMode)).append("\n");
     sb.append("    vehicleName: ").append(toIndentedString(vehicleName)).append("\n");
+    sb.append("    speedLimitMode: ").append(toIndentedString(speedLimitMode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
