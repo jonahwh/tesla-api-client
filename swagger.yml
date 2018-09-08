@@ -1274,11 +1274,14 @@ definitions:
           active:
             type: boolean
           current_limit_mph:
-            type: integer
+            type: number
+            format: double
           max_limit_mph:
-            type: integer
+            type: number
+            format: double
           min_limit_mph:
-            type: integer
+            type: number
+            format: double
           pin_code_set:
             type: boolean
   WakeUpCarResponse:

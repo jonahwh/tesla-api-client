@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * OpenTrunkRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-26T14:50:58.179-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-08T11:08:13.401-07:00")
 public class OpenTrunkRequest {
   @SerializedName("which_trunk")
   private String whichTrunk = null;

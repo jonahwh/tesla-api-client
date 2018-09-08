@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active** | **Boolean** |  |  [optional]
-**currentLimitMph** | **Integer** |  |  [optional]
-**maxLimitMph** | **Integer** |  |  [optional]
-**minLimitMph** | **Integer** |  |  [optional]
+**currentLimitMph** | **Double** |  |  [optional]
+**maxLimitMph** | **Double** |  |  [optional]
+**minLimitMph** | **Double** |  |  [optional]
 **pinCodeSet** | **Boolean** |  |  [optional]
 
 

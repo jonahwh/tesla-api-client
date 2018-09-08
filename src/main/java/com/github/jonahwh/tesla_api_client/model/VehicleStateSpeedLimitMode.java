@@ -26,19 +26,19 @@ import java.io.IOException;
 /**
  * VehicleStateSpeedLimitMode
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-26T14:50:58.179-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-08T11:08:13.401-07:00")
 public class VehicleStateSpeedLimitMode {
   @SerializedName("active")
   private Boolean active = null;
 
   @SerializedName("current_limit_mph")
-  private Integer currentLimitMph = null;
+  private Double currentLimitMph = null;
 
   @SerializedName("max_limit_mph")
-  private Integer maxLimitMph = null;
+  private Double maxLimitMph = null;
 
   @SerializedName("min_limit_mph")
-  private Integer minLimitMph = null;
+  private Double minLimitMph = null;
 
   @SerializedName("pin_code_set")
   private Boolean pinCodeSet = null;
@@ -61,7 +61,7 @@ public class VehicleStateSpeedLimitMode {
     this.active = active;
   }
 
-  public VehicleStateSpeedLimitMode currentLimitMph(Integer currentLimitMph) {
+  public VehicleStateSpeedLimitMode currentLimitMph(Double currentLimitMph) {
     this.currentLimitMph = currentLimitMph;
     return this;
   }
@@ -71,15 +71,15 @@ public class VehicleStateSpeedLimitMode {
    * @return currentLimitMph
   **/
   @ApiModelProperty(value = "")
-  public Integer getCurrentLimitMph() {
+  public Double getCurrentLimitMph() {
     return currentLimitMph;
   }
 
-  public void setCurrentLimitMph(Integer currentLimitMph) {
+  public void setCurrentLimitMph(Double currentLimitMph) {
     this.currentLimitMph = currentLimitMph;
   }
 
-  public VehicleStateSpeedLimitMode maxLimitMph(Integer maxLimitMph) {
+  public VehicleStateSpeedLimitMode maxLimitMph(Double maxLimitMph) {
     this.maxLimitMph = maxLimitMph;
     return this;
   }
@@ -89,15 +89,15 @@ public class VehicleStateSpeedLimitMode {
    * @return maxLimitMph
   **/
   @ApiModelProperty(value = "")
-  public Integer getMaxLimitMph() {
+  public Double getMaxLimitMph() {
     return maxLimitMph;
   }
 
-  public void setMaxLimitMph(Integer maxLimitMph) {
+  public void setMaxLimitMph(Double maxLimitMph) {
     this.maxLimitMph = maxLimitMph;
   }
 
-  public VehicleStateSpeedLimitMode minLimitMph(Integer minLimitMph) {
+  public VehicleStateSpeedLimitMode minLimitMph(Double minLimitMph) {
     this.minLimitMph = minLimitMph;
     return this;
   }
@@ -107,11 +107,11 @@ public class VehicleStateSpeedLimitMode {
    * @return minLimitMph
   **/
   @ApiModelProperty(value = "")
-  public Integer getMinLimitMph() {
+  public Double getMinLimitMph() {
     return minLimitMph;
   }
 
-  public void setMinLimitMph(Integer minLimitMph) {
+  public void setMinLimitMph(Double minLimitMph) {
     this.minLimitMph = minLimitMph;
   }
 
