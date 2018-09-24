@@ -7,6 +7,8 @@ Method | HTTP request | Description
 [**getVehicle**](VehiclesApi.md#getVehicle) | **GET** api/1/vehicles/{vehicle_id} | Retrieve a vehicle
 [**getVehicleChargeState**](VehiclesApi.md#getVehicleChargeState) | **GET** api/1/vehicles/{vehicle_id}/data_request/charge_state | Charge State
 [**getVehicleClimateState**](VehiclesApi.md#getVehicleClimateState) | **GET** api/1/vehicles/{vehicle_id}/data_request/climate_state | Climate Settings
+[**getVehicleConfig**](VehiclesApi.md#getVehicleConfig) | **GET** api/1/vehicles/{vehicle_id}/data_request/vehicle_config | Vehicle Config
+[**getVehicleData**](VehiclesApi.md#getVehicleData) | **GET** api/1/vehicles/{vehicle_id}/data | Vehicle Data
 [**getVehicleDriveState**](VehiclesApi.md#getVehicleDriveState) | **GET** api/1/vehicles/{vehicle_id}/data_request/drive_state | Driving and Position
 [**getVehicleMobileEnabled**](VehiclesApi.md#getVehicleMobileEnabled) | **GET** api/1/vehicles/{vehicle_id}/mobile_enabled | Mobile Access
 [**getVehicleState**](VehiclesApi.md#getVehicleState) | **GET** api/1/vehicles/{vehicle_id}/data_request/vehicle_state | Vehicle State
@@ -139,6 +141,96 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ClimateSettingsResponse**](ClimateSettingsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getVehicleConfig"></a>
+# **getVehicleConfig**
+> VehicleConfigResponse getVehicleConfig(vehicleId)
+
+Vehicle Config
+
+Returns the vehicle&#39;s configuration
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehiclesApi;
+
+
+VehiclesApi apiInstance = new VehiclesApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+try {
+    VehicleConfigResponse result = apiInstance.getVehicleConfig(vehicleId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehiclesApi#getVehicleConfig");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
+
+### Return type
+
+[**VehicleConfigResponse**](VehicleConfigResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getVehicleData"></a>
+# **getVehicleData**
+> VehicleDataResponse getVehicleData(vehicleId)
+
+Vehicle Data
+
+Returns all vehicle ∂ata, potentially cached
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehiclesApi;
+
+
+VehiclesApi apiInstance = new VehiclesApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+try {
+    VehicleDataResponse result = apiInstance.getVehicleData(vehicleId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehiclesApi#getVehicleData");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
+
+### Return type
+
+[**VehicleDataResponse**](VehicleDataResponse.md)
 
 ### Authorization
 

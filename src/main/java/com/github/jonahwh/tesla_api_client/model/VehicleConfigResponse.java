@@ -14,7 +14,7 @@
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
-import com.github.jonahwh.tesla_api_client.model.WakeUpCarResponseResponse;
+import com.github.jonahwh.tesla_api_client.model.VehicleConfig;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,14 +25,14 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * MovePanoRoofResponse
+ * VehicleConfigResponse
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-23T16:16:04.015-07:00")
-public class MovePanoRoofResponse {
+public class VehicleConfigResponse {
   @SerializedName("response")
-  private WakeUpCarResponseResponse response = null;
+  private VehicleConfig response = null;
 
-  public MovePanoRoofResponse response(WakeUpCarResponseResponse response) {
+  public VehicleConfigResponse response(VehicleConfig response) {
     this.response = response;
     return this;
   }
@@ -42,11 +42,11 @@ public class MovePanoRoofResponse {
    * @return response
   **/
   @ApiModelProperty(required = true, value = "")
-  public WakeUpCarResponseResponse getResponse() {
+  public VehicleConfig getResponse() {
     return response;
   }
 
-  public void setResponse(WakeUpCarResponseResponse response) {
+  public void setResponse(VehicleConfig response) {
     this.response = response;
   }
 
@@ -59,8 +59,8 @@ public class MovePanoRoofResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    MovePanoRoofResponse movePanoRoofResponse = (MovePanoRoofResponse) o;
-    return Objects.equals(this.response, movePanoRoofResponse.response);
+    VehicleConfigResponse vehicleConfigResponse = (VehicleConfigResponse) o;
+    return Objects.equals(this.response, vehicleConfigResponse.response);
   }
 
   @Override
@@ -72,7 +72,7 @@ public class MovePanoRoofResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class MovePanoRoofResponse {\n");
+    sb.append("class VehicleConfigResponse {\n");
     
     sb.append("    response: ").append(toIndentedString(response)).append("\n");
     sb.append("}");

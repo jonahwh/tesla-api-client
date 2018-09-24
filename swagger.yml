@@ -206,6 +206,46 @@ paths:
           description: ''
           schema:
             $ref: '#/definitions/VehicleStateResponse'
+  '/api/1/vehicles/{vehicle_id}/data_request/vehicle_config':
+    get:
+      description: 'Returns the vehicle''s configuration'
+      summary: Vehicle Config
+      tags:
+        - Vehicles
+      operationId: GetVehicleConfig
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/VehicleConfigResponse'
+  '/api/1/vehicles/{vehicle_id}/data':
+    get:
+      description: 'Returns all vehicle ∂ata, potentially cached'
+      summary: Vehicle Data
+      tags:
+        - Vehicles
+      operationId: GetVehicleData
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/VehicleDataResponse'
   '/api/1/vehicles/{vehicle_id}/command/wake_up':
     post:
       description: Wakes up the car from the sleep state. Necessary to get some data from the car.
@@ -1284,6 +1324,108 @@ definitions:
             format: double
           pin_code_set:
             type: boolean
+  VehicleConfigResponse:
+    title: Vehicle Config response
+    type: object
+    properties:
+      response:
+        $ref: '#/definitions/VehicleConfig'
+    required:
+      - response
+  VehicleConfig:
+    type: object
+    properties:
+      can_actuate_trunks:
+        type: boolean
+      car_special_type:
+        type: string
+      car_type:
+        type: string
+      charge_port_type:
+        type: string
+      eu_vehicle:
+        type: boolean
+      exterior_color:
+        type: string
+      has_ludicrous_mode:
+        type: boolean
+      motorized_charge_port:
+        type: boolean
+      perf_config:
+        type: string
+      plg:
+        type: boolean
+      rear_seat_heaters:
+        type: number
+      rear_seat_type:
+        type: number
+      rhd:
+        type: boolean
+      roof_color:
+        type: string
+      seat_type:
+        type: number
+      spoiler_type:
+        type: string
+      sun_roof_installed:
+        type: number
+      third_row_seats:
+        type: string
+      timestamp:
+        type: number
+      trim_badging:
+        type: string
+      wheel_type:
+        type: string
+  VehicleDataResponse:
+    title: Vehicle Data Response
+    type: object
+    properties:
+      response:
+        type: object
+        properties:
+          color:
+            type: string
+          display_name:
+            type: string
+          id:
+            type: string
+          option_codes:
+            type: string
+          vehicle_id:
+            type: string
+          vin:
+            type: string
+          user_id:
+            type: number
+          tokens:
+            type: array
+            items:
+              type: string
+          state:
+            type: string
+          in_service:
+            type: boolean
+          id_s:
+            type: string
+          calendar_enabled:
+            type: boolean
+          backseat_token:
+            type: string
+          backseat_token_updated_at:
+            type: number
+          gui_settings:
+            $ref: '#/definitions/GuiState'
+          climate_state:
+            $ref: '#/definitions/ClimateState'
+          drive_state:
+            $ref: '#/definitions/DriveState'
+          vehicle_state:
+            $ref: '#/definitions/VehicleState'
+          charge_state:
+            $ref: '#/definitions/ChargeState'
+          vehicle_config:
+            $ref: '#/definitions/VehicleConfig'
   WakeUpCarResponse:
     title: Wake Up Car response
     type: object

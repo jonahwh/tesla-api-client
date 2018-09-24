@@ -14,6 +14,8 @@ import com.github.jonahwh.tesla_api_client.model.DriveStateResponse;
 import com.github.jonahwh.tesla_api_client.model.GetVehiclesResponse;
 import com.github.jonahwh.tesla_api_client.model.GuistateResponse;
 import com.github.jonahwh.tesla_api_client.model.MobileAccessResponse;
+import com.github.jonahwh.tesla_api_client.model.VehicleConfigResponse;
+import com.github.jonahwh.tesla_api_client.model.VehicleDataResponse;
 import com.github.jonahwh.tesla_api_client.model.VehicleResponse;
 import com.github.jonahwh.tesla_api_client.model.VehicleStateResponse;
 
@@ -62,6 +64,34 @@ public interface VehiclesApi {
   })
   @GET("api/1/vehicles/{vehicle_id}/data_request/climate_state")
   Call<ClimateSettingsResponse> getVehicleClimateState(
+    @retrofit2.http.Path("vehicle_id") String vehicleId
+  );
+
+  /**
+   * Vehicle Config
+   * Returns the vehicle&#39;s configuration
+   * @param vehicleId The id of the Vehicle. (required)
+   * @return Call&lt;VehicleConfigResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @GET("api/1/vehicles/{vehicle_id}/data_request/vehicle_config")
+  Call<VehicleConfigResponse> getVehicleConfig(
+    @retrofit2.http.Path("vehicle_id") String vehicleId
+  );
+
+  /**
+   * Vehicle Data
+   * Returns all vehicle ∂ata, potentially cached
+   * @param vehicleId The id of the Vehicle. (required)
+   * @return Call&lt;VehicleDataResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @GET("api/1/vehicles/{vehicle_id}/data")
+  Call<VehicleDataResponse> getVehicleData(
     @retrofit2.http.Path("vehicle_id") String vehicleId
   );
 

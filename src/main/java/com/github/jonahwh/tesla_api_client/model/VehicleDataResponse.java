@@ -14,7 +14,7 @@
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
-import com.github.jonahwh.tesla_api_client.model.WakeUpCarResponseResponse;
+import com.github.jonahwh.tesla_api_client.model.VehicleDataResponseResponse;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,14 +25,14 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * MovePanoRoofResponse
+ * VehicleDataResponse
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-23T16:16:04.015-07:00")
-public class MovePanoRoofResponse {
+public class VehicleDataResponse {
   @SerializedName("response")
-  private WakeUpCarResponseResponse response = null;
+  private VehicleDataResponseResponse response = null;
 
-  public MovePanoRoofResponse response(WakeUpCarResponseResponse response) {
+  public VehicleDataResponse response(VehicleDataResponseResponse response) {
     this.response = response;
     return this;
   }
@@ -41,12 +41,12 @@ public class MovePanoRoofResponse {
    * Get response
    * @return response
   **/
-  @ApiModelProperty(required = true, value = "")
-  public WakeUpCarResponseResponse getResponse() {
+  @ApiModelProperty(value = "")
+  public VehicleDataResponseResponse getResponse() {
     return response;
   }
 
-  public void setResponse(WakeUpCarResponseResponse response) {
+  public void setResponse(VehicleDataResponseResponse response) {
     this.response = response;
   }
 
@@ -59,8 +59,8 @@ public class MovePanoRoofResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    MovePanoRoofResponse movePanoRoofResponse = (MovePanoRoofResponse) o;
-    return Objects.equals(this.response, movePanoRoofResponse.response);
+    VehicleDataResponse vehicleDataResponse = (VehicleDataResponse) o;
+    return Objects.equals(this.response, vehicleDataResponse.response);
   }
 
   @Override
@@ -72,7 +72,7 @@ public class MovePanoRoofResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class MovePanoRoofResponse {\n");
+    sb.append("class VehicleDataResponse {\n");
     
     sb.append("    response: ").append(toIndentedString(response)).append("\n");
     sb.append("}");
