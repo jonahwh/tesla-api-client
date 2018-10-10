@@ -775,6 +775,33 @@ paths:
               description: ''
               schema:
                 $ref: '#/definitions/SpeedLimitResponse'
+  '/api/1/vehicles/{vehicle_id}/command/navigation_request':
+          post:
+            description: |-
+              Sends Navigation Request to Vehicle
+            summary: Send Navigation Request
+            tags:
+              - Vehicle Commands
+            operationId: NavigationRequest
+            produces:
+              - application/json
+            parameters:
+              - name: vehicle_id
+                in: path
+                required: true
+                type: string
+                description: The id of the Vehicle.
+              - name: body
+                in: body
+                required: true
+                description: ''
+                schema:
+                  $ref: '#/definitions/NavigationRequestRequest'
+            responses:
+              '200':
+                description: ''
+                schema:
+                  $ref: '#/definitions/NavigationRequestResponse'
 definitions:
   CreateAccessTokenRequest:
     title: Get an Access Token request
@@ -940,6 +967,30 @@ definitions:
       which_trunk:
         type: string
         description: The trunk to open. `front` or `rear
+  NavigationRequestRequest:
+      title: Navigation Request request
+      type: object
+      properties:
+        type:
+          type: string
+          default: "share_ext_content_raw"
+          example: "share_ext_content_raw"
+          description: Do not change
+        value:
+          type: object
+          properties:
+            android.intent.extra.TEXT:
+              type: string
+              example: "45500 Fremont Blvd, Fremont, CA 94538\n\nhttps://goo.gl/maps/X"
+              description: Must match this syntax "DATA_TO_SEND_TO_NAV_SYSTEM\n\nhttps://goo.gl/maps/X"
+        locale:
+          type: string
+          default: "en-us"
+          example: "en-us"
+          description: Do not change
+        timestamp_ms:
+          type: string
+          description: Unix timestamp
   GetVehiclesResponse:
     title: List all Vehicles response
     example:
@@ -1724,6 +1775,20 @@ definitions:
               type: boolean
           reason:
               type: string
+        type: object
+    required:
+      - response
+  NavigationRequestResponse:
+    title: Navigation Request Response
+    type: object
+    properties:
+      response:
+        description: ''
+        properties:
+          result:
+              type: boolean
+          queued:
+              type: boolean
         type: object
     required:
       - response
