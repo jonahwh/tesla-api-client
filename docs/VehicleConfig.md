@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **canActuateTrunks** | **Boolean** |  |  [optional]
+**canAcceptNavigationRequests** | **Boolean** |  |  [optional]
 **carSpecialType** | **String** |  |  [optional]
 **carType** | **String** |  |  [optional]
 **chargePortType** | **String** |  |  [optional]

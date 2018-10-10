@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * StartChargingResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-23T16:16:04.015-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-09T18:52:51.199-07:00")
 public class StartChargingResponse {
   @SerializedName("response")
   private WakeUpCarResponseResponse response = null;

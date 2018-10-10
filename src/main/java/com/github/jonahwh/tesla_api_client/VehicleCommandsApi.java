@@ -13,6 +13,8 @@ import com.github.jonahwh.tesla_api_client.model.HonkHornResponse;
 import com.github.jonahwh.tesla_api_client.model.LockDoorsResponse;
 import com.github.jonahwh.tesla_api_client.model.MovePanoRoofRequest;
 import com.github.jonahwh.tesla_api_client.model.MovePanoRoofResponse;
+import com.github.jonahwh.tesla_api_client.model.NavigationRequestRequest;
+import com.github.jonahwh.tesla_api_client.model.NavigationRequestResponse;
 import com.github.jonahwh.tesla_api_client.model.OpenChargePortResponse;
 import com.github.jonahwh.tesla_api_client.model.OpenTrunkRequest;
 import com.github.jonahwh.tesla_api_client.model.OpenTrunkResponse;
@@ -128,6 +130,21 @@ public interface VehicleCommandsApi {
   @POST("api/1/vehicles/{vehicle_id}/command/door_lock")
   Call<LockDoorsResponse> lockDoors(
     @retrofit2.http.Path("vehicle_id") String vehicleId
+  );
+
+  /**
+   * Send Navigation Request
+   * Sends Navigation Request to Vehicle
+   * @param vehicleId The id of the Vehicle. (required)
+   * @param body  (required)
+   * @return Call&lt;NavigationRequestResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/command/navigation_request")
+  Call<NavigationRequestResponse> navigationRequest(
+    @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body NavigationRequestRequest body
   );
 
   /**

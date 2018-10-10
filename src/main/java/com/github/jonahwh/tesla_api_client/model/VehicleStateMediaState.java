@@ -24,50 +24,29 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * SetValetRequest
+ * VehicleStateMediaState
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-09T18:52:51.199-07:00")
-public class SetValetRequest {
-  @SerializedName("on")
-  private Boolean on = null;
+public class VehicleStateMediaState {
+  @SerializedName("remote_control_enabled")
+  private Boolean remoteControlEnabled = null;
 
-  @SerializedName("password")
-  private String password = null;
-
-  public SetValetRequest on(Boolean on) {
-    this.on = on;
+  public VehicleStateMediaState remoteControlEnabled(Boolean remoteControlEnabled) {
+    this.remoteControlEnabled = remoteControlEnabled;
     return this;
   }
 
    /**
-   * Whether to enable or disable valet mode.
-   * @return on
+   * Get remoteControlEnabled
+   * @return remoteControlEnabled
   **/
-  @ApiModelProperty(value = "Whether to enable or disable valet mode.")
-  public Boolean isOn() {
-    return on;
+  @ApiModelProperty(value = "")
+  public Boolean isRemoteControlEnabled() {
+    return remoteControlEnabled;
   }
 
-  public void setOn(Boolean on) {
-    this.on = on;
-  }
-
-  public SetValetRequest password(String password) {
-    this.password = password;
-    return this;
-  }
-
-   /**
-   * (optional) A 4 digit PIN code to unlock the car.
-   * @return password
-  **/
-  @ApiModelProperty(value = "(optional) A 4 digit PIN code to unlock the car.")
-  public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
+  public void setRemoteControlEnabled(Boolean remoteControlEnabled) {
+    this.remoteControlEnabled = remoteControlEnabled;
   }
 
 
@@ -79,24 +58,22 @@ public class SetValetRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SetValetRequest setValetRequest = (SetValetRequest) o;
-    return Objects.equals(this.on, setValetRequest.on) &&
-        Objects.equals(this.password, setValetRequest.password);
+    VehicleStateMediaState vehicleStateMediaState = (VehicleStateMediaState) o;
+    return Objects.equals(this.remoteControlEnabled, vehicleStateMediaState.remoteControlEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(on, password);
+    return Objects.hash(remoteControlEnabled);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SetValetRequest {\n");
+    sb.append("class VehicleStateMediaState {\n");
     
-    sb.append("    on: ").append(toIndentedString(on)).append("\n");
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    sb.append("    remoteControlEnabled: ").append(toIndentedString(remoteControlEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }

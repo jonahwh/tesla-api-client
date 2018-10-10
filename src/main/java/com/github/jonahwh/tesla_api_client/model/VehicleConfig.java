@@ -27,10 +27,13 @@ import java.math.BigDecimal;
 /**
  * VehicleConfig
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-23T16:16:04.015-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-09T18:52:51.199-07:00")
 public class VehicleConfig {
   @SerializedName("can_actuate_trunks")
   private Boolean canActuateTrunks = null;
+
+  @SerializedName("can_accept_navigation_requests")
+  private Boolean canAcceptNavigationRequests = null;
 
   @SerializedName("car_special_type")
   private String carSpecialType = null;
@@ -108,6 +111,24 @@ public class VehicleConfig {
 
   public void setCanActuateTrunks(Boolean canActuateTrunks) {
     this.canActuateTrunks = canActuateTrunks;
+  }
+
+  public VehicleConfig canAcceptNavigationRequests(Boolean canAcceptNavigationRequests) {
+    this.canAcceptNavigationRequests = canAcceptNavigationRequests;
+    return this;
+  }
+
+   /**
+   * Get canAcceptNavigationRequests
+   * @return canAcceptNavigationRequests
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isCanAcceptNavigationRequests() {
+    return canAcceptNavigationRequests;
+  }
+
+  public void setCanAcceptNavigationRequests(Boolean canAcceptNavigationRequests) {
+    this.canAcceptNavigationRequests = canAcceptNavigationRequests;
   }
 
   public VehicleConfig carSpecialType(String carSpecialType) {
@@ -481,6 +502,7 @@ public class VehicleConfig {
     }
     VehicleConfig vehicleConfig = (VehicleConfig) o;
     return Objects.equals(this.canActuateTrunks, vehicleConfig.canActuateTrunks) &&
+        Objects.equals(this.canAcceptNavigationRequests, vehicleConfig.canAcceptNavigationRequests) &&
         Objects.equals(this.carSpecialType, vehicleConfig.carSpecialType) &&
         Objects.equals(this.carType, vehicleConfig.carType) &&
         Objects.equals(this.chargePortType, vehicleConfig.chargePortType) &&
@@ -505,7 +527,7 @@ public class VehicleConfig {
 
   @Override
   public int hashCode() {
-    return Objects.hash(canActuateTrunks, carSpecialType, carType, chargePortType, euVehicle, exteriorColor, hasLudicrousMode, motorizedChargePort, perfConfig, plg, rearSeatHeaters, rearSeatType, rhd, roofColor, seatType, spoilerType, sunRoofInstalled, thirdRowSeats, timestamp, trimBadging, wheelType);
+    return Objects.hash(canActuateTrunks, canAcceptNavigationRequests, carSpecialType, carType, chargePortType, euVehicle, exteriorColor, hasLudicrousMode, motorizedChargePort, perfConfig, plg, rearSeatHeaters, rearSeatType, rhd, roofColor, seatType, spoilerType, sunRoofInstalled, thirdRowSeats, timestamp, trimBadging, wheelType);
   }
 
 
@@ -515,6 +537,7 @@ public class VehicleConfig {
     sb.append("class VehicleConfig {\n");
     
     sb.append("    canActuateTrunks: ").append(toIndentedString(canActuateTrunks)).append("\n");
+    sb.append("    canAcceptNavigationRequests: ").append(toIndentedString(canAcceptNavigationRequests)).append("\n");
     sb.append("    carSpecialType: ").append(toIndentedString(carSpecialType)).append("\n");
     sb.append("    carType: ").append(toIndentedString(carType)).append("\n");
     sb.append("    chargePortType: ").append(toIndentedString(chargePortType)).append("\n");

@@ -22,52 +22,53 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 
 /**
- * SetValetRequest
+ * VehicleStateSoftwareUpdate
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-09T18:52:51.199-07:00")
-public class SetValetRequest {
-  @SerializedName("on")
-  private Boolean on = null;
+public class VehicleStateSoftwareUpdate {
+  @SerializedName("expected_duration_sec")
+  private BigDecimal expectedDurationSec = null;
 
-  @SerializedName("password")
-  private String password = null;
+  @SerializedName("status")
+  private String status = null;
 
-  public SetValetRequest on(Boolean on) {
-    this.on = on;
+  public VehicleStateSoftwareUpdate expectedDurationSec(BigDecimal expectedDurationSec) {
+    this.expectedDurationSec = expectedDurationSec;
     return this;
   }
 
    /**
-   * Whether to enable or disable valet mode.
-   * @return on
+   * Get expectedDurationSec
+   * @return expectedDurationSec
   **/
-  @ApiModelProperty(value = "Whether to enable or disable valet mode.")
-  public Boolean isOn() {
-    return on;
+  @ApiModelProperty(value = "")
+  public BigDecimal getExpectedDurationSec() {
+    return expectedDurationSec;
   }
 
-  public void setOn(Boolean on) {
-    this.on = on;
+  public void setExpectedDurationSec(BigDecimal expectedDurationSec) {
+    this.expectedDurationSec = expectedDurationSec;
   }
 
-  public SetValetRequest password(String password) {
-    this.password = password;
+  public VehicleStateSoftwareUpdate status(String status) {
+    this.status = status;
     return this;
   }
 
    /**
-   * (optional) A 4 digit PIN code to unlock the car.
-   * @return password
+   * Get status
+   * @return status
   **/
-  @ApiModelProperty(value = "(optional) A 4 digit PIN code to unlock the car.")
-  public String getPassword() {
-    return password;
+  @ApiModelProperty(value = "")
+  public String getStatus() {
+    return status;
   }
 
-  public void setPassword(String password) {
-    this.password = password;
+  public void setStatus(String status) {
+    this.status = status;
   }
 
 
@@ -79,24 +80,24 @@ public class SetValetRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SetValetRequest setValetRequest = (SetValetRequest) o;
-    return Objects.equals(this.on, setValetRequest.on) &&
-        Objects.equals(this.password, setValetRequest.password);
+    VehicleStateSoftwareUpdate vehicleStateSoftwareUpdate = (VehicleStateSoftwareUpdate) o;
+    return Objects.equals(this.expectedDurationSec, vehicleStateSoftwareUpdate.expectedDurationSec) &&
+        Objects.equals(this.status, vehicleStateSoftwareUpdate.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(on, password);
+    return Objects.hash(expectedDurationSec, status);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SetValetRequest {\n");
+    sb.append("class VehicleStateSoftwareUpdate {\n");
     
-    sb.append("    on: ").append(toIndentedString(on)).append("\n");
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    sb.append("    expectedDurationSec: ").append(toIndentedString(expectedDurationSec)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }

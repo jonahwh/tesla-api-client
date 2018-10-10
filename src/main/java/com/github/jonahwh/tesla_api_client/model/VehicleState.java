@@ -14,6 +14,8 @@
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
+import com.github.jonahwh.tesla_api_client.model.VehicleStateMediaState;
+import com.github.jonahwh.tesla_api_client.model.VehicleStateSoftwareUpdate;
 import com.github.jonahwh.tesla_api_client.model.VehicleStateSpeedLimitMode;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -28,7 +30,7 @@ import java.math.BigDecimal;
 /**
  * VehicleState
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-23T16:16:04.015-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-09T18:52:51.199-07:00")
 public class VehicleState {
   @SerializedName("api_version")
   private Integer apiVersion = null;
@@ -69,6 +71,9 @@ public class VehicleState {
   @SerializedName("locked")
   private Boolean locked = null;
 
+  @SerializedName("media_state")
+  private VehicleStateMediaState mediaState = null;
+
   @SerializedName("notifications_supported")
   private Boolean notificationsSupported = null;
 
@@ -92,6 +97,9 @@ public class VehicleState {
 
   @SerializedName("rt")
   private Integer rt = null;
+
+  @SerializedName("software_update")
+  private VehicleStateSoftwareUpdate softwareUpdate = null;
 
   @SerializedName("sun_roof_percent_open")
   private Integer sunRoofPercentOpen = null;
@@ -345,6 +353,24 @@ public class VehicleState {
     this.locked = locked;
   }
 
+  public VehicleState mediaState(VehicleStateMediaState mediaState) {
+    this.mediaState = mediaState;
+    return this;
+  }
+
+   /**
+   * Get mediaState
+   * @return mediaState
+  **/
+  @ApiModelProperty(value = "")
+  public VehicleStateMediaState getMediaState() {
+    return mediaState;
+  }
+
+  public void setMediaState(VehicleStateMediaState mediaState) {
+    this.mediaState = mediaState;
+  }
+
   public VehicleState notificationsSupported(Boolean notificationsSupported) {
     this.notificationsSupported = notificationsSupported;
     return this;
@@ -489,6 +515,24 @@ public class VehicleState {
     this.rt = rt;
   }
 
+  public VehicleState softwareUpdate(VehicleStateSoftwareUpdate softwareUpdate) {
+    this.softwareUpdate = softwareUpdate;
+    return this;
+  }
+
+   /**
+   * Get softwareUpdate
+   * @return softwareUpdate
+  **/
+  @ApiModelProperty(value = "")
+  public VehicleStateSoftwareUpdate getSoftwareUpdate() {
+    return softwareUpdate;
+  }
+
+  public void setSoftwareUpdate(VehicleStateSoftwareUpdate softwareUpdate) {
+    this.softwareUpdate = softwareUpdate;
+  }
+
   public VehicleState sunRoofPercentOpen(Integer sunRoofPercentOpen) {
     this.sunRoofPercentOpen = sunRoofPercentOpen;
     return this;
@@ -620,6 +664,7 @@ public class VehicleState {
         Objects.equals(this.homelinkNearby, vehicleState.homelinkNearby) &&
         Objects.equals(this.lastAutoparkError, vehicleState.lastAutoparkError) &&
         Objects.equals(this.locked, vehicleState.locked) &&
+        Objects.equals(this.mediaState, vehicleState.mediaState) &&
         Objects.equals(this.notificationsSupported, vehicleState.notificationsSupported) &&
         Objects.equals(this.odometer, vehicleState.odometer) &&
         Objects.equals(this.parsedCalendarSupported, vehicleState.parsedCalendarSupported) &&
@@ -628,6 +673,7 @@ public class VehicleState {
         Objects.equals(this.remoteStart, vehicleState.remoteStart) &&
         Objects.equals(this.remoteStartSupported, vehicleState.remoteStartSupported) &&
         Objects.equals(this.rt, vehicleState.rt) &&
+        Objects.equals(this.softwareUpdate, vehicleState.softwareUpdate) &&
         Objects.equals(this.sunRoofPercentOpen, vehicleState.sunRoofPercentOpen) &&
         Objects.equals(this.sunRoofState, vehicleState.sunRoofState) &&
         Objects.equals(this.timestamp, vehicleState.timestamp) &&
@@ -638,7 +684,7 @@ public class VehicleState {
 
   @Override
   public int hashCode() {
-    return Objects.hash(apiVersion, autoparkState, autoparkStateV2, autoparkStyle, calendarSupported, carVersion, centerDisplayState, df, dr, ft, homelinkNearby, lastAutoparkError, locked, notificationsSupported, odometer, parsedCalendarSupported, pf, pr, remoteStart, remoteStartSupported, rt, sunRoofPercentOpen, sunRoofState, timestamp, valetMode, vehicleName, speedLimitMode);
+    return Objects.hash(apiVersion, autoparkState, autoparkStateV2, autoparkStyle, calendarSupported, carVersion, centerDisplayState, df, dr, ft, homelinkNearby, lastAutoparkError, locked, mediaState, notificationsSupported, odometer, parsedCalendarSupported, pf, pr, remoteStart, remoteStartSupported, rt, softwareUpdate, sunRoofPercentOpen, sunRoofState, timestamp, valetMode, vehicleName, speedLimitMode);
   }
 
 
@@ -660,6 +706,7 @@ public class VehicleState {
     sb.append("    homelinkNearby: ").append(toIndentedString(homelinkNearby)).append("\n");
     sb.append("    lastAutoparkError: ").append(toIndentedString(lastAutoparkError)).append("\n");
     sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
+    sb.append("    mediaState: ").append(toIndentedString(mediaState)).append("\n");
     sb.append("    notificationsSupported: ").append(toIndentedString(notificationsSupported)).append("\n");
     sb.append("    odometer: ").append(toIndentedString(odometer)).append("\n");
     sb.append("    parsedCalendarSupported: ").append(toIndentedString(parsedCalendarSupported)).append("\n");
@@ -668,6 +715,7 @@ public class VehicleState {
     sb.append("    remoteStart: ").append(toIndentedString(remoteStart)).append("\n");
     sb.append("    remoteStartSupported: ").append(toIndentedString(remoteStartSupported)).append("\n");
     sb.append("    rt: ").append(toIndentedString(rt)).append("\n");
+    sb.append("    softwareUpdate: ").append(toIndentedString(softwareUpdate)).append("\n");
     sb.append("    sunRoofPercentOpen: ").append(toIndentedString(sunRoofPercentOpen)).append("\n");
     sb.append("    sunRoofState: ").append(toIndentedString(sunRoofState)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");

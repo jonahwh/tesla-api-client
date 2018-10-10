@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**flashLights**](VehicleCommandsApi.md#flashLights) | **POST** api/1/vehicles/{vehicle_id}/command/flash_lights | Flash Lights
 [**honkHorn**](VehicleCommandsApi.md#honkHorn) | **POST** api/1/vehicles/{vehicle_id}/command/honk_horn | Honk Horn
 [**lockDoors**](VehicleCommandsApi.md#lockDoors) | **POST** api/1/vehicles/{vehicle_id}/command/door_lock | Lock Doors
+[**navigationRequest**](VehicleCommandsApi.md#navigationRequest) | **POST** api/1/vehicles/{vehicle_id}/command/navigation_request | Send Navigation Request
 [**openSunroof**](VehicleCommandsApi.md#openSunroof) | **POST** api/1/vehicles/{vehicle_id}/command/sun_roof_control | Move Pano Roof
 [**openTrunk**](VehicleCommandsApi.md#openTrunk) | **POST** api/1/vehicles/{vehicle_id}/command/actuate_trunk | Open Trunk/Frunk
 [**remoteStart**](VehicleCommandsApi.md#remoteStart) | **POST** api/1/vehicles/{vehicle_id}/command/remote_start_drive | Remote Start
@@ -295,6 +296,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**LockDoorsResponse**](LockDoorsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="navigationRequest"></a>
+# **navigationRequest**
+> NavigationRequestResponse navigationRequest(vehicleId, body)
+
+Send Navigation Request
+
+Sends Navigation Request to Vehicle
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+NavigationRequestRequest body = new NavigationRequestRequest(); // NavigationRequestRequest | 
+try {
+    NavigationRequestResponse result = apiInstance.navigationRequest(vehicleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#navigationRequest");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
+ **body** | [**NavigationRequestRequest**](NavigationRequestRequest.md)|  |
+
+### Return type
+
+[**NavigationRequestResponse**](NavigationRequestResponse.md)
 
 ### Authorization
 

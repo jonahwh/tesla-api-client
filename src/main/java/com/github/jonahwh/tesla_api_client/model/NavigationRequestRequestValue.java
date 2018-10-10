@@ -24,50 +24,29 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * SetValetRequest
+ * NavigationRequestRequestValue
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-09T18:52:51.199-07:00")
-public class SetValetRequest {
-  @SerializedName("on")
-  private Boolean on = null;
+public class NavigationRequestRequestValue {
+  @SerializedName("android.intent.extra.TEXT")
+  private String androidIntentExtraTEXT = null;
 
-  @SerializedName("password")
-  private String password = null;
-
-  public SetValetRequest on(Boolean on) {
-    this.on = on;
+  public NavigationRequestRequestValue androidIntentExtraTEXT(String androidIntentExtraTEXT) {
+    this.androidIntentExtraTEXT = androidIntentExtraTEXT;
     return this;
   }
 
    /**
-   * Whether to enable or disable valet mode.
-   * @return on
+   * Must match this syntax \&quot;DATA_TO_SEND_TO_NAV_SYSTEM\\n\\nhttps://goo.gl/maps/X\&quot;
+   * @return androidIntentExtraTEXT
   **/
-  @ApiModelProperty(value = "Whether to enable or disable valet mode.")
-  public Boolean isOn() {
-    return on;
+  @ApiModelProperty(example = "45500 Fremont Blvd, Fremont, CA 94538  https://goo.gl/maps/X", value = "Must match this syntax \"DATA_TO_SEND_TO_NAV_SYSTEM\\n\\nhttps://goo.gl/maps/X\"")
+  public String getAndroidIntentExtraTEXT() {
+    return androidIntentExtraTEXT;
   }
 
-  public void setOn(Boolean on) {
-    this.on = on;
-  }
-
-  public SetValetRequest password(String password) {
-    this.password = password;
-    return this;
-  }
-
-   /**
-   * (optional) A 4 digit PIN code to unlock the car.
-   * @return password
-  **/
-  @ApiModelProperty(value = "(optional) A 4 digit PIN code to unlock the car.")
-  public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
+  public void setAndroidIntentExtraTEXT(String androidIntentExtraTEXT) {
+    this.androidIntentExtraTEXT = androidIntentExtraTEXT;
   }
 
 
@@ -79,24 +58,22 @@ public class SetValetRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SetValetRequest setValetRequest = (SetValetRequest) o;
-    return Objects.equals(this.on, setValetRequest.on) &&
-        Objects.equals(this.password, setValetRequest.password);
+    NavigationRequestRequestValue navigationRequestRequestValue = (NavigationRequestRequestValue) o;
+    return Objects.equals(this.androidIntentExtraTEXT, navigationRequestRequestValue.androidIntentExtraTEXT);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(on, password);
+    return Objects.hash(androidIntentExtraTEXT);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SetValetRequest {\n");
+    sb.append("class NavigationRequestRequestValue {\n");
     
-    sb.append("    on: ").append(toIndentedString(on)).append("\n");
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    sb.append("    androidIntentExtraTEXT: ").append(toIndentedString(androidIntentExtraTEXT)).append("\n");
     sb.append("}");
     return sb.toString();
   }

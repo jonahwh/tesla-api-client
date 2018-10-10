@@ -24,50 +24,51 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * SetValetRequest
+ * 
  */
+@ApiModel(description = "")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-09T18:52:51.199-07:00")
-public class SetValetRequest {
-  @SerializedName("on")
-  private Boolean on = null;
+public class NavigationRequestResponseResponse {
+  @SerializedName("result")
+  private Boolean result = null;
 
-  @SerializedName("password")
-  private String password = null;
+  @SerializedName("queued")
+  private Boolean queued = null;
 
-  public SetValetRequest on(Boolean on) {
-    this.on = on;
+  public NavigationRequestResponseResponse result(Boolean result) {
+    this.result = result;
     return this;
   }
 
    /**
-   * Whether to enable or disable valet mode.
-   * @return on
+   * Get result
+   * @return result
   **/
-  @ApiModelProperty(value = "Whether to enable or disable valet mode.")
-  public Boolean isOn() {
-    return on;
+  @ApiModelProperty(value = "")
+  public Boolean isResult() {
+    return result;
   }
 
-  public void setOn(Boolean on) {
-    this.on = on;
+  public void setResult(Boolean result) {
+    this.result = result;
   }
 
-  public SetValetRequest password(String password) {
-    this.password = password;
+  public NavigationRequestResponseResponse queued(Boolean queued) {
+    this.queued = queued;
     return this;
   }
 
    /**
-   * (optional) A 4 digit PIN code to unlock the car.
-   * @return password
+   * Get queued
+   * @return queued
   **/
-  @ApiModelProperty(value = "(optional) A 4 digit PIN code to unlock the car.")
-  public String getPassword() {
-    return password;
+  @ApiModelProperty(value = "")
+  public Boolean isQueued() {
+    return queued;
   }
 
-  public void setPassword(String password) {
-    this.password = password;
+  public void setQueued(Boolean queued) {
+    this.queued = queued;
   }
 
 
@@ -79,24 +80,24 @@ public class SetValetRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SetValetRequest setValetRequest = (SetValetRequest) o;
-    return Objects.equals(this.on, setValetRequest.on) &&
-        Objects.equals(this.password, setValetRequest.password);
+    NavigationRequestResponseResponse navigationRequestResponseResponse = (NavigationRequestResponseResponse) o;
+    return Objects.equals(this.result, navigationRequestResponseResponse.result) &&
+        Objects.equals(this.queued, navigationRequestResponseResponse.queued);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(on, password);
+    return Objects.hash(result, queued);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SetValetRequest {\n");
+    sb.append("class NavigationRequestResponseResponse {\n");
     
-    sb.append("    on: ").append(toIndentedString(on)).append("\n");
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    sb.append("    result: ").append(toIndentedString(result)).append("\n");
+    sb.append("    queued: ").append(toIndentedString(queued)).append("\n");
     sb.append("}");
     return sb.toString();
   }
