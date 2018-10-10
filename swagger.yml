@@ -802,6 +802,153 @@ paths:
                 description: ''
                 schema:
                   $ref: '#/definitions/NavigationRequestResponse'
+  '/api/1/vehicles/{vehicle_id}/command/media_toggle_playback':
+            post:
+              description: |-
+                Pause/Play Media
+              summary: Pause/Play Media
+              tags:
+                - Media Control
+              operationId: MediaTogglePlayback
+              produces:
+                - application/json
+              parameters:
+                - name: vehicle_id
+                  in: path
+                  required: true
+                  type: string
+                  description: The id of the Vehicle.
+              responses:
+                '200':
+                  description: ''
+                  schema:
+                    $ref: '#/definitions/MediaControlResponse'
+  '/api/1/vehicles/{vehicle_id}/command/media_next_track':
+            post:
+              description: |-
+                Next Track
+              summary: Next Track
+              tags:
+                - Media Control
+              operationId: MediaNextTrack
+              produces:
+                - application/json
+              parameters:
+                - name: vehicle_id
+                  in: path
+                  required: true
+                  type: string
+                  description: The id of the Vehicle.
+              responses:
+                '200':
+                  description: ''
+                  schema:
+                    $ref: '#/definitions/MediaControlResponse'
+  '/api/1/vehicles/{vehicle_id}/command/media_prev_track':
+            post:
+              description: |-
+                Previous Track
+              summary: Previous Track
+              tags:
+                - Media Control
+              operationId: MediaPrevTrack
+              produces:
+                - application/json
+              parameters:
+                - name: vehicle_id
+                  in: path
+                  required: true
+                  type: string
+                  description: The id of the Vehicle.
+              responses:
+                '200':
+                  description: ''
+                  schema:
+                    $ref: '#/definitions/MediaControlResponse'
+  '/api/1/vehicles/{vehicle_id}/command/media_next_fav':
+            post:
+              description: |-
+                Next Favorite
+              summary: Next Favorite
+              tags:
+                - Media Control
+              operationId: MediaNextFavorite
+              produces:
+                - application/json
+              parameters:
+                - name: vehicle_id
+                  in: path
+                  required: true
+                  type: string
+                  description: The id of the Vehicle.
+              responses:
+                '200':
+                  description: ''
+                  schema:
+                    $ref: '#/definitions/MediaControlResponse'
+  '/api/1/vehicles/{vehicle_id}/command/media_prev_fav':
+            post:
+              description: |-
+                Previous Favorite
+              summary: Previous Favorite
+              tags:
+                - Media Control
+              operationId: MediaPrevFavorite
+              produces:
+                - application/json
+              parameters:
+                - name: vehicle_id
+                  in: path
+                  required: true
+                  type: string
+                  description: The id of the Vehicle.
+              responses:
+                '200':
+                  description: ''
+                  schema:
+                    $ref: '#/definitions/MediaControlResponse'
+  '/api/1/vehicles/{vehicle_id}/command/media_volume_up':
+            post:
+              description: |-
+                Volume Up
+              summary: Volume Up
+              tags:
+                - Media Control
+              operationId: MediaVolumeUp
+              produces:
+                - application/json
+              parameters:
+                - name: vehicle_id
+                  in: path
+                  required: true
+                  type: string
+                  description: The id of the Vehicle.
+              responses:
+                '200':
+                  description: ''
+                  schema:
+                    $ref: '#/definitions/MediaControlResponse'
+  '/api/1/vehicles/{vehicle_id}/command/media_volume_down':
+            post:
+              description: |-
+                Volume Down
+              summary: Volume Down
+              tags:
+                - Media Control
+              operationId: MediaVolumeDown
+              produces:
+                - application/json
+              parameters:
+                - name: vehicle_id
+                  in: path
+                  required: true
+                  type: string
+                  description: The id of the Vehicle.
+              responses:
+                '200':
+                  description: ''
+                  schema:
+                    $ref: '#/definitions/MediaControlResponse'
 definitions:
   CreateAccessTokenRequest:
     title: Get an Access Token request
@@ -1792,3 +1939,17 @@ definitions:
         type: object
     required:
       - response
+  MediaControlResponse:
+      title: Media Control Response
+      type: object
+      properties:
+        response:
+          description: ''
+          properties:
+            result:
+                type: boolean
+            reason:
+                type: string
+          type: object
+      required:
+        - response
