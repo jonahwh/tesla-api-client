@@ -1479,6 +1479,11 @@ definitions:
         type: string
       locked:
         type: boolean
+      media_state:
+        type: object
+        properties:
+          remote_control_enabled:
+            type: boolean
       notifications_supported:
         type: boolean
       odometer:
@@ -1496,6 +1501,13 @@ definitions:
         type: boolean
       rt:
         type: integer
+      software_update:
+        type: object
+        properties:
+          expected_duration_sec:
+            type: number
+          status:
+            type: string
       sun_roof_percent_open:
         type: integer
       sun_roof_state:
@@ -1534,6 +1546,8 @@ definitions:
     type: object
     properties:
       can_actuate_trunks:
+        type: boolean
+      can_accept_navigation_requests:
         type: boolean
       car_special_type:
         type: string
