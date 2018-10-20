@@ -38,6 +38,7 @@ import com.github.jonahwh.tesla_api_client.model.StopChargingResponse;
 import com.github.jonahwh.tesla_api_client.model.StopHvacSystemResponse;
 import com.github.jonahwh.tesla_api_client.model.UnlockDoorsResponse;
 import com.github.jonahwh.tesla_api_client.model.WakeUpCarResponse;
+import com.github.jonahwh.tesla_api_client.model.WakeUpResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -382,13 +383,27 @@ public interface VehicleCommandsApi {
    * Wake Up Car
    * Wakes up the car from the sleep state. Necessary to get some data from the car.
    * @param vehicleId The id of the Vehicle. (required)
+   * @return Call&lt;WakeUpResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/wake_up")
+  Call<WakeUpResponse> wakeUpVehicle(
+    @retrofit2.http.Path("vehicle_id") String vehicleId
+  );
+
+  /**
+   * Wake Up Car
+   * Wakes up the car from the sleep state. Necessary to get some data from the car.
+   * @param vehicleId The id of the Vehicle. (required)
    * @return Call&lt;WakeUpCarResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("api/1/vehicles/{vehicle_id}/command/wake_up")
-  Call<WakeUpCarResponse> wakeUpVehicle(
+  Call<WakeUpCarResponse> wakeUpVehicleCommand(
     @retrofit2.http.Path("vehicle_id") String vehicleId
   );
 

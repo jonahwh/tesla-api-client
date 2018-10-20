@@ -246,13 +246,33 @@ paths:
           description: ''
           schema:
             $ref: '#/definitions/VehicleDataResponse'
+  '/api/1/vehicles/{vehicle_id}/wake_up':
+      post:
+        description: Wakes up the car from the sleep state. Necessary to get some data from the car.
+        summary: Wake Up Car
+        tags:
+          - Vehicle Commands
+        operationId: WakeUpVehicle
+        produces:
+          - application/json
+        parameters:
+          - name: vehicle_id
+            in: path
+            required: true
+            type: string
+            description: The id of the Vehicle.
+        responses:
+          '200':
+            description: ''
+            schema:
+              $ref: '#/definitions/WakeUpResponse'
   '/api/1/vehicles/{vehicle_id}/command/wake_up':
     post:
       description: Wakes up the car from the sleep state. Necessary to get some data from the car.
       summary: Wake Up Car
       tags:
         - Vehicle Commands
-      operationId: WakeUpVehicle
+      operationId: WakeUpVehicleCommand
       produces:
         - application/json
       parameters:
@@ -1638,6 +1658,45 @@ definitions:
             $ref: '#/definitions/ChargeState'
           vehicle_config:
             $ref: '#/definitions/VehicleConfig'
+  WakeUpResponse:
+      title: Wake Up Response
+      type: object
+      properties:
+        response:
+          type: object
+          properties:
+            id:
+              type: string
+            user_id:
+              type: number
+            vehicle_id:
+              type: number
+            vin:
+              type: string
+            display_name:
+              type: string
+            option_codes:
+              type: string
+            color:
+              type: string
+            tokens:
+              type: array
+              items:
+                type: string
+            state:
+              type: string
+            in_service:
+              type: boolean
+            id_s:
+              type: string
+            calendar_enabled:
+              type: boolean
+            api_version:
+              type: string
+            backseat_token:
+              type: string
+            backseat_token_updated_at:
+              type: number
   WakeUpCarResponse:
     title: Wake Up Car response
     type: object

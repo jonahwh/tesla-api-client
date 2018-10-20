@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * SetTempsRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-09T18:52:51.199-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-19T22:54:18.028-07:00")
 public class SetTempsRequest {
   @SerializedName("driver_temp")
   private Double driverTemp = null;

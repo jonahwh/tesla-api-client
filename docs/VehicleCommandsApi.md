@@ -27,7 +27,8 @@ Method | HTTP request | Description
 [**toggleChargePort**](VehicleCommandsApi.md#toggleChargePort) | **POST** api/1/vehicles/{vehicle_id}/command/charge_port_door_open | Open Charge Port
 [**toggleValetMode**](VehicleCommandsApi.md#toggleValetMode) | **POST** api/1/vehicles/{vehicle_id}/command/set_valet_mode | Set Valet Mode
 [**unlockDoors**](VehicleCommandsApi.md#unlockDoors) | **POST** api/1/vehicles/{vehicle_id}/command/door_unlock | Unlock Doors
-[**wakeUpVehicle**](VehicleCommandsApi.md#wakeUpVehicle) | **POST** api/1/vehicles/{vehicle_id}/command/wake_up | Wake Up Car
+[**wakeUpVehicle**](VehicleCommandsApi.md#wakeUpVehicle) | **POST** api/1/vehicles/{vehicle_id}/wake_up | Wake Up Car
+[**wakeUpVehicleCommand**](VehicleCommandsApi.md#wakeUpVehicleCommand) | **POST** api/1/vehicles/{vehicle_id}/command/wake_up | Wake Up Car
 
 
 <a name="activateSpeedLimit"></a>
@@ -1089,7 +1090,7 @@ No authorization required
 
 <a name="wakeUpVehicle"></a>
 # **wakeUpVehicle**
-> WakeUpCarResponse wakeUpVehicle(vehicleId)
+> WakeUpResponse wakeUpVehicle(vehicleId)
 
 Wake Up Car
 
@@ -1105,10 +1106,55 @@ Wakes up the car from the sleep state. Necessary to get some data from the car.
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    WakeUpCarResponse result = apiInstance.wakeUpVehicle(vehicleId);
+    WakeUpResponse result = apiInstance.wakeUpVehicle(vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#wakeUpVehicle");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
+
+### Return type
+
+[**WakeUpResponse**](WakeUpResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="wakeUpVehicleCommand"></a>
+# **wakeUpVehicleCommand**
+> WakeUpCarResponse wakeUpVehicleCommand(vehicleId)
+
+Wake Up Car
+
+Wakes up the car from the sleep state. Necessary to get some data from the car.
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+try {
+    WakeUpCarResponse result = apiInstance.wakeUpVehicleCommand(vehicleId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#wakeUpVehicleCommand");
     e.printStackTrace();
 }
 ```

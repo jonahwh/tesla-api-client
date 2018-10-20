@@ -14,6 +14,7 @@
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
+import com.github.jonahwh.tesla_api_client.model.WakeUpResponseResponse;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,29 +25,29 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * SpeedLimitRequest
+ * WakeUpResponse
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-19T22:54:18.028-07:00")
-public class SpeedLimitRequest {
-  @SerializedName("pin")
-  private String pin = null;
+public class WakeUpResponse {
+  @SerializedName("response")
+  private WakeUpResponseResponse response = null;
 
-  public SpeedLimitRequest pin(String pin) {
-    this.pin = pin;
+  public WakeUpResponse response(WakeUpResponseResponse response) {
+    this.response = response;
     return this;
   }
 
    /**
-   * The current, or if activating, new, speed limit PIN
-   * @return pin
+   * Get response
+   * @return response
   **/
-  @ApiModelProperty(value = "The current, or if activating, new, speed limit PIN")
-  public String getPin() {
-    return pin;
+  @ApiModelProperty(value = "")
+  public WakeUpResponseResponse getResponse() {
+    return response;
   }
 
-  public void setPin(String pin) {
-    this.pin = pin;
+  public void setResponse(WakeUpResponseResponse response) {
+    this.response = response;
   }
 
 
@@ -58,22 +59,22 @@ public class SpeedLimitRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SpeedLimitRequest speedLimitRequest = (SpeedLimitRequest) o;
-    return Objects.equals(this.pin, speedLimitRequest.pin);
+    WakeUpResponse wakeUpResponse = (WakeUpResponse) o;
+    return Objects.equals(this.response, wakeUpResponse.response);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(pin);
+    return Objects.hash(response);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SpeedLimitRequest {\n");
+    sb.append("class WakeUpResponse {\n");
     
-    sb.append("    pin: ").append(toIndentedString(pin)).append("\n");
+    sb.append("    response: ").append(toIndentedString(response)).append("\n");
     sb.append("}");
     return sb.toString();
   }
