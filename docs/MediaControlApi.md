@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="mediaNextFavorite"></a>
 # **mediaNextFavorite**
-> MediaControlResponse mediaNextFavorite(vehicleId)
+> CommandResponse mediaNextFavorite(vehicleId)
 
 Next Favorite
 
@@ -31,7 +31,7 @@ Next Favorite
 MediaControlApi apiInstance = new MediaControlApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    MediaControlResponse result = apiInstance.mediaNextFavorite(vehicleId);
+    CommandResponse result = apiInstance.mediaNextFavorite(vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaControlApi#mediaNextFavorite");
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MediaControlResponse**](MediaControlResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -60,7 +60,7 @@ No authorization required
 
 <a name="mediaNextTrack"></a>
 # **mediaNextTrack**
-> MediaControlResponse mediaNextTrack(vehicleId)
+> CommandResponse mediaNextTrack(vehicleId)
 
 Next Track
 
@@ -76,7 +76,7 @@ Next Track
 MediaControlApi apiInstance = new MediaControlApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    MediaControlResponse result = apiInstance.mediaNextTrack(vehicleId);
+    CommandResponse result = apiInstance.mediaNextTrack(vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaControlApi#mediaNextTrack");
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MediaControlResponse**](MediaControlResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -105,7 +105,7 @@ No authorization required
 
 <a name="mediaPrevFavorite"></a>
 # **mediaPrevFavorite**
-> MediaControlResponse mediaPrevFavorite(vehicleId)
+> CommandResponse mediaPrevFavorite(vehicleId)
 
 Previous Favorite
 
@@ -121,7 +121,7 @@ Previous Favorite
 MediaControlApi apiInstance = new MediaControlApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    MediaControlResponse result = apiInstance.mediaPrevFavorite(vehicleId);
+    CommandResponse result = apiInstance.mediaPrevFavorite(vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaControlApi#mediaPrevFavorite");
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MediaControlResponse**](MediaControlResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -150,7 +150,7 @@ No authorization required
 
 <a name="mediaPrevTrack"></a>
 # **mediaPrevTrack**
-> MediaControlResponse mediaPrevTrack(vehicleId)
+> CommandResponse mediaPrevTrack(vehicleId)
 
 Previous Track
 
@@ -166,7 +166,7 @@ Previous Track
 MediaControlApi apiInstance = new MediaControlApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    MediaControlResponse result = apiInstance.mediaPrevTrack(vehicleId);
+    CommandResponse result = apiInstance.mediaPrevTrack(vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaControlApi#mediaPrevTrack");
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MediaControlResponse**](MediaControlResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -195,7 +195,7 @@ No authorization required
 
 <a name="mediaTogglePlayback"></a>
 # **mediaTogglePlayback**
-> MediaControlResponse mediaTogglePlayback(vehicleId)
+> CommandResponse mediaTogglePlayback(vehicleId)
 
 Pause/Play Media
 
@@ -211,7 +211,7 @@ Pause/Play Media
 MediaControlApi apiInstance = new MediaControlApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    MediaControlResponse result = apiInstance.mediaTogglePlayback(vehicleId);
+    CommandResponse result = apiInstance.mediaTogglePlayback(vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaControlApi#mediaTogglePlayback");
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MediaControlResponse**](MediaControlResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -240,7 +240,7 @@ No authorization required
 
 <a name="mediaVolumeDown"></a>
 # **mediaVolumeDown**
-> MediaControlResponse mediaVolumeDown(vehicleId)
+> CommandResponse mediaVolumeDown(vehicleId)
 
 Volume Down
 
@@ -256,7 +256,7 @@ Volume Down
 MediaControlApi apiInstance = new MediaControlApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    MediaControlResponse result = apiInstance.mediaVolumeDown(vehicleId);
+    CommandResponse result = apiInstance.mediaVolumeDown(vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaControlApi#mediaVolumeDown");
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MediaControlResponse**](MediaControlResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ No authorization required
 
 <a name="mediaVolumeUp"></a>
 # **mediaVolumeUp**
-> MediaControlResponse mediaVolumeUp(vehicleId)
+> CommandResponse mediaVolumeUp(vehicleId)
 
 Volume Up
 
@@ -301,7 +301,7 @@ Volume Up
 MediaControlApi apiInstance = new MediaControlApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    MediaControlResponse result = apiInstance.mediaVolumeUp(vehicleId);
+    CommandResponse result = apiInstance.mediaVolumeUp(vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MediaControlApi#mediaVolumeUp");
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MediaControlResponse**](MediaControlResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 

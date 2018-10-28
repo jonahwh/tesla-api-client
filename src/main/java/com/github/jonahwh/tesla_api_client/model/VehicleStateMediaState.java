@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * VehicleStateMediaState
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-19T22:54:18.028-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-28T16:26:49.255-07:00")
 public class VehicleStateMediaState {
   @SerializedName("remote_control_enabled")
   private Boolean remoteControlEnabled = null;

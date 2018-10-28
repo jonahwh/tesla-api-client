@@ -33,7 +33,7 @@ Method | HTTP request | Description
 
 <a name="activateSpeedLimit"></a>
 # **activateSpeedLimit**
-> SpeedLimitResponse activateSpeedLimit(vehicleId, body)
+> CommandResponse activateSpeedLimit(vehicleId, body)
 
 Activate Speed Limit
 
@@ -50,7 +50,7 @@ VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 SpeedLimitRequest body = new SpeedLimitRequest(); // SpeedLimitRequest | 
 try {
-    SpeedLimitResponse result = apiInstance.activateSpeedLimit(vehicleId, body);
+    CommandResponse result = apiInstance.activateSpeedLimit(vehicleId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#activateSpeedLimit");
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SpeedLimitResponse**](SpeedLimitResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -80,7 +80,7 @@ No authorization required
 
 <a name="clearSpeedLimitPin"></a>
 # **clearSpeedLimitPin**
-> SpeedLimitResponse clearSpeedLimitPin(vehicleId, body)
+> CommandResponse clearSpeedLimitPin(vehicleId, body)
 
 Clear Speed Limit Pin
 
@@ -97,7 +97,7 @@ VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 SpeedLimitRequest body = new SpeedLimitRequest(); // SpeedLimitRequest | 
 try {
-    SpeedLimitResponse result = apiInstance.clearSpeedLimitPin(vehicleId, body);
+    CommandResponse result = apiInstance.clearSpeedLimitPin(vehicleId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#clearSpeedLimitPin");
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SpeedLimitResponse**](SpeedLimitResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -127,7 +127,7 @@ No authorization required
 
 <a name="deactivateSpeedLimit"></a>
 # **deactivateSpeedLimit**
-> SpeedLimitResponse deactivateSpeedLimit(vehicleId, body)
+> CommandResponse deactivateSpeedLimit(vehicleId, body)
 
 Deactivate Speed Limit
 
@@ -144,7 +144,7 @@ VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 SpeedLimitRequest body = new SpeedLimitRequest(); // SpeedLimitRequest | 
 try {
-    SpeedLimitResponse result = apiInstance.deactivateSpeedLimit(vehicleId, body);
+    CommandResponse result = apiInstance.deactivateSpeedLimit(vehicleId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#deactivateSpeedLimit");
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SpeedLimitResponse**](SpeedLimitResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ No authorization required
 
 <a name="flashLights"></a>
 # **flashLights**
-> FlashLightsResponse flashLights(vehicleId)
+> CommandResponse flashLights(vehicleId)
 
 Flash Lights
 
@@ -190,7 +190,7 @@ Flash the lights once.
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    FlashLightsResponse result = apiInstance.flashLights(vehicleId);
+    CommandResponse result = apiInstance.flashLights(vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#flashLights");
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FlashLightsResponse**](FlashLightsResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -219,7 +219,7 @@ No authorization required
 
 <a name="honkHorn"></a>
 # **honkHorn**
-> HonkHornResponse honkHorn(vehicleId)
+> CommandResponse honkHorn(vehicleId)
 
 Honk Horn
 
@@ -235,7 +235,7 @@ Honk the horn once.
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    HonkHornResponse result = apiInstance.honkHorn(vehicleId);
+    CommandResponse result = apiInstance.honkHorn(vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#honkHorn");
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HonkHornResponse**](HonkHornResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -264,7 +264,7 @@ No authorization required
 
 <a name="lockDoors"></a>
 # **lockDoors**
-> LockDoorsResponse lockDoors(vehicleId)
+> CommandResponse lockDoors(vehicleId)
 
 Lock Doors
 
@@ -280,7 +280,7 @@ Lock the car&#39;s doors.
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    LockDoorsResponse result = apiInstance.lockDoors(vehicleId);
+    CommandResponse result = apiInstance.lockDoors(vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#lockDoors");
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LockDoorsResponse**](LockDoorsResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -309,7 +309,7 @@ No authorization required
 
 <a name="navigationRequest"></a>
 # **navigationRequest**
-> NavigationRequestResponse navigationRequest(vehicleId, body)
+> CommandResponse navigationRequest(vehicleId, body)
 
 Send Navigation Request
 
@@ -326,7 +326,7 @@ VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 NavigationRequestRequest body = new NavigationRequestRequest(); // NavigationRequestRequest | 
 try {
-    NavigationRequestResponse result = apiInstance.navigationRequest(vehicleId, body);
+    CommandResponse result = apiInstance.navigationRequest(vehicleId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#navigationRequest");
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NavigationRequestResponse**](NavigationRequestResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -356,7 +356,7 @@ No authorization required
 
 <a name="openSunroof"></a>
 # **openSunroof**
-> MovePanoRoofResponse openSunroof(vehicleId, body)
+> CommandResponse openSunroof(vehicleId, body)
 
 Move Pano Roof
 
@@ -373,7 +373,7 @@ VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 MovePanoRoofRequest body = new MovePanoRoofRequest(); // MovePanoRoofRequest | 
 try {
-    MovePanoRoofResponse result = apiInstance.openSunroof(vehicleId, body);
+    CommandResponse result = apiInstance.openSunroof(vehicleId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#openSunroof");
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MovePanoRoofResponse**](MovePanoRoofResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -403,7 +403,7 @@ No authorization required
 
 <a name="openTrunk"></a>
 # **openTrunk**
-> OpenTrunkResponse openTrunk(vehicleId, body)
+> CommandResponse openTrunk(vehicleId, body)
 
 Open Trunk/Frunk
 
@@ -420,7 +420,7 @@ VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 OpenTrunkRequest body = new OpenTrunkRequest(); // OpenTrunkRequest | 
 try {
-    OpenTrunkResponse result = apiInstance.openTrunk(vehicleId, body);
+    CommandResponse result = apiInstance.openTrunk(vehicleId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#openTrunk");
@@ -437,7 +437,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OpenTrunkResponse**](OpenTrunkResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -450,7 +450,7 @@ No authorization required
 
 <a name="remoteStart"></a>
 # **remoteStart**
-> RemoteStartResponse remoteStart(vehicleId, body)
+> CommandResponse remoteStart(vehicleId, body)
 
 Remote Start
 
@@ -467,7 +467,7 @@ VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 RemoteStartRequest body = new RemoteStartRequest(); // RemoteStartRequest | 
 try {
-    RemoteStartResponse result = apiInstance.remoteStart(vehicleId, body);
+    CommandResponse result = apiInstance.remoteStart(vehicleId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#remoteStart");
@@ -484,7 +484,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RemoteStartResponse**](RemoteStartResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -497,7 +497,7 @@ No authorization required
 
 <a name="resetValetPin"></a>
 # **resetValetPin**
-> ResetValetPinResponse resetValetPin(vehicleId)
+> CommandResponse resetValetPin(vehicleId)
 
 Reset Valet PIN
 
@@ -513,7 +513,7 @@ Resets the PIN set for valet mode, if set.
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    ResetValetPinResponse result = apiInstance.resetValetPin(vehicleId);
+    CommandResponse result = apiInstance.resetValetPin(vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#resetValetPin");
@@ -529,7 +529,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResetValetPinResponse**](ResetValetPinResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -542,7 +542,7 @@ No authorization required
 
 <a name="sendStandardChargeLimit"></a>
 # **sendStandardChargeLimit**
-> SetChargeLimitToStandardResponse sendStandardChargeLimit(vehicleId)
+> CommandResponse sendStandardChargeLimit(vehicleId)
 
 Set Charge Limit to Standard
 
@@ -558,7 +558,7 @@ Set the charge mode to standard (90% under the new percentage system introduced 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    SetChargeLimitToStandardResponse result = apiInstance.sendStandardChargeLimit(vehicleId);
+    CommandResponse result = apiInstance.sendStandardChargeLimit(vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#sendStandardChargeLimit");
@@ -574,7 +574,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SetChargeLimitToStandardResponse**](SetChargeLimitToStandardResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -587,7 +587,7 @@ No authorization required
 
 <a name="setChargeLimit"></a>
 # **setChargeLimit**
-> SetChargeLimitResponse setChargeLimit(vehicleId, body)
+> CommandResponse setChargeLimit(vehicleId, body)
 
 Set Charge Limit
 
@@ -604,7 +604,7 @@ VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 SetChargeLimitRequest body = new SetChargeLimitRequest(); // SetChargeLimitRequest | 
 try {
-    SetChargeLimitResponse result = apiInstance.setChargeLimit(vehicleId, body);
+    CommandResponse result = apiInstance.setChargeLimit(vehicleId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#setChargeLimit");
@@ -621,7 +621,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SetChargeLimitResponse**](SetChargeLimitResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -634,7 +634,7 @@ No authorization required
 
 <a name="setMaxChargeLimit"></a>
 # **setMaxChargeLimit**
-> SetChargeLimitToMaxRangeResponse setMaxChargeLimit(vehicleId)
+> CommandResponse setMaxChargeLimit(vehicleId)
 
 Set Charge Limit to Max Range
 
@@ -650,7 +650,7 @@ Set the charge mode to max range (100% under the new percentage system introduce
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    SetChargeLimitToMaxRangeResponse result = apiInstance.setMaxChargeLimit(vehicleId);
+    CommandResponse result = apiInstance.setMaxChargeLimit(vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#setMaxChargeLimit");
@@ -666,7 +666,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SetChargeLimitToMaxRangeResponse**](SetChargeLimitToMaxRangeResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -679,7 +679,7 @@ No authorization required
 
 <a name="setSpeedLimit"></a>
 # **setSpeedLimit**
-> SpeedLimitResponse setSpeedLimit(vehicleId, body)
+> CommandResponse setSpeedLimit(vehicleId, body)
 
 Set Speed Limit
 
@@ -696,7 +696,7 @@ VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 SetSpeedLimitRequest body = new SetSpeedLimitRequest(); // SetSpeedLimitRequest | 
 try {
-    SpeedLimitResponse result = apiInstance.setSpeedLimit(vehicleId, body);
+    CommandResponse result = apiInstance.setSpeedLimit(vehicleId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#setSpeedLimit");
@@ -713,7 +713,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SpeedLimitResponse**](SpeedLimitResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -726,7 +726,7 @@ No authorization required
 
 <a name="setTemperatures"></a>
 # **setTemperatures**
-> SetTemperatureResponse setTemperatures(vehicleId, body)
+> CommandResponse setTemperatures(vehicleId, body)
 
 Set Temperature
 
@@ -743,7 +743,7 @@ VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 SetTempsRequest body = new SetTempsRequest(); // SetTempsRequest | 
 try {
-    SetTemperatureResponse result = apiInstance.setTemperatures(vehicleId, body);
+    CommandResponse result = apiInstance.setTemperatures(vehicleId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#setTemperatures");
@@ -760,7 +760,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SetTemperatureResponse**](SetTemperatureResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -773,7 +773,7 @@ No authorization required
 
 <a name="startCharge"></a>
 # **startCharge**
-> StartChargingResponse startCharge(vehicleId)
+> CommandResponse startCharge(vehicleId)
 
 Start Charging
 
@@ -789,7 +789,7 @@ Start charging. Must be plugged in, have power available, and not have reached y
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    StartChargingResponse result = apiInstance.startCharge(vehicleId);
+    CommandResponse result = apiInstance.startCharge(vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#startCharge");
@@ -805,7 +805,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StartChargingResponse**](StartChargingResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -818,7 +818,7 @@ No authorization required
 
 <a name="startHVAC"></a>
 # **startHVAC**
-> StartHvacSystemResponse startHVAC(vehicleId)
+> CommandResponse startHVAC(vehicleId)
 
 Start HVAC System
 
@@ -834,7 +834,7 @@ Start the climate control system. Will cool or heat automatically, depending on 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    StartHvacSystemResponse result = apiInstance.startHVAC(vehicleId);
+    CommandResponse result = apiInstance.startHVAC(vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#startHVAC");
@@ -850,7 +850,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StartHvacSystemResponse**](StartHvacSystemResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -863,7 +863,7 @@ No authorization required
 
 <a name="stopCharge"></a>
 # **stopCharge**
-> StopChargingResponse stopCharge(vehicleId)
+> CommandResponse stopCharge(vehicleId)
 
 Stop Charging
 
@@ -879,7 +879,7 @@ Stop charging. Must already be charging.
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    StopChargingResponse result = apiInstance.stopCharge(vehicleId);
+    CommandResponse result = apiInstance.stopCharge(vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#stopCharge");
@@ -895,7 +895,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StopChargingResponse**](StopChargingResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -908,7 +908,7 @@ No authorization required
 
 <a name="stopHVAC"></a>
 # **stopHVAC**
-> StopHvacSystemResponse stopHVAC(vehicleId)
+> CommandResponse stopHVAC(vehicleId)
 
 Stop HVAC System
 
@@ -924,7 +924,7 @@ Stop the climate control system.
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    StopHvacSystemResponse result = apiInstance.stopHVAC(vehicleId);
+    CommandResponse result = apiInstance.stopHVAC(vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#stopHVAC");
@@ -940,7 +940,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StopHvacSystemResponse**](StopHvacSystemResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -953,7 +953,7 @@ No authorization required
 
 <a name="toggleChargePort"></a>
 # **toggleChargePort**
-> OpenChargePortResponse toggleChargePort(vehicleId)
+> CommandResponse toggleChargePort(vehicleId)
 
 Open Charge Port
 
@@ -969,7 +969,7 @@ Opens the charge port. Does not close the charge port (for now...). This endpoin
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    OpenChargePortResponse result = apiInstance.toggleChargePort(vehicleId);
+    CommandResponse result = apiInstance.toggleChargePort(vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#toggleChargePort");
@@ -985,7 +985,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OpenChargePortResponse**](OpenChargePortResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -998,7 +998,7 @@ No authorization required
 
 <a name="toggleValetMode"></a>
 # **toggleValetMode**
-> SetValetModeResponse toggleValetMode(vehicleId, body)
+> CommandResponse toggleValetMode(vehicleId, body)
 
 Set Valet Mode
 
@@ -1015,7 +1015,7 @@ VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 SetValetRequest body = new SetValetRequest(); // SetValetRequest | 
 try {
-    SetValetModeResponse result = apiInstance.toggleValetMode(vehicleId, body);
+    CommandResponse result = apiInstance.toggleValetMode(vehicleId, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#toggleValetMode");
@@ -1032,7 +1032,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SetValetModeResponse**](SetValetModeResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -1045,7 +1045,7 @@ No authorization required
 
 <a name="unlockDoors"></a>
 # **unlockDoors**
-> UnlockDoorsResponse unlockDoors(vehicleId)
+> CommandResponse unlockDoors(vehicleId)
 
 Unlock Doors
 
@@ -1061,7 +1061,7 @@ Unlock the car&#39;s doors.
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    UnlockDoorsResponse result = apiInstance.unlockDoors(vehicleId);
+    CommandResponse result = apiInstance.unlockDoors(vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#unlockDoors");
@@ -1077,7 +1077,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UnlockDoorsResponse**](UnlockDoorsResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 
@@ -1135,7 +1135,7 @@ No authorization required
 
 <a name="wakeUpVehicleCommand"></a>
 # **wakeUpVehicleCommand**
-> WakeUpCarResponse wakeUpVehicleCommand(vehicleId)
+> CommandResponse wakeUpVehicleCommand(vehicleId)
 
 Wake Up Car
 
@@ -1151,7 +1151,7 @@ Wakes up the car from the sleep state. Necessary to get some data from the car.
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    WakeUpCarResponse result = apiInstance.wakeUpVehicleCommand(vehicleId);
+    CommandResponse result = apiInstance.wakeUpVehicleCommand(vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#wakeUpVehicleCommand");
@@ -1167,7 +1167,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WakeUpCarResponse**](WakeUpCarResponse.md)
+[**CommandResponse**](CommandResponse.md)
 
 ### Authorization
 

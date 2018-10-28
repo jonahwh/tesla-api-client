@@ -8,7 +8,7 @@ import retrofit2.http.*;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 
-import com.github.jonahwh.tesla_api_client.model.MediaControlResponse;
+import com.github.jonahwh.tesla_api_client.model.CommandResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,13 +20,13 @@ public interface MediaControlApi {
    * Next Favorite
    * Next Favorite
    * @param vehicleId The id of the Vehicle. (required)
-   * @return Call&lt;MediaControlResponse&gt;
+   * @return Call&lt;CommandResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("api/1/vehicles/{vehicle_id}/command/media_next_fav")
-  Call<MediaControlResponse> mediaNextFavorite(
+  Call<CommandResponse> mediaNextFavorite(
     @retrofit2.http.Path("vehicle_id") String vehicleId
   );
 
@@ -34,13 +34,13 @@ public interface MediaControlApi {
    * Next Track
    * Next Track
    * @param vehicleId The id of the Vehicle. (required)
-   * @return Call&lt;MediaControlResponse&gt;
+   * @return Call&lt;CommandResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("api/1/vehicles/{vehicle_id}/command/media_next_track")
-  Call<MediaControlResponse> mediaNextTrack(
+  Call<CommandResponse> mediaNextTrack(
     @retrofit2.http.Path("vehicle_id") String vehicleId
   );
 
@@ -48,13 +48,13 @@ public interface MediaControlApi {
    * Previous Favorite
    * Previous Favorite
    * @param vehicleId The id of the Vehicle. (required)
-   * @return Call&lt;MediaControlResponse&gt;
+   * @return Call&lt;CommandResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("api/1/vehicles/{vehicle_id}/command/media_prev_fav")
-  Call<MediaControlResponse> mediaPrevFavorite(
+  Call<CommandResponse> mediaPrevFavorite(
     @retrofit2.http.Path("vehicle_id") String vehicleId
   );
 
@@ -62,13 +62,13 @@ public interface MediaControlApi {
    * Previous Track
    * Previous Track
    * @param vehicleId The id of the Vehicle. (required)
-   * @return Call&lt;MediaControlResponse&gt;
+   * @return Call&lt;CommandResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("api/1/vehicles/{vehicle_id}/command/media_prev_track")
-  Call<MediaControlResponse> mediaPrevTrack(
+  Call<CommandResponse> mediaPrevTrack(
     @retrofit2.http.Path("vehicle_id") String vehicleId
   );
 
@@ -76,13 +76,13 @@ public interface MediaControlApi {
    * Pause/Play Media
    * Pause/Play Media
    * @param vehicleId The id of the Vehicle. (required)
-   * @return Call&lt;MediaControlResponse&gt;
+   * @return Call&lt;CommandResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("api/1/vehicles/{vehicle_id}/command/media_toggle_playback")
-  Call<MediaControlResponse> mediaTogglePlayback(
+  Call<CommandResponse> mediaTogglePlayback(
     @retrofit2.http.Path("vehicle_id") String vehicleId
   );
 
@@ -90,13 +90,13 @@ public interface MediaControlApi {
    * Volume Down
    * Volume Down
    * @param vehicleId The id of the Vehicle. (required)
-   * @return Call&lt;MediaControlResponse&gt;
+   * @return Call&lt;CommandResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("api/1/vehicles/{vehicle_id}/command/media_volume_down")
-  Call<MediaControlResponse> mediaVolumeDown(
+  Call<CommandResponse> mediaVolumeDown(
     @retrofit2.http.Path("vehicle_id") String vehicleId
   );
 
@@ -104,13 +104,13 @@ public interface MediaControlApi {
    * Volume Up
    * Volume Up
    * @param vehicleId The id of the Vehicle. (required)
-   * @return Call&lt;MediaControlResponse&gt;
+   * @return Call&lt;CommandResponse&gt;
    */
   @Headers({
     "Content-Type:application/json"
   })
   @POST("api/1/vehicles/{vehicle_id}/command/media_volume_up")
-  Call<MediaControlResponse> mediaVolumeUp(
+  Call<CommandResponse> mediaVolumeUp(
     @retrofit2.http.Path("vehicle_id") String vehicleId
   );
 

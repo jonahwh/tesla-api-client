@@ -285,7 +285,7 @@ paths:
         '200':
           description: ''
           schema:
-            $ref: '#/definitions/WakeUpCarResponse'
+            $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/set_valet_mode':
     post:
       description: |-
@@ -315,7 +315,7 @@ paths:
         '200':
           description: ''
           schema:
-            $ref: '#/definitions/SetValetModeResponse'
+            $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/reset_valet_pin':
     post:
       description: 'Resets the PIN set for valet mode, if set.'
@@ -335,7 +335,7 @@ paths:
         '200':
           description: ''
           schema:
-            $ref: '#/definitions/ResetValetPinResponse'
+            $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/charge_port_door_open':
     post:
       description: Opens the charge port. Does not close the charge port (for now...). This endpoint also unlocks the charge port if it's locked.
@@ -355,7 +355,7 @@ paths:
         '200':
           description: ''
           schema:
-            $ref: '#/definitions/OpenChargePortResponse'
+            $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/charge_standard':
     post:
       description: Set the charge mode to standard (90% under the new percentage system introduced in 4.5).
@@ -375,7 +375,7 @@ paths:
         '200':
           description: ''
           schema:
-            $ref: '#/definitions/SetChargeLimitToStandardResponse'
+            $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/charge_max_range':
     post:
       description: Set the charge mode to max range (100% under the new percentage system introduced in 4.5). Use sparingly!
@@ -395,7 +395,7 @@ paths:
         '200':
           description: ''
           schema:
-            $ref: '#/definitions/SetChargeLimitToMaxRangeResponse'
+            $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/set_charge_limit':
     post:
       description: Set the charge limit to a custom percentage.
@@ -420,7 +420,7 @@ paths:
         '200':
           description: ''
           schema:
-            $ref: '#/definitions/SetChargeLimitResponse'
+            $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/charge_start':
     post:
       description: 'Start charging. Must be plugged in, have power available, and not have reached your charge limit.'
@@ -440,7 +440,7 @@ paths:
         '200':
           description: ''
           schema:
-            $ref: '#/definitions/StartChargingResponse'
+            $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/charge_stop':
     post:
       description: Stop charging. Must already be charging.
@@ -460,7 +460,7 @@ paths:
         '200':
           description: ''
           schema:
-            $ref: '#/definitions/StopChargingResponse'
+            $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/flash_lights':
     post:
       description: Flash the lights once.
@@ -480,7 +480,7 @@ paths:
         '200':
           description: ''
           schema:
-            $ref: '#/definitions/FlashLightsResponse'
+            $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/honk_horn':
     post:
       description: Honk the horn once.
@@ -500,7 +500,7 @@ paths:
         '200':
           description: ''
           schema:
-            $ref: '#/definitions/HonkHornResponse'
+            $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/door_unlock':
     post:
       description: Unlock the car's doors.
@@ -520,7 +520,7 @@ paths:
         '200':
           description: ''
           schema:
-            $ref: '#/definitions/UnlockDoorsResponse'
+            $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/door_lock':
     post:
       description: Lock the car's doors.
@@ -540,7 +540,7 @@ paths:
         '200':
           description: ''
           schema:
-            $ref: '#/definitions/LockDoorsResponse'
+            $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/set_temps':
     post:
       description: Set the temperature target for the HVAC system.
@@ -565,7 +565,7 @@ paths:
         '200':
           description: ''
           schema:
-            $ref: '#/definitions/SetTemperatureResponse'
+            $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/auto_conditioning_start':
     post:
       description: 'Start the climate control system. Will cool or heat automatically, depending on set temperature.'
@@ -585,7 +585,7 @@ paths:
         '200':
           description: ''
           schema:
-            $ref: '#/definitions/StartHvacSystemResponse'
+            $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/auto_conditioning_stop':
     post:
       description: Stop the climate control system.
@@ -605,7 +605,7 @@ paths:
         '200':
           description: ''
           schema:
-            $ref: '#/definitions/StopHvacSystemResponse'
+            $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/sun_roof_control':
     post:
       description: 'Controls the car''s panoramic roof, if installed.'
@@ -631,7 +631,7 @@ paths:
         '200':
           description: ''
           schema:
-            $ref: '#/definitions/MovePanoRoofResponse'
+            $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/remote_start_drive':
     post:
       description: Start the car for keyless driving. Must start driving within 2 minutes of issuing this request.
@@ -656,7 +656,7 @@ paths:
         '200':
           description: ''
           schema:
-            $ref: '#/definitions/RemoteStartResponse'
+            $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/actuate_trunk':
     post:
       description: Open the trunk or frunk. Currently inoperable.
@@ -681,7 +681,7 @@ paths:
         '200':
           description: ''
           schema:
-            $ref: '#/definitions/OpenTrunkResponse'
+            $ref: '#/definitions/CommandResponse'
           examples:
             application/json:
               response:
@@ -713,7 +713,7 @@ paths:
           '200':
             description: ''
             schema:
-              $ref: '#/definitions/SpeedLimitResponse'
+              $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/speed_limit_deactivate':
         post:
           description: |-
@@ -740,7 +740,7 @@ paths:
             '200':
               description: ''
               schema:
-                $ref: '#/definitions/SpeedLimitResponse'
+                $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/speed_limit_set_limit':
         post:
           description: |-
@@ -767,7 +767,7 @@ paths:
             '200':
               description: ''
               schema:
-                $ref: '#/definitions/SpeedLimitResponse'
+                $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/speed_limit_clear_pin':
         post:
           description: |-
@@ -794,7 +794,7 @@ paths:
             '200':
               description: ''
               schema:
-                $ref: '#/definitions/SpeedLimitResponse'
+                $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/navigation_request':
           post:
             description: |-
@@ -821,7 +821,7 @@ paths:
               '200':
                 description: ''
                 schema:
-                  $ref: '#/definitions/NavigationRequestResponse'
+                  $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/media_toggle_playback':
             post:
               description: |-
@@ -842,7 +842,7 @@ paths:
                 '200':
                   description: ''
                   schema:
-                    $ref: '#/definitions/MediaControlResponse'
+                    $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/media_next_track':
             post:
               description: |-
@@ -863,7 +863,7 @@ paths:
                 '200':
                   description: ''
                   schema:
-                    $ref: '#/definitions/MediaControlResponse'
+                    $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/media_prev_track':
             post:
               description: |-
@@ -884,7 +884,7 @@ paths:
                 '200':
                   description: ''
                   schema:
-                    $ref: '#/definitions/MediaControlResponse'
+                    $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/media_next_fav':
             post:
               description: |-
@@ -905,7 +905,7 @@ paths:
                 '200':
                   description: ''
                   schema:
-                    $ref: '#/definitions/MediaControlResponse'
+                    $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/media_prev_fav':
             post:
               description: |-
@@ -926,7 +926,7 @@ paths:
                 '200':
                   description: ''
                   schema:
-                    $ref: '#/definitions/MediaControlResponse'
+                    $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/media_volume_up':
             post:
               description: |-
@@ -947,7 +947,7 @@ paths:
                 '200':
                   description: ''
                   schema:
-                    $ref: '#/definitions/MediaControlResponse'
+                    $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/media_volume_down':
             post:
               description: |-
@@ -968,7 +968,7 @@ paths:
                 '200':
                   description: ''
                   schema:
-                    $ref: '#/definitions/MediaControlResponse'
+                    $ref: '#/definitions/CommandResponse'
 definitions:
   CreateAccessTokenRequest:
     title: Get an Access Token request
@@ -1697,232 +1697,8 @@ definitions:
               type: string
             backseat_token_updated_at:
               type: number
-  WakeUpCarResponse:
-    title: Wake Up Car response
-    type: object
-    properties:
-      response:
-        description: ''
-        properties:
-          result:
-              type: boolean
-          reason:
-              type: string
-        type: object
-    required:
-      - response
-  SetValetModeResponse:
-    title: Set Valet Mode response
-    type: object
-    properties:
-      response:
-        description: ''
-        properties:
-          result:
-              type: boolean
-          reason:
-              type: string
-        type: object
-    required:
-      - response
-  SpeedLimitResponse:
-      title: Speed Limit Response
-      type: object
-      properties:
-        response:
-          description: ''
-          properties:
-            result:
-                type: boolean
-            reason:
-                type: string
-          type: object
-      required:
-        - response
-  ResetValetPinResponse:
-    title: Reset Valet PIN response
-    type: object
-    properties:
-      response:
-        description: ''
-        properties:
-          result:
-              type: boolean
-          reason:
-              type: string
-        type: object
-    required:
-      - response
-  OpenChargePortResponse:
-    title: Open Charge Port response
-    type: object
-    properties:
-      response:
-        description: ''
-        properties:
-          result:
-              type: boolean
-          reason:
-              type: string
-        type: object
-    required:
-      - response
-  SetChargeLimitToStandardResponse:
-    title: Set Charge Limit to Standard response
-    type: object
-    properties:
-      response:
-        description: ''
-        properties:
-          result:
-              type: boolean
-          reason:
-              type: string
-        type: object
-    required:
-      - response
-  SetChargeLimitToMaxRangeResponse:
-    title: Set Charge Limit to Max Range response
-    type: object
-    properties:
-      response:
-        description: ''
-        properties:
-          result:
-              type: boolean
-          reason:
-              type: string
-        type: object
-    required:
-      - response
-  SetChargeLimitResponse:
-    title: Set Charge Limit response
-    type: object
-    properties:
-      response:
-        description: ''
-        properties:
-          result:
-              type: boolean
-          reason:
-              type: string
-        type: object
-    required:
-      - response
-  StartChargingResponse:
-    title: Start Charging response
-    type: object
-    properties:
-      response:
-        description: ''
-        properties:
-          result:
-              type: boolean
-          reason:
-              type: string
-        type: object
-    required:
-      - response
-  StopChargingResponse:
-    title: Stop Charging response
-    type: object
-    properties:
-      response:
-        description: ''
-        properties:
-          result:
-              type: boolean
-          reason:
-              type: string
-        type: object
-    required:
-      - response
-  FlashLightsResponse:
-    title: Flash Lights response
-    type: object
-    properties:
-      response:
-        description: ''
-        properties:
-          result:
-              type: boolean
-          reason:
-              type: string
-        type: object
-    required:
-      - response
-  HonkHornResponse:
-    title: Honk Horn response
-    type: object
-    properties:
-      response:
-        description: ''
-        properties:
-          result:
-              type: boolean
-          reason:
-              type: string
-        type: object
-    required:
-      - response
-  UnlockDoorsResponse:
-    title: Unlock Doors response
-    type: object
-    properties:
-      response:
-        description: ''
-        properties:
-          result:
-              type: boolean
-          reason:
-              type: string
-        type: object
-    required:
-      - response
-  LockDoorsResponse:
-    title: Lock Doors response
-    type: object
-    properties:
-      response:
-        description: ''
-        properties:
-          result:
-              type: boolean
-          reason:
-              type: string
-        type: object
-    required:
-      - response
-  SetTemperatureResponse:
-    title: Set Temperature response
-    type: object
-    properties:
-      response:
-        description: ''
-        properties:
-          result:
-              type: boolean
-          reason:
-              type: string
-        type: object
-    required:
-      - response
-  StartHvacSystemResponse:
-    title: Start HVAC System response
-    type: object
-    properties:
-      response:
-        description: ''
-        properties:
-          result:
-              type: boolean
-          reason:
-              type: string
-        type: object
-    required:
-      - response
-  StopHvacSystemResponse:
-    title: Stop HVAC System response
+  CommandResponse:
+    title: CommandResponse
     type: object
     properties:
       response:
@@ -1956,73 +1732,3 @@ definitions:
       - comfort
       - vent
       - move
-  MovePanoRoofResponse:
-    title: Move Pano Roof response
-    type: object
-    properties:
-      response:
-        description: ''
-        properties:
-          result:
-              type: boolean
-          reason:
-              type: string
-        type: object
-    required:
-      - response
-  RemoteStartResponse:
-    title: Remote Start response
-    type: object
-    properties:
-      response:
-        description: ''
-        properties:
-          result:
-              type: boolean
-          reason:
-              type: string
-        type: object
-    required:
-      - response
-  OpenTrunkResponse:
-    title: Open Trunk/Frunk response
-    type: object
-    properties:
-      response:
-        description: ''
-        properties:
-          result:
-              type: boolean
-          reason:
-              type: string
-        type: object
-    required:
-      - response
-  NavigationRequestResponse:
-    title: Navigation Request Response
-    type: object
-    properties:
-      response:
-        description: ''
-        properties:
-          result:
-              type: boolean
-          queued:
-              type: boolean
-        type: object
-    required:
-      - response
-  MediaControlResponse:
-      title: Media Control Response
-      type: object
-      properties:
-        response:
-          description: ''
-          properties:
-            result:
-                type: boolean
-            reason:
-                type: string
-          type: object
-      required:
-        - response

@@ -14,7 +14,7 @@
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
-import com.github.jonahwh.tesla_api_client.model.DriveState;
+import com.github.jonahwh.tesla_api_client.model.CommandResponseResponse;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,14 +25,14 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * DriveStateResponse
+ * CommandResponse
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-28T16:26:49.255-07:00")
-public class DriveStateResponse {
+public class CommandResponse {
   @SerializedName("response")
-  private DriveState response = null;
+  private CommandResponseResponse response = null;
 
-  public DriveStateResponse response(DriveState response) {
+  public CommandResponse response(CommandResponseResponse response) {
     this.response = response;
     return this;
   }
@@ -42,11 +42,11 @@ public class DriveStateResponse {
    * @return response
   **/
   @ApiModelProperty(required = true, value = "")
-  public DriveState getResponse() {
+  public CommandResponseResponse getResponse() {
     return response;
   }
 
-  public void setResponse(DriveState response) {
+  public void setResponse(CommandResponseResponse response) {
     this.response = response;
   }
 
@@ -59,8 +59,8 @@ public class DriveStateResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DriveStateResponse driveStateResponse = (DriveStateResponse) o;
-    return Objects.equals(this.response, driveStateResponse.response);
+    CommandResponse commandResponse = (CommandResponse) o;
+    return Objects.equals(this.response, commandResponse.response);
   }
 
   @Override
@@ -72,7 +72,7 @@ public class DriveStateResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DriveStateResponse {\n");
+    sb.append("class CommandResponse {\n");
     
     sb.append("    response: ").append(toIndentedString(response)).append("\n");
     sb.append("}");
