@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * Vehicle
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-28T16:26:49.255-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-29T23:37:56.840-07:00")
 public class Vehicle {
   @SerializedName("color")
   private String color = null;

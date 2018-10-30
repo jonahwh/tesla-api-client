@@ -1298,8 +1298,7 @@ definitions:
       conn_charge_cable:
         type: string
       scheduled_charging_start_time:
-        type: number
-        format: long
+        type: string
       scheduled_charging_pending:
         type: boolean
       user_charge_enable_request:

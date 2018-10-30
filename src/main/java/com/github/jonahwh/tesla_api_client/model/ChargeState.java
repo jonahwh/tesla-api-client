@@ -27,7 +27,7 @@ import java.math.BigDecimal;
 /**
  * ChargeState
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-28T16:26:49.255-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-29T23:37:56.840-07:00")
 public class ChargeState {
   @SerializedName("charging_state")
   private String chargingState = null;
@@ -111,7 +111,7 @@ public class ChargeState {
   private String connChargeCable = null;
 
   @SerializedName("scheduled_charging_start_time")
-  private BigDecimal scheduledChargingStartTime = null;
+  private String scheduledChargingStartTime = null;
 
   @SerializedName("scheduled_charging_pending")
   private Boolean scheduledChargingPending = null;
@@ -638,7 +638,7 @@ public class ChargeState {
     this.connChargeCable = connChargeCable;
   }
 
-  public ChargeState scheduledChargingStartTime(BigDecimal scheduledChargingStartTime) {
+  public ChargeState scheduledChargingStartTime(String scheduledChargingStartTime) {
     this.scheduledChargingStartTime = scheduledChargingStartTime;
     return this;
   }
@@ -648,11 +648,11 @@ public class ChargeState {
    * @return scheduledChargingStartTime
   **/
   @ApiModelProperty(value = "")
-  public BigDecimal getScheduledChargingStartTime() {
+  public String getScheduledChargingStartTime() {
     return scheduledChargingStartTime;
   }
 
-  public void setScheduledChargingStartTime(BigDecimal scheduledChargingStartTime) {
+  public void setScheduledChargingStartTime(String scheduledChargingStartTime) {
     this.scheduledChargingStartTime = scheduledChargingStartTime;
   }
 

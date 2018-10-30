@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **chargeRate** | **Double** |  |  [optional]
 **chargePortDoorOpen** | **Boolean** |  |  [optional]
 **connChargeCable** | **String** |  |  [optional]
-**scheduledChargingStartTime** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**scheduledChargingStartTime** | **String** |  |  [optional]
 **scheduledChargingPending** | **Boolean** |  |  [optional]
 **userChargeEnableRequest** | **Boolean** |  |  [optional]
 **chargeEnableRequest** | **Boolean** |  |  [optional]
