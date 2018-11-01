@@ -5,7 +5,7 @@
     <artifactId>tesla-api-client</artifactId>
     <packaging>jar</packaging>
     <name>tesla-api-client</name>
-    <version>1.7.1</version>
+    <version>1.8.0</version>
     <url>https://github.com/jonahwh/tesla-api-client</url>
     <description>Tesla API Client</description>
     <scm>
