@@ -27,7 +27,7 @@ import java.math.BigDecimal;
 /**
  * VehicleStateSoftwareUpdate
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-29T23:37:56.840-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-01T15:39:52.863-07:00")
 public class VehicleStateSoftwareUpdate {
   @SerializedName("expected_duration_sec")
   private BigDecimal expectedDurationSec = null;

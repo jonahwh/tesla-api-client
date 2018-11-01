@@ -27,7 +27,7 @@ import java.math.BigDecimal;
 /**
  * DriveState
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-29T23:37:56.840-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-01T15:39:52.863-07:00")
 public class DriveState {
   @SerializedName("shift_state")
   private String shiftState = null;

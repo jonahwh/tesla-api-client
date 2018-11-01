@@ -42,6 +42,20 @@ public interface VehicleCommandsApi {
   );
 
   /**
+   * Cancel Software Update
+   * Cancel Software Update
+   * @param vehicleId The id of the Vehicle. (required)
+   * @return Call&lt;CommandResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/command/cancel_software_update")
+  Call<CommandResponse> cancelSoftwareUpdate(
+    @retrofit2.http.Path("vehicle_id") String vehicleId
+  );
+
+  /**
    * Clear Speed Limit Pin
    * Clears Speed Limit Pin
    * @param vehicleId The id of the Vehicle. (required)
@@ -285,6 +299,20 @@ public interface VehicleCommandsApi {
   })
   @POST("api/1/vehicles/{vehicle_id}/command/auto_conditioning_start")
   Call<CommandResponse> startHVAC(
+    @retrofit2.http.Path("vehicle_id") String vehicleId
+  );
+
+  /**
+   * Start Software Update
+   * Start Software Update
+   * @param vehicleId The id of the Vehicle. (required)
+   * @return Call&lt;CommandResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/command/schedule_software_update")
+  Call<CommandResponse> startSoftwareUpdate(
     @retrofit2.http.Path("vehicle_id") String vehicleId
   );
 

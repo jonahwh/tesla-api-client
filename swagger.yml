@@ -969,6 +969,48 @@ paths:
                   description: ''
                   schema:
                     $ref: '#/definitions/CommandResponse'
+  '/api/1/vehicles/{vehicle_id}/command/schedule_software_update':
+            post:
+              description: |-
+                Start Software Update
+              summary: Start Software Update
+              tags:
+                - Vehicle Commands
+              operationId: StartSoftwareUpdate
+              produces:
+                - application/json
+              parameters:
+                - name: vehicle_id
+                  in: path
+                  required: true
+                  type: string
+                  description: The id of the Vehicle.
+              responses:
+                '200':
+                  description: ''
+                  schema:
+                    $ref: '#/definitions/CommandResponse'
+  '/api/1/vehicles/{vehicle_id}/command/cancel_software_update':
+            post:
+              description: |-
+                Cancel Software Update
+              summary: Cancel Software Update
+              tags:
+                - Vehicle Commands
+              operationId: CancelSoftwareUpdate
+              produces:
+                - application/json
+              parameters:
+                - name: vehicle_id
+                  in: path
+                  required: true
+                  type: string
+                  description: The id of the Vehicle.
+              responses:
+                '200':
+                  description: ''
+                  schema:
+                    $ref: '#/definitions/CommandResponse'
 definitions:
   CreateAccessTokenRequest:
     title: Get an Access Token request

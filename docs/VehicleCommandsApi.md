@@ -5,6 +5,7 @@ All URIs are relative to *https://owner-api.teslamotors.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**activateSpeedLimit**](VehicleCommandsApi.md#activateSpeedLimit) | **POST** api/1/vehicles/{vehicle_id}/command/speed_limit_activate | Activate Speed Limit
+[**cancelSoftwareUpdate**](VehicleCommandsApi.md#cancelSoftwareUpdate) | **POST** api/1/vehicles/{vehicle_id}/command/cancel_software_update | Cancel Software Update
 [**clearSpeedLimitPin**](VehicleCommandsApi.md#clearSpeedLimitPin) | **POST** api/1/vehicles/{vehicle_id}/command/speed_limit_clear_pin | Clear Speed Limit Pin
 [**deactivateSpeedLimit**](VehicleCommandsApi.md#deactivateSpeedLimit) | **POST** api/1/vehicles/{vehicle_id}/command/speed_limit_deactivate | Deactivate Speed Limit
 [**flashLights**](VehicleCommandsApi.md#flashLights) | **POST** api/1/vehicles/{vehicle_id}/command/flash_lights | Flash Lights
@@ -22,6 +23,7 @@ Method | HTTP request | Description
 [**setTemperatures**](VehicleCommandsApi.md#setTemperatures) | **POST** api/1/vehicles/{vehicle_id}/command/set_temps | Set Temperature
 [**startCharge**](VehicleCommandsApi.md#startCharge) | **POST** api/1/vehicles/{vehicle_id}/command/charge_start | Start Charging
 [**startHVAC**](VehicleCommandsApi.md#startHVAC) | **POST** api/1/vehicles/{vehicle_id}/command/auto_conditioning_start | Start HVAC System
+[**startSoftwareUpdate**](VehicleCommandsApi.md#startSoftwareUpdate) | **POST** api/1/vehicles/{vehicle_id}/command/schedule_software_update | Start Software Update
 [**stopCharge**](VehicleCommandsApi.md#stopCharge) | **POST** api/1/vehicles/{vehicle_id}/command/charge_stop | Stop Charging
 [**stopHVAC**](VehicleCommandsApi.md#stopHVAC) | **POST** api/1/vehicles/{vehicle_id}/command/auto_conditioning_stop | Stop HVAC System
 [**toggleChargePort**](VehicleCommandsApi.md#toggleChargePort) | **POST** api/1/vehicles/{vehicle_id}/command/charge_port_door_open | Open Charge Port
@@ -64,6 +66,51 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**SpeedLimitRequest**](SpeedLimitRequest.md)|  |
+
+### Return type
+
+[**CommandResponse**](CommandResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="cancelSoftwareUpdate"></a>
+# **cancelSoftwareUpdate**
+> CommandResponse cancelSoftwareUpdate(vehicleId)
+
+Cancel Software Update
+
+Cancel Software Update
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+try {
+    CommandResponse result = apiInstance.cancelSoftwareUpdate(vehicleId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#cancelSoftwareUpdate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -838,6 +885,51 @@ try {
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#startHVAC");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
+
+### Return type
+
+[**CommandResponse**](CommandResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="startSoftwareUpdate"></a>
+# **startSoftwareUpdate**
+> CommandResponse startSoftwareUpdate(vehicleId)
+
+Start Software Update
+
+Start Software Update
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+try {
+    CommandResponse result = apiInstance.startSoftwareUpdate(vehicleId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#startSoftwareUpdate");
     e.printStackTrace();
 }
 ```
