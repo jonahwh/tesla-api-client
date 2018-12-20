@@ -27,7 +27,7 @@ import java.math.BigDecimal;
 /**
  * GuiState
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-01T15:39:52.863-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-12-19T21:28:46.162-07:00")
 public class GuiState {
   @SerializedName("gui_distance_units")
   private String guiDistanceUnits = null;

@@ -27,7 +27,7 @@ import java.math.BigDecimal;
 /**
  * ClimateState
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-01T15:39:52.863-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-12-19T21:28:46.162-07:00")
 public class ClimateState {
   @SerializedName("inside_temp")
   private Double insideTemp = null;
@@ -66,25 +66,25 @@ public class ClimateState {
   private Integer maxAvailTemp = null;
 
   @SerializedName("seat_heater_left")
-  private Boolean seatHeaterLeft = null;
+  private String seatHeaterLeft = null;
 
   @SerializedName("seat_heater_right")
-  private Boolean seatHeaterRight = null;
+  private String seatHeaterRight = null;
 
   @SerializedName("seat_heater_rear_left")
-  private Boolean seatHeaterRearLeft = null;
+  private String seatHeaterRearLeft = null;
 
   @SerializedName("seat_heater_rear_right")
-  private Boolean seatHeaterRearRight = null;
+  private String seatHeaterRearRight = null;
 
   @SerializedName("seat_heater_rear_center")
-  private Boolean seatHeaterRearCenter = null;
+  private String seatHeaterRearCenter = null;
 
   @SerializedName("seat_heater_rear_right_back")
-  private Integer seatHeaterRearRightBack = null;
+  private String seatHeaterRearRightBack = null;
 
   @SerializedName("seat_heater_rear_left_back")
-  private Integer seatHeaterRearLeftBack = null;
+  private String seatHeaterRearLeftBack = null;
 
   @SerializedName("battery_heater")
   private Boolean batteryHeater = null;
@@ -329,7 +329,7 @@ public class ClimateState {
     this.maxAvailTemp = maxAvailTemp;
   }
 
-  public ClimateState seatHeaterLeft(Boolean seatHeaterLeft) {
+  public ClimateState seatHeaterLeft(String seatHeaterLeft) {
     this.seatHeaterLeft = seatHeaterLeft;
     return this;
   }
@@ -339,15 +339,15 @@ public class ClimateState {
    * @return seatHeaterLeft
   **/
   @ApiModelProperty(value = "")
-  public Boolean isSeatHeaterLeft() {
+  public String getSeatHeaterLeft() {
     return seatHeaterLeft;
   }
 
-  public void setSeatHeaterLeft(Boolean seatHeaterLeft) {
+  public void setSeatHeaterLeft(String seatHeaterLeft) {
     this.seatHeaterLeft = seatHeaterLeft;
   }
 
-  public ClimateState seatHeaterRight(Boolean seatHeaterRight) {
+  public ClimateState seatHeaterRight(String seatHeaterRight) {
     this.seatHeaterRight = seatHeaterRight;
     return this;
   }
@@ -357,15 +357,15 @@ public class ClimateState {
    * @return seatHeaterRight
   **/
   @ApiModelProperty(value = "")
-  public Boolean isSeatHeaterRight() {
+  public String getSeatHeaterRight() {
     return seatHeaterRight;
   }
 
-  public void setSeatHeaterRight(Boolean seatHeaterRight) {
+  public void setSeatHeaterRight(String seatHeaterRight) {
     this.seatHeaterRight = seatHeaterRight;
   }
 
-  public ClimateState seatHeaterRearLeft(Boolean seatHeaterRearLeft) {
+  public ClimateState seatHeaterRearLeft(String seatHeaterRearLeft) {
     this.seatHeaterRearLeft = seatHeaterRearLeft;
     return this;
   }
@@ -375,15 +375,15 @@ public class ClimateState {
    * @return seatHeaterRearLeft
   **/
   @ApiModelProperty(value = "")
-  public Boolean isSeatHeaterRearLeft() {
+  public String getSeatHeaterRearLeft() {
     return seatHeaterRearLeft;
   }
 
-  public void setSeatHeaterRearLeft(Boolean seatHeaterRearLeft) {
+  public void setSeatHeaterRearLeft(String seatHeaterRearLeft) {
     this.seatHeaterRearLeft = seatHeaterRearLeft;
   }
 
-  public ClimateState seatHeaterRearRight(Boolean seatHeaterRearRight) {
+  public ClimateState seatHeaterRearRight(String seatHeaterRearRight) {
     this.seatHeaterRearRight = seatHeaterRearRight;
     return this;
   }
@@ -393,15 +393,15 @@ public class ClimateState {
    * @return seatHeaterRearRight
   **/
   @ApiModelProperty(value = "")
-  public Boolean isSeatHeaterRearRight() {
+  public String getSeatHeaterRearRight() {
     return seatHeaterRearRight;
   }
 
-  public void setSeatHeaterRearRight(Boolean seatHeaterRearRight) {
+  public void setSeatHeaterRearRight(String seatHeaterRearRight) {
     this.seatHeaterRearRight = seatHeaterRearRight;
   }
 
-  public ClimateState seatHeaterRearCenter(Boolean seatHeaterRearCenter) {
+  public ClimateState seatHeaterRearCenter(String seatHeaterRearCenter) {
     this.seatHeaterRearCenter = seatHeaterRearCenter;
     return this;
   }
@@ -411,15 +411,15 @@ public class ClimateState {
    * @return seatHeaterRearCenter
   **/
   @ApiModelProperty(value = "")
-  public Boolean isSeatHeaterRearCenter() {
+  public String getSeatHeaterRearCenter() {
     return seatHeaterRearCenter;
   }
 
-  public void setSeatHeaterRearCenter(Boolean seatHeaterRearCenter) {
+  public void setSeatHeaterRearCenter(String seatHeaterRearCenter) {
     this.seatHeaterRearCenter = seatHeaterRearCenter;
   }
 
-  public ClimateState seatHeaterRearRightBack(Integer seatHeaterRearRightBack) {
+  public ClimateState seatHeaterRearRightBack(String seatHeaterRearRightBack) {
     this.seatHeaterRearRightBack = seatHeaterRearRightBack;
     return this;
   }
@@ -429,15 +429,15 @@ public class ClimateState {
    * @return seatHeaterRearRightBack
   **/
   @ApiModelProperty(value = "")
-  public Integer getSeatHeaterRearRightBack() {
+  public String getSeatHeaterRearRightBack() {
     return seatHeaterRearRightBack;
   }
 
-  public void setSeatHeaterRearRightBack(Integer seatHeaterRearRightBack) {
+  public void setSeatHeaterRearRightBack(String seatHeaterRearRightBack) {
     this.seatHeaterRearRightBack = seatHeaterRearRightBack;
   }
 
-  public ClimateState seatHeaterRearLeftBack(Integer seatHeaterRearLeftBack) {
+  public ClimateState seatHeaterRearLeftBack(String seatHeaterRearLeftBack) {
     this.seatHeaterRearLeftBack = seatHeaterRearLeftBack;
     return this;
   }
@@ -447,11 +447,11 @@ public class ClimateState {
    * @return seatHeaterRearLeftBack
   **/
   @ApiModelProperty(value = "")
-  public Integer getSeatHeaterRearLeftBack() {
+  public String getSeatHeaterRearLeftBack() {
     return seatHeaterRearLeftBack;
   }
 
-  public void setSeatHeaterRearLeftBack(Integer seatHeaterRearLeftBack) {
+  public void setSeatHeaterRearLeftBack(String seatHeaterRearLeftBack) {
     this.seatHeaterRearLeftBack = seatHeaterRearLeftBack;
   }
 

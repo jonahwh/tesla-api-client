@@ -1408,19 +1408,19 @@ definitions:
         max_avail_temp:
           type: integer
         seat_heater_left:
-          type: boolean
+          type: string
         seat_heater_right:
-          type: boolean
+          type: string
         seat_heater_rear_left:
-          type: boolean
+          type: string
         seat_heater_rear_right:
-          type: boolean
+          type: string
         seat_heater_rear_center:
-          type: boolean
+          type: string
         seat_heater_rear_right_back:
-          type: integer
+          type: string
         seat_heater_rear_left_back:
-          type: integer
+          type: string
         battery_heater:
           type: boolean
         battery_heater_no_power:
