@@ -27,7 +27,7 @@ import java.math.BigDecimal;
 /**
  * ClimateState
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-12-22T19:58:12.919-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-12-22T20:07:29.736-07:00")
 public class ClimateState {
   @SerializedName("inside_temp")
   private Double insideTemp = null;

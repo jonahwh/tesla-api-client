@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ClimateSettingsResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-12-22T19:58:12.919-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-12-22T20:07:29.736-07:00")
 public class ClimateSettingsResponse {
   @SerializedName("response")
   private ClimateState response = null;

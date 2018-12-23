@@ -22,20 +22,129 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 /**
  * RemoteSeatHeaterRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-12-22T19:58:12.919-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-12-22T20:07:29.736-07:00")
 public class RemoteSeatHeaterRequest {
+  /**
+   * The desired seat to adjust the heater for.  SeatHeaterFrontLeft: 0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack: 3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack: 6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8
+   */
+  @JsonAdapter(HeaterEnum.Adapter.class)
+  public enum HeaterEnum {
+    NUMBER_0(0),
+    
+    NUMBER_1(1),
+    
+    NUMBER_2(2),
+    
+    NUMBER_3(3),
+    
+    NUMBER_4(4),
+    
+    NUMBER_5(5),
+    
+    NUMBER_6(6),
+    
+    NUMBER_7(7),
+    
+    NUMBER_8(8);
+
+    private Integer value;
+
+    HeaterEnum(Integer value) {
+      this.value = value;
+    }
+
+    public Integer getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static HeaterEnum fromValue(String text) {
+      for (HeaterEnum b : HeaterEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<HeaterEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final HeaterEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public HeaterEnum read(final JsonReader jsonReader) throws IOException {
+        Integer value = jsonReader.nextInt();
+        return HeaterEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
   @SerializedName("heater")
-  private BigDecimal heater = null;
+  private HeaterEnum heater = null;
+
+  /**
+   * Seat heater level
+   */
+  @JsonAdapter(LevelEnum.Adapter.class)
+  public enum LevelEnum {
+    NUMBER_1(1),
+    
+    NUMBER_2(2),
+    
+    NUMBER_3(3);
+
+    private Integer value;
+
+    LevelEnum(Integer value) {
+      this.value = value;
+    }
+
+    public Integer getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static LevelEnum fromValue(String text) {
+      for (LevelEnum b : LevelEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<LevelEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final LevelEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public LevelEnum read(final JsonReader jsonReader) throws IOException {
+        Integer value = jsonReader.nextInt();
+        return LevelEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
 
   @SerializedName("level")
-  private BigDecimal level = null;
+  private LevelEnum level = null;
 
-  public RemoteSeatHeaterRequest heater(BigDecimal heater) {
+  public RemoteSeatHeaterRequest heater(HeaterEnum heater) {
     this.heater = heater;
     return this;
   }
@@ -45,15 +154,15 @@ public class RemoteSeatHeaterRequest {
    * @return heater
   **/
   @ApiModelProperty(value = "The desired seat to adjust the heater for.  SeatHeaterFrontLeft: 0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack: 3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack: 6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8")
-  public BigDecimal getHeater() {
+  public HeaterEnum getHeater() {
     return heater;
   }
 
-  public void setHeater(BigDecimal heater) {
+  public void setHeater(HeaterEnum heater) {
     this.heater = heater;
   }
 
-  public RemoteSeatHeaterRequest level(BigDecimal level) {
+  public RemoteSeatHeaterRequest level(LevelEnum level) {
     this.level = level;
     return this;
   }
@@ -63,11 +172,11 @@ public class RemoteSeatHeaterRequest {
    * @return level
   **/
   @ApiModelProperty(value = "Seat heater level")
-  public BigDecimal getLevel() {
+  public LevelEnum getLevel() {
     return level;
   }
 
-  public void setLevel(BigDecimal level) {
+  public void setLevel(LevelEnum level) {
     this.level = level;
   }
 

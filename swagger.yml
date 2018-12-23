@@ -1208,14 +1208,16 @@ definitions:
           - 6
           - 7
           - 8
-        type: number
+        type: integer
+        format: int32
         description: 'The desired seat to adjust the heater for.  SeatHeaterFrontLeft: 0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack: 3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack: 6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8'
       level:
         enum:
          - 1
          - 2
          - 3
-        type: number
+        type: integer
+        format: int32
         description: 'Seat heater level'
   RemoteSteeringWheelHeaterRequest:
     title: Remote Steering Wheel Heater
