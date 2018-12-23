@@ -14,7 +14,9 @@ Method | HTTP request | Description
 [**navigationRequest**](VehicleCommandsApi.md#navigationRequest) | **POST** api/1/vehicles/{vehicle_id}/command/navigation_request | Send Navigation Request
 [**openSunroof**](VehicleCommandsApi.md#openSunroof) | **POST** api/1/vehicles/{vehicle_id}/command/sun_roof_control | Move Pano Roof
 [**openTrunk**](VehicleCommandsApi.md#openTrunk) | **POST** api/1/vehicles/{vehicle_id}/command/actuate_trunk | Open Trunk/Frunk
+[**remoteSeatHeaterRequest**](VehicleCommandsApi.md#remoteSeatHeaterRequest) | **POST** api/1/vehicles/{vehicle_id}/command/remote_seat_heater_request | Set Seat Heater Level
 [**remoteStart**](VehicleCommandsApi.md#remoteStart) | **POST** api/1/vehicles/{vehicle_id}/command/remote_start_drive | Remote Start
+[**remoteSteeringWheelHeaterRequest**](VehicleCommandsApi.md#remoteSteeringWheelHeaterRequest) | **POST** api/1/vehicles/{vehicle_id}/command/remote_steering_wheel_heater_request | Toggle Steering Wheel Heater
 [**resetValetPin**](VehicleCommandsApi.md#resetValetPin) | **POST** api/1/vehicles/{vehicle_id}/command/reset_valet_pin | Reset Valet PIN
 [**sendStandardChargeLimit**](VehicleCommandsApi.md#sendStandardChargeLimit) | **POST** api/1/vehicles/{vehicle_id}/command/charge_standard | Set Charge Limit to Standard
 [**setChargeLimit**](VehicleCommandsApi.md#setChargeLimit) | **POST** api/1/vehicles/{vehicle_id}/command/set_charge_limit | Set Charge Limit
@@ -495,6 +497,53 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="remoteSeatHeaterRequest"></a>
+# **remoteSeatHeaterRequest**
+> CommandResponse remoteSeatHeaterRequest(vehicleId, body)
+
+Set Seat Heater Level
+
+Set the heating level of a seat heater
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+RemoteSeatHeaterRequest body = new RemoteSeatHeaterRequest(); // RemoteSeatHeaterRequest | 
+try {
+    CommandResponse result = apiInstance.remoteSeatHeaterRequest(vehicleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#remoteSeatHeaterRequest");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
+ **body** | [**RemoteSeatHeaterRequest**](RemoteSeatHeaterRequest.md)|  |
+
+### Return type
+
+[**CommandResponse**](CommandResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="remoteStart"></a>
 # **remoteStart**
 > CommandResponse remoteStart(vehicleId, body)
@@ -528,6 +577,53 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**RemoteStartRequest**](RemoteStartRequest.md)|  |
+
+### Return type
+
+[**CommandResponse**](CommandResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="remoteSteeringWheelHeaterRequest"></a>
+# **remoteSteeringWheelHeaterRequest**
+> CommandResponse remoteSteeringWheelHeaterRequest(vehicleId, body)
+
+Toggle Steering Wheel Heater
+
+Toggle the steering wheel heater
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+RemoteSteeringWheelHeaterRequest body = new RemoteSteeringWheelHeaterRequest(); // RemoteSteeringWheelHeaterRequest | 
+try {
+    CommandResponse result = apiInstance.remoteSteeringWheelHeaterRequest(vehicleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#remoteSteeringWheelHeaterRequest");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
+ **body** | [**RemoteSteeringWheelHeaterRequest**](RemoteSteeringWheelHeaterRequest.md)|  |
 
 ### Return type
 

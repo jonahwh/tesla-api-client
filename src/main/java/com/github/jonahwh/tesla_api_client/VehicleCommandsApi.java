@@ -12,7 +12,9 @@ import com.github.jonahwh.tesla_api_client.model.CommandResponse;
 import com.github.jonahwh.tesla_api_client.model.MovePanoRoofRequest;
 import com.github.jonahwh.tesla_api_client.model.NavigationRequestRequest;
 import com.github.jonahwh.tesla_api_client.model.OpenTrunkRequest;
+import com.github.jonahwh.tesla_api_client.model.RemoteSeatHeaterRequest;
 import com.github.jonahwh.tesla_api_client.model.RemoteStartRequest;
+import com.github.jonahwh.tesla_api_client.model.RemoteSteeringWheelHeaterRequest;
 import com.github.jonahwh.tesla_api_client.model.SetChargeLimitRequest;
 import com.github.jonahwh.tesla_api_client.model.SetSpeedLimitRequest;
 import com.github.jonahwh.tesla_api_client.model.SetTempsRequest;
@@ -173,6 +175,21 @@ public interface VehicleCommandsApi {
   );
 
   /**
+   * Set Seat Heater Level
+   * Set the heating level of a seat heater
+   * @param vehicleId The id of the Vehicle. (required)
+   * @param body  (required)
+   * @return Call&lt;CommandResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/command/remote_seat_heater_request")
+  Call<CommandResponse> remoteSeatHeaterRequest(
+    @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body RemoteSeatHeaterRequest body
+  );
+
+  /**
    * Remote Start
    * Start the car for keyless driving. Must start driving within 2 minutes of issuing this request.
    * @param vehicleId The id of the Vehicle. (required)
@@ -185,6 +202,21 @@ public interface VehicleCommandsApi {
   @POST("api/1/vehicles/{vehicle_id}/command/remote_start_drive")
   Call<CommandResponse> remoteStart(
     @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body RemoteStartRequest body
+  );
+
+  /**
+   * Toggle Steering Wheel Heater
+   * Toggle the steering wheel heater
+   * @param vehicleId The id of the Vehicle. (required)
+   * @param body  (required)
+   * @return Call&lt;CommandResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/command/remote_steering_wheel_heater_request")
+  Call<CommandResponse> remoteSteeringWheelHeaterRequest(
+    @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body RemoteSteeringWheelHeaterRequest body
   );
 
   /**

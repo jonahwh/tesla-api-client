@@ -24,29 +24,29 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * VehicleStateMediaState
+ * RemoteSteeringWheelHeaterRequest
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-12-22T19:58:12.919-07:00")
-public class VehicleStateMediaState {
-  @SerializedName("remote_control_enabled")
-  private Boolean remoteControlEnabled = null;
+public class RemoteSteeringWheelHeaterRequest {
+  @SerializedName("on")
+  private Boolean on = null;
 
-  public VehicleStateMediaState remoteControlEnabled(Boolean remoteControlEnabled) {
-    this.remoteControlEnabled = remoteControlEnabled;
+  public RemoteSteeringWheelHeaterRequest on(Boolean on) {
+    this.on = on;
     return this;
   }
 
    /**
-   * Get remoteControlEnabled
-   * @return remoteControlEnabled
+   * Get on
+   * @return on
   **/
   @ApiModelProperty(value = "")
-  public Boolean isRemoteControlEnabled() {
-    return remoteControlEnabled;
+  public Boolean isOn() {
+    return on;
   }
 
-  public void setRemoteControlEnabled(Boolean remoteControlEnabled) {
-    this.remoteControlEnabled = remoteControlEnabled;
+  public void setOn(Boolean on) {
+    this.on = on;
   }
 
 
@@ -58,22 +58,22 @@ public class VehicleStateMediaState {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    VehicleStateMediaState vehicleStateMediaState = (VehicleStateMediaState) o;
-    return Objects.equals(this.remoteControlEnabled, vehicleStateMediaState.remoteControlEnabled);
+    RemoteSteeringWheelHeaterRequest remoteSteeringWheelHeaterRequest = (RemoteSteeringWheelHeaterRequest) o;
+    return Objects.equals(this.on, remoteSteeringWheelHeaterRequest.on);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(remoteControlEnabled);
+    return Objects.hash(on);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class VehicleStateMediaState {\n");
+    sb.append("class RemoteSteeringWheelHeaterRequest {\n");
     
-    sb.append("    remoteControlEnabled: ").append(toIndentedString(remoteControlEnabled)).append("\n");
+    sb.append("    on: ").append(toIndentedString(on)).append("\n");
     sb.append("}");
     return sb.toString();
   }

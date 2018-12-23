@@ -27,7 +27,7 @@ import java.math.BigDecimal;
 /**
  * VehicleConfig
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-12-19T21:28:46.162-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-12-22T19:58:12.919-07:00")
 public class VehicleConfig {
   @SerializedName("can_actuate_trunks")
   private Boolean canActuateTrunks = null;

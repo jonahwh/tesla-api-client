@@ -606,6 +606,60 @@ paths:
           description: ''
           schema:
             $ref: '#/definitions/CommandResponse'
+  '/api/1/vehicles/{vehicle_id}/command/remote_seat_heater_request':
+      post:
+        description: |-
+          Set the heating level of a seat heater
+        summary: Set Seat Heater Level
+        tags:
+          - Vehicle Commands
+        operationId: RemoteSeatHeaterRequest
+        produces:
+          - application/json
+        parameters:
+          - name: vehicle_id
+            in: path
+            required: true
+            type: string
+            description: The id of the Vehicle.
+          - name: body
+            in: body
+            required: true
+            description: ''
+            schema:
+              $ref: '#/definitions/RemoteSeatHeaterRequest'
+        responses:
+          '200':
+            description: ''
+            schema:
+              $ref: '#/definitions/CommandResponse'
+  '/api/1/vehicles/{vehicle_id}/command/remote_steering_wheel_heater_request':
+      post:
+        description: |-
+          Toggle the steering wheel heater
+        summary: Toggle Steering Wheel Heater
+        tags:
+          - Vehicle Commands
+        operationId: RemoteSteeringWheelHeaterRequest
+        produces:
+          - application/json
+        parameters:
+          - name: vehicle_id
+            in: path
+            required: true
+            type: string
+            description: The id of the Vehicle.
+          - name: body
+            in: body
+            required: true
+            description: ''
+            schema:
+              $ref: '#/definitions/RemoteSteeringWheelHeaterRequest'
+        responses:
+          '200':
+            description: ''
+            schema:
+              $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/sun_roof_control':
     post:
       description: 'Controls the car''s panoramic roof, if installed.'
@@ -1136,6 +1190,41 @@ definitions:
         type: number
         format: double
         description: The percentage to move the roof to.
+  RemoteSeatHeaterRequest:
+    title: Remote Seat Heater
+    example:
+      heater: 0
+      level: 2
+    type: object
+    properties:
+      heater:
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+        type: number
+        description: 'The desired seat to adjust the heater for.  SeatHeaterFrontLeft: 0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack: 3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack: 6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8'
+      level:
+        enum:
+         - 1
+         - 2
+         - 3
+        type: number
+        description: 'Seat heater level'
+  RemoteSteeringWheelHeaterRequest:
+    title: Remote Steering Wheel Heater
+    example:
+      'on': true
+    type: object
+    properties:
+      'on':
+        type: boolean
   SetTempsRequest:
     title: Set SetTemperatures
     example:
