@@ -7,6 +7,7 @@ import retrofit2.http.*;
 
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
+import okhttp3.MultipartBody;
 
 import com.github.jonahwh.tesla_api_client.model.CommandResponse;
 import com.github.jonahwh.tesla_api_client.model.MovePanoRoofRequest;
@@ -15,6 +16,7 @@ import com.github.jonahwh.tesla_api_client.model.OpenTrunkRequest;
 import com.github.jonahwh.tesla_api_client.model.RemoteSeatHeaterRequest;
 import com.github.jonahwh.tesla_api_client.model.RemoteStartRequest;
 import com.github.jonahwh.tesla_api_client.model.RemoteSteeringWheelHeaterRequest;
+import com.github.jonahwh.tesla_api_client.model.SentryModeRequest;
 import com.github.jonahwh.tesla_api_client.model.SetChargeLimitRequest;
 import com.github.jonahwh.tesla_api_client.model.SetSpeedLimitRequest;
 import com.github.jonahwh.tesla_api_client.model.SetTempsRequest;
@@ -274,6 +276,21 @@ public interface VehicleCommandsApi {
   @POST("api/1/vehicles/{vehicle_id}/command/charge_max_range")
   Call<CommandResponse> setMaxChargeLimit(
     @retrofit2.http.Path("vehicle_id") String vehicleId
+  );
+
+  /**
+   * Toggle Sentry Mode
+   * Toggle Sentry Mode
+   * @param vehicleId The id of the Vehicle. (required)
+   * @param body  (required)
+   * @return Call&lt;CommandResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/command/set_sentry_mode")
+  Call<CommandResponse> setSentryMode(
+    @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body SentryModeRequest body
   );
 
   /**

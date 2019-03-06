@@ -7,6 +7,7 @@ import retrofit2.http.*;
 
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
+import okhttp3.MultipartBody;
 
 import com.github.jonahwh.tesla_api_client.model.CreateAccessTokenRequest;
 import com.github.jonahwh.tesla_api_client.model.CreateAccessTokenResponse;

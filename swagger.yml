@@ -1065,6 +1065,33 @@ paths:
                   description: ''
                   schema:
                     $ref: '#/definitions/CommandResponse'
+  '/api/1/vehicles/{vehicle_id}/command/set_sentry_mode':
+    post:
+      description: |-
+        Toggle Sentry Mode
+      summary: Toggle Sentry Mode
+      tags:
+      - Vehicle Commands
+      operationId: SetSentryMode
+      produces:
+      - application/json
+      parameters:
+      - name: vehicle_id
+        in: path
+        required: true
+        type: string
+        description: The id of the Vehicle.
+      - name: body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/SentryModeRequest'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/CommandResponse'
 definitions:
   CreateAccessTokenRequest:
     title: Get an Access Token request
@@ -1291,6 +1318,14 @@ definitions:
         timestamp_ms:
           type: string
           description: Unix timestamp
+  SentryModeRequest:
+    title: Sentry Mode
+    example:
+      'on': true
+    type: object
+    properties:
+      'on':
+        type: boolean
   GetVehiclesResponse:
     title: List all Vehicles response
     example:

@@ -21,6 +21,7 @@ Method | HTTP request | Description
 [**sendStandardChargeLimit**](VehicleCommandsApi.md#sendStandardChargeLimit) | **POST** api/1/vehicles/{vehicle_id}/command/charge_standard | Set Charge Limit to Standard
 [**setChargeLimit**](VehicleCommandsApi.md#setChargeLimit) | **POST** api/1/vehicles/{vehicle_id}/command/set_charge_limit | Set Charge Limit
 [**setMaxChargeLimit**](VehicleCommandsApi.md#setMaxChargeLimit) | **POST** api/1/vehicles/{vehicle_id}/command/charge_max_range | Set Charge Limit to Max Range
+[**setSentryMode**](VehicleCommandsApi.md#setSentryMode) | **POST** api/1/vehicles/{vehicle_id}/command/set_sentry_mode | Toggle Sentry Mode
 [**setSpeedLimit**](VehicleCommandsApi.md#setSpeedLimit) | **POST** api/1/vehicles/{vehicle_id}/command/speed_limit_set_limit | Set Speed Limit
 [**setTemperatures**](VehicleCommandsApi.md#setTemperatures) | **POST** api/1/vehicles/{vehicle_id}/command/set_temps | Set Temperature
 [**startCharge**](VehicleCommandsApi.md#startCharge) | **POST** api/1/vehicles/{vehicle_id}/command/charge_start | Start Charging
@@ -806,6 +807,53 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vehicleId** | **String**| The id of the Vehicle. |
+
+### Return type
+
+[**CommandResponse**](CommandResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="setSentryMode"></a>
+# **setSentryMode**
+> CommandResponse setSentryMode(vehicleId, body)
+
+Toggle Sentry Mode
+
+Toggle Sentry Mode
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+SentryModeRequest body = new SentryModeRequest(); // SentryModeRequest | 
+try {
+    CommandResponse result = apiInstance.setSentryMode(vehicleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#setSentryMode");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
+ **body** | [**SentryModeRequest**](SentryModeRequest.md)|  |
 
 ### Return type
 

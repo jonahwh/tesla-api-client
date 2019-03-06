@@ -14,7 +14,7 @@
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
-import com.github.jonahwh.tesla_api_client.model.WakeUpCarResponseResponse;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,29 +25,29 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * ResetValetPinResponse
+ * SentryModeRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-19T22:54:18.028-07:00")
-public class ResetValetPinResponse {
-  @SerializedName("response")
-  private WakeUpCarResponseResponse response = null;
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-06T14:33:05.796-07:00")
+public class SentryModeRequest {
+  @SerializedName("on")
+  private Boolean on = null;
 
-  public ResetValetPinResponse response(WakeUpCarResponseResponse response) {
-    this.response = response;
+  public SentryModeRequest on(Boolean on) {
+    this.on = on;
     return this;
   }
 
    /**
-   * Get response
-   * @return response
+   * Get on
+   * @return on
   **/
-  @ApiModelProperty(required = true, value = "")
-  public WakeUpCarResponseResponse getResponse() {
-    return response;
+  @ApiModelProperty(value = "")
+  public Boolean isOn() {
+    return on;
   }
 
-  public void setResponse(WakeUpCarResponseResponse response) {
-    this.response = response;
+  public void setOn(Boolean on) {
+    this.on = on;
   }
 
 
@@ -59,22 +59,22 @@ public class ResetValetPinResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResetValetPinResponse resetValetPinResponse = (ResetValetPinResponse) o;
-    return Objects.equals(this.response, resetValetPinResponse.response);
+    SentryModeRequest sentryModeRequest = (SentryModeRequest) o;
+    return Objects.equals(this.on, sentryModeRequest.on);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(response);
+    return Objects.hash(on);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResetValetPinResponse {\n");
+    sb.append("class SentryModeRequest {\n");
     
-    sb.append("    response: ").append(toIndentedString(response)).append("\n");
+    sb.append("    on: ").append(toIndentedString(on)).append("\n");
     sb.append("}");
     return sb.toString();
   }

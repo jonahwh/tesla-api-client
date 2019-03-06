@@ -14,6 +14,7 @@
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,7 +27,7 @@ import java.io.IOException;
 /**
  * CreateAccessTokenRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-12-22T20:07:29.736-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-06T14:33:05.796-07:00")
 public class CreateAccessTokenRequest {
   @SerializedName("grant_type")
   private String grantType = null;

@@ -14,6 +14,7 @@
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,7 +27,7 @@ import java.io.IOException;
 /**
  * MovePanoRoofRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-12-22T20:07:29.736-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-06T14:33:05.796-07:00")
 public class MovePanoRoofRequest {
   /**
    * The desired state of the panoramic roof. The approximate percent open values for each state are &#x60;open&#x60; &#x3D; 100%, &#x60;close&#x60; &#x3D; 0%, &#x60;comfort&#x60; &#x3D; 80%, and &#x60;vent&#x60; &#x3D; ~15%
