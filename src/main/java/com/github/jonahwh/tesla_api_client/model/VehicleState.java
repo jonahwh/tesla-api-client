@@ -31,7 +31,7 @@ import java.math.BigDecimal;
 /**
  * VehicleState
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-06T14:33:05.796-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-08T14:31:36.738-07:00")
 public class VehicleState {
   @SerializedName("api_version")
   private Integer apiVersion = null;
@@ -98,6 +98,9 @@ public class VehicleState {
 
   @SerializedName("rt")
   private Integer rt = null;
+
+  @SerializedName("sentry_mode")
+  private Boolean sentryMode = null;
 
   @SerializedName("software_update")
   private VehicleStateSoftwareUpdate softwareUpdate = null;
@@ -516,6 +519,24 @@ public class VehicleState {
     this.rt = rt;
   }
 
+  public VehicleState sentryMode(Boolean sentryMode) {
+    this.sentryMode = sentryMode;
+    return this;
+  }
+
+   /**
+   * Get sentryMode
+   * @return sentryMode
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isSentryMode() {
+    return sentryMode;
+  }
+
+  public void setSentryMode(Boolean sentryMode) {
+    this.sentryMode = sentryMode;
+  }
+
   public VehicleState softwareUpdate(VehicleStateSoftwareUpdate softwareUpdate) {
     this.softwareUpdate = softwareUpdate;
     return this;
@@ -674,6 +695,7 @@ public class VehicleState {
         Objects.equals(this.remoteStart, vehicleState.remoteStart) &&
         Objects.equals(this.remoteStartSupported, vehicleState.remoteStartSupported) &&
         Objects.equals(this.rt, vehicleState.rt) &&
+        Objects.equals(this.sentryMode, vehicleState.sentryMode) &&
         Objects.equals(this.softwareUpdate, vehicleState.softwareUpdate) &&
         Objects.equals(this.sunRoofPercentOpen, vehicleState.sunRoofPercentOpen) &&
         Objects.equals(this.sunRoofState, vehicleState.sunRoofState) &&
@@ -685,7 +707,7 @@ public class VehicleState {
 
   @Override
   public int hashCode() {
-    return Objects.hash(apiVersion, autoparkState, autoparkStateV2, autoparkStyle, calendarSupported, carVersion, centerDisplayState, df, dr, ft, homelinkNearby, lastAutoparkError, locked, mediaState, notificationsSupported, odometer, parsedCalendarSupported, pf, pr, remoteStart, remoteStartSupported, rt, softwareUpdate, sunRoofPercentOpen, sunRoofState, timestamp, valetMode, vehicleName, speedLimitMode);
+    return Objects.hash(apiVersion, autoparkState, autoparkStateV2, autoparkStyle, calendarSupported, carVersion, centerDisplayState, df, dr, ft, homelinkNearby, lastAutoparkError, locked, mediaState, notificationsSupported, odometer, parsedCalendarSupported, pf, pr, remoteStart, remoteStartSupported, rt, sentryMode, softwareUpdate, sunRoofPercentOpen, sunRoofState, timestamp, valetMode, vehicleName, speedLimitMode);
   }
 
 
@@ -716,6 +738,7 @@ public class VehicleState {
     sb.append("    remoteStart: ").append(toIndentedString(remoteStart)).append("\n");
     sb.append("    remoteStartSupported: ").append(toIndentedString(remoteStartSupported)).append("\n");
     sb.append("    rt: ").append(toIndentedString(rt)).append("\n");
+    sb.append("    sentryMode: ").append(toIndentedString(sentryMode)).append("\n");
     sb.append("    softwareUpdate: ").append(toIndentedString(softwareUpdate)).append("\n");
     sb.append("    sunRoofPercentOpen: ").append(toIndentedString(sunRoofPercentOpen)).append("\n");
     sb.append("    sunRoofState: ").append(toIndentedString(sunRoofState)).append("\n");

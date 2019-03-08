@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **remoteStart** | **Boolean** |  |  [optional]
 **remoteStartSupported** | **Boolean** |  |  [optional]
 **rt** | **Integer** |  |  [optional]
+**sentryMode** | **Boolean** |  |  [optional]
 **softwareUpdate** | [**VehicleStateSoftwareUpdate**](VehicleStateSoftwareUpdate.md) |  |  [optional]
 **sunRoofPercentOpen** | **Integer** |  |  [optional]
 **sunRoofState** | **String** |  |  [optional]
