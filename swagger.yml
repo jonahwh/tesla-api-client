@@ -461,6 +461,26 @@ paths:
           description: ''
           schema:
             $ref: '#/definitions/CommandResponse'
+  '/api/1/vehicles/{vehicle_id}/nearby_charging_sites':
+    get:
+      description: Get a list of nearby charging sites
+      summary: Get Nearby Chargers
+      tags:
+      - Vehicles
+      operationId: NearbyChargers
+      produces:
+      - application/json
+      parameters:
+      - name: vehicle_id
+        in: path
+        required: true
+        type: string
+        description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/NearbyChargerResponse'
   '/api/1/vehicles/{vehicle_id}/command/flash_lights':
     post:
       description: Flash the lights once.
@@ -1880,6 +1900,71 @@ definitions:
         type: object
     required:
       - response
+  NearbyChargerResponse:
+    title: NearbyChargerResponse
+    type: object
+    properties:
+      response:
+        type: object
+        properties:
+          congestion_sync_time_utc_secs:
+            type: number
+          destination_charging:
+            type: array
+            items:
+              $ref: '#/definitions/DestinationCharger'
+          superchargers:
+            type: array
+            items:
+              $ref: '#/definitions/Supercharger'
+  DestinationCharger:
+    title: DestinationCharger
+    type: object
+    properties:
+      location:
+        type: object
+        properties:
+          lat:
+            type: number
+            format: double
+          long:
+            type: number
+            format: double
+      name:
+        type: string
+      'type':
+        type: string
+        default: 'destination'
+      distance_miles:
+        type: number
+        format: double
+  Supercharger:
+    title: Supercharger
+    type: object
+    properties:
+      location:
+        type: object
+        properties:
+          lat:
+            type: number
+            format: double
+          long:
+            type: number
+            format: double
+      name:
+        type: string
+      'type':
+        type: string
+        default: 'supercharger'
+      distance_miles:
+        type: number
+        format: double
+      available_stalls:
+        type: number
+      total_stalls:
+        type: number
+      site_closed:
+        type: boolean
   State:
     title: state
     example: open

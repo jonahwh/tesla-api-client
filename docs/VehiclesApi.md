@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**getVehicleState**](VehiclesApi.md#getVehicleState) | **GET** api/1/vehicles/{vehicle_id}/data_request/vehicle_state | Vehicle State
 [**getVehicles**](VehiclesApi.md#getVehicles) | **GET** api/1/vehicles | List all Vehicles
 [**getVehilceGuiSettings**](VehiclesApi.md#getVehilceGuiSettings) | **GET** api/1/vehicles/{vehicle_id}/data_request/gui_settings | GUI Settings
+[**nearbyChargers**](VehiclesApi.md#nearbyChargers) | **GET** api/1/vehicles/{vehicle_id}/nearby_charging_sites | Get Nearby Chargers
 
 
 <a name="getVehicle"></a>
@@ -452,6 +453,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GuistateResponse**](GuistateResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="nearbyChargers"></a>
+# **nearbyChargers**
+> NearbyChargerResponse nearbyChargers(vehicleId)
+
+Get Nearby Chargers
+
+Get a list of nearby charging sites
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehiclesApi;
+
+
+VehiclesApi apiInstance = new VehiclesApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+try {
+    NearbyChargerResponse result = apiInstance.nearbyChargers(vehicleId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehiclesApi#nearbyChargers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
+
+### Return type
+
+[**NearbyChargerResponse**](NearbyChargerResponse.md)
 
 ### Authorization
 

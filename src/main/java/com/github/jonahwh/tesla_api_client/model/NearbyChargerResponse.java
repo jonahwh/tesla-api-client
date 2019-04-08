@@ -15,6 +15,7 @@ package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.github.jonahwh.tesla_api_client.model.NearbyChargerResponseResponse;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,51 +26,29 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * 
+ * NearbyChargerResponse
  */
-@ApiModel(description = "")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-07T18:40:25.601-07:00")
-public class CommandResponseResponse {
-  @SerializedName("result")
-  private Boolean result = null;
+public class NearbyChargerResponse {
+  @SerializedName("response")
+  private NearbyChargerResponseResponse response = null;
 
-  @SerializedName("reason")
-  private String reason = null;
-
-  public CommandResponseResponse result(Boolean result) {
-    this.result = result;
+  public NearbyChargerResponse response(NearbyChargerResponseResponse response) {
+    this.response = response;
     return this;
   }
 
    /**
-   * Get result
-   * @return result
+   * Get response
+   * @return response
   **/
   @ApiModelProperty(value = "")
-  public Boolean isResult() {
-    return result;
+  public NearbyChargerResponseResponse getResponse() {
+    return response;
   }
 
-  public void setResult(Boolean result) {
-    this.result = result;
-  }
-
-  public CommandResponseResponse reason(String reason) {
-    this.reason = reason;
-    return this;
-  }
-
-   /**
-   * Get reason
-   * @return reason
-  **/
-  @ApiModelProperty(value = "")
-  public String getReason() {
-    return reason;
-  }
-
-  public void setReason(String reason) {
-    this.reason = reason;
+  public void setResponse(NearbyChargerResponseResponse response) {
+    this.response = response;
   }
 
 
@@ -81,24 +60,22 @@ public class CommandResponseResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CommandResponseResponse commandResponseResponse = (CommandResponseResponse) o;
-    return Objects.equals(this.result, commandResponseResponse.result) &&
-        Objects.equals(this.reason, commandResponseResponse.reason);
+    NearbyChargerResponse nearbyChargerResponse = (NearbyChargerResponse) o;
+    return Objects.equals(this.response, nearbyChargerResponse.response);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(result, reason);
+    return Objects.hash(response);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CommandResponseResponse {\n");
+    sb.append("class NearbyChargerResponse {\n");
     
-    sb.append("    result: ").append(toIndentedString(result)).append("\n");
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    sb.append("    response: ").append(toIndentedString(response)).append("\n");
     sb.append("}");
     return sb.toString();
   }

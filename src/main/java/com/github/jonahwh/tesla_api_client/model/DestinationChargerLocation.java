@@ -25,51 +25,50 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * 
+ * DestinationChargerLocation
  */
-@ApiModel(description = "")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-07T18:40:25.601-07:00")
-public class CommandResponseResponse {
-  @SerializedName("result")
-  private Boolean result = null;
+public class DestinationChargerLocation {
+  @SerializedName("lat")
+  private Double lat = null;
 
-  @SerializedName("reason")
-  private String reason = null;
+  @SerializedName("long")
+  private Double _long = null;
 
-  public CommandResponseResponse result(Boolean result) {
-    this.result = result;
+  public DestinationChargerLocation lat(Double lat) {
+    this.lat = lat;
     return this;
   }
 
    /**
-   * Get result
-   * @return result
+   * Get lat
+   * @return lat
   **/
   @ApiModelProperty(value = "")
-  public Boolean isResult() {
-    return result;
+  public Double getLat() {
+    return lat;
   }
 
-  public void setResult(Boolean result) {
-    this.result = result;
+  public void setLat(Double lat) {
+    this.lat = lat;
   }
 
-  public CommandResponseResponse reason(String reason) {
-    this.reason = reason;
+  public DestinationChargerLocation _long(Double _long) {
+    this._long = _long;
     return this;
   }
 
    /**
-   * Get reason
-   * @return reason
+   * Get _long
+   * @return _long
   **/
   @ApiModelProperty(value = "")
-  public String getReason() {
-    return reason;
+  public Double getLong() {
+    return _long;
   }
 
-  public void setReason(String reason) {
-    this.reason = reason;
+  public void setLong(Double _long) {
+    this._long = _long;
   }
 
 
@@ -81,24 +80,24 @@ public class CommandResponseResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CommandResponseResponse commandResponseResponse = (CommandResponseResponse) o;
-    return Objects.equals(this.result, commandResponseResponse.result) &&
-        Objects.equals(this.reason, commandResponseResponse.reason);
+    DestinationChargerLocation destinationChargerLocation = (DestinationChargerLocation) o;
+    return Objects.equals(this.lat, destinationChargerLocation.lat) &&
+        Objects.equals(this._long, destinationChargerLocation._long);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(result, reason);
+    return Objects.hash(lat, _long);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CommandResponseResponse {\n");
+    sb.append("class DestinationChargerLocation {\n");
     
-    sb.append("    result: ").append(toIndentedString(result)).append("\n");
-    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    sb.append("    lat: ").append(toIndentedString(lat)).append("\n");
+    sb.append("    _long: ").append(toIndentedString(_long)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * SpeedLimitRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-08T14:31:36.738-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-07T18:40:25.601-07:00")
 public class SpeedLimitRequest {
   @SerializedName("pin")
   private String pin = null;

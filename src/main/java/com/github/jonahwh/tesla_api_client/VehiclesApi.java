@@ -15,6 +15,7 @@ import com.github.jonahwh.tesla_api_client.model.DriveStateResponse;
 import com.github.jonahwh.tesla_api_client.model.GetVehiclesResponse;
 import com.github.jonahwh.tesla_api_client.model.GuistateResponse;
 import com.github.jonahwh.tesla_api_client.model.MobileAccessResponse;
+import com.github.jonahwh.tesla_api_client.model.NearbyChargerResponse;
 import com.github.jonahwh.tesla_api_client.model.VehicleConfigResponse;
 import com.github.jonahwh.tesla_api_client.model.VehicleDataResponse;
 import com.github.jonahwh.tesla_api_client.model.VehicleResponse;
@@ -161,6 +162,20 @@ public interface VehiclesApi {
   })
   @GET("api/1/vehicles/{vehicle_id}/data_request/gui_settings")
   Call<GuistateResponse> getVehilceGuiSettings(
+    @retrofit2.http.Path("vehicle_id") String vehicleId
+  );
+
+  /**
+   * Get Nearby Chargers
+   * Get a list of nearby charging sites
+   * @param vehicleId The id of the Vehicle. (required)
+   * @return Call&lt;NearbyChargerResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @GET("api/1/vehicles/{vehicle_id}/nearby_charging_sites")
+  Call<NearbyChargerResponse> nearbyChargers(
     @retrofit2.http.Path("vehicle_id") String vehicleId
   );
 
