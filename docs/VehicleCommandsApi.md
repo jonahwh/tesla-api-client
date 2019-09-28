@@ -21,9 +21,11 @@ Method | HTTP request | Description
 [**sendStandardChargeLimit**](VehicleCommandsApi.md#sendStandardChargeLimit) | **POST** api/1/vehicles/{vehicle_id}/command/charge_standard | Set Charge Limit to Standard
 [**setChargeLimit**](VehicleCommandsApi.md#setChargeLimit) | **POST** api/1/vehicles/{vehicle_id}/command/set_charge_limit | Set Charge Limit
 [**setMaxChargeLimit**](VehicleCommandsApi.md#setMaxChargeLimit) | **POST** api/1/vehicles/{vehicle_id}/command/charge_max_range | Set Charge Limit to Max Range
+[**setMaxDefrost**](VehicleCommandsApi.md#setMaxDefrost) | **POST** api/1/vehicles/{vehicle_id}/command/set_preconditioning_max | Set Max Defrost
 [**setSentryMode**](VehicleCommandsApi.md#setSentryMode) | **POST** api/1/vehicles/{vehicle_id}/command/set_sentry_mode | Toggle Sentry Mode
 [**setSpeedLimit**](VehicleCommandsApi.md#setSpeedLimit) | **POST** api/1/vehicles/{vehicle_id}/command/speed_limit_set_limit | Set Speed Limit
 [**setTemperatures**](VehicleCommandsApi.md#setTemperatures) | **POST** api/1/vehicles/{vehicle_id}/command/set_temps | Set Temperature
+[**sharetoVehicle**](VehicleCommandsApi.md#sharetoVehicle) | **POST** api/1/vehicles/{vehicle_id}/command/share | Share data to Vehicle
 [**startCharge**](VehicleCommandsApi.md#startCharge) | **POST** api/1/vehicles/{vehicle_id}/command/charge_start | Start Charging
 [**startHVAC**](VehicleCommandsApi.md#startHVAC) | **POST** api/1/vehicles/{vehicle_id}/command/auto_conditioning_start | Start HVAC System
 [**startSoftwareUpdate**](VehicleCommandsApi.md#startSoftwareUpdate) | **POST** api/1/vehicles/{vehicle_id}/command/schedule_software_update | Start Software Update
@@ -31,9 +33,11 @@ Method | HTTP request | Description
 [**stopHVAC**](VehicleCommandsApi.md#stopHVAC) | **POST** api/1/vehicles/{vehicle_id}/command/auto_conditioning_stop | Stop HVAC System
 [**toggleChargePort**](VehicleCommandsApi.md#toggleChargePort) | **POST** api/1/vehicles/{vehicle_id}/command/charge_port_door_open | Open Charge Port
 [**toggleValetMode**](VehicleCommandsApi.md#toggleValetMode) | **POST** api/1/vehicles/{vehicle_id}/command/set_valet_mode | Set Valet Mode
+[**triggerHomelink**](VehicleCommandsApi.md#triggerHomelink) | **POST** api/1/vehicles/{vehicle_id}/command/trigger_homelink | Trigger Homelink
 [**unlockDoors**](VehicleCommandsApi.md#unlockDoors) | **POST** api/1/vehicles/{vehicle_id}/command/door_unlock | Unlock Doors
 [**wakeUpVehicle**](VehicleCommandsApi.md#wakeUpVehicle) | **POST** api/1/vehicles/{vehicle_id}/wake_up | Wake Up Car
 [**wakeUpVehicleCommand**](VehicleCommandsApi.md#wakeUpVehicleCommand) | **POST** api/1/vehicles/{vehicle_id}/command/wake_up | Wake Up Car
+[**windowControl**](VehicleCommandsApi.md#windowControl) | **POST** api/1/vehicles/{vehicle_id}/command/window_control | Window Control
 
 
 <a name="activateSpeedLimit"></a>
@@ -821,6 +825,53 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="setMaxDefrost"></a>
+# **setMaxDefrost**
+> CommandResponse setMaxDefrost(vehicleId, body)
+
+Set Max Defrost
+
+Set Max Defrost
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+MaxDefrostRequest body = new MaxDefrostRequest(); // MaxDefrostRequest | 
+try {
+    CommandResponse result = apiInstance.setMaxDefrost(vehicleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#setMaxDefrost");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
+ **body** | [**MaxDefrostRequest**](MaxDefrostRequest.md)|  |
+
+### Return type
+
+[**CommandResponse**](CommandResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="setSentryMode"></a>
 # **setSentryMode**
 > CommandResponse setSentryMode(vehicleId, body)
@@ -948,6 +999,53 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**SetTempsRequest**](SetTempsRequest.md)|  |
+
+### Return type
+
+[**CommandResponse**](CommandResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="sharetoVehicle"></a>
+# **sharetoVehicle**
+> CommandResponse sharetoVehicle(vehicleId, body)
+
+Share data to Vehicle
+
+Sends Data to Vehicle (v10 only)
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+ShareRequest body = new ShareRequest(); // ShareRequest | 
+try {
+    CommandResponse result = apiInstance.sharetoVehicle(vehicleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#sharetoVehicle");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
+ **body** | [**ShareRequest**](ShareRequest.md)|  |
 
 ### Return type
 
@@ -1279,6 +1377,53 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="triggerHomelink"></a>
+# **triggerHomelink**
+> CommandResponse triggerHomelink(vehicleId, body)
+
+Trigger Homelink
+
+Trigger Homelink
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+TriggerHomelinkRequest body = new TriggerHomelinkRequest(); // TriggerHomelinkRequest | 
+try {
+    CommandResponse result = apiInstance.triggerHomelink(vehicleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#triggerHomelink");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
+ **body** | [**TriggerHomelinkRequest**](TriggerHomelinkRequest.md)|  |
+
+### Return type
+
+[**CommandResponse**](CommandResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="unlockDoors"></a>
 # **unlockDoors**
 > CommandResponse unlockDoors(vehicleId)
@@ -1400,6 +1545,53 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vehicleId** | **String**| The id of the Vehicle. |
+
+### Return type
+
+[**CommandResponse**](CommandResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="windowControl"></a>
+# **windowControl**
+> CommandResponse windowControl(vehicleId, body)
+
+Window Control
+
+Window Control
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+WindowControlRequest body = new WindowControlRequest(); // WindowControlRequest | 
+try {
+    CommandResponse result = apiInstance.windowControl(vehicleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#windowControl");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
+ **body** | [**WindowControlRequest**](WindowControlRequest.md)|  |
 
 ### Return type
 

@@ -10,6 +10,7 @@ import okhttp3.ResponseBody;
 import okhttp3.MultipartBody;
 
 import com.github.jonahwh.tesla_api_client.model.CommandResponse;
+import com.github.jonahwh.tesla_api_client.model.MaxDefrostRequest;
 import com.github.jonahwh.tesla_api_client.model.MovePanoRoofRequest;
 import com.github.jonahwh.tesla_api_client.model.NavigationRequestRequest;
 import com.github.jonahwh.tesla_api_client.model.OpenTrunkRequest;
@@ -21,8 +22,11 @@ import com.github.jonahwh.tesla_api_client.model.SetChargeLimitRequest;
 import com.github.jonahwh.tesla_api_client.model.SetSpeedLimitRequest;
 import com.github.jonahwh.tesla_api_client.model.SetTempsRequest;
 import com.github.jonahwh.tesla_api_client.model.SetValetRequest;
+import com.github.jonahwh.tesla_api_client.model.ShareRequest;
 import com.github.jonahwh.tesla_api_client.model.SpeedLimitRequest;
+import com.github.jonahwh.tesla_api_client.model.TriggerHomelinkRequest;
 import com.github.jonahwh.tesla_api_client.model.WakeUpResponse;
+import com.github.jonahwh.tesla_api_client.model.WindowControlRequest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -279,6 +283,21 @@ public interface VehicleCommandsApi {
   );
 
   /**
+   * Set Max Defrost
+   * Set Max Defrost
+   * @param vehicleId The id of the Vehicle. (required)
+   * @param body  (required)
+   * @return Call&lt;CommandResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/command/set_preconditioning_max")
+  Call<CommandResponse> setMaxDefrost(
+    @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body MaxDefrostRequest body
+  );
+
+  /**
    * Toggle Sentry Mode
    * Toggle Sentry Mode
    * @param vehicleId The id of the Vehicle. (required)
@@ -321,6 +340,21 @@ public interface VehicleCommandsApi {
   @POST("api/1/vehicles/{vehicle_id}/command/set_temps")
   Call<CommandResponse> setTemperatures(
     @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body SetTempsRequest body
+  );
+
+  /**
+   * Share data to Vehicle
+   * Sends Data to Vehicle (v10 only)
+   * @param vehicleId The id of the Vehicle. (required)
+   * @param body  (required)
+   * @return Call&lt;CommandResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/command/share")
+  Call<CommandResponse> sharetoVehicle(
+    @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body ShareRequest body
   );
 
   /**
@@ -423,6 +457,21 @@ public interface VehicleCommandsApi {
   );
 
   /**
+   * Trigger Homelink
+   * Trigger Homelink
+   * @param vehicleId The id of the Vehicle. (required)
+   * @param body  (required)
+   * @return Call&lt;CommandResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/command/trigger_homelink")
+  Call<CommandResponse> triggerHomelink(
+    @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body TriggerHomelinkRequest body
+  );
+
+  /**
    * Unlock Doors
    * Unlock the car&#39;s doors.
    * @param vehicleId The id of the Vehicle. (required)
@@ -462,6 +511,21 @@ public interface VehicleCommandsApi {
   @POST("api/1/vehicles/{vehicle_id}/command/wake_up")
   Call<CommandResponse> wakeUpVehicleCommand(
     @retrofit2.http.Path("vehicle_id") String vehicleId
+  );
+
+  /**
+   * Window Control
+   * Window Control
+   * @param vehicleId The id of the Vehicle. (required)
+   * @param body  (required)
+   * @return Call&lt;CommandResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/command/window_control")
+  Call<CommandResponse> windowControl(
+    @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body WindowControlRequest body
   );
 
 }

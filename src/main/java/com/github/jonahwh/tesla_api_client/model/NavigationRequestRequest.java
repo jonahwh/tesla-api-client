@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * NavigationRequestRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-07T18:40:25.601-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-27T18:43:45.566-07:00")
 public class NavigationRequestRequest {
   @SerializedName("type")
   private String type = "share_ext_content_raw";

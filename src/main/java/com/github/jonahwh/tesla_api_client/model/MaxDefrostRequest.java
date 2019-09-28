@@ -15,7 +15,6 @@ package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.github.jonahwh.tesla_api_client.model.DriveState;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,29 +25,29 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * DriveStateResponse
+ * MaxDefrostRequest
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-27T18:43:45.566-07:00")
-public class DriveStateResponse {
-  @SerializedName("response")
-  private DriveState response = null;
+public class MaxDefrostRequest {
+  @SerializedName("on")
+  private Boolean on = null;
 
-  public DriveStateResponse response(DriveState response) {
-    this.response = response;
+  public MaxDefrostRequest on(Boolean on) {
+    this.on = on;
     return this;
   }
 
    /**
-   * Get response
-   * @return response
+   * Get on
+   * @return on
   **/
-  @ApiModelProperty(required = true, value = "")
-  public DriveState getResponse() {
-    return response;
+  @ApiModelProperty(value = "")
+  public Boolean isOn() {
+    return on;
   }
 
-  public void setResponse(DriveState response) {
-    this.response = response;
+  public void setOn(Boolean on) {
+    this.on = on;
   }
 
 
@@ -60,22 +59,22 @@ public class DriveStateResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DriveStateResponse driveStateResponse = (DriveStateResponse) o;
-    return Objects.equals(this.response, driveStateResponse.response);
+    MaxDefrostRequest maxDefrostRequest = (MaxDefrostRequest) o;
+    return Objects.equals(this.on, maxDefrostRequest.on);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(response);
+    return Objects.hash(on);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DriveStateResponse {\n");
+    sb.append("class MaxDefrostRequest {\n");
     
-    sb.append("    response: ").append(toIndentedString(response)).append("\n");
+    sb.append("    on: ").append(toIndentedString(on)).append("\n");
     sb.append("}");
     return sb.toString();
   }

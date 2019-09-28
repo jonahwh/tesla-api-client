@@ -15,7 +15,6 @@ package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.github.jonahwh.tesla_api_client.model.DriveState;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,29 +25,50 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * DriveStateResponse
+ * TriggerHomelinkRequest
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-27T18:43:45.566-07:00")
-public class DriveStateResponse {
-  @SerializedName("response")
-  private DriveState response = null;
+public class TriggerHomelinkRequest {
+  @SerializedName("lat")
+  private Double lat = null;
 
-  public DriveStateResponse response(DriveState response) {
-    this.response = response;
+  @SerializedName("long")
+  private Double _long = null;
+
+  public TriggerHomelinkRequest lat(Double lat) {
+    this.lat = lat;
     return this;
   }
 
    /**
-   * Get response
-   * @return response
+   * Get lat
+   * @return lat
   **/
-  @ApiModelProperty(required = true, value = "")
-  public DriveState getResponse() {
-    return response;
+  @ApiModelProperty(value = "")
+  public Double getLat() {
+    return lat;
   }
 
-  public void setResponse(DriveState response) {
-    this.response = response;
+  public void setLat(Double lat) {
+    this.lat = lat;
+  }
+
+  public TriggerHomelinkRequest _long(Double _long) {
+    this._long = _long;
+    return this;
+  }
+
+   /**
+   * Get _long
+   * @return _long
+  **/
+  @ApiModelProperty(value = "")
+  public Double getLong() {
+    return _long;
+  }
+
+  public void setLong(Double _long) {
+    this._long = _long;
   }
 
 
@@ -60,22 +80,24 @@ public class DriveStateResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DriveStateResponse driveStateResponse = (DriveStateResponse) o;
-    return Objects.equals(this.response, driveStateResponse.response);
+    TriggerHomelinkRequest triggerHomelinkRequest = (TriggerHomelinkRequest) o;
+    return Objects.equals(this.lat, triggerHomelinkRequest.lat) &&
+        Objects.equals(this._long, triggerHomelinkRequest._long);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(response);
+    return Objects.hash(lat, _long);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DriveStateResponse {\n");
+    sb.append("class TriggerHomelinkRequest {\n");
     
-    sb.append("    response: ").append(toIndentedString(response)).append("\n");
+    sb.append("    lat: ").append(toIndentedString(lat)).append("\n");
+    sb.append("    _long: ").append(toIndentedString(_long)).append("\n");
     sb.append("}");
     return sb.toString();
   }

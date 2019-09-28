@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * WakeUpResponseResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-07T18:40:25.601-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-27T18:43:45.566-07:00")
 public class WakeUpResponseResponse {
   @SerializedName("id")
   private String id = null;

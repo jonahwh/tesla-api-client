@@ -25,14 +25,20 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * NavigationRequestRequestValue
+ * ShareRequestValue
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-27T18:43:45.566-07:00")
-public class NavigationRequestRequestValue {
+public class ShareRequestValue {
   @SerializedName("android.intent.extra.TEXT")
   private String androidIntentExtraTEXT = null;
 
-  public NavigationRequestRequestValue androidIntentExtraTEXT(String androidIntentExtraTEXT) {
+  @SerializedName("lat")
+  private Double lat = null;
+
+  @SerializedName("long")
+  private Double _long = null;
+
+  public ShareRequestValue androidIntentExtraTEXT(String androidIntentExtraTEXT) {
     this.androidIntentExtraTEXT = androidIntentExtraTEXT;
     return this;
   }
@@ -50,6 +56,42 @@ public class NavigationRequestRequestValue {
     this.androidIntentExtraTEXT = androidIntentExtraTEXT;
   }
 
+  public ShareRequestValue lat(Double lat) {
+    this.lat = lat;
+    return this;
+  }
+
+   /**
+   * Latitude of destination to send. Only send with &#39;long&#39;
+   * @return lat
+  **/
+  @ApiModelProperty(example = "123.456", value = "Latitude of destination to send. Only send with 'long'")
+  public Double getLat() {
+    return lat;
+  }
+
+  public void setLat(Double lat) {
+    this.lat = lat;
+  }
+
+  public ShareRequestValue _long(Double _long) {
+    this._long = _long;
+    return this;
+  }
+
+   /**
+   * Longitude of destination to send. Only send with &#39;lat&#39;
+   * @return _long
+  **/
+  @ApiModelProperty(example = "-123.456", value = "Longitude of destination to send. Only send with 'lat'")
+  public Double getLong() {
+    return _long;
+  }
+
+  public void setLong(Double _long) {
+    this._long = _long;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -59,22 +101,26 @@ public class NavigationRequestRequestValue {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    NavigationRequestRequestValue navigationRequestRequestValue = (NavigationRequestRequestValue) o;
-    return Objects.equals(this.androidIntentExtraTEXT, navigationRequestRequestValue.androidIntentExtraTEXT);
+    ShareRequestValue shareRequestValue = (ShareRequestValue) o;
+    return Objects.equals(this.androidIntentExtraTEXT, shareRequestValue.androidIntentExtraTEXT) &&
+        Objects.equals(this.lat, shareRequestValue.lat) &&
+        Objects.equals(this._long, shareRequestValue._long);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(androidIntentExtraTEXT);
+    return Objects.hash(androidIntentExtraTEXT, lat, _long);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class NavigationRequestRequestValue {\n");
+    sb.append("class ShareRequestValue {\n");
     
     sb.append("    androidIntentExtraTEXT: ").append(toIndentedString(androidIntentExtraTEXT)).append("\n");
+    sb.append("    lat: ").append(toIndentedString(lat)).append("\n");
+    sb.append("    _long: ").append(toIndentedString(_long)).append("\n");
     sb.append("}");
     return sb.toString();
   }

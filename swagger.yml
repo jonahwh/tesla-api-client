@@ -896,6 +896,33 @@ paths:
                 description: ''
                 schema:
                   $ref: '#/definitions/CommandResponse'
+  '/api/1/vehicles/{vehicle_id}/command/share':
+    post:
+      description: |-
+        Sends Data to Vehicle (v10 only)
+      summary: Share data to Vehicle
+      tags:
+        - Vehicle Commands
+      operationId: SharetoVehicle
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          description: The id of the Vehicle.
+        - name: body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/ShareRequest'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/media_toggle_playback':
             post:
               description: |-
@@ -1107,6 +1134,87 @@ paths:
         description: ''
         schema:
           $ref: '#/definitions/SentryModeRequest'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/CommandResponse'
+  '/api/1/vehicles/{vehicle_id}/command/set_preconditioning_max':
+    post:
+      description: |-
+        Set Max Defrost
+      summary: Set Max Defrost
+      tags:
+        - Vehicle Commands
+      operationId: SetMaxDefrost
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          description: The id of the Vehicle.
+        - name: body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/MaxDefrostRequest'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/CommandResponse'
+  '/api/1/vehicles/{vehicle_id}/command/window_control':
+    post:
+      description: |-
+        Window Control
+      summary: Window Control
+      tags:
+        - Vehicle Commands
+      operationId: WindowControl
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          description: The id of the Vehicle.
+        - name: body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/WindowControlRequest'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/CommandResponse'
+  '/api/1/vehicles/{vehicle_id}/command/trigger_homelink':
+    post:
+      description: |-
+        Trigger Homelink
+      summary: Trigger Homelink
+      tags:
+        - Vehicle Commands
+      operationId: TriggerHomelink
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          description: The id of the Vehicle.
+        - name: body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/TriggerHomelinkRequest'
       responses:
         '200':
           description: ''
@@ -1338,6 +1446,32 @@ definitions:
         timestamp_ms:
           type: string
           description: Unix timestamp
+  ShareRequest:
+    title: Share request (v10 only)
+    type: object
+    properties:
+      type:
+        type: string
+        default: "share_ext_content_raw"
+        example: "share_ext_content_raw"
+        description: Change to "share_dest_content_coords" if using lat/long
+      value:
+        type: object
+        properties:
+          android.intent.extra.TEXT:
+            type: string
+            example: "45500 Fremont Blvd, Fremont, CA 94538\n\nhttps://goo.gl/maps/X"
+            description: Must match this syntax "DATA_TO_SEND_TO_NAV_SYSTEM\n\nhttps://goo.gl/maps/X"
+          lat:
+            type: number
+            format: double
+            example: 123.456
+            description: "Latitude of destination to send. Only send with 'long'"
+          long:
+            type: number
+            format: double
+            example: -123.456
+            description: "Longitude of destination to send. Only send with 'lat'"
   SentryModeRequest:
     title: Sentry Mode
     example:
@@ -1346,6 +1480,46 @@ definitions:
     properties:
       'on':
         type: boolean
+  MaxDefrostRequest:
+    title: Max Defrost
+    example:
+        'on': true
+    type: object
+    properties:
+      'on':
+        type: boolean
+  WindowControlRequest:
+    title: Window Control
+    example:
+      lat: 123.456
+      lng: -123.456
+      command: vent
+    type: object
+    properties:
+      lat:
+        type: number
+        format: double
+      long:
+        type: number
+        format: double
+      command:
+        enum:
+          - vent
+          - close
+        type: string
+  TriggerHomelinkRequest:
+    title: Trigger Homelink
+    example:
+      lat: 123.456
+      lng: -123.456
+    type: object
+    properties:
+      lat:
+        type: number
+        format: double
+      long:
+        type: number
+        format: double
   GetVehiclesResponse:
     title: List all Vehicles response
     example:
