@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * NearbyChargerResponseResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-27T18:43:45.566-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-25T22:27:26.641-07:00")
 public class NearbyChargerResponseResponse {
   @SerializedName("congestion_sync_time_utc_secs")
   private BigDecimal congestionSyncTimeUtcSecs = null;
