@@ -4,8 +4,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**expectedDurationSec** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**expectedDurationSec** | **Integer** |  |  [optional]
 **status** | **String** |  |  [optional]
+**downloadPerc** | **Integer** |  |  [optional]
+**installPerc** | **Integer** |  |  [optional]
+**version** | **Object** |  |  [optional]
 
 
 

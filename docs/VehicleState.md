@@ -34,6 +34,11 @@ Name | Type | Description | Notes
 **valetMode** | **Boolean** |  |  [optional]
 **vehicleName** | **String** |  |  [optional]
 **speedLimitMode** | [**VehicleStateSpeedLimitMode**](VehicleStateSpeedLimitMode.md) |  |  [optional]
+**fdWindow** | **Integer** |  |  [optional]
+**fpWindow** | **Integer** |  |  [optional]
+**homelinkDeviceCount** | **Integer** |  |  [optional]
+**rdWindow** | **Integer** |  |  [optional]
+**rpWindow** | **Integer** |  |  [optional]
 
 
 

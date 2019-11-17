@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * SetSpeedLimitRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-25T22:27:26.641-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-17T13:53:36.587-08:00")
 public class SetSpeedLimitRequest {
   @SerializedName("limit_mph")
   private Integer limitMph = null;

@@ -23,20 +23,28 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 /**
  * VehicleStateSoftwareUpdate
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-25T22:27:26.641-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-17T13:53:36.587-08:00")
 public class VehicleStateSoftwareUpdate {
   @SerializedName("expected_duration_sec")
-  private BigDecimal expectedDurationSec = null;
+  private Integer expectedDurationSec = null;
 
   @SerializedName("status")
   private String status = null;
 
-  public VehicleStateSoftwareUpdate expectedDurationSec(BigDecimal expectedDurationSec) {
+  @SerializedName("download_perc")
+  private Integer downloadPerc = null;
+
+  @SerializedName("install_perc")
+  private Integer installPerc = null;
+
+  @SerializedName("version")
+  private Object version = null;
+
+  public VehicleStateSoftwareUpdate expectedDurationSec(Integer expectedDurationSec) {
     this.expectedDurationSec = expectedDurationSec;
     return this;
   }
@@ -46,11 +54,11 @@ public class VehicleStateSoftwareUpdate {
    * @return expectedDurationSec
   **/
   @ApiModelProperty(value = "")
-  public BigDecimal getExpectedDurationSec() {
+  public Integer getExpectedDurationSec() {
     return expectedDurationSec;
   }
 
-  public void setExpectedDurationSec(BigDecimal expectedDurationSec) {
+  public void setExpectedDurationSec(Integer expectedDurationSec) {
     this.expectedDurationSec = expectedDurationSec;
   }
 
@@ -72,6 +80,60 @@ public class VehicleStateSoftwareUpdate {
     this.status = status;
   }
 
+  public VehicleStateSoftwareUpdate downloadPerc(Integer downloadPerc) {
+    this.downloadPerc = downloadPerc;
+    return this;
+  }
+
+   /**
+   * Get downloadPerc
+   * @return downloadPerc
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getDownloadPerc() {
+    return downloadPerc;
+  }
+
+  public void setDownloadPerc(Integer downloadPerc) {
+    this.downloadPerc = downloadPerc;
+  }
+
+  public VehicleStateSoftwareUpdate installPerc(Integer installPerc) {
+    this.installPerc = installPerc;
+    return this;
+  }
+
+   /**
+   * Get installPerc
+   * @return installPerc
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getInstallPerc() {
+    return installPerc;
+  }
+
+  public void setInstallPerc(Integer installPerc) {
+    this.installPerc = installPerc;
+  }
+
+  public VehicleStateSoftwareUpdate version(Object version) {
+    this.version = version;
+    return this;
+  }
+
+   /**
+   * Get version
+   * @return version
+  **/
+  @ApiModelProperty(value = "")
+  public Object getVersion() {
+    return version;
+  }
+
+  public void setVersion(Object version) {
+    this.version = version;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -83,12 +145,15 @@ public class VehicleStateSoftwareUpdate {
     }
     VehicleStateSoftwareUpdate vehicleStateSoftwareUpdate = (VehicleStateSoftwareUpdate) o;
     return Objects.equals(this.expectedDurationSec, vehicleStateSoftwareUpdate.expectedDurationSec) &&
-        Objects.equals(this.status, vehicleStateSoftwareUpdate.status);
+        Objects.equals(this.status, vehicleStateSoftwareUpdate.status) &&
+        Objects.equals(this.downloadPerc, vehicleStateSoftwareUpdate.downloadPerc) &&
+        Objects.equals(this.installPerc, vehicleStateSoftwareUpdate.installPerc) &&
+        Objects.equals(this.version, vehicleStateSoftwareUpdate.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(expectedDurationSec, status);
+    return Objects.hash(expectedDurationSec, status, downloadPerc, installPerc, version);
   }
 
 
@@ -99,6 +164,9 @@ public class VehicleStateSoftwareUpdate {
     
     sb.append("    expectedDurationSec: ").append(toIndentedString(expectedDurationSec)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    downloadPerc: ").append(toIndentedString(downloadPerc)).append("\n");
+    sb.append("    installPerc: ").append(toIndentedString(installPerc)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");
     return sb.toString();
   }

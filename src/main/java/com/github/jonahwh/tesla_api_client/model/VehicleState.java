@@ -31,7 +31,7 @@ import java.math.BigDecimal;
 /**
  * VehicleState
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-25T22:27:26.641-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-17T13:53:36.587-08:00")
 public class VehicleState {
   @SerializedName("api_version")
   private Integer apiVersion = null;
@@ -122,6 +122,21 @@ public class VehicleState {
 
   @SerializedName("speed_limit_mode")
   private VehicleStateSpeedLimitMode speedLimitMode = null;
+
+  @SerializedName("fd_window")
+  private Integer fdWindow = null;
+
+  @SerializedName("fp_window")
+  private Integer fpWindow = null;
+
+  @SerializedName("homelink_device_count")
+  private Integer homelinkDeviceCount = null;
+
+  @SerializedName("rd_window")
+  private Integer rdWindow = null;
+
+  @SerializedName("rp_window")
+  private Integer rpWindow = null;
 
   public VehicleState apiVersion(Integer apiVersion) {
     this.apiVersion = apiVersion;
@@ -663,6 +678,96 @@ public class VehicleState {
     this.speedLimitMode = speedLimitMode;
   }
 
+  public VehicleState fdWindow(Integer fdWindow) {
+    this.fdWindow = fdWindow;
+    return this;
+  }
+
+   /**
+   * Get fdWindow
+   * @return fdWindow
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getFdWindow() {
+    return fdWindow;
+  }
+
+  public void setFdWindow(Integer fdWindow) {
+    this.fdWindow = fdWindow;
+  }
+
+  public VehicleState fpWindow(Integer fpWindow) {
+    this.fpWindow = fpWindow;
+    return this;
+  }
+
+   /**
+   * Get fpWindow
+   * @return fpWindow
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getFpWindow() {
+    return fpWindow;
+  }
+
+  public void setFpWindow(Integer fpWindow) {
+    this.fpWindow = fpWindow;
+  }
+
+  public VehicleState homelinkDeviceCount(Integer homelinkDeviceCount) {
+    this.homelinkDeviceCount = homelinkDeviceCount;
+    return this;
+  }
+
+   /**
+   * Get homelinkDeviceCount
+   * @return homelinkDeviceCount
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getHomelinkDeviceCount() {
+    return homelinkDeviceCount;
+  }
+
+  public void setHomelinkDeviceCount(Integer homelinkDeviceCount) {
+    this.homelinkDeviceCount = homelinkDeviceCount;
+  }
+
+  public VehicleState rdWindow(Integer rdWindow) {
+    this.rdWindow = rdWindow;
+    return this;
+  }
+
+   /**
+   * Get rdWindow
+   * @return rdWindow
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getRdWindow() {
+    return rdWindow;
+  }
+
+  public void setRdWindow(Integer rdWindow) {
+    this.rdWindow = rdWindow;
+  }
+
+  public VehicleState rpWindow(Integer rpWindow) {
+    this.rpWindow = rpWindow;
+    return this;
+  }
+
+   /**
+   * Get rpWindow
+   * @return rpWindow
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getRpWindow() {
+    return rpWindow;
+  }
+
+  public void setRpWindow(Integer rpWindow) {
+    this.rpWindow = rpWindow;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -702,12 +807,17 @@ public class VehicleState {
         Objects.equals(this.timestamp, vehicleState.timestamp) &&
         Objects.equals(this.valetMode, vehicleState.valetMode) &&
         Objects.equals(this.vehicleName, vehicleState.vehicleName) &&
-        Objects.equals(this.speedLimitMode, vehicleState.speedLimitMode);
+        Objects.equals(this.speedLimitMode, vehicleState.speedLimitMode) &&
+        Objects.equals(this.fdWindow, vehicleState.fdWindow) &&
+        Objects.equals(this.fpWindow, vehicleState.fpWindow) &&
+        Objects.equals(this.homelinkDeviceCount, vehicleState.homelinkDeviceCount) &&
+        Objects.equals(this.rdWindow, vehicleState.rdWindow) &&
+        Objects.equals(this.rpWindow, vehicleState.rpWindow);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(apiVersion, autoparkState, autoparkStateV2, autoparkStyle, calendarSupported, carVersion, centerDisplayState, df, dr, ft, homelinkNearby, lastAutoparkError, locked, mediaState, notificationsSupported, odometer, parsedCalendarSupported, pf, pr, remoteStart, remoteStartSupported, rt, sentryMode, softwareUpdate, sunRoofPercentOpen, sunRoofState, timestamp, valetMode, vehicleName, speedLimitMode);
+    return Objects.hash(apiVersion, autoparkState, autoparkStateV2, autoparkStyle, calendarSupported, carVersion, centerDisplayState, df, dr, ft, homelinkNearby, lastAutoparkError, locked, mediaState, notificationsSupported, odometer, parsedCalendarSupported, pf, pr, remoteStart, remoteStartSupported, rt, sentryMode, softwareUpdate, sunRoofPercentOpen, sunRoofState, timestamp, valetMode, vehicleName, speedLimitMode, fdWindow, fpWindow, homelinkDeviceCount, rdWindow, rpWindow);
   }
 
 
@@ -746,6 +856,11 @@ public class VehicleState {
     sb.append("    valetMode: ").append(toIndentedString(valetMode)).append("\n");
     sb.append("    vehicleName: ").append(toIndentedString(vehicleName)).append("\n");
     sb.append("    speedLimitMode: ").append(toIndentedString(speedLimitMode)).append("\n");
+    sb.append("    fdWindow: ").append(toIndentedString(fdWindow)).append("\n");
+    sb.append("    fpWindow: ").append(toIndentedString(fpWindow)).append("\n");
+    sb.append("    homelinkDeviceCount: ").append(toIndentedString(homelinkDeviceCount)).append("\n");
+    sb.append("    rdWindow: ").append(toIndentedString(rdWindow)).append("\n");
+    sb.append("    rpWindow: ").append(toIndentedString(rpWindow)).append("\n");
     sb.append("}");
     return sb.toString();
   }

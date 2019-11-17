@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * ClimateState
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-25T22:27:26.641-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-17T13:53:36.587-08:00")
 public class ClimateState {
   @SerializedName("inside_temp")
   private Double insideTemp = null;
@@ -110,6 +110,9 @@ public class ClimateState {
 
   @SerializedName("is_auto_conditioning_on")
   private Boolean isAutoConditioningOn = null;
+
+  @SerializedName("defrost_mode")
+  private Integer defrostMode = null;
 
   @SerializedName("timestamp")
   private BigDecimal timestamp = null;
@@ -600,6 +603,24 @@ public class ClimateState {
     this.isAutoConditioningOn = isAutoConditioningOn;
   }
 
+  public ClimateState defrostMode(Integer defrostMode) {
+    this.defrostMode = defrostMode;
+    return this;
+  }
+
+   /**
+   * Get defrostMode
+   * @return defrostMode
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getDefrostMode() {
+    return defrostMode;
+  }
+
+  public void setDefrostMode(Integer defrostMode) {
+    this.defrostMode = defrostMode;
+  }
+
   public ClimateState timestamp(BigDecimal timestamp) {
     this.timestamp = timestamp;
     return this;
@@ -655,12 +676,13 @@ public class ClimateState {
         Objects.equals(this.isPreconditioning, climateState.isPreconditioning) &&
         Objects.equals(this.smartPreconditioning, climateState.smartPreconditioning) &&
         Objects.equals(this.isAutoConditioningOn, climateState.isAutoConditioningOn) &&
+        Objects.equals(this.defrostMode, climateState.defrostMode) &&
         Objects.equals(this.timestamp, climateState.timestamp);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(insideTemp, outsideTemp, driverTempSetting, passengerTempSetting, leftTempDirection, rightTempDirection, isFrontDefrosterOn, isRearDefrosterOn, fanStatus, isClimateOn, minAvailTemp, maxAvailTemp, seatHeaterLeft, seatHeaterRight, seatHeaterRearLeft, seatHeaterRearRight, seatHeaterRearCenter, seatHeaterRearRightBack, seatHeaterRearLeftBack, batteryHeater, batteryHeaterNoPower, steeringWheelHeater, wiperBladeHeater, sideMirrorHeaters, isPreconditioning, smartPreconditioning, isAutoConditioningOn, timestamp);
+    return Objects.hash(insideTemp, outsideTemp, driverTempSetting, passengerTempSetting, leftTempDirection, rightTempDirection, isFrontDefrosterOn, isRearDefrosterOn, fanStatus, isClimateOn, minAvailTemp, maxAvailTemp, seatHeaterLeft, seatHeaterRight, seatHeaterRearLeft, seatHeaterRearRight, seatHeaterRearCenter, seatHeaterRearRightBack, seatHeaterRearLeftBack, batteryHeater, batteryHeaterNoPower, steeringWheelHeater, wiperBladeHeater, sideMirrorHeaters, isPreconditioning, smartPreconditioning, isAutoConditioningOn, defrostMode, timestamp);
   }
 
 
@@ -696,6 +718,7 @@ public class ClimateState {
     sb.append("    isPreconditioning: ").append(toIndentedString(isPreconditioning)).append("\n");
     sb.append("    smartPreconditioning: ").append(toIndentedString(smartPreconditioning)).append("\n");
     sb.append("    isAutoConditioningOn: ").append(toIndentedString(isAutoConditioningOn)).append("\n");
+    sb.append("    defrostMode: ").append(toIndentedString(defrostMode)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **isPreconditioning** | **Boolean** |  |  [optional]
 **smartPreconditioning** | **Boolean** |  |  [optional]
 **isAutoConditioningOn** | **Boolean** |  |  [optional]
+**defrostMode** | **Integer** |  |  [optional]
 **timestamp** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 
 

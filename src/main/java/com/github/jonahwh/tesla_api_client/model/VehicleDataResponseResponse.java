@@ -36,7 +36,7 @@ import java.util.List;
 /**
  * VehicleDataResponseResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-25T22:27:26.641-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-17T13:53:36.587-08:00")
 public class VehicleDataResponseResponse {
   @SerializedName("color")
   private String color = null;

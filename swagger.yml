@@ -1757,6 +1757,8 @@ definitions:
           type: boolean
         is_auto_conditioning_on:
           type: boolean
+        defrost_mode:
+          type: integer
         timestamp:
           type: number
   DriveStateResponse:
@@ -1888,9 +1890,14 @@ definitions:
         type: object
         properties:
           expected_duration_sec:
-            type: number
+            type: integer
           status:
             type: string
+          download_perc:
+            type: integer
+          install_perc:
+            type: integer
+          version: string
       sun_roof_percent_open:
         type: integer
       sun_roof_state:
@@ -1917,6 +1924,20 @@ definitions:
             format: double
           pin_code_set:
             type: boolean
+      fd_window:
+        type: integer
+      fp_window:
+        type: integer
+      homelink_device_count:
+        type: integer
+      rd_window:
+        type: integer
+      rp_window:
+        type: integer
+      smart_summon_available:
+        type: Boolean
+      summon_standby_mode_enabled:
+        type: Boolean
   VehicleConfigResponse:
     title: Vehicle Config response
     type: object
