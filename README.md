@@ -56,7 +56,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-class Scratch {
+class TeslaApiClientExample {
     public static void main(String[] args) throws IOException {
         // Anonymous API Client for Authentication
         ApiClient anonymousApiClient = new ApiClient();
@@ -99,8 +99,6 @@ class Scratch {
                 commandsApi.flashLights(vehicleId);
             }
         }
-
-
     }
 }
 
