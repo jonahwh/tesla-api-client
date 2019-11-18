@@ -28,13 +28,19 @@ import java.io.IOException;
 /**
  * ShareRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-17T13:53:36.587-08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-17T18:15:50.495-08:00")
 public class ShareRequest {
   @SerializedName("type")
   private String type = "share_ext_content_raw";
 
   @SerializedName("value")
   private ShareRequestValue value = null;
+
+  @SerializedName("locale")
+  private String locale = null;
+
+  @SerializedName("timestamp")
+  private Integer timestamp = null;
 
   public ShareRequest type(String type) {
     this.type = type;
@@ -72,6 +78,42 @@ public class ShareRequest {
     this.value = value;
   }
 
+  public ShareRequest locale(String locale) {
+    this.locale = locale;
+    return this;
+  }
+
+   /**
+   * Locale this request should be treated as
+   * @return locale
+  **/
+  @ApiModelProperty(example = "en-US", value = "Locale this request should be treated as")
+  public String getLocale() {
+    return locale;
+  }
+
+  public void setLocale(String locale) {
+    this.locale = locale;
+  }
+
+  public ShareRequest timestamp(Integer timestamp) {
+    this.timestamp = timestamp;
+    return this;
+  }
+
+   /**
+   * UNIX timestamp indicating when this request was sent
+   * @return timestamp
+  **/
+  @ApiModelProperty(example = "1574041714569", value = "UNIX timestamp indicating when this request was sent")
+  public Integer getTimestamp() {
+    return timestamp;
+  }
+
+  public void setTimestamp(Integer timestamp) {
+    this.timestamp = timestamp;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -83,12 +125,14 @@ public class ShareRequest {
     }
     ShareRequest shareRequest = (ShareRequest) o;
     return Objects.equals(this.type, shareRequest.type) &&
-        Objects.equals(this.value, shareRequest.value);
+        Objects.equals(this.value, shareRequest.value) &&
+        Objects.equals(this.locale, shareRequest.locale) &&
+        Objects.equals(this.timestamp, shareRequest.timestamp);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, value);
+    return Objects.hash(type, value, locale, timestamp);
   }
 
 
@@ -99,6 +143,8 @@ public class ShareRequest {
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
+    sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
+    sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("}");
     return sb.toString();
   }
