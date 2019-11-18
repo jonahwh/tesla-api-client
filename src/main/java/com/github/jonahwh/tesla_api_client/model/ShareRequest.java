@@ -24,11 +24,12 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 
 /**
  * ShareRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-17T18:15:50.495-08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-17T18:43:57.272-08:00")
 public class ShareRequest {
   @SerializedName("type")
   private String type = "share_ext_content_raw";
@@ -40,7 +41,7 @@ public class ShareRequest {
   private String locale = null;
 
   @SerializedName("timestamp")
-  private Integer timestamp = null;
+  private BigDecimal timestamp = null;
 
   public ShareRequest type(String type) {
     this.type = type;
@@ -96,7 +97,7 @@ public class ShareRequest {
     this.locale = locale;
   }
 
-  public ShareRequest timestamp(Integer timestamp) {
+  public ShareRequest timestamp(BigDecimal timestamp) {
     this.timestamp = timestamp;
     return this;
   }
@@ -105,12 +106,12 @@ public class ShareRequest {
    * UNIX timestamp indicating when this request was sent
    * @return timestamp
   **/
-  @ApiModelProperty(example = "1574041714569", value = "UNIX timestamp indicating when this request was sent")
-  public Integer getTimestamp() {
+  @ApiModelProperty(example = "1.574041714569E12", value = "UNIX timestamp indicating when this request was sent")
+  public BigDecimal getTimestamp() {
     return timestamp;
   }
 
-  public void setTimestamp(Integer timestamp) {
+  public void setTimestamp(BigDecimal timestamp) {
     this.timestamp = timestamp;
   }
 

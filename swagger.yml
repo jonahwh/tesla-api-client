@@ -1477,7 +1477,7 @@ definitions:
         example: "en-US"
         description: "Locale this request should be treated as"
       timestamp:
-        type: integer
+        type: number
         example: 1574041714569
         description: "UNIX timestamp indicating when this request was sent"
   SentryModeRequest:
