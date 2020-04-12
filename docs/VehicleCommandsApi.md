@@ -7,11 +7,13 @@ Method | HTTP request | Description
 [**activateSpeedLimit**](VehicleCommandsApi.md#activateSpeedLimit) | **POST** api/1/vehicles/{vehicle_id}/command/speed_limit_activate | Activate Speed Limit
 [**cancelSoftwareUpdate**](VehicleCommandsApi.md#cancelSoftwareUpdate) | **POST** api/1/vehicles/{vehicle_id}/command/cancel_software_update | Cancel Software Update
 [**clearSpeedLimitPin**](VehicleCommandsApi.md#clearSpeedLimitPin) | **POST** api/1/vehicles/{vehicle_id}/command/speed_limit_clear_pin | Clear Speed Limit Pin
+[**closeChargePort**](VehicleCommandsApi.md#closeChargePort) | **POST** api/1/vehicles/{vehicle_id}/command/charge_port_door_close | Close Charge Port
 [**deactivateSpeedLimit**](VehicleCommandsApi.md#deactivateSpeedLimit) | **POST** api/1/vehicles/{vehicle_id}/command/speed_limit_deactivate | Deactivate Speed Limit
 [**flashLights**](VehicleCommandsApi.md#flashLights) | **POST** api/1/vehicles/{vehicle_id}/command/flash_lights | Flash Lights
 [**honkHorn**](VehicleCommandsApi.md#honkHorn) | **POST** api/1/vehicles/{vehicle_id}/command/honk_horn | Honk Horn
 [**lockDoors**](VehicleCommandsApi.md#lockDoors) | **POST** api/1/vehicles/{vehicle_id}/command/door_lock | Lock Doors
 [**navigationRequest**](VehicleCommandsApi.md#navigationRequest) | **POST** api/1/vehicles/{vehicle_id}/command/navigation_request | Send Navigation Request
+[**openChargePort**](VehicleCommandsApi.md#openChargePort) | **POST** api/1/vehicles/{vehicle_id}/command/charge_port_door_open | Open Charge Port
 [**openSunroof**](VehicleCommandsApi.md#openSunroof) | **POST** api/1/vehicles/{vehicle_id}/command/sun_roof_control | Move Pano Roof
 [**openTrunk**](VehicleCommandsApi.md#openTrunk) | **POST** api/1/vehicles/{vehicle_id}/command/actuate_trunk | Open Trunk/Frunk
 [**remoteSeatHeaterRequest**](VehicleCommandsApi.md#remoteSeatHeaterRequest) | **POST** api/1/vehicles/{vehicle_id}/command/remote_seat_heater_request | Set Seat Heater Level
@@ -31,7 +33,6 @@ Method | HTTP request | Description
 [**startSoftwareUpdate**](VehicleCommandsApi.md#startSoftwareUpdate) | **POST** api/1/vehicles/{vehicle_id}/command/schedule_software_update | Start Software Update
 [**stopCharge**](VehicleCommandsApi.md#stopCharge) | **POST** api/1/vehicles/{vehicle_id}/command/charge_stop | Stop Charging
 [**stopHVAC**](VehicleCommandsApi.md#stopHVAC) | **POST** api/1/vehicles/{vehicle_id}/command/auto_conditioning_stop | Stop HVAC System
-[**toggleChargePort**](VehicleCommandsApi.md#toggleChargePort) | **POST** api/1/vehicles/{vehicle_id}/command/charge_port_door_open | Open Charge Port
 [**toggleValetMode**](VehicleCommandsApi.md#toggleValetMode) | **POST** api/1/vehicles/{vehicle_id}/command/set_valet_mode | Set Valet Mode
 [**triggerHomelink**](VehicleCommandsApi.md#triggerHomelink) | **POST** api/1/vehicles/{vehicle_id}/command/trigger_homelink | Trigger Homelink
 [**unlockDoors**](VehicleCommandsApi.md#unlockDoors) | **POST** api/1/vehicles/{vehicle_id}/command/door_unlock | Unlock Doors
@@ -165,6 +166,51 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**SpeedLimitRequest**](SpeedLimitRequest.md)|  |
+
+### Return type
+
+[**CommandResponse**](CommandResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="closeChargePort"></a>
+# **closeChargePort**
+> CommandResponse closeChargePort(vehicleId)
+
+Close Charge Port
+
+Closes the charge port.
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+try {
+    CommandResponse result = apiInstance.closeChargePort(vehicleId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#closeChargePort");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -394,6 +440,51 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**NavigationRequestRequest**](NavigationRequestRequest.md)|  |
+
+### Return type
+
+[**CommandResponse**](CommandResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="openChargePort"></a>
+# **openChargePort**
+> CommandResponse openChargePort(vehicleId)
+
+Open Charge Port
+
+Opens the charge port. Does not close the charge port (for now...). This endpoint also unlocks the charge port if it&#39;s locked.
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+try {
+    CommandResponse result = apiInstance.openChargePort(vehicleId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#openChargePort");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -1262,51 +1353,6 @@ try {
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#stopHVAC");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **vehicleId** | **String**| The id of the Vehicle. |
-
-### Return type
-
-[**CommandResponse**](CommandResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="toggleChargePort"></a>
-# **toggleChargePort**
-> CommandResponse toggleChargePort(vehicleId)
-
-Open Charge Port
-
-Opens the charge port. Does not close the charge port (for now...). This endpoint also unlocks the charge port if it&#39;s locked.
-
-### Example
-```java
-// Import classes:
-//import com.github.jonahwh.ApiException;
-//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
-
-
-VehicleCommandsApi apiInstance = new VehicleCommandsApi();
-String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
-try {
-    CommandResponse result = apiInstance.toggleChargePort(vehicleId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling VehicleCommandsApi#toggleChargePort");
     e.printStackTrace();
 }
 ```

@@ -79,6 +79,20 @@ public interface VehicleCommandsApi {
   );
 
   /**
+   * Close Charge Port
+   * Closes the charge port.
+   * @param vehicleId The id of the Vehicle. (required)
+   * @return Call&lt;CommandResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/command/charge_port_door_close")
+  Call<CommandResponse> closeChargePort(
+    @retrofit2.http.Path("vehicle_id") String vehicleId
+  );
+
+  /**
    * Deactivate Speed Limit
    * Deactivates Speed Limit
    * @param vehicleId The id of the Vehicle. (required)
@@ -148,6 +162,20 @@ public interface VehicleCommandsApi {
   @POST("api/1/vehicles/{vehicle_id}/command/navigation_request")
   Call<CommandResponse> navigationRequest(
     @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body NavigationRequestRequest body
+  );
+
+  /**
+   * Open Charge Port
+   * Opens the charge port. Does not close the charge port (for now...). This endpoint also unlocks the charge port if it&#39;s locked.
+   * @param vehicleId The id of the Vehicle. (required)
+   * @return Call&lt;CommandResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/command/charge_port_door_open")
+  Call<CommandResponse> openChargePort(
+    @retrofit2.http.Path("vehicle_id") String vehicleId
   );
 
   /**
@@ -424,20 +452,6 @@ public interface VehicleCommandsApi {
   })
   @POST("api/1/vehicles/{vehicle_id}/command/auto_conditioning_stop")
   Call<CommandResponse> stopHVAC(
-    @retrofit2.http.Path("vehicle_id") String vehicleId
-  );
-
-  /**
-   * Open Charge Port
-   * Opens the charge port. Does not close the charge port (for now...). This endpoint also unlocks the charge port if it&#39;s locked.
-   * @param vehicleId The id of the Vehicle. (required)
-   * @return Call&lt;CommandResponse&gt;
-   */
-  @Headers({
-    "Content-Type:application/json"
-  })
-  @POST("api/1/vehicles/{vehicle_id}/command/charge_port_door_open")
-  Call<CommandResponse> toggleChargePort(
     @retrofit2.http.Path("vehicle_id") String vehicleId
   );
 
