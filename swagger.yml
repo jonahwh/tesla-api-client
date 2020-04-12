@@ -342,7 +342,27 @@ paths:
       summary: Open Charge Port
       tags:
         - Vehicle Commands
-      operationId: ToggleChargePort
+      operationId: OpenChargePort
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/CommandResponse'
+  '/api/1/vehicles/{vehicle_id}/command/charge_port_door_close':
+    post:
+      description: Closes the charge port.
+      summary: Close Charge Port
+      tags:
+        - Vehicle Commands
+      operationId: CloseChargePort
       produces:
         - application/json
       parameters:
