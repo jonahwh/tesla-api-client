@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **status** | **String** |  |  [optional]
 **downloadPerc** | **Integer** |  |  [optional]
 **installPerc** | **Integer** |  |  [optional]
-**version** | **Object** |  |  [optional]
+**version** | **String** |  |  [optional]
 
 
 

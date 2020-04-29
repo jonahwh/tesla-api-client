@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * DriveStateResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-11T20:35:46.716-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-28T21:46:07.171-07:00")
 public class DriveStateResponse {
   @SerializedName("response")
   private DriveState response = null;

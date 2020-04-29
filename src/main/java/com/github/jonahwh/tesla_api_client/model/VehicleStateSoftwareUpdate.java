@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * VehicleStateSoftwareUpdate
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-11T20:35:46.716-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-28T21:46:07.171-07:00")
 public class VehicleStateSoftwareUpdate {
   @SerializedName("expected_duration_sec")
   private Integer expectedDurationSec = null;
@@ -42,7 +42,7 @@ public class VehicleStateSoftwareUpdate {
   private Integer installPerc = null;
 
   @SerializedName("version")
-  private Object version = null;
+  private String version = null;
 
   public VehicleStateSoftwareUpdate expectedDurationSec(Integer expectedDurationSec) {
     this.expectedDurationSec = expectedDurationSec;
@@ -116,7 +116,7 @@ public class VehicleStateSoftwareUpdate {
     this.installPerc = installPerc;
   }
 
-  public VehicleStateSoftwareUpdate version(Object version) {
+  public VehicleStateSoftwareUpdate version(String version) {
     this.version = version;
     return this;
   }
@@ -126,11 +126,11 @@ public class VehicleStateSoftwareUpdate {
    * @return version
   **/
   @ApiModelProperty(value = "")
-  public Object getVersion() {
+  public String getVersion() {
     return version;
   }
 
-  public void setVersion(Object version) {
+  public void setVersion(String version) {
     this.version = version;
   }
 
