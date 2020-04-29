@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * MovePanoRoofRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-11T20:35:46.716-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-28T21:46:07.171-07:00")
 public class MovePanoRoofRequest {
   /**
    * The desired state of the panoramic roof. The approximate percent open values for each state are &#x60;open&#x60; &#x3D; 100%, &#x60;close&#x60; &#x3D; 0%, &#x60;comfort&#x60; &#x3D; 80%, and &#x60;vent&#x60; &#x3D; ~15%
