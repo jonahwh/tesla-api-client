@@ -1527,7 +1527,7 @@ definitions:
       lat:
         type: number
         format: double
-      long:
+      lon:
         type: number
         format: double
       command:
@@ -1545,7 +1545,7 @@ definitions:
       lat:
         type: number
         format: double
-      long:
+      lon:
         type: number
         format: double
   GetVehiclesResponse:
