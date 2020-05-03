@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * WakeUpResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-28T21:46:07.171-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-03T12:04:55.598-07:00")
 public class WakeUpResponse {
   @SerializedName("response")
   private WakeUpResponseResponse response = null;

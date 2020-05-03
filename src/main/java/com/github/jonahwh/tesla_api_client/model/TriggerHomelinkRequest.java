@@ -27,13 +27,13 @@ import java.io.IOException;
 /**
  * TriggerHomelinkRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-28T21:46:07.171-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-03T12:04:55.598-07:00")
 public class TriggerHomelinkRequest {
   @SerializedName("lat")
   private Double lat = null;
 
-  @SerializedName("long")
-  private Double _long = null;
+  @SerializedName("lon")
+  private Double lon = null;
 
   public TriggerHomelinkRequest lat(Double lat) {
     this.lat = lat;
@@ -53,22 +53,22 @@ public class TriggerHomelinkRequest {
     this.lat = lat;
   }
 
-  public TriggerHomelinkRequest _long(Double _long) {
-    this._long = _long;
+  public TriggerHomelinkRequest lon(Double lon) {
+    this.lon = lon;
     return this;
   }
 
    /**
-   * Get _long
-   * @return _long
+   * Get lon
+   * @return lon
   **/
   @ApiModelProperty(value = "")
-  public Double getLong() {
-    return _long;
+  public Double getLon() {
+    return lon;
   }
 
-  public void setLong(Double _long) {
-    this._long = _long;
+  public void setLon(Double lon) {
+    this.lon = lon;
   }
 
 
@@ -82,12 +82,12 @@ public class TriggerHomelinkRequest {
     }
     TriggerHomelinkRequest triggerHomelinkRequest = (TriggerHomelinkRequest) o;
     return Objects.equals(this.lat, triggerHomelinkRequest.lat) &&
-        Objects.equals(this._long, triggerHomelinkRequest._long);
+        Objects.equals(this.lon, triggerHomelinkRequest.lon);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(lat, _long);
+    return Objects.hash(lat, lon);
   }
 
 
@@ -97,7 +97,7 @@ public class TriggerHomelinkRequest {
     sb.append("class TriggerHomelinkRequest {\n");
     
     sb.append("    lat: ").append(toIndentedString(lat)).append("\n");
-    sb.append("    _long: ").append(toIndentedString(_long)).append("\n");
+    sb.append("    lon: ").append(toIndentedString(lon)).append("\n");
     sb.append("}");
     return sb.toString();
   }

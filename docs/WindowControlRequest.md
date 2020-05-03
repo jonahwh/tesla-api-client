@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **lat** | **Double** |  |  [optional]
-**_long** | **Double** |  |  [optional]
+**lon** | **Double** |  |  [optional]
 **command** | [**CommandEnum**](#CommandEnum) |  |  [optional]
 
 

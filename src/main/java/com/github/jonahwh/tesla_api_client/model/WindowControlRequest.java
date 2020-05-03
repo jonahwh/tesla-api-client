@@ -27,13 +27,13 @@ import java.io.IOException;
 /**
  * WindowControlRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-28T21:46:07.171-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-03T12:04:55.598-07:00")
 public class WindowControlRequest {
   @SerializedName("lat")
   private Double lat = null;
 
-  @SerializedName("long")
-  private Double _long = null;
+  @SerializedName("lon")
+  private Double lon = null;
 
   /**
    * Gets or Sets command
@@ -103,22 +103,22 @@ public class WindowControlRequest {
     this.lat = lat;
   }
 
-  public WindowControlRequest _long(Double _long) {
-    this._long = _long;
+  public WindowControlRequest lon(Double lon) {
+    this.lon = lon;
     return this;
   }
 
    /**
-   * Get _long
-   * @return _long
+   * Get lon
+   * @return lon
   **/
   @ApiModelProperty(value = "")
-  public Double getLong() {
-    return _long;
+  public Double getLon() {
+    return lon;
   }
 
-  public void setLong(Double _long) {
-    this._long = _long;
+  public void setLon(Double lon) {
+    this.lon = lon;
   }
 
   public WindowControlRequest command(CommandEnum command) {
@@ -150,13 +150,13 @@ public class WindowControlRequest {
     }
     WindowControlRequest windowControlRequest = (WindowControlRequest) o;
     return Objects.equals(this.lat, windowControlRequest.lat) &&
-        Objects.equals(this._long, windowControlRequest._long) &&
+        Objects.equals(this.lon, windowControlRequest.lon) &&
         Objects.equals(this.command, windowControlRequest.command);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(lat, _long, command);
+    return Objects.hash(lat, lon, command);
   }
 
 
@@ -166,7 +166,7 @@ public class WindowControlRequest {
     sb.append("class WindowControlRequest {\n");
     
     sb.append("    lat: ").append(toIndentedString(lat)).append("\n");
-    sb.append("    _long: ").append(toIndentedString(_long)).append("\n");
+    sb.append("    lon: ").append(toIndentedString(lon)).append("\n");
     sb.append("    command: ").append(toIndentedString(command)).append("\n");
     sb.append("}");
     return sb.toString();
