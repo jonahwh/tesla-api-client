@@ -29,7 +29,7 @@ import java.math.BigDecimal;
 /**
  * Supercharger
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-03T12:04:55.598-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-15T23:06:21.774-07:00")
 public class Supercharger {
   @SerializedName("location")
   private DestinationChargerLocation location = null;

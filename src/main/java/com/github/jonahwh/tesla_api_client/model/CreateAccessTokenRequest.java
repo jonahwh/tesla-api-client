@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * CreateAccessTokenRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-03T12:04:55.598-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-15T23:06:21.774-07:00")
 public class CreateAccessTokenRequest {
   @SerializedName("grant_type")
   private String grantType = null;
@@ -44,16 +44,19 @@ public class CreateAccessTokenRequest {
   @SerializedName("password")
   private String password = null;
 
+  @SerializedName("refresh_token")
+  private String refreshToken = null;
+
   public CreateAccessTokenRequest grantType(String grantType) {
     this.grantType = grantType;
     return this;
   }
 
    /**
-   * The type of oAuth grant. Always \&quot;password\&quot;
+   * The type of oAuth grant. \&quot;password\&quot; or \&quot;refresh_token\&quot;
    * @return grantType
   **/
-  @ApiModelProperty(example = "password", value = "The type of oAuth grant. Always \"password\"")
+  @ApiModelProperty(example = "password", value = "The type of oAuth grant. \"password\" or \"refresh_token\"")
   public String getGrantType() {
     return grantType;
   }
@@ -104,10 +107,10 @@ public class CreateAccessTokenRequest {
   }
 
    /**
-   * The email for my.teslamotors.com
+   * The email for my.teslamotors.com. Only used with \&quot;password\&quot; grant type.
    * @return email
   **/
-  @ApiModelProperty(example = "elon@teslamotors.com", value = "The email for my.teslamotors.com")
+  @ApiModelProperty(example = "elon@teslamotors.com", value = "The email for my.teslamotors.com. Only used with \"password\" grant type.")
   public String getEmail() {
     return email;
   }
@@ -122,16 +125,34 @@ public class CreateAccessTokenRequest {
   }
 
    /**
-   * The password for my.teslamotors.com
+   * The password for my.teslamotors.com. Only used with \&quot;password\&quot; grant type.
    * @return password
   **/
-  @ApiModelProperty(example = "edisonsux", value = "The password for my.teslamotors.com")
+  @ApiModelProperty(example = "edisonsux", value = "The password for my.teslamotors.com. Only used with \"password\" grant type.")
   public String getPassword() {
     return password;
   }
 
   public void setPassword(String password) {
     this.password = password;
+  }
+
+  public CreateAccessTokenRequest refreshToken(String refreshToken) {
+    this.refreshToken = refreshToken;
+    return this;
+  }
+
+   /**
+   * A refresh token from a previous CreateAccessTokenResponse
+   * @return refreshToken
+  **/
+  @ApiModelProperty(example = "0f0f0f0f0f0ff0f0f0f0f0f0f0f0f0f0f0f0f0f0f0ff0f0f0f0f0f0f0f0f0f", value = "A refresh token from a previous CreateAccessTokenResponse")
+  public String getRefreshToken() {
+    return refreshToken;
+  }
+
+  public void setRefreshToken(String refreshToken) {
+    this.refreshToken = refreshToken;
   }
 
 
@@ -148,12 +169,13 @@ public class CreateAccessTokenRequest {
         Objects.equals(this.clientId, createAccessTokenRequest.clientId) &&
         Objects.equals(this.clientSecret, createAccessTokenRequest.clientSecret) &&
         Objects.equals(this.email, createAccessTokenRequest.email) &&
-        Objects.equals(this.password, createAccessTokenRequest.password);
+        Objects.equals(this.password, createAccessTokenRequest.password) &&
+        Objects.equals(this.refreshToken, createAccessTokenRequest.refreshToken);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(grantType, clientId, clientSecret, email, password);
+    return Objects.hash(grantType, clientId, clientSecret, email, password, refreshToken);
   }
 
 
@@ -167,6 +189,7 @@ public class CreateAccessTokenRequest {
     sb.append("    clientSecret: ").append(toIndentedString(clientSecret)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    sb.append("    refreshToken: ").append(toIndentedString(refreshToken)).append("\n");
     sb.append("}");
     return sb.toString();
   }

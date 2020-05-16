@@ -460,7 +460,7 @@ No authorization required
 
 Open Charge Port
 
-Opens the charge port. Does not close the charge port (for now...). This endpoint also unlocks the charge port if it&#39;s locked.
+Opens and unlocks the charge port.
 
 ### Example
 ```java

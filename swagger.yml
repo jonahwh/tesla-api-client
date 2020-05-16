@@ -338,7 +338,7 @@ paths:
             $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/charge_port_door_open':
     post:
-      description: Opens the charge port. Does not close the charge port (for now...). This endpoint also unlocks the charge port if it's locked.
+      description: Opens and unlocks the charge port.
       summary: Open Charge Port
       tags:
         - Vehicle Commands
@@ -1246,7 +1246,7 @@ definitions:
     type: object
     properties:
       grant_type:
-        description: The type of oAuth grant. Always "password"
+        description: The type of oAuth grant. "password" or "refresh_token"
         example: password
         type: string
       client_id:
@@ -1258,12 +1258,16 @@ definitions:
         example: '123'
         type: string
       email:
-        description: The email for my.teslamotors.com
+        description: The email for my.teslamotors.com. Only used with "password" grant type.
         example: elon@teslamotors.com
         type: string
       password:
-        description: The password for my.teslamotors.com
+        description: The password for my.teslamotors.com. Only used with "password" grant type.
         example: edisonsux
+        type: string
+      refresh_token:
+        description: A refresh token from a previous CreateAccessTokenResponse
+        example: 0f0f0f0f0f0ff0f0f0f0f0f0f0f0f0f0f0f0f0f0f0ff0f0f0f0f0f0f0f0f0f
         type: string
   CreateAccessTokenResponse:
     title: Get an Access Token response

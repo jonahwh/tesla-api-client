@@ -166,7 +166,7 @@ public interface VehicleCommandsApi {
 
   /**
    * Open Charge Port
-   * Opens the charge port. Does not close the charge port (for now...). This endpoint also unlocks the charge port if it&#39;s locked.
+   * Opens and unlocks the charge port.
    * @param vehicleId The id of the Vehicle. (required)
    * @return Call&lt;CommandResponse&gt;
    */
