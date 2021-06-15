@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * RemoteSeatHeaterRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-15T23:06:21.774-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-14T22:04:36.321-07:00")
 public class RemoteSeatHeaterRequest {
   /**
    * The desired seat to adjust the heater for.  SeatHeaterFrontLeft: 0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack: 3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack: 6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8
@@ -84,7 +84,7 @@ public class RemoteSeatHeaterRequest {
 
       @Override
       public HeaterEnum read(final JsonReader jsonReader) throws IOException {
-        Integer value = jsonReader.nextInt();
+        int value = jsonReader.nextInt();
         return HeaterEnum.fromValue(String.valueOf(value));
       }
     }
@@ -136,7 +136,7 @@ public class RemoteSeatHeaterRequest {
 
       @Override
       public LevelEnum read(final JsonReader jsonReader) throws IOException {
-        Integer value = jsonReader.nextInt();
+        int value = jsonReader.nextInt();
         return LevelEnum.fromValue(String.valueOf(value));
       }
     }

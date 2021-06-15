@@ -92,7 +92,7 @@ public interface VehiclesApi {
   @Headers({
     "Content-Type:application/json"
   })
-  @GET("api/1/vehicles/{vehicle_id}/data")
+  @GET("api/1/vehicles/{vehicle_id}/vehicle_data")
   Call<VehicleDataResponse> getVehicleData(
     @retrofit2.http.Path("vehicle_id") String vehicleId
   );

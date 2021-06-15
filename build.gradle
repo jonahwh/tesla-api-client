@@ -2,10 +2,12 @@ apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'maven'
 apply plugin: 'signing'
+apply plugin: 'maven-publish'
+
 
 group = 'com.github.jonahwh'
 archivesBaseName = 'tesla-api-client'
-version = '1.15'
+version = '1.16'
 
 buildscript {
     repositories {

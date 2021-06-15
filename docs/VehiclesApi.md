@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**getVehicleChargeState**](VehiclesApi.md#getVehicleChargeState) | **GET** api/1/vehicles/{vehicle_id}/data_request/charge_state | Charge State
 [**getVehicleClimateState**](VehiclesApi.md#getVehicleClimateState) | **GET** api/1/vehicles/{vehicle_id}/data_request/climate_state | Climate Settings
 [**getVehicleConfig**](VehiclesApi.md#getVehicleConfig) | **GET** api/1/vehicles/{vehicle_id}/data_request/vehicle_config | Vehicle Config
-[**getVehicleData**](VehiclesApi.md#getVehicleData) | **GET** api/1/vehicles/{vehicle_id}/data | Vehicle Data
+[**getVehicleData**](VehiclesApi.md#getVehicleData) | **GET** api/1/vehicles/{vehicle_id}/vehicle_data | Vehicle Data
 [**getVehicleDriveState**](VehiclesApi.md#getVehicleDriveState) | **GET** api/1/vehicles/{vehicle_id}/data_request/drive_state | Driving and Position
 [**getVehicleMobileEnabled**](VehiclesApi.md#getVehicleMobileEnabled) | **GET** api/1/vehicles/{vehicle_id}/mobile_enabled | Mobile Access
 [**getVehicleState**](VehiclesApi.md#getVehicleState) | **GET** api/1/vehicles/{vehicle_id}/data_request/vehicle_state | Vehicle State

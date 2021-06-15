@@ -226,7 +226,7 @@ paths:
           description: ''
           schema:
             $ref: '#/definitions/VehicleConfigResponse'
-  '/api/1/vehicles/{vehicle_id}/data':
+  '/api/1/vehicles/{vehicle_id}/vehicle_data':
     get:
       description: 'Returns all vehicle ∂ata, potentially cached'
       summary: Vehicle Data
