@@ -17,8 +17,12 @@ import com.github.jonahwh.tesla_api_client.model.OpenTrunkRequest;
 import com.github.jonahwh.tesla_api_client.model.RemoteSeatHeaterRequest;
 import com.github.jonahwh.tesla_api_client.model.RemoteStartRequest;
 import com.github.jonahwh.tesla_api_client.model.RemoteSteeringWheelHeaterRequest;
+import com.github.jonahwh.tesla_api_client.model.ScheduledChargingRequest;
+import com.github.jonahwh.tesla_api_client.model.ScheduledDepartureRequest;
 import com.github.jonahwh.tesla_api_client.model.SentryModeRequest;
+import com.github.jonahwh.tesla_api_client.model.SetBioweaponModeRequest;
 import com.github.jonahwh.tesla_api_client.model.SetChargeLimitRequest;
+import com.github.jonahwh.tesla_api_client.model.SetChargingAmpsRequest;
 import com.github.jonahwh.tesla_api_client.model.SetSpeedLimitRequest;
 import com.github.jonahwh.tesla_api_client.model.SetTempsRequest;
 import com.github.jonahwh.tesla_api_client.model.SetValetRequest;
@@ -47,6 +51,21 @@ public interface VehicleCommandsApi {
   @POST("api/1/vehicles/{vehicle_id}/command/speed_limit_activate")
   Call<CommandResponse> activateSpeedLimit(
     @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body SpeedLimitRequest body
+  );
+
+  /**
+   * Toggle Bioweapon Defense Mode
+   * Enable or Disable Bioweapon Defense Mode on equipped vehicles.
+   * @param vehicleId The id of the Vehicle. (required)
+   * @param body  (required)
+   * @return Call&lt;CommandResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/command/set_bioweapon_mode")
+  Call<CommandResponse> bioweaponDefense(
+    @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body SetBioweaponModeRequest body
   );
 
   /**
@@ -297,6 +316,21 @@ public interface VehicleCommandsApi {
   );
 
   /**
+   * Set Charge Current
+   * Set the maximum Charge Current in Amps
+   * @param vehicleId The id of the Vehicle. (required)
+   * @param body  (required)
+   * @return Call&lt;CommandResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/command/set_charging_amps")
+  Call<CommandResponse> setChargingAmps(
+    @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body SetChargingAmpsRequest body
+  );
+
+  /**
    * Set Charge Limit to Max Range
    * Set the charge mode to max range (100% under the new percentage system introduced in 4.5). Use sparingly!
    * @param vehicleId The id of the Vehicle. (required)
@@ -323,6 +357,36 @@ public interface VehicleCommandsApi {
   @POST("api/1/vehicles/{vehicle_id}/command/set_preconditioning_max")
   Call<CommandResponse> setMaxDefrost(
     @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body MaxDefrostRequest body
+  );
+
+  /**
+   * Set Scheduled Charging
+   * Set Scheduled Charging settings
+   * @param vehicleId The id of the Vehicle. (required)
+   * @param body  (required)
+   * @return Call&lt;CommandResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/command/set_scheduled_charging")
+  Call<CommandResponse> setScheduledCharging(
+    @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body ScheduledChargingRequest body
+  );
+
+  /**
+   * Set Scheduled Departure
+   * Set Scheduled Departure settings
+   * @param vehicleId The id of the Vehicle. (required)
+   * @param body  (required)
+   * @return Call&lt;CommandResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/command/set_scheduled_departure")
+  Call<CommandResponse> setScheduledDeparture(
+    @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Body ScheduledDepartureRequest body
   );
 
   /**

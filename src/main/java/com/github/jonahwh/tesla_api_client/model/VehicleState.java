@@ -31,7 +31,7 @@ import java.math.BigDecimal;
 /**
  * VehicleState
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-06-14T22:04:36.321-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-08T17:51:21.272-07:00")
 public class VehicleState {
   @SerializedName("api_version")
   private Integer apiVersion = null;
@@ -137,6 +137,12 @@ public class VehicleState {
 
   @SerializedName("rp_window")
   private Integer rpWindow = null;
+
+  @SerializedName("smart_summon_available")
+  private Boolean smartSummonAvailable = null;
+
+  @SerializedName("summon_standby_mode_enabled")
+  private Boolean summonStandbyModeEnabled = null;
 
   public VehicleState apiVersion(Integer apiVersion) {
     this.apiVersion = apiVersion;
@@ -768,6 +774,42 @@ public class VehicleState {
     this.rpWindow = rpWindow;
   }
 
+  public VehicleState smartSummonAvailable(Boolean smartSummonAvailable) {
+    this.smartSummonAvailable = smartSummonAvailable;
+    return this;
+  }
+
+   /**
+   * Get smartSummonAvailable
+   * @return smartSummonAvailable
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isSmartSummonAvailable() {
+    return smartSummonAvailable;
+  }
+
+  public void setSmartSummonAvailable(Boolean smartSummonAvailable) {
+    this.smartSummonAvailable = smartSummonAvailable;
+  }
+
+  public VehicleState summonStandbyModeEnabled(Boolean summonStandbyModeEnabled) {
+    this.summonStandbyModeEnabled = summonStandbyModeEnabled;
+    return this;
+  }
+
+   /**
+   * Get summonStandbyModeEnabled
+   * @return summonStandbyModeEnabled
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isSummonStandbyModeEnabled() {
+    return summonStandbyModeEnabled;
+  }
+
+  public void setSummonStandbyModeEnabled(Boolean summonStandbyModeEnabled) {
+    this.summonStandbyModeEnabled = summonStandbyModeEnabled;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -812,12 +854,14 @@ public class VehicleState {
         Objects.equals(this.fpWindow, vehicleState.fpWindow) &&
         Objects.equals(this.homelinkDeviceCount, vehicleState.homelinkDeviceCount) &&
         Objects.equals(this.rdWindow, vehicleState.rdWindow) &&
-        Objects.equals(this.rpWindow, vehicleState.rpWindow);
+        Objects.equals(this.rpWindow, vehicleState.rpWindow) &&
+        Objects.equals(this.smartSummonAvailable, vehicleState.smartSummonAvailable) &&
+        Objects.equals(this.summonStandbyModeEnabled, vehicleState.summonStandbyModeEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(apiVersion, autoparkState, autoparkStateV2, autoparkStyle, calendarSupported, carVersion, centerDisplayState, df, dr, ft, homelinkNearby, lastAutoparkError, locked, mediaState, notificationsSupported, odometer, parsedCalendarSupported, pf, pr, remoteStart, remoteStartSupported, rt, sentryMode, softwareUpdate, sunRoofPercentOpen, sunRoofState, timestamp, valetMode, vehicleName, speedLimitMode, fdWindow, fpWindow, homelinkDeviceCount, rdWindow, rpWindow);
+    return Objects.hash(apiVersion, autoparkState, autoparkStateV2, autoparkStyle, calendarSupported, carVersion, centerDisplayState, df, dr, ft, homelinkNearby, lastAutoparkError, locked, mediaState, notificationsSupported, odometer, parsedCalendarSupported, pf, pr, remoteStart, remoteStartSupported, rt, sentryMode, softwareUpdate, sunRoofPercentOpen, sunRoofState, timestamp, valetMode, vehicleName, speedLimitMode, fdWindow, fpWindow, homelinkDeviceCount, rdWindow, rpWindow, smartSummonAvailable, summonStandbyModeEnabled);
   }
 
 
@@ -861,6 +905,8 @@ public class VehicleState {
     sb.append("    homelinkDeviceCount: ").append(toIndentedString(homelinkDeviceCount)).append("\n");
     sb.append("    rdWindow: ").append(toIndentedString(rdWindow)).append("\n");
     sb.append("    rpWindow: ").append(toIndentedString(rpWindow)).append("\n");
+    sb.append("    smartSummonAvailable: ").append(toIndentedString(smartSummonAvailable)).append("\n");
+    sb.append("    summonStandbyModeEnabled: ").append(toIndentedString(summonStandbyModeEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }

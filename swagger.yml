@@ -441,6 +441,81 @@ paths:
           description: ''
           schema:
             $ref: '#/definitions/CommandResponse'
+  '/api/1/vehicles/{vehicle_id}/command/set_charging_amps':
+    post:
+      description: Set the maximum Charge Current in Amps
+      summary: Set Charge Current
+      tags:
+        - Vehicle Commands
+      operationId: SetChargingAmps
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          description: The id of the Vehicle.
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/SetChargingAmpsRequest'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/CommandResponse'
+  '/api/1/vehicles/{vehicle_id}/command/set_scheduled_departure':
+    post:
+      description: Set Scheduled Departure settings
+      summary: Set Scheduled Departure
+      tags:
+        - Vehicle Commands
+      operationId: SetScheduledDeparture
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          description: The id of the Vehicle.
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ScheduledDepartureRequest'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/CommandResponse'
+  '/api/1/vehicles/{vehicle_id}/command/set_scheduled_charging':
+    post:
+      description: Set Scheduled Charging settings
+      summary: Set Scheduled Charging
+      tags:
+        - Vehicle Commands
+      operationId: SetScheduledCharging
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          description: The id of the Vehicle.
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/ScheduledChargingRequest'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/CommandResponse'
   '/api/1/vehicles/{vehicle_id}/command/charge_start':
     post:
       description: 'Start charging. Must be plugged in, have power available, and not have reached your charge limit.'
@@ -641,6 +716,31 @@ paths:
           required: true
           type: string
           description: The id of the Vehicle.
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/CommandResponse'
+  '/api/1/vehicles/{vehicle_id}/command/set_bioweapon_mode':
+    post:
+      description: Enable or Disable Bioweapon Defense Mode on equipped vehicles.
+      summary: Toggle Bioweapon Defense Mode
+      tags:
+        - Vehicle Commands
+      operationId: BioweaponDefense
+      produces:
+        - application/json
+      parameters:
+        - name: vehicle_id
+          in: path
+          required: true
+          type: string
+          description: The id of the Vehicle.
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/SetBioweaponModeRequest'
       responses:
         '200':
           description: ''
@@ -1431,6 +1531,65 @@ definitions:
         type: integer
         format: int32
         description: Percentage to set Charge Limit to.
+  SetChargingAmpsRequest:
+    title: Set Charging Amps
+    example:
+      charging_amps: 40
+    type: object
+    properties:
+      percent:
+        type: integer
+        format: int32
+        description: Charging Current in Amps
+  ScheduledDepartureRequest:
+    title: Scheduled Departure Request
+    example:
+      departure_time: 180
+      enable: true
+      preconditioning_enabled: true
+      preconditioning_weekdays_only: true
+      off_peak_charging_enabled: false
+      off_peak_charging_weekdays_only: false
+      end_off_peak_time: 60
+    type: object
+    properties:
+      departure_time:
+        type: integer
+        format: int32
+        description:
+          Integer representing the desired departure time.
+          Value is number of minutes from midnight in intervals of 15
+      enable:
+        type: boolean
+      preconditioning_enabled:
+        type: boolean
+      preconditioning_weekdays_only:
+        type: boolean
+      off_peak_charging_enabled:
+        type: boolean
+      off_peak_charging_weekdays_only:
+        type: boolean
+      end_off_peak_time:
+        type: integer
+        format: int32
+        description:
+          Integer representing the desired off peak end time.
+          Value is number of minutes from midnight in intervals of 15
+  ScheduledChargingRequest:
+    title: Scheduled Charging Request
+    example:
+      time: 60
+      enable: true
+    type: object
+    properties:
+      time:
+        type: integer
+        format: int32
+        description:
+          Integer representing the desired charging start time.
+          Value is number of minutes from midnight in intervals of 15
+      enable:
+        type: boolean
   RemoteStartRequest:
     title: Remote Start
     example:
@@ -1552,6 +1711,14 @@ definitions:
       lon:
         type: number
         format: double
+  SetBioweaponModeRequest:
+    title: Set Bioweapon Mode
+    example:
+      'on': true
+    type: object
+    properties:
+      'on':
+        type: boolean
   GetVehiclesResponse:
     title: List all Vehicles response
     example:
@@ -1968,9 +2135,9 @@ definitions:
       rp_window:
         type: integer
       smart_summon_available:
-        type: Boolean
+        type: boolean
       summon_standby_mode_enabled:
-        type: Boolean
+        type: boolean
   VehicleConfigResponse:
     title: Vehicle Config response
     type: object
