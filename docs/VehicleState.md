@@ -39,6 +39,8 @@ Name | Type | Description | Notes
 **homelinkDeviceCount** | **Integer** |  |  [optional]
 **rdWindow** | **Integer** |  |  [optional]
 **rpWindow** | **Integer** |  |  [optional]
+**smartSummonAvailable** | **Boolean** |  |  [optional]
+**summonStandbyModeEnabled** | **Boolean** |  |  [optional]
 
 
 

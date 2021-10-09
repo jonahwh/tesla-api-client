@@ -5,6 +5,7 @@ All URIs are relative to *https://owner-api.teslamotors.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**activateSpeedLimit**](VehicleCommandsApi.md#activateSpeedLimit) | **POST** api/1/vehicles/{vehicle_id}/command/speed_limit_activate | Activate Speed Limit
+[**bioweaponDefense**](VehicleCommandsApi.md#bioweaponDefense) | **POST** api/1/vehicles/{vehicle_id}/command/set_bioweapon_mode | Toggle Bioweapon Defense Mode
 [**cancelSoftwareUpdate**](VehicleCommandsApi.md#cancelSoftwareUpdate) | **POST** api/1/vehicles/{vehicle_id}/command/cancel_software_update | Cancel Software Update
 [**clearSpeedLimitPin**](VehicleCommandsApi.md#clearSpeedLimitPin) | **POST** api/1/vehicles/{vehicle_id}/command/speed_limit_clear_pin | Clear Speed Limit Pin
 [**closeChargePort**](VehicleCommandsApi.md#closeChargePort) | **POST** api/1/vehicles/{vehicle_id}/command/charge_port_door_close | Close Charge Port
@@ -22,8 +23,11 @@ Method | HTTP request | Description
 [**resetValetPin**](VehicleCommandsApi.md#resetValetPin) | **POST** api/1/vehicles/{vehicle_id}/command/reset_valet_pin | Reset Valet PIN
 [**sendStandardChargeLimit**](VehicleCommandsApi.md#sendStandardChargeLimit) | **POST** api/1/vehicles/{vehicle_id}/command/charge_standard | Set Charge Limit to Standard
 [**setChargeLimit**](VehicleCommandsApi.md#setChargeLimit) | **POST** api/1/vehicles/{vehicle_id}/command/set_charge_limit | Set Charge Limit
+[**setChargingAmps**](VehicleCommandsApi.md#setChargingAmps) | **POST** api/1/vehicles/{vehicle_id}/command/set_charging_amps | Set Charge Current
 [**setMaxChargeLimit**](VehicleCommandsApi.md#setMaxChargeLimit) | **POST** api/1/vehicles/{vehicle_id}/command/charge_max_range | Set Charge Limit to Max Range
 [**setMaxDefrost**](VehicleCommandsApi.md#setMaxDefrost) | **POST** api/1/vehicles/{vehicle_id}/command/set_preconditioning_max | Set Max Defrost
+[**setScheduledCharging**](VehicleCommandsApi.md#setScheduledCharging) | **POST** api/1/vehicles/{vehicle_id}/command/set_scheduled_charging | Set Scheduled Charging
+[**setScheduledDeparture**](VehicleCommandsApi.md#setScheduledDeparture) | **POST** api/1/vehicles/{vehicle_id}/command/set_scheduled_departure | Set Scheduled Departure
 [**setSentryMode**](VehicleCommandsApi.md#setSentryMode) | **POST** api/1/vehicles/{vehicle_id}/command/set_sentry_mode | Toggle Sentry Mode
 [**setSpeedLimit**](VehicleCommandsApi.md#setSpeedLimit) | **POST** api/1/vehicles/{vehicle_id}/command/speed_limit_set_limit | Set Speed Limit
 [**setTemperatures**](VehicleCommandsApi.md#setTemperatures) | **POST** api/1/vehicles/{vehicle_id}/command/set_temps | Set Temperature
@@ -74,6 +78,53 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**SpeedLimitRequest**](SpeedLimitRequest.md)|  |
+
+### Return type
+
+[**CommandResponse**](CommandResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="bioweaponDefense"></a>
+# **bioweaponDefense**
+> CommandResponse bioweaponDefense(vehicleId, body)
+
+Toggle Bioweapon Defense Mode
+
+Enable or Disable Bioweapon Defense Mode on equipped vehicles.
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+SetBioweaponModeRequest body = new SetBioweaponModeRequest(); // SetBioweaponModeRequest | 
+try {
+    CommandResponse result = apiInstance.bioweaponDefense(vehicleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#bioweaponDefense");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
+ **body** | [**SetBioweaponModeRequest**](SetBioweaponModeRequest.md)|  |
 
 ### Return type
 
@@ -871,6 +922,53 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="setChargingAmps"></a>
+# **setChargingAmps**
+> CommandResponse setChargingAmps(vehicleId, body)
+
+Set Charge Current
+
+Set the maximum Charge Current in Amps
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+SetChargingAmpsRequest body = new SetChargingAmpsRequest(); // SetChargingAmpsRequest | 
+try {
+    CommandResponse result = apiInstance.setChargingAmps(vehicleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#setChargingAmps");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
+ **body** | [**SetChargingAmpsRequest**](SetChargingAmpsRequest.md)|  |
+
+### Return type
+
+[**CommandResponse**](CommandResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="setMaxChargeLimit"></a>
 # **setMaxChargeLimit**
 > CommandResponse setMaxChargeLimit(vehicleId)
@@ -949,6 +1047,100 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**MaxDefrostRequest**](MaxDefrostRequest.md)|  |
+
+### Return type
+
+[**CommandResponse**](CommandResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="setScheduledCharging"></a>
+# **setScheduledCharging**
+> CommandResponse setScheduledCharging(vehicleId, body)
+
+Set Scheduled Charging
+
+Set Scheduled Charging settings
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+ScheduledChargingRequest body = new ScheduledChargingRequest(); // ScheduledChargingRequest | 
+try {
+    CommandResponse result = apiInstance.setScheduledCharging(vehicleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#setScheduledCharging");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
+ **body** | [**ScheduledChargingRequest**](ScheduledChargingRequest.md)|  |
+
+### Return type
+
+[**CommandResponse**](CommandResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="setScheduledDeparture"></a>
+# **setScheduledDeparture**
+> CommandResponse setScheduledDeparture(vehicleId, body)
+
+Set Scheduled Departure
+
+Set Scheduled Departure settings
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+ScheduledDepartureRequest body = new ScheduledDepartureRequest(); // ScheduledDepartureRequest | 
+try {
+    CommandResponse result = apiInstance.setScheduledDeparture(vehicleId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#setScheduledDeparture");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
+ **body** | [**ScheduledDepartureRequest**](ScheduledDepartureRequest.md)|  |
 
 ### Return type
 
