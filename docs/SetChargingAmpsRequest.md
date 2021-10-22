@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**percent** | **Integer** | Charging Current in Amps |  [optional]
+**chargingAmps** | **Integer** | Charging Current in Amps |  [optional]
 
 
 

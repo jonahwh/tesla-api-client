@@ -1537,7 +1537,7 @@ definitions:
       charging_amps: 40
     type: object
     properties:
-      percent:
+      charging_amps:
         type: integer
         format: int32
         description: Charging Current in Amps

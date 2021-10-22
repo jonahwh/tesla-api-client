@@ -27,27 +27,27 @@ import java.io.IOException;
 /**
  * SetChargingAmpsRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-08T17:51:21.272-07:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
 public class SetChargingAmpsRequest {
-  @SerializedName("percent")
-  private Integer percent = null;
+  @SerializedName("charging_amps")
+  private Integer chargingAmps = null;
 
-  public SetChargingAmpsRequest percent(Integer percent) {
-    this.percent = percent;
+  public SetChargingAmpsRequest chargingAmps(Integer chargingAmps) {
+    this.chargingAmps = chargingAmps;
     return this;
   }
 
    /**
    * Charging Current in Amps
-   * @return percent
+   * @return chargingAmps
   **/
   @ApiModelProperty(value = "Charging Current in Amps")
-  public Integer getPercent() {
-    return percent;
+  public Integer getChargingAmps() {
+    return chargingAmps;
   }
 
-  public void setPercent(Integer percent) {
-    this.percent = percent;
+  public void setChargingAmps(Integer chargingAmps) {
+    this.chargingAmps = chargingAmps;
   }
 
 
@@ -60,12 +60,12 @@ public class SetChargingAmpsRequest {
       return false;
     }
     SetChargingAmpsRequest setChargingAmpsRequest = (SetChargingAmpsRequest) o;
-    return Objects.equals(this.percent, setChargingAmpsRequest.percent);
+    return Objects.equals(this.chargingAmps, setChargingAmpsRequest.chargingAmps);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(percent);
+    return Objects.hash(chargingAmps);
   }
 
 
@@ -74,7 +74,7 @@ public class SetChargingAmpsRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class SetChargingAmpsRequest {\n");
     
-    sb.append("    percent: ").append(toIndentedString(percent)).append("\n");
+    sb.append("    chargingAmps: ").append(toIndentedString(chargingAmps)).append("\n");
     sb.append("}");
     return sb.toString();
   }
