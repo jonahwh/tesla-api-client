@@ -21,17 +21,59 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.math.BigDecimal;
 /**
  * SetClimateKeeperRequest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:08:58.619-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:40:14.443-07:00[America/Los_Angeles]")
 public class SetClimateKeeperRequest {
-  @SerializedName("climate_keeper_mode")
-  private BigDecimal climateKeeperMode = null;
+  /**
+   * 0 &#x3D; off, 1 &#x3D; Climate Keeper, 2 &#x3D; Dog Mode, 3 &#x3D; Camp Mode
+   */
+  @JsonAdapter(ClimateKeeperModeEnum.Adapter.class)
+  public enum ClimateKeeperModeEnum {
+    NUMBER_0(0),
+    NUMBER_1(1),
+    NUMBER_2(2),
+    NUMBER_3(3);
 
-  public SetClimateKeeperRequest climateKeeperMode(BigDecimal climateKeeperMode) {
+    private Integer value;
+
+    ClimateKeeperModeEnum(Integer value) {
+      this.value = value;
+    }
+    public Integer getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+    public static ClimateKeeperModeEnum fromValue(Integer input) {
+      for (ClimateKeeperModeEnum b : ClimateKeeperModeEnum.values()) {
+        if (b.value.equals(input)) {
+          return b;
+        }
+      }
+      return null;
+    }
+    public static class Adapter extends TypeAdapter<ClimateKeeperModeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ClimateKeeperModeEnum enumeration) throws IOException {
+        jsonWriter.value(String.valueOf(enumeration.getValue()));
+      }
+
+      @Override
+      public ClimateKeeperModeEnum read(final JsonReader jsonReader) throws IOException {
+        Object value = jsonReader.nextInt();
+        return ClimateKeeperModeEnum.fromValue((Integer)(value));
+      }
+    }
+  }  @SerializedName("climate_keeper_mode")
+  private ClimateKeeperModeEnum climateKeeperMode = null;
+
+  public SetClimateKeeperRequest climateKeeperMode(ClimateKeeperModeEnum climateKeeperMode) {
     this.climateKeeperMode = climateKeeperMode;
     return this;
   }
@@ -41,11 +83,11 @@ public class SetClimateKeeperRequest {
    * @return climateKeeperMode
   **/
   @Schema(description = "0 = off, 1 = Climate Keeper, 2 = Dog Mode, 3 = Camp Mode")
-  public BigDecimal getClimateKeeperMode() {
+  public ClimateKeeperModeEnum getClimateKeeperMode() {
     return climateKeeperMode;
   }
 
-  public void setClimateKeeperMode(BigDecimal climateKeeperMode) {
+  public void setClimateKeeperMode(ClimateKeeperModeEnum climateKeeperMode) {
     this.climateKeeperMode = climateKeeperMode;
   }
 

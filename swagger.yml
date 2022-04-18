@@ -1914,9 +1914,14 @@ components:
       type: object
       properties:
         climate_keeper_mode:
-          type: number
           description: 0 = off, 1 = Climate Keeper, 2 = Dog Mode, 3 = Camp Mode
           format: int32
+          type: integer
+          enum:
+            - 0
+            - 1
+            - 2
+            - 3
       example:
         climate_keeper_mode: 1
     SetCabinOverheatProtectionRequest:
