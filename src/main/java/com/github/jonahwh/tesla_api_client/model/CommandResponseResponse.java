@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
@@ -20,15 +19,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-
 /**
- * 
+ * CommandResponseResponse
  */
-@ApiModel(description = "")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:08:58.619-07:00[America/Los_Angeles]")
 public class CommandResponseResponse {
   @SerializedName("result")
   private Boolean result = null;
@@ -45,7 +42,7 @@ public class CommandResponseResponse {
    * Get result
    * @return result
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isResult() {
     return result;
   }
@@ -63,7 +60,7 @@ public class CommandResponseResponse {
    * Get reason
    * @return reason
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getReason() {
     return reason;
   }
@@ -115,4 +112,3 @@ public class CommandResponseResponse {
   }
 
 }
-

@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
@@ -21,15 +20,14 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.math.BigDecimal;
-
 /**
  * Supercharger
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:08:58.619-07:00[America/Los_Angeles]")
 public class Supercharger {
   @SerializedName("location")
   private DestinationChargerLocation location = null;
@@ -61,7 +59,7 @@ public class Supercharger {
    * Get location
    * @return location
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public DestinationChargerLocation getLocation() {
     return location;
   }
@@ -79,7 +77,7 @@ public class Supercharger {
    * Get name
    * @return name
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getName() {
     return name;
   }
@@ -97,7 +95,7 @@ public class Supercharger {
    * Get type
    * @return type
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getType() {
     return type;
   }
@@ -115,7 +113,7 @@ public class Supercharger {
    * Get distanceMiles
    * @return distanceMiles
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Double getDistanceMiles() {
     return distanceMiles;
   }
@@ -133,7 +131,7 @@ public class Supercharger {
    * Get availableStalls
    * @return availableStalls
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public BigDecimal getAvailableStalls() {
     return availableStalls;
   }
@@ -151,7 +149,7 @@ public class Supercharger {
    * Get totalStalls
    * @return totalStalls
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public BigDecimal getTotalStalls() {
     return totalStalls;
   }
@@ -169,7 +167,7 @@ public class Supercharger {
    * Get siteClosed
    * @return siteClosed
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isSiteClosed() {
     return siteClosed;
   }
@@ -231,4 +229,3 @@ public class Supercharger {
   }
 
 }
-

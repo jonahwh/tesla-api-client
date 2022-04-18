@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
@@ -20,17 +19,16 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  * WakeUpResponseResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:08:58.619-07:00[America/Los_Angeles]")
 public class WakeUpResponseResponse {
   @SerializedName("id")
   private String id = null;
@@ -86,7 +84,7 @@ public class WakeUpResponseResponse {
    * Get id
    * @return id
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getId() {
     return id;
   }
@@ -104,7 +102,7 @@ public class WakeUpResponseResponse {
    * Get userId
    * @return userId
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public BigDecimal getUserId() {
     return userId;
   }
@@ -122,7 +120,7 @@ public class WakeUpResponseResponse {
    * Get vehicleId
    * @return vehicleId
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public BigDecimal getVehicleId() {
     return vehicleId;
   }
@@ -140,7 +138,7 @@ public class WakeUpResponseResponse {
    * Get vin
    * @return vin
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getVin() {
     return vin;
   }
@@ -158,7 +156,7 @@ public class WakeUpResponseResponse {
    * Get displayName
    * @return displayName
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getDisplayName() {
     return displayName;
   }
@@ -176,7 +174,7 @@ public class WakeUpResponseResponse {
    * Get optionCodes
    * @return optionCodes
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getOptionCodes() {
     return optionCodes;
   }
@@ -194,7 +192,7 @@ public class WakeUpResponseResponse {
    * Get color
    * @return color
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getColor() {
     return color;
   }
@@ -220,7 +218,7 @@ public class WakeUpResponseResponse {
    * Get tokens
    * @return tokens
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public List<String> getTokens() {
     return tokens;
   }
@@ -238,7 +236,7 @@ public class WakeUpResponseResponse {
    * Get state
    * @return state
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getState() {
     return state;
   }
@@ -256,7 +254,7 @@ public class WakeUpResponseResponse {
    * Get inService
    * @return inService
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isInService() {
     return inService;
   }
@@ -274,7 +272,7 @@ public class WakeUpResponseResponse {
    * Get idS
    * @return idS
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getIdS() {
     return idS;
   }
@@ -292,7 +290,7 @@ public class WakeUpResponseResponse {
    * Get calendarEnabled
    * @return calendarEnabled
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isCalendarEnabled() {
     return calendarEnabled;
   }
@@ -310,7 +308,7 @@ public class WakeUpResponseResponse {
    * Get apiVersion
    * @return apiVersion
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getApiVersion() {
     return apiVersion;
   }
@@ -328,7 +326,7 @@ public class WakeUpResponseResponse {
    * Get backseatToken
    * @return backseatToken
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getBackseatToken() {
     return backseatToken;
   }
@@ -346,7 +344,7 @@ public class WakeUpResponseResponse {
    * Get backseatTokenUpdatedAt
    * @return backseatTokenUpdatedAt
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public BigDecimal getBackseatTokenUpdatedAt() {
     return backseatTokenUpdatedAt;
   }
@@ -424,4 +422,3 @@ public class WakeUpResponseResponse {
   }
 
 }
-

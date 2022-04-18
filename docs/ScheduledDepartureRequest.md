@@ -1,4 +1,3 @@
-
 # ScheduledDepartureRequest
 
 ## Properties
@@ -11,6 +10,3 @@ Name | Type | Description | Notes
 **offPeakChargingEnabled** | **Boolean** |  |  [optional]
 **offPeakChargingWeekdaysOnly** | **Boolean** |  |  [optional]
 **endOffPeakTime** | **Integer** | Integer representing the desired off peak end time. Value is number of minutes from midnight in intervals of 15 |  [optional]
-
-
-

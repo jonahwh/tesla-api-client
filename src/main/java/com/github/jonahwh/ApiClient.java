@@ -97,7 +97,7 @@ public class ApiClient {
     json = new JSON();
     okBuilder = new OkHttpClient.Builder();
 
-    String baseUrl = "https://owner-api.teslamotors.com";
+    String baseUrl = "https://owner-api.teslamotors.com/";
     if (!baseUrl.endsWith("/"))
       baseUrl = baseUrl + "/";
 

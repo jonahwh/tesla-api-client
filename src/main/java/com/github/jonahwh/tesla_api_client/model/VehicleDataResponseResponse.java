@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
@@ -26,17 +25,16 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  * VehicleDataResponseResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:08:58.619-07:00[America/Los_Angeles]")
 public class VehicleDataResponseResponse {
   @SerializedName("color")
   private String color = null;
@@ -107,7 +105,7 @@ public class VehicleDataResponseResponse {
    * Get color
    * @return color
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getColor() {
     return color;
   }
@@ -125,7 +123,7 @@ public class VehicleDataResponseResponse {
    * Get displayName
    * @return displayName
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getDisplayName() {
     return displayName;
   }
@@ -143,7 +141,7 @@ public class VehicleDataResponseResponse {
    * Get id
    * @return id
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getId() {
     return id;
   }
@@ -161,7 +159,7 @@ public class VehicleDataResponseResponse {
    * Get optionCodes
    * @return optionCodes
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getOptionCodes() {
     return optionCodes;
   }
@@ -179,7 +177,7 @@ public class VehicleDataResponseResponse {
    * Get vehicleId
    * @return vehicleId
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getVehicleId() {
     return vehicleId;
   }
@@ -197,7 +195,7 @@ public class VehicleDataResponseResponse {
    * Get vin
    * @return vin
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getVin() {
     return vin;
   }
@@ -215,7 +213,7 @@ public class VehicleDataResponseResponse {
    * Get userId
    * @return userId
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public BigDecimal getUserId() {
     return userId;
   }
@@ -241,7 +239,7 @@ public class VehicleDataResponseResponse {
    * Get tokens
    * @return tokens
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public List<String> getTokens() {
     return tokens;
   }
@@ -259,7 +257,7 @@ public class VehicleDataResponseResponse {
    * Get state
    * @return state
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getState() {
     return state;
   }
@@ -277,7 +275,7 @@ public class VehicleDataResponseResponse {
    * Get inService
    * @return inService
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isInService() {
     return inService;
   }
@@ -295,7 +293,7 @@ public class VehicleDataResponseResponse {
    * Get idS
    * @return idS
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getIdS() {
     return idS;
   }
@@ -313,7 +311,7 @@ public class VehicleDataResponseResponse {
    * Get calendarEnabled
    * @return calendarEnabled
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isCalendarEnabled() {
     return calendarEnabled;
   }
@@ -331,7 +329,7 @@ public class VehicleDataResponseResponse {
    * Get backseatToken
    * @return backseatToken
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getBackseatToken() {
     return backseatToken;
   }
@@ -349,7 +347,7 @@ public class VehicleDataResponseResponse {
    * Get backseatTokenUpdatedAt
    * @return backseatTokenUpdatedAt
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public BigDecimal getBackseatTokenUpdatedAt() {
     return backseatTokenUpdatedAt;
   }
@@ -367,7 +365,7 @@ public class VehicleDataResponseResponse {
    * Get guiSettings
    * @return guiSettings
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public GuiState getGuiSettings() {
     return guiSettings;
   }
@@ -385,7 +383,7 @@ public class VehicleDataResponseResponse {
    * Get climateState
    * @return climateState
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public ClimateState getClimateState() {
     return climateState;
   }
@@ -403,7 +401,7 @@ public class VehicleDataResponseResponse {
    * Get driveState
    * @return driveState
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public DriveState getDriveState() {
     return driveState;
   }
@@ -421,7 +419,7 @@ public class VehicleDataResponseResponse {
    * Get vehicleState
    * @return vehicleState
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public VehicleState getVehicleState() {
     return vehicleState;
   }
@@ -439,7 +437,7 @@ public class VehicleDataResponseResponse {
    * Get chargeState
    * @return chargeState
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public ChargeState getChargeState() {
     return chargeState;
   }
@@ -457,7 +455,7 @@ public class VehicleDataResponseResponse {
    * Get vehicleConfig
    * @return vehicleConfig
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public VehicleConfig getVehicleConfig() {
     return vehicleConfig;
   }
@@ -545,4 +543,3 @@ public class VehicleDataResponseResponse {
   }
 
 }
-

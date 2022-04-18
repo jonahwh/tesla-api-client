@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
@@ -20,15 +19,14 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.math.BigDecimal;
-
 /**
  * ChargeState
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:08:58.619-07:00[America/Los_Angeles]")
 public class ChargeState {
   @SerializedName("charging_state")
   private String chargingState = null;
@@ -162,7 +160,7 @@ public class ChargeState {
    * Get chargingState
    * @return chargingState
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getChargingState() {
     return chargingState;
   }
@@ -180,7 +178,7 @@ public class ChargeState {
    * Get fastChargerType
    * @return fastChargerType
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getFastChargerType() {
     return fastChargerType;
   }
@@ -198,7 +196,7 @@ public class ChargeState {
    * Get fastChargerBrand
    * @return fastChargerBrand
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getFastChargerBrand() {
     return fastChargerBrand;
   }
@@ -216,7 +214,7 @@ public class ChargeState {
    * Get chargeLimitSoc
    * @return chargeLimitSoc
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getChargeLimitSoc() {
     return chargeLimitSoc;
   }
@@ -234,7 +232,7 @@ public class ChargeState {
    * Get chargeLimitSocStd
    * @return chargeLimitSocStd
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getChargeLimitSocStd() {
     return chargeLimitSocStd;
   }
@@ -252,7 +250,7 @@ public class ChargeState {
    * Get chargeLimitSocMin
    * @return chargeLimitSocMin
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getChargeLimitSocMin() {
     return chargeLimitSocMin;
   }
@@ -270,7 +268,7 @@ public class ChargeState {
    * Get chargeLimitSocMax
    * @return chargeLimitSocMax
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getChargeLimitSocMax() {
     return chargeLimitSocMax;
   }
@@ -288,7 +286,7 @@ public class ChargeState {
    * Get chargeToMaxRange
    * @return chargeToMaxRange
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isChargeToMaxRange() {
     return chargeToMaxRange;
   }
@@ -306,7 +304,7 @@ public class ChargeState {
    * Get maxRangeChargeCounter
    * @return maxRangeChargeCounter
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getMaxRangeChargeCounter() {
     return maxRangeChargeCounter;
   }
@@ -324,7 +322,7 @@ public class ChargeState {
    * Get fastChargerPresent
    * @return fastChargerPresent
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isFastChargerPresent() {
     return fastChargerPresent;
   }
@@ -342,7 +340,7 @@ public class ChargeState {
    * Get batteryRange
    * @return batteryRange
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Double getBatteryRange() {
     return batteryRange;
   }
@@ -360,7 +358,7 @@ public class ChargeState {
    * Get estBatteryRange
    * @return estBatteryRange
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Double getEstBatteryRange() {
     return estBatteryRange;
   }
@@ -378,7 +376,7 @@ public class ChargeState {
    * Get idealBatteryRange
    * @return idealBatteryRange
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Double getIdealBatteryRange() {
     return idealBatteryRange;
   }
@@ -396,7 +394,7 @@ public class ChargeState {
    * Get batteryLevel
    * @return batteryLevel
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getBatteryLevel() {
     return batteryLevel;
   }
@@ -414,7 +412,7 @@ public class ChargeState {
    * Get usableBatteryLevel
    * @return usableBatteryLevel
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getUsableBatteryLevel() {
     return usableBatteryLevel;
   }
@@ -432,7 +430,7 @@ public class ChargeState {
    * Get chargeEnergyAdded
    * @return chargeEnergyAdded
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Double getChargeEnergyAdded() {
     return chargeEnergyAdded;
   }
@@ -450,7 +448,7 @@ public class ChargeState {
    * Get chargeMilesAddedRated
    * @return chargeMilesAddedRated
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Double getChargeMilesAddedRated() {
     return chargeMilesAddedRated;
   }
@@ -468,7 +466,7 @@ public class ChargeState {
    * Get chargeMilesAddedIdeal
    * @return chargeMilesAddedIdeal
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Double getChargeMilesAddedIdeal() {
     return chargeMilesAddedIdeal;
   }
@@ -486,7 +484,7 @@ public class ChargeState {
    * Get chargerVoltage
    * @return chargerVoltage
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getChargerVoltage() {
     return chargerVoltage;
   }
@@ -504,7 +502,7 @@ public class ChargeState {
    * Get chargerPilotCurrent
    * @return chargerPilotCurrent
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getChargerPilotCurrent() {
     return chargerPilotCurrent;
   }
@@ -522,7 +520,7 @@ public class ChargeState {
    * Get chargerActualCurrent
    * @return chargerActualCurrent
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getChargerActualCurrent() {
     return chargerActualCurrent;
   }
@@ -540,7 +538,7 @@ public class ChargeState {
    * Get chargerPower
    * @return chargerPower
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getChargerPower() {
     return chargerPower;
   }
@@ -558,7 +556,7 @@ public class ChargeState {
    * Get timeToFullCharge
    * @return timeToFullCharge
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Double getTimeToFullCharge() {
     return timeToFullCharge;
   }
@@ -576,7 +574,7 @@ public class ChargeState {
    * Get tripCharging
    * @return tripCharging
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isTripCharging() {
     return tripCharging;
   }
@@ -594,7 +592,7 @@ public class ChargeState {
    * Get chargeRate
    * @return chargeRate
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Double getChargeRate() {
     return chargeRate;
   }
@@ -612,7 +610,7 @@ public class ChargeState {
    * Get chargePortDoorOpen
    * @return chargePortDoorOpen
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isChargePortDoorOpen() {
     return chargePortDoorOpen;
   }
@@ -630,7 +628,7 @@ public class ChargeState {
    * Get connChargeCable
    * @return connChargeCable
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getConnChargeCable() {
     return connChargeCable;
   }
@@ -648,7 +646,7 @@ public class ChargeState {
    * Get scheduledChargingStartTime
    * @return scheduledChargingStartTime
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getScheduledChargingStartTime() {
     return scheduledChargingStartTime;
   }
@@ -666,7 +664,7 @@ public class ChargeState {
    * Get scheduledChargingPending
    * @return scheduledChargingPending
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isScheduledChargingPending() {
     return scheduledChargingPending;
   }
@@ -684,7 +682,7 @@ public class ChargeState {
    * Get userChargeEnableRequest
    * @return userChargeEnableRequest
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isUserChargeEnableRequest() {
     return userChargeEnableRequest;
   }
@@ -702,7 +700,7 @@ public class ChargeState {
    * Get chargeEnableRequest
    * @return chargeEnableRequest
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isChargeEnableRequest() {
     return chargeEnableRequest;
   }
@@ -720,7 +718,7 @@ public class ChargeState {
    * Get chargerPhases
    * @return chargerPhases
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getChargerPhases() {
     return chargerPhases;
   }
@@ -738,7 +736,7 @@ public class ChargeState {
    * Get chargePortLatch
    * @return chargePortLatch
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getChargePortLatch() {
     return chargePortLatch;
   }
@@ -756,7 +754,7 @@ public class ChargeState {
    * Get chargeCurrentRequest
    * @return chargeCurrentRequest
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getChargeCurrentRequest() {
     return chargeCurrentRequest;
   }
@@ -774,7 +772,7 @@ public class ChargeState {
    * Get chargeCurrentRequestMax
    * @return chargeCurrentRequestMax
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getChargeCurrentRequestMax() {
     return chargeCurrentRequestMax;
   }
@@ -792,7 +790,7 @@ public class ChargeState {
    * Get managedChargingActive
    * @return managedChargingActive
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isManagedChargingActive() {
     return managedChargingActive;
   }
@@ -810,7 +808,7 @@ public class ChargeState {
    * Get managedChargingUserCanceled
    * @return managedChargingUserCanceled
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isManagedChargingUserCanceled() {
     return managedChargingUserCanceled;
   }
@@ -828,7 +826,7 @@ public class ChargeState {
    * Get managedChargingStartTime
    * @return managedChargingStartTime
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public BigDecimal getManagedChargingStartTime() {
     return managedChargingStartTime;
   }
@@ -846,7 +844,7 @@ public class ChargeState {
    * Get batteryHeaterOn
    * @return batteryHeaterOn
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isBatteryHeaterOn() {
     return batteryHeaterOn;
   }
@@ -864,7 +862,7 @@ public class ChargeState {
    * Get notEnoughPowerToHeat
    * @return notEnoughPowerToHeat
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isNotEnoughPowerToHeat() {
     return notEnoughPowerToHeat;
   }
@@ -882,7 +880,7 @@ public class ChargeState {
    * Get timestamp
    * @return timestamp
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public BigDecimal getTimestamp() {
     return timestamp;
   }
@@ -1012,4 +1010,3 @@ public class ChargeState {
   }
 
 }
-

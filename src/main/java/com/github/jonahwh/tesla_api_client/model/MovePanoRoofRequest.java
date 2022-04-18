@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
@@ -20,14 +19,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-
 /**
  * MovePanoRoofRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:08:58.619-07:00[America/Los_Angeles]")
 public class MovePanoRoofRequest {
   /**
    * The desired state of the panoramic roof. The approximate percent open values for each state are &#x60;open&#x60; &#x3D; 100%, &#x60;close&#x60; &#x3D; 0%, &#x60;comfort&#x60; &#x3D; 80%, and &#x60;vent&#x60; &#x3D; ~15%
@@ -35,13 +33,9 @@ public class MovePanoRoofRequest {
   @JsonAdapter(StateEnum.Adapter.class)
   public enum StateEnum {
     OPEN("open"),
-    
     CLOSE("close"),
-    
     COMFORT("comfort"),
-    
     VENT("vent"),
-    
     MOVE("move");
 
     private String value;
@@ -49,7 +43,6 @@ public class MovePanoRoofRequest {
     StateEnum(String value) {
       this.value = value;
     }
-
     public String getValue() {
       return value;
     }
@@ -58,31 +51,27 @@ public class MovePanoRoofRequest {
     public String toString() {
       return String.valueOf(value);
     }
-
-    public static StateEnum fromValue(String text) {
+    public static StateEnum fromValue(String input) {
       for (StateEnum b : StateEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
+        if (b.value.equals(input)) {
           return b;
         }
       }
       return null;
     }
-
     public static class Adapter extends TypeAdapter<StateEnum> {
       @Override
       public void write(final JsonWriter jsonWriter, final StateEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
+        jsonWriter.value(String.valueOf(enumeration.getValue()));
       }
 
       @Override
       public StateEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return StateEnum.fromValue(String.valueOf(value));
+        Object value = jsonReader.nextString();
+        return StateEnum.fromValue((String)(value));
       }
     }
-  }
-
-  @SerializedName("state")
+  }  @SerializedName("state")
   private StateEnum state = null;
 
   @SerializedName("percent")
@@ -97,7 +86,7 @@ public class MovePanoRoofRequest {
    * The desired state of the panoramic roof. The approximate percent open values for each state are &#x60;open&#x60; &#x3D; 100%, &#x60;close&#x60; &#x3D; 0%, &#x60;comfort&#x60; &#x3D; 80%, and &#x60;vent&#x60; &#x3D; ~15%
    * @return state
   **/
-  @ApiModelProperty(value = "The desired state of the panoramic roof. The approximate percent open values for each state are `open` = 100%, `close` = 0%, `comfort` = 80%, and `vent` = ~15%")
+  @Schema(description = "The desired state of the panoramic roof. The approximate percent open values for each state are `open` = 100%, `close` = 0%, `comfort` = 80%, and `vent` = ~15%")
   public StateEnum getState() {
     return state;
   }
@@ -115,7 +104,7 @@ public class MovePanoRoofRequest {
    * The percentage to move the roof to.
    * @return percent
   **/
-  @ApiModelProperty(value = "The percentage to move the roof to.")
+  @Schema(description = "The percentage to move the roof to.")
   public Double getPercent() {
     return percent;
   }
@@ -167,4 +156,3 @@ public class MovePanoRoofRequest {
   }
 
 }
-

@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
@@ -20,14 +19,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-
 /**
  * WindowControlRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:08:58.619-07:00[America/Los_Angeles]")
 public class WindowControlRequest {
   @SerializedName("lat")
   private Double lat = null;
@@ -41,7 +39,6 @@ public class WindowControlRequest {
   @JsonAdapter(CommandEnum.Adapter.class)
   public enum CommandEnum {
     VENT("vent"),
-    
     CLOSE("close");
 
     private String value;
@@ -49,7 +46,6 @@ public class WindowControlRequest {
     CommandEnum(String value) {
       this.value = value;
     }
-
     public String getValue() {
       return value;
     }
@@ -58,31 +54,27 @@ public class WindowControlRequest {
     public String toString() {
       return String.valueOf(value);
     }
-
-    public static CommandEnum fromValue(String text) {
+    public static CommandEnum fromValue(String input) {
       for (CommandEnum b : CommandEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
+        if (b.value.equals(input)) {
           return b;
         }
       }
       return null;
     }
-
     public static class Adapter extends TypeAdapter<CommandEnum> {
       @Override
       public void write(final JsonWriter jsonWriter, final CommandEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
+        jsonWriter.value(String.valueOf(enumeration.getValue()));
       }
 
       @Override
       public CommandEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return CommandEnum.fromValue(String.valueOf(value));
+        Object value = jsonReader.nextString();
+        return CommandEnum.fromValue((String)(value));
       }
     }
-  }
-
-  @SerializedName("command")
+  }  @SerializedName("command")
   private CommandEnum command = null;
 
   public WindowControlRequest lat(Double lat) {
@@ -94,7 +86,7 @@ public class WindowControlRequest {
    * Get lat
    * @return lat
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Double getLat() {
     return lat;
   }
@@ -112,7 +104,7 @@ public class WindowControlRequest {
    * Get lon
    * @return lon
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Double getLon() {
     return lon;
   }
@@ -130,7 +122,7 @@ public class WindowControlRequest {
    * Get command
    * @return command
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public CommandEnum getCommand() {
     return command;
   }
@@ -184,4 +176,3 @@ public class WindowControlRequest {
   }
 
 }
-

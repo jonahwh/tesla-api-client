@@ -1,4 +1,3 @@
-
 # NavigationRequestRequest
 
 ## Properties
@@ -8,6 +7,3 @@ Name | Type | Description | Notes
 **value** | [**NavigationRequestRequestValue**](NavigationRequestRequestValue.md) |  |  [optional]
 **locale** | **String** | Do not change |  [optional]
 **timestampMs** | **String** | Unix timestamp |  [optional]
-
-
-

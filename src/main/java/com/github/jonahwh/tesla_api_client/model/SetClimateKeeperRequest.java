@@ -14,7 +14,6 @@ package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.github.jonahwh.tesla_api_client.model.CommandResponseResponse;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,31 +21,32 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.math.BigDecimal;
 /**
- * CommandResponse
+ * SetClimateKeeperRequest
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:08:58.619-07:00[America/Los_Angeles]")
-public class CommandResponse {
-  @SerializedName("response")
-  private CommandResponseResponse response = null;
+public class SetClimateKeeperRequest {
+  @SerializedName("climate_keeper_mode")
+  private BigDecimal climateKeeperMode = null;
 
-  public CommandResponse response(CommandResponseResponse response) {
-    this.response = response;
+  public SetClimateKeeperRequest climateKeeperMode(BigDecimal climateKeeperMode) {
+    this.climateKeeperMode = climateKeeperMode;
     return this;
   }
 
    /**
-   * Get response
-   * @return response
+   * 0 &#x3D; off, 1 &#x3D; Climate Keeper, 2 &#x3D; Dog Mode, 3 &#x3D; Camp Mode
+   * @return climateKeeperMode
   **/
-  @Schema(required = true, description = "")
-  public CommandResponseResponse getResponse() {
-    return response;
+  @Schema(description = "0 = off, 1 = Climate Keeper, 2 = Dog Mode, 3 = Camp Mode")
+  public BigDecimal getClimateKeeperMode() {
+    return climateKeeperMode;
   }
 
-  public void setResponse(CommandResponseResponse response) {
-    this.response = response;
+  public void setClimateKeeperMode(BigDecimal climateKeeperMode) {
+    this.climateKeeperMode = climateKeeperMode;
   }
 
 
@@ -58,22 +58,22 @@ public class CommandResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CommandResponse commandResponse = (CommandResponse) o;
-    return Objects.equals(this.response, commandResponse.response);
+    SetClimateKeeperRequest setClimateKeeperRequest = (SetClimateKeeperRequest) o;
+    return Objects.equals(this.climateKeeperMode, setClimateKeeperRequest.climateKeeperMode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(response);
+    return Objects.hash(climateKeeperMode);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CommandResponse {\n");
+    sb.append("class SetClimateKeeperRequest {\n");
     
-    sb.append("    response: ").append(toIndentedString(response)).append("\n");
+    sb.append("    climateKeeperMode: ").append(toIndentedString(climateKeeperMode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

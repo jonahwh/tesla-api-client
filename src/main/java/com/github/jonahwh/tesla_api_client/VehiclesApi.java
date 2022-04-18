@@ -7,7 +7,6 @@ import retrofit2.http.*;
 
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
-import okhttp3.MultipartBody;
 
 import com.github.jonahwh.tesla_api_client.model.ChargeStateResponse;
 import com.github.jonahwh.tesla_api_client.model.ClimateSettingsResponse;
@@ -33,9 +32,6 @@ public interface VehiclesApi {
    * @param vehicleId The id of the Vehicle. (required)
    * @return Call&lt;VehicleResponse&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("api/1/vehicles/{vehicle_id}")
   Call<VehicleResponse> getVehicle(
     @retrofit2.http.Path("vehicle_id") String vehicleId
@@ -47,9 +43,6 @@ public interface VehiclesApi {
    * @param vehicleId The id of the Vehicle. (required)
    * @return Call&lt;ChargeStateResponse&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("api/1/vehicles/{vehicle_id}/data_request/charge_state")
   Call<ChargeStateResponse> getVehicleChargeState(
     @retrofit2.http.Path("vehicle_id") String vehicleId
@@ -61,9 +54,6 @@ public interface VehiclesApi {
    * @param vehicleId The id of the Vehicle. (required)
    * @return Call&lt;ClimateSettingsResponse&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("api/1/vehicles/{vehicle_id}/data_request/climate_state")
   Call<ClimateSettingsResponse> getVehicleClimateState(
     @retrofit2.http.Path("vehicle_id") String vehicleId
@@ -71,13 +61,10 @@ public interface VehiclesApi {
 
   /**
    * Vehicle Config
-   * Returns the vehicle&#39;s configuration
+   * Returns the vehicle&#x27;s configuration
    * @param vehicleId The id of the Vehicle. (required)
    * @return Call&lt;VehicleConfigResponse&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("api/1/vehicles/{vehicle_id}/data_request/vehicle_config")
   Call<VehicleConfigResponse> getVehicleConfig(
     @retrofit2.http.Path("vehicle_id") String vehicleId
@@ -89,9 +76,6 @@ public interface VehiclesApi {
    * @param vehicleId The id of the Vehicle. (required)
    * @return Call&lt;VehicleDataResponse&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("api/1/vehicles/{vehicle_id}/vehicle_data")
   Call<VehicleDataResponse> getVehicleData(
     @retrofit2.http.Path("vehicle_id") String vehicleId
@@ -103,9 +87,6 @@ public interface VehiclesApi {
    * @param vehicleId The id of the Vehicle. (required)
    * @return Call&lt;DriveStateResponse&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("api/1/vehicles/{vehicle_id}/data_request/drive_state")
   Call<DriveStateResponse> getVehicleDriveState(
     @retrofit2.http.Path("vehicle_id") String vehicleId
@@ -117,9 +98,6 @@ public interface VehiclesApi {
    * @param vehicleId The id of the Vehicle. (required)
    * @return Call&lt;MobileAccessResponse&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("api/1/vehicles/{vehicle_id}/mobile_enabled")
   Call<MobileAccessResponse> getVehicleMobileEnabled(
     @retrofit2.http.Path("vehicle_id") String vehicleId
@@ -127,13 +105,10 @@ public interface VehiclesApi {
 
   /**
    * Vehicle State
-   * Returns the vehicle&#39;s physical state, such as which doors are open.
+   * Returns the vehicle&#x27;s physical state, such as which doors are open.
    * @param vehicleId The id of the Vehicle. (required)
    * @return Call&lt;VehicleStateResponse&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("api/1/vehicles/{vehicle_id}/data_request/vehicle_state")
   Call<VehicleStateResponse> getVehicleState(
     @retrofit2.http.Path("vehicle_id") String vehicleId
@@ -144,9 +119,6 @@ public interface VehiclesApi {
    * Retrieve a list of your owned vehicles (includes vehicles not yet shipped!)
    * @return Call&lt;GetVehiclesResponse&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("api/1/vehicles")
   Call<GetVehiclesResponse> getVehicles();
     
@@ -157,9 +129,6 @@ public interface VehiclesApi {
    * @param vehicleId The id of the Vehicle. (required)
    * @return Call&lt;GuistateResponse&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("api/1/vehicles/{vehicle_id}/data_request/gui_settings")
   Call<GuistateResponse> getVehilceGuiSettings(
     @retrofit2.http.Path("vehicle_id") String vehicleId
@@ -171,9 +140,6 @@ public interface VehiclesApi {
    * @param vehicleId The id of the Vehicle. (required)
    * @return Call&lt;NearbyChargerResponse&gt;
    */
-  @Headers({
-    "Content-Type:application/json"
-  })
   @GET("api/1/vehicles/{vehicle_id}/nearby_charging_sites")
   Call<NearbyChargerResponse> nearbyChargers(
     @retrofit2.http.Path("vehicle_id") String vehicleId

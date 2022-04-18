@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
@@ -21,14 +20,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-
 /**
  * NavigationRequestRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:08:58.619-07:00[America/Los_Angeles]")
 public class NavigationRequestRequest {
   @SerializedName("type")
   private String type = "share_ext_content_raw";
@@ -51,7 +49,7 @@ public class NavigationRequestRequest {
    * Do not change
    * @return type
   **/
-  @ApiModelProperty(example = "share_ext_content_raw", value = "Do not change")
+  @Schema(example = "share_ext_content_raw", description = "Do not change")
   public String getType() {
     return type;
   }
@@ -69,7 +67,7 @@ public class NavigationRequestRequest {
    * Get value
    * @return value
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public NavigationRequestRequestValue getValue() {
     return value;
   }
@@ -87,7 +85,7 @@ public class NavigationRequestRequest {
    * Do not change
    * @return locale
   **/
-  @ApiModelProperty(example = "en-us", value = "Do not change")
+  @Schema(example = "en-us", description = "Do not change")
   public String getLocale() {
     return locale;
   }
@@ -105,7 +103,7 @@ public class NavigationRequestRequest {
    * Unix timestamp
    * @return timestampMs
   **/
-  @ApiModelProperty(value = "Unix timestamp")
+  @Schema(description = "Unix timestamp")
   public String getTimestampMs() {
     return timestampMs;
   }
@@ -161,4 +159,3 @@ public class NavigationRequestRequest {
   }
 
 }
-

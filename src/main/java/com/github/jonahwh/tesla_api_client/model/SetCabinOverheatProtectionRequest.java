@@ -14,7 +14,6 @@ package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.github.jonahwh.tesla_api_client.model.CommandResponseResponse;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,30 +22,51 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * CommandResponse
+ * SetCabinOverheatProtectionRequest
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:08:58.619-07:00[America/Los_Angeles]")
-public class CommandResponse {
-  @SerializedName("response")
-  private CommandResponseResponse response = null;
+public class SetCabinOverheatProtectionRequest {
+  @SerializedName("on")
+  private Boolean on = null;
 
-  public CommandResponse response(CommandResponseResponse response) {
-    this.response = response;
+  @SerializedName("fan_only")
+  private Boolean fanOnly = null;
+
+  public SetCabinOverheatProtectionRequest on(Boolean on) {
+    this.on = on;
     return this;
   }
 
    /**
-   * Get response
-   * @return response
+   * Get on
+   * @return on
   **/
-  @Schema(required = true, description = "")
-  public CommandResponseResponse getResponse() {
-    return response;
+  @Schema(description = "")
+  public Boolean isOn() {
+    return on;
   }
 
-  public void setResponse(CommandResponseResponse response) {
-    this.response = response;
+  public void setOn(Boolean on) {
+    this.on = on;
+  }
+
+  public SetCabinOverheatProtectionRequest fanOnly(Boolean fanOnly) {
+    this.fanOnly = fanOnly;
+    return this;
+  }
+
+   /**
+   * Only supported by some vehicles. Must be false on unsupported vehicles.
+   * @return fanOnly
+  **/
+  @Schema(description = "Only supported by some vehicles. Must be false on unsupported vehicles.")
+  public Boolean isFanOnly() {
+    return fanOnly;
+  }
+
+  public void setFanOnly(Boolean fanOnly) {
+    this.fanOnly = fanOnly;
   }
 
 
@@ -58,22 +78,24 @@ public class CommandResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CommandResponse commandResponse = (CommandResponse) o;
-    return Objects.equals(this.response, commandResponse.response);
+    SetCabinOverheatProtectionRequest setCabinOverheatProtectionRequest = (SetCabinOverheatProtectionRequest) o;
+    return Objects.equals(this.on, setCabinOverheatProtectionRequest.on) &&
+        Objects.equals(this.fanOnly, setCabinOverheatProtectionRequest.fanOnly);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(response);
+    return Objects.hash(on, fanOnly);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CommandResponse {\n");
+    sb.append("class SetCabinOverheatProtectionRequest {\n");
     
-    sb.append("    response: ").append(toIndentedString(response)).append("\n");
+    sb.append("    on: ").append(toIndentedString(on)).append("\n");
+    sb.append("    fanOnly: ").append(toIndentedString(fanOnly)).append("\n");
     sb.append("}");
     return sb.toString();
   }

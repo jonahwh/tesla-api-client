@@ -10,13 +10,11 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
-
 import java.io.IOException;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -28,15 +26,10 @@ import com.google.gson.stream.JsonWriter;
  */
 @JsonAdapter(State.Adapter.class)
 public enum State {
-  
   OPEN("open"),
-  
   CLOSE("close"),
-  
   COMFORT("comfort"),
-  
   VENT("vent"),
-  
   MOVE("move");
 
   private String value;
@@ -54,9 +47,9 @@ public enum State {
     return String.valueOf(value);
   }
 
-  public static State fromValue(String text) {
+  public static State fromValue(String input) {
     for (State b : State.values()) {
-      if (String.valueOf(b.value).equals(text)) {
+      if (b.value.equals(input)) {
         return b;
       }
     }
@@ -66,14 +59,13 @@ public enum State {
   public static class Adapter extends TypeAdapter<State> {
     @Override
     public void write(final JsonWriter jsonWriter, final State enumeration) throws IOException {
-      jsonWriter.value(enumeration.getValue());
+      jsonWriter.value(String.valueOf(enumeration.getValue()));
     }
 
     @Override
     public State read(final JsonReader jsonReader) throws IOException {
-      String value = jsonReader.nextString();
-      return State.fromValue(String.valueOf(value));
+      Object value = jsonReader.nextString();
+      return State.fromValue((String)(value));
     }
   }
 }
-

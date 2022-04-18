@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
@@ -20,14 +19,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-
 /**
  * CreateAccessTokenRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:08:58.619-07:00[America/Los_Angeles]")
 public class CreateAccessTokenRequest {
   @SerializedName("grant_type")
   private String grantType = null;
@@ -56,7 +54,7 @@ public class CreateAccessTokenRequest {
    * The type of oAuth grant. \&quot;password\&quot; or \&quot;refresh_token\&quot;
    * @return grantType
   **/
-  @ApiModelProperty(example = "password", value = "The type of oAuth grant. \"password\" or \"refresh_token\"")
+  @Schema(example = "password", description = "The type of oAuth grant. \"password\" or \"refresh_token\"")
   public String getGrantType() {
     return grantType;
   }
@@ -74,7 +72,7 @@ public class CreateAccessTokenRequest {
    * The oAuth client ID
    * @return clientId
   **/
-  @ApiModelProperty(example = "abc", value = "The oAuth client ID")
+  @Schema(example = "abc", description = "The oAuth client ID")
   public String getClientId() {
     return clientId;
   }
@@ -92,7 +90,7 @@ public class CreateAccessTokenRequest {
    * The oAuth client secret
    * @return clientSecret
   **/
-  @ApiModelProperty(example = "123", value = "The oAuth client secret")
+  @Schema(example = "123", description = "The oAuth client secret")
   public String getClientSecret() {
     return clientSecret;
   }
@@ -110,7 +108,7 @@ public class CreateAccessTokenRequest {
    * The email for my.teslamotors.com. Only used with \&quot;password\&quot; grant type.
    * @return email
   **/
-  @ApiModelProperty(example = "elon@teslamotors.com", value = "The email for my.teslamotors.com. Only used with \"password\" grant type.")
+  @Schema(example = "elon@teslamotors.com", description = "The email for my.teslamotors.com. Only used with \"password\" grant type.")
   public String getEmail() {
     return email;
   }
@@ -128,7 +126,7 @@ public class CreateAccessTokenRequest {
    * The password for my.teslamotors.com. Only used with \&quot;password\&quot; grant type.
    * @return password
   **/
-  @ApiModelProperty(example = "edisonsux", value = "The password for my.teslamotors.com. Only used with \"password\" grant type.")
+  @Schema(example = "edisonsux", description = "The password for my.teslamotors.com. Only used with \"password\" grant type.")
   public String getPassword() {
     return password;
   }
@@ -146,7 +144,7 @@ public class CreateAccessTokenRequest {
    * A refresh token from a previous CreateAccessTokenResponse
    * @return refreshToken
   **/
-  @ApiModelProperty(example = "0f0f0f0f0f0ff0f0f0f0f0f0f0f0f0f0f0f0f0f0f0ff0f0f0f0f0f0f0f0f0f", value = "A refresh token from a previous CreateAccessTokenResponse")
+  @Schema(example = "0f0f0f0f0f0ff0f0f0f0f0f0f0f0f0f0f0f0f0f0f0ff0f0f0f0f0f0f0f0f0f", description = "A refresh token from a previous CreateAccessTokenResponse")
   public String getRefreshToken() {
     return refreshToken;
   }
@@ -206,4 +204,3 @@ public class CreateAccessTokenRequest {
   }
 
 }
-

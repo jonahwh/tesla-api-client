@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
@@ -23,15 +22,14 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.math.BigDecimal;
-
 /**
  * VehicleState
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:08:58.619-07:00[America/Los_Angeles]")
 public class VehicleState {
   @SerializedName("api_version")
   private Integer apiVersion = null;
@@ -153,7 +151,7 @@ public class VehicleState {
    * Get apiVersion
    * @return apiVersion
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getApiVersion() {
     return apiVersion;
   }
@@ -171,7 +169,7 @@ public class VehicleState {
    * Get autoparkState
    * @return autoparkState
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getAutoparkState() {
     return autoparkState;
   }
@@ -189,7 +187,7 @@ public class VehicleState {
    * Get autoparkStateV2
    * @return autoparkStateV2
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getAutoparkStateV2() {
     return autoparkStateV2;
   }
@@ -207,7 +205,7 @@ public class VehicleState {
    * Get autoparkStyle
    * @return autoparkStyle
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getAutoparkStyle() {
     return autoparkStyle;
   }
@@ -225,7 +223,7 @@ public class VehicleState {
    * Get calendarSupported
    * @return calendarSupported
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isCalendarSupported() {
     return calendarSupported;
   }
@@ -243,7 +241,7 @@ public class VehicleState {
    * Get carVersion
    * @return carVersion
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getCarVersion() {
     return carVersion;
   }
@@ -261,7 +259,7 @@ public class VehicleState {
    * Get centerDisplayState
    * @return centerDisplayState
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getCenterDisplayState() {
     return centerDisplayState;
   }
@@ -279,7 +277,7 @@ public class VehicleState {
    * Get df
    * @return df
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getDf() {
     return df;
   }
@@ -297,7 +295,7 @@ public class VehicleState {
    * Get dr
    * @return dr
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getDr() {
     return dr;
   }
@@ -315,7 +313,7 @@ public class VehicleState {
    * Get ft
    * @return ft
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getFt() {
     return ft;
   }
@@ -333,7 +331,7 @@ public class VehicleState {
    * Get homelinkNearby
    * @return homelinkNearby
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isHomelinkNearby() {
     return homelinkNearby;
   }
@@ -351,7 +349,7 @@ public class VehicleState {
    * Get lastAutoparkError
    * @return lastAutoparkError
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getLastAutoparkError() {
     return lastAutoparkError;
   }
@@ -369,7 +367,7 @@ public class VehicleState {
    * Get locked
    * @return locked
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isLocked() {
     return locked;
   }
@@ -387,7 +385,7 @@ public class VehicleState {
    * Get mediaState
    * @return mediaState
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public VehicleStateMediaState getMediaState() {
     return mediaState;
   }
@@ -405,7 +403,7 @@ public class VehicleState {
    * Get notificationsSupported
    * @return notificationsSupported
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isNotificationsSupported() {
     return notificationsSupported;
   }
@@ -423,7 +421,7 @@ public class VehicleState {
    * Get odometer
    * @return odometer
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Double getOdometer() {
     return odometer;
   }
@@ -441,7 +439,7 @@ public class VehicleState {
    * Get parsedCalendarSupported
    * @return parsedCalendarSupported
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isParsedCalendarSupported() {
     return parsedCalendarSupported;
   }
@@ -459,7 +457,7 @@ public class VehicleState {
    * Get pf
    * @return pf
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getPf() {
     return pf;
   }
@@ -477,7 +475,7 @@ public class VehicleState {
    * Get pr
    * @return pr
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getPr() {
     return pr;
   }
@@ -495,7 +493,7 @@ public class VehicleState {
    * Get remoteStart
    * @return remoteStart
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isRemoteStart() {
     return remoteStart;
   }
@@ -513,7 +511,7 @@ public class VehicleState {
    * Get remoteStartSupported
    * @return remoteStartSupported
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isRemoteStartSupported() {
     return remoteStartSupported;
   }
@@ -531,7 +529,7 @@ public class VehicleState {
    * Get rt
    * @return rt
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getRt() {
     return rt;
   }
@@ -549,7 +547,7 @@ public class VehicleState {
    * Get sentryMode
    * @return sentryMode
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isSentryMode() {
     return sentryMode;
   }
@@ -567,7 +565,7 @@ public class VehicleState {
    * Get softwareUpdate
    * @return softwareUpdate
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public VehicleStateSoftwareUpdate getSoftwareUpdate() {
     return softwareUpdate;
   }
@@ -585,7 +583,7 @@ public class VehicleState {
    * Get sunRoofPercentOpen
    * @return sunRoofPercentOpen
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getSunRoofPercentOpen() {
     return sunRoofPercentOpen;
   }
@@ -603,7 +601,7 @@ public class VehicleState {
    * Get sunRoofState
    * @return sunRoofState
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getSunRoofState() {
     return sunRoofState;
   }
@@ -621,7 +619,7 @@ public class VehicleState {
    * Get timestamp
    * @return timestamp
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public BigDecimal getTimestamp() {
     return timestamp;
   }
@@ -639,7 +637,7 @@ public class VehicleState {
    * Get valetMode
    * @return valetMode
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isValetMode() {
     return valetMode;
   }
@@ -657,7 +655,7 @@ public class VehicleState {
    * Get vehicleName
    * @return vehicleName
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getVehicleName() {
     return vehicleName;
   }
@@ -675,7 +673,7 @@ public class VehicleState {
    * Get speedLimitMode
    * @return speedLimitMode
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public VehicleStateSpeedLimitMode getSpeedLimitMode() {
     return speedLimitMode;
   }
@@ -693,7 +691,7 @@ public class VehicleState {
    * Get fdWindow
    * @return fdWindow
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getFdWindow() {
     return fdWindow;
   }
@@ -711,7 +709,7 @@ public class VehicleState {
    * Get fpWindow
    * @return fpWindow
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getFpWindow() {
     return fpWindow;
   }
@@ -729,7 +727,7 @@ public class VehicleState {
    * Get homelinkDeviceCount
    * @return homelinkDeviceCount
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getHomelinkDeviceCount() {
     return homelinkDeviceCount;
   }
@@ -747,7 +745,7 @@ public class VehicleState {
    * Get rdWindow
    * @return rdWindow
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getRdWindow() {
     return rdWindow;
   }
@@ -765,7 +763,7 @@ public class VehicleState {
    * Get rpWindow
    * @return rpWindow
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getRpWindow() {
     return rpWindow;
   }
@@ -783,7 +781,7 @@ public class VehicleState {
    * Get smartSummonAvailable
    * @return smartSummonAvailable
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isSmartSummonAvailable() {
     return smartSummonAvailable;
   }
@@ -801,7 +799,7 @@ public class VehicleState {
    * Get summonStandbyModeEnabled
    * @return summonStandbyModeEnabled
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isSummonStandbyModeEnabled() {
     return summonStandbyModeEnabled;
   }
@@ -923,4 +921,3 @@ public class VehicleState {
   }
 
 }
-

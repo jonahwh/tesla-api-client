@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
@@ -20,15 +19,14 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.math.BigDecimal;
-
 /**
  * ClimateState
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:08:58.619-07:00[America/Los_Angeles]")
 public class ClimateState {
   @SerializedName("inside_temp")
   private Double insideTemp = null;
@@ -126,7 +124,7 @@ public class ClimateState {
    * Get insideTemp
    * @return insideTemp
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Double getInsideTemp() {
     return insideTemp;
   }
@@ -144,7 +142,7 @@ public class ClimateState {
    * Get outsideTemp
    * @return outsideTemp
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Double getOutsideTemp() {
     return outsideTemp;
   }
@@ -162,7 +160,7 @@ public class ClimateState {
    * Get driverTempSetting
    * @return driverTempSetting
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Double getDriverTempSetting() {
     return driverTempSetting;
   }
@@ -180,7 +178,7 @@ public class ClimateState {
    * Get passengerTempSetting
    * @return passengerTempSetting
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Double getPassengerTempSetting() {
     return passengerTempSetting;
   }
@@ -198,7 +196,7 @@ public class ClimateState {
    * Get leftTempDirection
    * @return leftTempDirection
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getLeftTempDirection() {
     return leftTempDirection;
   }
@@ -216,7 +214,7 @@ public class ClimateState {
    * Get rightTempDirection
    * @return rightTempDirection
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getRightTempDirection() {
     return rightTempDirection;
   }
@@ -234,7 +232,7 @@ public class ClimateState {
    * Get isFrontDefrosterOn
    * @return isFrontDefrosterOn
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isIsFrontDefrosterOn() {
     return isFrontDefrosterOn;
   }
@@ -252,7 +250,7 @@ public class ClimateState {
    * Get isRearDefrosterOn
    * @return isRearDefrosterOn
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isIsRearDefrosterOn() {
     return isRearDefrosterOn;
   }
@@ -270,7 +268,7 @@ public class ClimateState {
    * Get fanStatus
    * @return fanStatus
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getFanStatus() {
     return fanStatus;
   }
@@ -288,7 +286,7 @@ public class ClimateState {
    * Get isClimateOn
    * @return isClimateOn
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isIsClimateOn() {
     return isClimateOn;
   }
@@ -306,7 +304,7 @@ public class ClimateState {
    * Get minAvailTemp
    * @return minAvailTemp
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getMinAvailTemp() {
     return minAvailTemp;
   }
@@ -324,7 +322,7 @@ public class ClimateState {
    * Get maxAvailTemp
    * @return maxAvailTemp
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getMaxAvailTemp() {
     return maxAvailTemp;
   }
@@ -342,7 +340,7 @@ public class ClimateState {
    * Get seatHeaterLeft
    * @return seatHeaterLeft
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getSeatHeaterLeft() {
     return seatHeaterLeft;
   }
@@ -360,7 +358,7 @@ public class ClimateState {
    * Get seatHeaterRight
    * @return seatHeaterRight
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getSeatHeaterRight() {
     return seatHeaterRight;
   }
@@ -378,7 +376,7 @@ public class ClimateState {
    * Get seatHeaterRearLeft
    * @return seatHeaterRearLeft
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getSeatHeaterRearLeft() {
     return seatHeaterRearLeft;
   }
@@ -396,7 +394,7 @@ public class ClimateState {
    * Get seatHeaterRearRight
    * @return seatHeaterRearRight
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getSeatHeaterRearRight() {
     return seatHeaterRearRight;
   }
@@ -414,7 +412,7 @@ public class ClimateState {
    * Get seatHeaterRearCenter
    * @return seatHeaterRearCenter
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getSeatHeaterRearCenter() {
     return seatHeaterRearCenter;
   }
@@ -432,7 +430,7 @@ public class ClimateState {
    * Get seatHeaterRearRightBack
    * @return seatHeaterRearRightBack
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getSeatHeaterRearRightBack() {
     return seatHeaterRearRightBack;
   }
@@ -450,7 +448,7 @@ public class ClimateState {
    * Get seatHeaterRearLeftBack
    * @return seatHeaterRearLeftBack
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getSeatHeaterRearLeftBack() {
     return seatHeaterRearLeftBack;
   }
@@ -468,7 +466,7 @@ public class ClimateState {
    * Get batteryHeater
    * @return batteryHeater
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isBatteryHeater() {
     return batteryHeater;
   }
@@ -486,7 +484,7 @@ public class ClimateState {
    * Get batteryHeaterNoPower
    * @return batteryHeaterNoPower
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isBatteryHeaterNoPower() {
     return batteryHeaterNoPower;
   }
@@ -504,7 +502,7 @@ public class ClimateState {
    * Get steeringWheelHeater
    * @return steeringWheelHeater
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isSteeringWheelHeater() {
     return steeringWheelHeater;
   }
@@ -522,7 +520,7 @@ public class ClimateState {
    * Get wiperBladeHeater
    * @return wiperBladeHeater
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isWiperBladeHeater() {
     return wiperBladeHeater;
   }
@@ -540,7 +538,7 @@ public class ClimateState {
    * Get sideMirrorHeaters
    * @return sideMirrorHeaters
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isSideMirrorHeaters() {
     return sideMirrorHeaters;
   }
@@ -558,7 +556,7 @@ public class ClimateState {
    * Get isPreconditioning
    * @return isPreconditioning
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isIsPreconditioning() {
     return isPreconditioning;
   }
@@ -576,7 +574,7 @@ public class ClimateState {
    * Get smartPreconditioning
    * @return smartPreconditioning
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isSmartPreconditioning() {
     return smartPreconditioning;
   }
@@ -594,7 +592,7 @@ public class ClimateState {
    * Get isAutoConditioningOn
    * @return isAutoConditioningOn
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isIsAutoConditioningOn() {
     return isAutoConditioningOn;
   }
@@ -612,7 +610,7 @@ public class ClimateState {
    * Get defrostMode
    * @return defrostMode
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getDefrostMode() {
     return defrostMode;
   }
@@ -630,7 +628,7 @@ public class ClimateState {
    * Get timestamp
    * @return timestamp
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public BigDecimal getTimestamp() {
     return timestamp;
   }
@@ -736,4 +734,3 @@ public class ClimateState {
   }
 
 }
-

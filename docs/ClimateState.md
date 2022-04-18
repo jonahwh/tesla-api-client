@@ -1,4 +1,3 @@
-
 # ClimateState
 
 ## Properties
@@ -33,6 +32,3 @@ Name | Type | Description | Notes
 **isAutoConditioningOn** | **Boolean** |  |  [optional]
 **defrostMode** | **Integer** |  |  [optional]
 **timestamp** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-
-
-

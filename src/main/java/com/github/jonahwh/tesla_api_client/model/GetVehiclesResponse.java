@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
@@ -21,16 +20,15 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  * GetVehiclesResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:08:58.619-07:00[America/Los_Angeles]")
 public class GetVehiclesResponse {
   @SerializedName("response")
   private List<Vehicle> response = new ArrayList<Vehicle>();
@@ -52,7 +50,7 @@ public class GetVehiclesResponse {
    * Get response
    * @return response
   **/
-  @ApiModelProperty(required = true, value = "")
+  @Schema(required = true, description = "")
   public List<Vehicle> getResponse() {
     return response;
   }
@@ -67,10 +65,10 @@ public class GetVehiclesResponse {
   }
 
    /**
-   * 
+   * Get count
    * @return count
   **/
-  @ApiModelProperty(example = "1", required = true, value = "")
+  @Schema(example = "1", required = true, description = "")
   public Integer getCount() {
     return count;
   }
@@ -122,4 +120,3 @@ public class GetVehiclesResponse {
   }
 
 }
-

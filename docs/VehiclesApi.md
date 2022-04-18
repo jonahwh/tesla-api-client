@@ -1,6 +1,6 @@
 # VehiclesApi
 
-All URIs are relative to *https://owner-api.teslamotors.com*
+All URIs are relative to *https://owner-api.teslamotors.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,6 @@ Method | HTTP request | Description
 [**getVehicles**](VehiclesApi.md#getVehicles) | **GET** api/1/vehicles | List all Vehicles
 [**getVehilceGuiSettings**](VehiclesApi.md#getVehilceGuiSettings) | **GET** api/1/vehicles/{vehicle_id}/data_request/gui_settings | GUI Settings
 [**nearbyChargers**](VehiclesApi.md#nearbyChargers) | **GET** api/1/vehicles/{vehicle_id}/nearby_charging_sites | Get Nearby Chargers
-
 
 <a name="getVehicle"></a>
 # **getVehicle**
@@ -59,7 +58,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getVehicleChargeState"></a>
@@ -104,7 +103,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getVehicleClimateState"></a>
@@ -149,7 +148,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getVehicleConfig"></a>
@@ -158,7 +157,7 @@ No authorization required
 
 Vehicle Config
 
-Returns the vehicle&#39;s configuration
+Returns the vehicle&#x27;s configuration
 
 ### Example
 ```java
@@ -194,7 +193,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getVehicleData"></a>
@@ -239,7 +238,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getVehicleDriveState"></a>
@@ -284,7 +283,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getVehicleMobileEnabled"></a>
@@ -329,7 +328,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getVehicleState"></a>
@@ -338,7 +337,7 @@ No authorization required
 
 Vehicle State
 
-Returns the vehicle&#39;s physical state, such as which doors are open.
+Returns the vehicle&#x27;s physical state, such as which doors are open.
 
 ### Example
 ```java
@@ -374,7 +373,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getVehicles"></a>
@@ -415,7 +414,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getVehilceGuiSettings"></a>
@@ -460,7 +459,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="nearbyChargers"></a>
@@ -505,6 +504,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
