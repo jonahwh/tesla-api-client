@@ -1,6 +1,6 @@
 # MediaControlApi
 
-All URIs are relative to *https://owner-api.teslamotors.com*
+All URIs are relative to *https://owner-api.teslamotors.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,6 @@ Method | HTTP request | Description
 [**mediaTogglePlayback**](MediaControlApi.md#mediaTogglePlayback) | **POST** api/1/vehicles/{vehicle_id}/command/media_toggle_playback | Pause/Play Media
 [**mediaVolumeDown**](MediaControlApi.md#mediaVolumeDown) | **POST** api/1/vehicles/{vehicle_id}/command/media_volume_down | Volume Down
 [**mediaVolumeUp**](MediaControlApi.md#mediaVolumeUp) | **POST** api/1/vehicles/{vehicle_id}/command/media_volume_up | Volume Up
-
 
 <a name="mediaNextFavorite"></a>
 # **mediaNextFavorite**
@@ -55,7 +54,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="mediaNextTrack"></a>
@@ -100,7 +99,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="mediaPrevFavorite"></a>
@@ -145,7 +144,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="mediaPrevTrack"></a>
@@ -190,7 +189,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="mediaTogglePlayback"></a>
@@ -235,7 +234,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="mediaVolumeDown"></a>
@@ -280,7 +279,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="mediaVolumeUp"></a>
@@ -325,6 +324,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

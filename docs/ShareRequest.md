@@ -1,4 +1,3 @@
-
 # ShareRequest
 
 ## Properties
@@ -8,6 +7,3 @@ Name | Type | Description | Notes
 **value** | [**ShareRequestValue**](ShareRequestValue.md) |  |  [optional]
 **locale** | **String** | Locale this request should be treated as |  [optional]
 **timestamp** | [**BigDecimal**](BigDecimal.md) | UNIX timestamp indicating when this request was sent |  [optional]
-
-
-

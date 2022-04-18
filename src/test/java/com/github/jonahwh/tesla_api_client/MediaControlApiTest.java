@@ -5,10 +5,12 @@ import com.github.jonahwh.tesla_api_client.model.CommandResponse;
 import org.junit.Before;
 import org.junit.Test;
 
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 /**
  * API tests for MediaControlApi
@@ -22,6 +24,7 @@ public class MediaControlApiTest {
         api = new ApiClient().createService(MediaControlApi.class);
     }
 
+
     /**
      * Next Favorite
      *
@@ -34,6 +37,7 @@ public class MediaControlApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Next Track
      *
@@ -46,6 +50,7 @@ public class MediaControlApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Previous Favorite
      *
@@ -58,6 +63,7 @@ public class MediaControlApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Previous Track
      *
@@ -70,6 +76,7 @@ public class MediaControlApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Pause/Play Media
      *
@@ -82,6 +89,7 @@ public class MediaControlApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Volume Down
      *
@@ -94,6 +102,7 @@ public class MediaControlApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Volume Up
      *

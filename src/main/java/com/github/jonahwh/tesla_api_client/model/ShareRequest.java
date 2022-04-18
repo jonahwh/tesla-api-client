@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
@@ -21,15 +20,14 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.math.BigDecimal;
-
 /**
  * ShareRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:40:14.443-07:00[America/Los_Angeles]")
 public class ShareRequest {
   @SerializedName("type")
   private String type = "share_ext_content_raw";
@@ -52,7 +50,7 @@ public class ShareRequest {
    * Change to \&quot;share_dest_content_coords\&quot; if using lat/long
    * @return type
   **/
-  @ApiModelProperty(example = "share_ext_content_raw", value = "Change to \"share_dest_content_coords\" if using lat/long")
+  @Schema(example = "share_ext_content_raw", description = "Change to \"share_dest_content_coords\" if using lat/long")
   public String getType() {
     return type;
   }
@@ -70,7 +68,7 @@ public class ShareRequest {
    * Get value
    * @return value
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public ShareRequestValue getValue() {
     return value;
   }
@@ -88,7 +86,7 @@ public class ShareRequest {
    * Locale this request should be treated as
    * @return locale
   **/
-  @ApiModelProperty(example = "en-US", value = "Locale this request should be treated as")
+  @Schema(example = "en-US", description = "Locale this request should be treated as")
   public String getLocale() {
     return locale;
   }
@@ -106,7 +104,7 @@ public class ShareRequest {
    * UNIX timestamp indicating when this request was sent
    * @return timestamp
   **/
-  @ApiModelProperty(example = "1.574041714569E12", value = "UNIX timestamp indicating when this request was sent")
+  @Schema(example = "1574041714569", description = "UNIX timestamp indicating when this request was sent")
   public BigDecimal getTimestamp() {
     return timestamp;
   }
@@ -162,4 +160,3 @@ public class ShareRequest {
   }
 
 }
-

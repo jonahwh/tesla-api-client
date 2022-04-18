@@ -1,4 +1,3 @@
-
 # Supercharger
 
 ## Properties
@@ -11,6 +10,3 @@ Name | Type | Description | Notes
 **availableStalls** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **totalStalls** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **siteClosed** | **Boolean** |  |  [optional]
-
-
-

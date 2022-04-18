@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
@@ -20,14 +19,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-
 /**
  * SetTempsRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:40:14.443-07:00[America/Los_Angeles]")
 public class SetTempsRequest {
   @SerializedName("driver_temp")
   private Double driverTemp = null;
@@ -41,10 +39,10 @@ public class SetTempsRequest {
   }
 
    /**
-   * The desired temperature on the driver&#39;s side in celcius.
+   * The desired temperature on the driver&#x27;s side in celcius.
    * @return driverTemp
   **/
-  @ApiModelProperty(value = "The desired temperature on the driver's side in celcius.")
+  @Schema(description = "The desired temperature on the driver's side in celcius.")
   public Double getDriverTemp() {
     return driverTemp;
   }
@@ -59,10 +57,10 @@ public class SetTempsRequest {
   }
 
    /**
-   * The desired temperature on the passenger&#39;s side in celcius.
+   * The desired temperature on the passenger&#x27;s side in celcius.
    * @return passengerTemp
   **/
-  @ApiModelProperty(value = "The desired temperature on the passenger's side in celcius.")
+  @Schema(description = "The desired temperature on the passenger's side in celcius.")
   public Double getPassengerTemp() {
     return passengerTemp;
   }
@@ -114,4 +112,3 @@ public class SetTempsRequest {
   }
 
 }
-

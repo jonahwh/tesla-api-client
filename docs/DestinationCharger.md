@@ -1,4 +1,3 @@
-
 # DestinationCharger
 
 ## Properties
@@ -8,6 +7,3 @@ Name | Type | Description | Notes
 **name** | **String** |  |  [optional]
 **type** | **String** |  |  [optional]
 **distanceMiles** | **Double** |  |  [optional]
-
-
-

@@ -15,10 +15,12 @@ import com.github.jonahwh.tesla_api_client.model.VehicleStateResponse;
 import org.junit.Before;
 import org.junit.Test;
 
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 /**
  * API tests for VehiclesApi
@@ -32,6 +34,7 @@ public class VehiclesApiTest {
         api = new ApiClient().createService(VehiclesApi.class);
     }
 
+
     /**
      * Retrieve a vehicle
      *
@@ -44,6 +47,7 @@ public class VehiclesApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Charge State
      *
@@ -56,6 +60,7 @@ public class VehiclesApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Climate Settings
      *
@@ -68,10 +73,11 @@ public class VehiclesApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Vehicle Config
      *
-     * Returns the vehicle&#39;s configuration
+     * Returns the vehicle&#x27;s configuration
      */
     @Test
     public void getVehicleConfigTest() {
@@ -80,6 +86,7 @@ public class VehiclesApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Vehicle Data
      *
@@ -92,6 +99,7 @@ public class VehiclesApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Driving and Position
      *
@@ -104,6 +112,7 @@ public class VehiclesApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Mobile Access
      *
@@ -116,10 +125,11 @@ public class VehiclesApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Vehicle State
      *
-     * Returns the vehicle&#39;s physical state, such as which doors are open.
+     * Returns the vehicle&#x27;s physical state, such as which doors are open.
      */
     @Test
     public void getVehicleStateTest() {
@@ -128,6 +138,7 @@ public class VehiclesApiTest {
 
         // TODO: test validations
     }
+
     /**
      * List all Vehicles
      *
@@ -139,6 +150,7 @@ public class VehiclesApiTest {
 
         // TODO: test validations
     }
+
     /**
      * GUI Settings
      *
@@ -151,6 +163,7 @@ public class VehiclesApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Get Nearby Chargers
      *

@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
@@ -20,15 +19,14 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.math.BigDecimal;
-
 /**
  * VehicleConfig
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:40:14.443-07:00[America/Los_Angeles]")
 public class VehicleConfig {
   @SerializedName("can_actuate_trunks")
   private Boolean canActuateTrunks = null;
@@ -105,7 +103,7 @@ public class VehicleConfig {
    * Get canActuateTrunks
    * @return canActuateTrunks
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isCanActuateTrunks() {
     return canActuateTrunks;
   }
@@ -123,7 +121,7 @@ public class VehicleConfig {
    * Get canAcceptNavigationRequests
    * @return canAcceptNavigationRequests
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isCanAcceptNavigationRequests() {
     return canAcceptNavigationRequests;
   }
@@ -141,7 +139,7 @@ public class VehicleConfig {
    * Get carSpecialType
    * @return carSpecialType
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getCarSpecialType() {
     return carSpecialType;
   }
@@ -159,7 +157,7 @@ public class VehicleConfig {
    * Get carType
    * @return carType
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getCarType() {
     return carType;
   }
@@ -177,7 +175,7 @@ public class VehicleConfig {
    * Get chargePortType
    * @return chargePortType
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getChargePortType() {
     return chargePortType;
   }
@@ -195,7 +193,7 @@ public class VehicleConfig {
    * Get euVehicle
    * @return euVehicle
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isEuVehicle() {
     return euVehicle;
   }
@@ -213,7 +211,7 @@ public class VehicleConfig {
    * Get exteriorColor
    * @return exteriorColor
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getExteriorColor() {
     return exteriorColor;
   }
@@ -231,7 +229,7 @@ public class VehicleConfig {
    * Get hasLudicrousMode
    * @return hasLudicrousMode
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isHasLudicrousMode() {
     return hasLudicrousMode;
   }
@@ -249,7 +247,7 @@ public class VehicleConfig {
    * Get motorizedChargePort
    * @return motorizedChargePort
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isMotorizedChargePort() {
     return motorizedChargePort;
   }
@@ -267,7 +265,7 @@ public class VehicleConfig {
    * Get perfConfig
    * @return perfConfig
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getPerfConfig() {
     return perfConfig;
   }
@@ -285,7 +283,7 @@ public class VehicleConfig {
    * Get plg
    * @return plg
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isPlg() {
     return plg;
   }
@@ -303,7 +301,7 @@ public class VehicleConfig {
    * Get rearSeatHeaters
    * @return rearSeatHeaters
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public BigDecimal getRearSeatHeaters() {
     return rearSeatHeaters;
   }
@@ -321,7 +319,7 @@ public class VehicleConfig {
    * Get rearSeatType
    * @return rearSeatType
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public BigDecimal getRearSeatType() {
     return rearSeatType;
   }
@@ -339,7 +337,7 @@ public class VehicleConfig {
    * Get rhd
    * @return rhd
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isRhd() {
     return rhd;
   }
@@ -357,7 +355,7 @@ public class VehicleConfig {
    * Get roofColor
    * @return roofColor
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getRoofColor() {
     return roofColor;
   }
@@ -375,7 +373,7 @@ public class VehicleConfig {
    * Get seatType
    * @return seatType
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public BigDecimal getSeatType() {
     return seatType;
   }
@@ -393,7 +391,7 @@ public class VehicleConfig {
    * Get spoilerType
    * @return spoilerType
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getSpoilerType() {
     return spoilerType;
   }
@@ -411,7 +409,7 @@ public class VehicleConfig {
    * Get sunRoofInstalled
    * @return sunRoofInstalled
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public BigDecimal getSunRoofInstalled() {
     return sunRoofInstalled;
   }
@@ -429,7 +427,7 @@ public class VehicleConfig {
    * Get thirdRowSeats
    * @return thirdRowSeats
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getThirdRowSeats() {
     return thirdRowSeats;
   }
@@ -447,7 +445,7 @@ public class VehicleConfig {
    * Get timestamp
    * @return timestamp
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public BigDecimal getTimestamp() {
     return timestamp;
   }
@@ -465,7 +463,7 @@ public class VehicleConfig {
    * Get trimBadging
    * @return trimBadging
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getTrimBadging() {
     return trimBadging;
   }
@@ -483,7 +481,7 @@ public class VehicleConfig {
    * Get wheelType
    * @return wheelType
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getWheelType() {
     return wheelType;
   }
@@ -575,4 +573,3 @@ public class VehicleConfig {
   }
 
 }
-

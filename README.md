@@ -10,10 +10,7 @@ See [swagger.yml](swagger.yml) to view the Swagger document used to generate the
    If on Mac and using Homebrew, you can use `brew install swagger-codegen`
 3. Generate the library
    ```bash
-   swagger-codegen generate \
-   -i swagger.yml -l java -o . \
-   --library retrofit2 --api-package com.github.jonahwh.tesla-api-client \
-   --model-package com.github.jonahwh.tesla-api-client.model
+   swagger-codegen generate -i swagger.yml -c config.json
    ```
    This will generate the library.
 4. Build the library
@@ -24,13 +21,13 @@ See [swagger.yml](swagger.yml) to view the Swagger document used to generate the
    
 ## Installation
 ### Gradle
-    compile 'com.github.jonahwh:tesla-api-client:1.17.1'
+    compile 'com.github.jonahwh:tesla-api-client:2.0.0'
 
 ### Maven
     <dependency>
         <groupId>com.github.jonahwh</groupId>
         <artifactId>tesla-api-client</artifactId>
-        <version>1.17.1</version>
+        <version>2.0.0</version>
     </dependency>
     
 

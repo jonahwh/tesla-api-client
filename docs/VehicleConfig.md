@@ -1,4 +1,3 @@
-
 # VehicleConfig
 
 ## Properties
@@ -26,6 +25,3 @@ Name | Type | Description | Notes
 **timestamp** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **trimBadging** | **String** |  |  [optional]
 **wheelType** | **String** |  |  [optional]
-
-
-

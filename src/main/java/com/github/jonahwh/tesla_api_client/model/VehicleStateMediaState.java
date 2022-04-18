@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
@@ -20,14 +19,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-
 /**
  * VehicleStateMediaState
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:40:14.443-07:00[America/Los_Angeles]")
 public class VehicleStateMediaState {
   @SerializedName("remote_control_enabled")
   private Boolean remoteControlEnabled = null;
@@ -41,7 +39,7 @@ public class VehicleStateMediaState {
    * Get remoteControlEnabled
    * @return remoteControlEnabled
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isRemoteControlEnabled() {
     return remoteControlEnabled;
   }
@@ -91,4 +89,3 @@ public class VehicleStateMediaState {
   }
 
 }
-

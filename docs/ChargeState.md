@@ -1,4 +1,3 @@
-
 # ChargeState
 
 ## Properties
@@ -45,6 +44,3 @@ Name | Type | Description | Notes
 **batteryHeaterOn** | **Boolean** |  |  [optional]
 **notEnoughPowerToHeat** | **Boolean** |  |  [optional]
 **timestamp** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-
-
-

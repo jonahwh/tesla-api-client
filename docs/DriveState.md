@@ -1,4 +1,3 @@
-
 # DriveState
 
 ## Properties
@@ -16,6 +15,3 @@ Name | Type | Description | Notes
 **nativeLongitude** | **Double** |  |  [optional]
 **nativeType** | **String** |  |  [optional]
 **timestamp** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-
-
-

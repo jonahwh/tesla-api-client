@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
@@ -20,14 +19,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-
 /**
  * RemoteSeatHeaterRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:40:14.443-07:00[America/Los_Angeles]")
 public class RemoteSeatHeaterRequest {
   /**
    * The desired seat to adjust the heater for.  SeatHeaterFrontLeft: 0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack: 3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack: 6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8
@@ -35,21 +33,13 @@ public class RemoteSeatHeaterRequest {
   @JsonAdapter(HeaterEnum.Adapter.class)
   public enum HeaterEnum {
     NUMBER_0(0),
-    
     NUMBER_1(1),
-    
     NUMBER_2(2),
-    
     NUMBER_3(3),
-    
     NUMBER_4(4),
-    
     NUMBER_5(5),
-    
     NUMBER_6(6),
-    
     NUMBER_7(7),
-    
     NUMBER_8(8);
 
     private Integer value;
@@ -57,7 +47,6 @@ public class RemoteSeatHeaterRequest {
     HeaterEnum(Integer value) {
       this.value = value;
     }
-
     public Integer getValue() {
       return value;
     }
@@ -66,31 +55,27 @@ public class RemoteSeatHeaterRequest {
     public String toString() {
       return String.valueOf(value);
     }
-
-    public static HeaterEnum fromValue(String text) {
+    public static HeaterEnum fromValue(Integer input) {
       for (HeaterEnum b : HeaterEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
+        if (b.value.equals(input)) {
           return b;
         }
       }
       return null;
     }
-
     public static class Adapter extends TypeAdapter<HeaterEnum> {
       @Override
       public void write(final JsonWriter jsonWriter, final HeaterEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
+        jsonWriter.value(String.valueOf(enumeration.getValue()));
       }
 
       @Override
       public HeaterEnum read(final JsonReader jsonReader) throws IOException {
-        int value = jsonReader.nextInt();
-        return HeaterEnum.fromValue(String.valueOf(value));
+        Object value = jsonReader.nextInt();
+        return HeaterEnum.fromValue((Integer)(value));
       }
     }
-  }
-
-  @SerializedName("heater")
+  }  @SerializedName("heater")
   private HeaterEnum heater = null;
 
   /**
@@ -99,9 +84,7 @@ public class RemoteSeatHeaterRequest {
   @JsonAdapter(LevelEnum.Adapter.class)
   public enum LevelEnum {
     NUMBER_1(1),
-    
     NUMBER_2(2),
-    
     NUMBER_3(3);
 
     private Integer value;
@@ -109,7 +92,6 @@ public class RemoteSeatHeaterRequest {
     LevelEnum(Integer value) {
       this.value = value;
     }
-
     public Integer getValue() {
       return value;
     }
@@ -118,31 +100,27 @@ public class RemoteSeatHeaterRequest {
     public String toString() {
       return String.valueOf(value);
     }
-
-    public static LevelEnum fromValue(String text) {
+    public static LevelEnum fromValue(Integer input) {
       for (LevelEnum b : LevelEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
+        if (b.value.equals(input)) {
           return b;
         }
       }
       return null;
     }
-
     public static class Adapter extends TypeAdapter<LevelEnum> {
       @Override
       public void write(final JsonWriter jsonWriter, final LevelEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
+        jsonWriter.value(String.valueOf(enumeration.getValue()));
       }
 
       @Override
       public LevelEnum read(final JsonReader jsonReader) throws IOException {
-        int value = jsonReader.nextInt();
-        return LevelEnum.fromValue(String.valueOf(value));
+        Object value = jsonReader.nextInt();
+        return LevelEnum.fromValue((Integer)(value));
       }
     }
-  }
-
-  @SerializedName("level")
+  }  @SerializedName("level")
   private LevelEnum level = null;
 
   public RemoteSeatHeaterRequest heater(HeaterEnum heater) {
@@ -154,7 +132,7 @@ public class RemoteSeatHeaterRequest {
    * The desired seat to adjust the heater for.  SeatHeaterFrontLeft: 0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack: 3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack: 6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8
    * @return heater
   **/
-  @ApiModelProperty(value = "The desired seat to adjust the heater for.  SeatHeaterFrontLeft: 0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack: 3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack: 6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8")
+  @Schema(description = "The desired seat to adjust the heater for.  SeatHeaterFrontLeft: 0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack: 3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack: 6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8")
   public HeaterEnum getHeater() {
     return heater;
   }
@@ -172,7 +150,7 @@ public class RemoteSeatHeaterRequest {
    * Seat heater level
    * @return level
   **/
-  @ApiModelProperty(value = "Seat heater level")
+  @Schema(description = "Seat heater level")
   public LevelEnum getLevel() {
     return level;
   }
@@ -224,4 +202,3 @@ public class RemoteSeatHeaterRequest {
   }
 
 }
-

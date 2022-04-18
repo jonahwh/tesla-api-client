@@ -1,4 +1,3 @@
-
 # VehicleStateSoftwareUpdate
 
 ## Properties
@@ -9,6 +8,3 @@ Name | Type | Description | Notes
 **downloadPerc** | **Integer** |  |  [optional]
 **installPerc** | **Integer** |  |  [optional]
 **version** | **String** |  |  [optional]
-
-
-

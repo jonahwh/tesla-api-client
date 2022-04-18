@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
@@ -20,14 +19,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-
 /**
  * VehicleStateSoftwareUpdate
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:40:14.443-07:00[America/Los_Angeles]")
 public class VehicleStateSoftwareUpdate {
   @SerializedName("expected_duration_sec")
   private Integer expectedDurationSec = null;
@@ -53,7 +51,7 @@ public class VehicleStateSoftwareUpdate {
    * Get expectedDurationSec
    * @return expectedDurationSec
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getExpectedDurationSec() {
     return expectedDurationSec;
   }
@@ -71,7 +69,7 @@ public class VehicleStateSoftwareUpdate {
    * Get status
    * @return status
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getStatus() {
     return status;
   }
@@ -89,7 +87,7 @@ public class VehicleStateSoftwareUpdate {
    * Get downloadPerc
    * @return downloadPerc
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getDownloadPerc() {
     return downloadPerc;
   }
@@ -107,7 +105,7 @@ public class VehicleStateSoftwareUpdate {
    * Get installPerc
    * @return installPerc
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getInstallPerc() {
     return installPerc;
   }
@@ -125,7 +123,7 @@ public class VehicleStateSoftwareUpdate {
    * Get version
    * @return version
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getVersion() {
     return version;
   }
@@ -183,4 +181,3 @@ public class VehicleStateSoftwareUpdate {
   }
 
 }
-

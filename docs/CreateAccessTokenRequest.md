@@ -1,4 +1,3 @@
-
 # CreateAccessTokenRequest
 
 ## Properties
@@ -10,6 +9,3 @@ Name | Type | Description | Notes
 **email** | **String** | The email for my.teslamotors.com. Only used with \&quot;password\&quot; grant type. |  [optional]
 **password** | **String** | The password for my.teslamotors.com. Only used with \&quot;password\&quot; grant type. |  [optional]
 **refreshToken** | **String** | A refresh token from a previous CreateAccessTokenResponse |  [optional]
-
-
-

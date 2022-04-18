@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
@@ -20,14 +19,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-
 /**
  * SetValetRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:40:14.443-07:00[America/Los_Angeles]")
 public class SetValetRequest {
   @SerializedName("on")
   private Boolean on = null;
@@ -44,7 +42,7 @@ public class SetValetRequest {
    * Whether to enable or disable valet mode.
    * @return on
   **/
-  @ApiModelProperty(value = "Whether to enable or disable valet mode.")
+  @Schema(description = "Whether to enable or disable valet mode.")
   public Boolean isOn() {
     return on;
   }
@@ -62,7 +60,7 @@ public class SetValetRequest {
    * (optional) A 4 digit PIN code to unlock the car.
    * @return password
   **/
-  @ApiModelProperty(value = "(optional) A 4 digit PIN code to unlock the car.")
+  @Schema(description = "(optional) A 4 digit PIN code to unlock the car.")
   public String getPassword() {
     return password;
   }
@@ -114,4 +112,3 @@ public class SetValetRequest {
   }
 
 }
-

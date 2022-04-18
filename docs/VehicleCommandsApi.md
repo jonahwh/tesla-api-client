@@ -1,13 +1,15 @@
 # VehicleCommandsApi
 
-All URIs are relative to *https://owner-api.teslamotors.com*
+All URIs are relative to *https://owner-api.teslamotors.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**activateSpeedLimit**](VehicleCommandsApi.md#activateSpeedLimit) | **POST** api/1/vehicles/{vehicle_id}/command/speed_limit_activate | Activate Speed Limit
 [**bioweaponDefense**](VehicleCommandsApi.md#bioweaponDefense) | **POST** api/1/vehicles/{vehicle_id}/command/set_bioweapon_mode | Toggle Bioweapon Defense Mode
+[**cabinOverheatProtection**](VehicleCommandsApi.md#cabinOverheatProtection) | **POST** api/1/vehicles/{vehicle_id}/command/set_cabin_overheat_protection | Enable or Disable Cabin Overheat Protection
 [**cancelSoftwareUpdate**](VehicleCommandsApi.md#cancelSoftwareUpdate) | **POST** api/1/vehicles/{vehicle_id}/command/cancel_software_update | Cancel Software Update
 [**clearSpeedLimitPin**](VehicleCommandsApi.md#clearSpeedLimitPin) | **POST** api/1/vehicles/{vehicle_id}/command/speed_limit_clear_pin | Clear Speed Limit Pin
+[**climateKeeper**](VehicleCommandsApi.md#climateKeeper) | **POST** api/1/vehicles/{vehicle_id}/command/set_climate_keeper_mode | Set the Climate Keeper mode
 [**closeChargePort**](VehicleCommandsApi.md#closeChargePort) | **POST** api/1/vehicles/{vehicle_id}/command/charge_port_door_close | Close Charge Port
 [**deactivateSpeedLimit**](VehicleCommandsApi.md#deactivateSpeedLimit) | **POST** api/1/vehicles/{vehicle_id}/command/speed_limit_deactivate | Deactivate Speed Limit
 [**flashLights**](VehicleCommandsApi.md#flashLights) | **POST** api/1/vehicles/{vehicle_id}/command/flash_lights | Flash Lights
@@ -17,6 +19,7 @@ Method | HTTP request | Description
 [**openChargePort**](VehicleCommandsApi.md#openChargePort) | **POST** api/1/vehicles/{vehicle_id}/command/charge_port_door_open | Open Charge Port
 [**openSunroof**](VehicleCommandsApi.md#openSunroof) | **POST** api/1/vehicles/{vehicle_id}/command/sun_roof_control | Move Pano Roof
 [**openTrunk**](VehicleCommandsApi.md#openTrunk) | **POST** api/1/vehicles/{vehicle_id}/command/actuate_trunk | Open Trunk/Frunk
+[**remoteSeatCoolerRequest**](VehicleCommandsApi.md#remoteSeatCoolerRequest) | **POST** api/1/vehicles/{vehicle_id}/command/remote_seat_cooler_request | Set Seat Cooler Level
 [**remoteSeatHeaterRequest**](VehicleCommandsApi.md#remoteSeatHeaterRequest) | **POST** api/1/vehicles/{vehicle_id}/command/remote_seat_heater_request | Set Seat Heater Level
 [**remoteStart**](VehicleCommandsApi.md#remoteStart) | **POST** api/1/vehicles/{vehicle_id}/command/remote_start_drive | Remote Start
 [**remoteSteeringWheelHeaterRequest**](VehicleCommandsApi.md#remoteSteeringWheelHeaterRequest) | **POST** api/1/vehicles/{vehicle_id}/command/remote_steering_wheel_heater_request | Toggle Steering Wheel Heater
@@ -44,10 +47,9 @@ Method | HTTP request | Description
 [**wakeUpVehicleCommand**](VehicleCommandsApi.md#wakeUpVehicleCommand) | **POST** api/1/vehicles/{vehicle_id}/command/wake_up | Wake Up Car
 [**windowControl**](VehicleCommandsApi.md#windowControl) | **POST** api/1/vehicles/{vehicle_id}/command/window_control | Window Control
 
-
 <a name="activateSpeedLimit"></a>
 # **activateSpeedLimit**
-> CommandResponse activateSpeedLimit(vehicleId, body)
+> CommandResponse activateSpeedLimit(body, vehicleId)
 
 Activate Speed Limit
 
@@ -61,10 +63,10 @@ Activates Speed Limit
 
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
-String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 SpeedLimitRequest body = new SpeedLimitRequest(); // SpeedLimitRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    CommandResponse result = apiInstance.activateSpeedLimit(vehicleId, body);
+    CommandResponse result = apiInstance.activateSpeedLimit(body, vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#activateSpeedLimit");
@@ -76,8 +78,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**SpeedLimitRequest**](SpeedLimitRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -94,7 +96,7 @@ No authorization required
 
 <a name="bioweaponDefense"></a>
 # **bioweaponDefense**
-> CommandResponse bioweaponDefense(vehicleId, body)
+> CommandResponse bioweaponDefense(body, vehicleId)
 
 Toggle Bioweapon Defense Mode
 
@@ -108,10 +110,10 @@ Enable or Disable Bioweapon Defense Mode on equipped vehicles.
 
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
-String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 SetBioweaponModeRequest body = new SetBioweaponModeRequest(); // SetBioweaponModeRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    CommandResponse result = apiInstance.bioweaponDefense(vehicleId, body);
+    CommandResponse result = apiInstance.bioweaponDefense(body, vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#bioweaponDefense");
@@ -123,8 +125,55 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**SetBioweaponModeRequest**](SetBioweaponModeRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
+
+### Return type
+
+[**CommandResponse**](CommandResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="cabinOverheatProtection"></a>
+# **cabinOverheatProtection**
+> CommandResponse cabinOverheatProtection(body, vehicleId)
+
+Enable or Disable Cabin Overheat Protection
+
+Enable or Disable Cabin Overheat Protection
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+SetCabinOverheatProtectionRequest body = new SetCabinOverheatProtectionRequest(); // SetCabinOverheatProtectionRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+try {
+    CommandResponse result = apiInstance.cabinOverheatProtection(body, vehicleId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#cabinOverheatProtection");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SetCabinOverheatProtectionRequest**](SetCabinOverheatProtectionRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -181,12 +230,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="clearSpeedLimitPin"></a>
 # **clearSpeedLimitPin**
-> CommandResponse clearSpeedLimitPin(vehicleId, body)
+> CommandResponse clearSpeedLimitPin(body, vehicleId)
 
 Clear Speed Limit Pin
 
@@ -200,10 +249,10 @@ Clears Speed Limit Pin
 
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
-String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 SpeedLimitRequest body = new SpeedLimitRequest(); // SpeedLimitRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    CommandResponse result = apiInstance.clearSpeedLimitPin(vehicleId, body);
+    CommandResponse result = apiInstance.clearSpeedLimitPin(body, vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#clearSpeedLimitPin");
@@ -215,8 +264,55 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**SpeedLimitRequest**](SpeedLimitRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
+
+### Return type
+
+[**CommandResponse**](CommandResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="climateKeeper"></a>
+# **climateKeeper**
+> CommandResponse climateKeeper(body, vehicleId)
+
+Set the Climate Keeper mode
+
+Set the Climate Keeper mode.
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+SetClimateKeeperRequest body = new SetClimateKeeperRequest(); // SetClimateKeeperRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+try {
+    CommandResponse result = apiInstance.climateKeeper(body, vehicleId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#climateKeeper");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SetClimateKeeperRequest**](SetClimateKeeperRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -273,12 +369,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deactivateSpeedLimit"></a>
 # **deactivateSpeedLimit**
-> CommandResponse deactivateSpeedLimit(vehicleId, body)
+> CommandResponse deactivateSpeedLimit(body, vehicleId)
 
 Deactivate Speed Limit
 
@@ -292,10 +388,10 @@ Deactivates Speed Limit
 
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
-String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 SpeedLimitRequest body = new SpeedLimitRequest(); // SpeedLimitRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    CommandResponse result = apiInstance.deactivateSpeedLimit(vehicleId, body);
+    CommandResponse result = apiInstance.deactivateSpeedLimit(body, vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#deactivateSpeedLimit");
@@ -307,8 +403,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**SpeedLimitRequest**](SpeedLimitRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -365,7 +461,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="honkHorn"></a>
@@ -410,7 +506,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="lockDoors"></a>
@@ -419,7 +515,7 @@ No authorization required
 
 Lock Doors
 
-Lock the car&#39;s doors.
+Lock the car&#x27;s doors.
 
 ### Example
 ```java
@@ -455,12 +551,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="navigationRequest"></a>
 # **navigationRequest**
-> CommandResponse navigationRequest(vehicleId, body)
+> CommandResponse navigationRequest(body, vehicleId)
 
 Send Navigation Request
 
@@ -474,10 +570,10 @@ Sends Navigation Request to Vehicle
 
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
-String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 NavigationRequestRequest body = new NavigationRequestRequest(); // NavigationRequestRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    CommandResponse result = apiInstance.navigationRequest(vehicleId, body);
+    CommandResponse result = apiInstance.navigationRequest(body, vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#navigationRequest");
@@ -489,8 +585,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**NavigationRequestRequest**](NavigationRequestRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -547,16 +643,16 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="openSunroof"></a>
 # **openSunroof**
-> CommandResponse openSunroof(vehicleId, body)
+> CommandResponse openSunroof(body, vehicleId)
 
 Move Pano Roof
 
-Controls the car&#39;s panoramic roof, if installed.
+Controls the car&#x27;s panoramic roof, if installed.
 
 ### Example
 ```java
@@ -566,10 +662,10 @@ Controls the car&#39;s panoramic roof, if installed.
 
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
-String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 MovePanoRoofRequest body = new MovePanoRoofRequest(); // MovePanoRoofRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    CommandResponse result = apiInstance.openSunroof(vehicleId, body);
+    CommandResponse result = apiInstance.openSunroof(body, vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#openSunroof");
@@ -581,8 +677,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**MovePanoRoofRequest**](MovePanoRoofRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -599,7 +695,7 @@ No authorization required
 
 <a name="openTrunk"></a>
 # **openTrunk**
-> CommandResponse openTrunk(vehicleId, body)
+> CommandResponse openTrunk(body, vehicleId)
 
 Open Trunk/Frunk
 
@@ -613,10 +709,10 @@ Open the trunk or frunk. Currently inoperable.
 
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
-String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 OpenTrunkRequest body = new OpenTrunkRequest(); // OpenTrunkRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    CommandResponse result = apiInstance.openTrunk(vehicleId, body);
+    CommandResponse result = apiInstance.openTrunk(body, vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#openTrunk");
@@ -628,8 +724,55 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**OpenTrunkRequest**](OpenTrunkRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
+
+### Return type
+
+[**CommandResponse**](CommandResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="remoteSeatCoolerRequest"></a>
+# **remoteSeatCoolerRequest**
+> CommandResponse remoteSeatCoolerRequest(body, vehicleId)
+
+Set Seat Cooler Level
+
+Set the cooling level of a seat heater
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+RemoteSeatCoolerRequest body = new RemoteSeatCoolerRequest(); // RemoteSeatCoolerRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+try {
+    CommandResponse result = apiInstance.remoteSeatCoolerRequest(body, vehicleId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#remoteSeatCoolerRequest");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RemoteSeatCoolerRequest**](RemoteSeatCoolerRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -646,7 +789,7 @@ No authorization required
 
 <a name="remoteSeatHeaterRequest"></a>
 # **remoteSeatHeaterRequest**
-> CommandResponse remoteSeatHeaterRequest(vehicleId, body)
+> CommandResponse remoteSeatHeaterRequest(body, vehicleId)
 
 Set Seat Heater Level
 
@@ -660,10 +803,10 @@ Set the heating level of a seat heater
 
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
-String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 RemoteSeatHeaterRequest body = new RemoteSeatHeaterRequest(); // RemoteSeatHeaterRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    CommandResponse result = apiInstance.remoteSeatHeaterRequest(vehicleId, body);
+    CommandResponse result = apiInstance.remoteSeatHeaterRequest(body, vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#remoteSeatHeaterRequest");
@@ -675,8 +818,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**RemoteSeatHeaterRequest**](RemoteSeatHeaterRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -693,7 +836,7 @@ No authorization required
 
 <a name="remoteStart"></a>
 # **remoteStart**
-> CommandResponse remoteStart(vehicleId, body)
+> CommandResponse remoteStart(body, vehicleId)
 
 Remote Start
 
@@ -707,10 +850,10 @@ Start the car for keyless driving. Must start driving within 2 minutes of issuin
 
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
-String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 RemoteStartRequest body = new RemoteStartRequest(); // RemoteStartRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    CommandResponse result = apiInstance.remoteStart(vehicleId, body);
+    CommandResponse result = apiInstance.remoteStart(body, vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#remoteStart");
@@ -722,8 +865,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**RemoteStartRequest**](RemoteStartRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -740,7 +883,7 @@ No authorization required
 
 <a name="remoteSteeringWheelHeaterRequest"></a>
 # **remoteSteeringWheelHeaterRequest**
-> CommandResponse remoteSteeringWheelHeaterRequest(vehicleId, body)
+> CommandResponse remoteSteeringWheelHeaterRequest(body, vehicleId)
 
 Toggle Steering Wheel Heater
 
@@ -754,10 +897,10 @@ Toggle the steering wheel heater
 
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
-String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 RemoteSteeringWheelHeaterRequest body = new RemoteSteeringWheelHeaterRequest(); // RemoteSteeringWheelHeaterRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    CommandResponse result = apiInstance.remoteSteeringWheelHeaterRequest(vehicleId, body);
+    CommandResponse result = apiInstance.remoteSteeringWheelHeaterRequest(body, vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#remoteSteeringWheelHeaterRequest");
@@ -769,8 +912,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**RemoteSteeringWheelHeaterRequest**](RemoteSteeringWheelHeaterRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -827,7 +970,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="sendStandardChargeLimit"></a>
@@ -872,12 +1015,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="setChargeLimit"></a>
 # **setChargeLimit**
-> CommandResponse setChargeLimit(vehicleId, body)
+> CommandResponse setChargeLimit(body, vehicleId)
 
 Set Charge Limit
 
@@ -891,10 +1034,10 @@ Set the charge limit to a custom percentage.
 
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
-String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 SetChargeLimitRequest body = new SetChargeLimitRequest(); // SetChargeLimitRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    CommandResponse result = apiInstance.setChargeLimit(vehicleId, body);
+    CommandResponse result = apiInstance.setChargeLimit(body, vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#setChargeLimit");
@@ -906,8 +1049,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**SetChargeLimitRequest**](SetChargeLimitRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -924,7 +1067,7 @@ No authorization required
 
 <a name="setChargingAmps"></a>
 # **setChargingAmps**
-> CommandResponse setChargingAmps(vehicleId, body)
+> CommandResponse setChargingAmps(body, vehicleId)
 
 Set Charge Current
 
@@ -938,10 +1081,10 @@ Set the maximum Charge Current in Amps
 
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
-String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 SetChargingAmpsRequest body = new SetChargingAmpsRequest(); // SetChargingAmpsRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    CommandResponse result = apiInstance.setChargingAmps(vehicleId, body);
+    CommandResponse result = apiInstance.setChargingAmps(body, vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#setChargingAmps");
@@ -953,8 +1096,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**SetChargingAmpsRequest**](SetChargingAmpsRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -1011,12 +1154,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="setMaxDefrost"></a>
 # **setMaxDefrost**
-> CommandResponse setMaxDefrost(vehicleId, body)
+> CommandResponse setMaxDefrost(body, vehicleId)
 
 Set Max Defrost
 
@@ -1030,10 +1173,10 @@ Set Max Defrost
 
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
-String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 MaxDefrostRequest body = new MaxDefrostRequest(); // MaxDefrostRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    CommandResponse result = apiInstance.setMaxDefrost(vehicleId, body);
+    CommandResponse result = apiInstance.setMaxDefrost(body, vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#setMaxDefrost");
@@ -1045,8 +1188,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**MaxDefrostRequest**](MaxDefrostRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -1063,7 +1206,7 @@ No authorization required
 
 <a name="setScheduledCharging"></a>
 # **setScheduledCharging**
-> CommandResponse setScheduledCharging(vehicleId, body)
+> CommandResponse setScheduledCharging(body, vehicleId)
 
 Set Scheduled Charging
 
@@ -1077,10 +1220,10 @@ Set Scheduled Charging settings
 
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
-String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 ScheduledChargingRequest body = new ScheduledChargingRequest(); // ScheduledChargingRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    CommandResponse result = apiInstance.setScheduledCharging(vehicleId, body);
+    CommandResponse result = apiInstance.setScheduledCharging(body, vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#setScheduledCharging");
@@ -1092,8 +1235,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**ScheduledChargingRequest**](ScheduledChargingRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -1110,7 +1253,7 @@ No authorization required
 
 <a name="setScheduledDeparture"></a>
 # **setScheduledDeparture**
-> CommandResponse setScheduledDeparture(vehicleId, body)
+> CommandResponse setScheduledDeparture(body, vehicleId)
 
 Set Scheduled Departure
 
@@ -1124,10 +1267,10 @@ Set Scheduled Departure settings
 
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
-String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 ScheduledDepartureRequest body = new ScheduledDepartureRequest(); // ScheduledDepartureRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    CommandResponse result = apiInstance.setScheduledDeparture(vehicleId, body);
+    CommandResponse result = apiInstance.setScheduledDeparture(body, vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#setScheduledDeparture");
@@ -1139,8 +1282,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**ScheduledDepartureRequest**](ScheduledDepartureRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -1157,7 +1300,7 @@ No authorization required
 
 <a name="setSentryMode"></a>
 # **setSentryMode**
-> CommandResponse setSentryMode(vehicleId, body)
+> CommandResponse setSentryMode(body, vehicleId)
 
 Toggle Sentry Mode
 
@@ -1171,10 +1314,10 @@ Toggle Sentry Mode
 
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
-String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 SentryModeRequest body = new SentryModeRequest(); // SentryModeRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    CommandResponse result = apiInstance.setSentryMode(vehicleId, body);
+    CommandResponse result = apiInstance.setSentryMode(body, vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#setSentryMode");
@@ -1186,8 +1329,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**SentryModeRequest**](SentryModeRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -1204,7 +1347,7 @@ No authorization required
 
 <a name="setSpeedLimit"></a>
 # **setSpeedLimit**
-> CommandResponse setSpeedLimit(vehicleId, body)
+> CommandResponse setSpeedLimit(body, vehicleId)
 
 Set Speed Limit
 
@@ -1218,10 +1361,10 @@ Sets Speed Limit
 
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
-String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 SetSpeedLimitRequest body = new SetSpeedLimitRequest(); // SetSpeedLimitRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    CommandResponse result = apiInstance.setSpeedLimit(vehicleId, body);
+    CommandResponse result = apiInstance.setSpeedLimit(body, vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#setSpeedLimit");
@@ -1233,8 +1376,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**SetSpeedLimitRequest**](SetSpeedLimitRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -1251,7 +1394,7 @@ No authorization required
 
 <a name="setTemperatures"></a>
 # **setTemperatures**
-> CommandResponse setTemperatures(vehicleId, body)
+> CommandResponse setTemperatures(body, vehicleId)
 
 Set Temperature
 
@@ -1265,10 +1408,10 @@ Set the temperature target for the HVAC system.
 
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
-String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 SetTempsRequest body = new SetTempsRequest(); // SetTempsRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    CommandResponse result = apiInstance.setTemperatures(vehicleId, body);
+    CommandResponse result = apiInstance.setTemperatures(body, vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#setTemperatures");
@@ -1280,8 +1423,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**SetTempsRequest**](SetTempsRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -1298,7 +1441,7 @@ No authorization required
 
 <a name="sharetoVehicle"></a>
 # **sharetoVehicle**
-> CommandResponse sharetoVehicle(vehicleId, body)
+> CommandResponse sharetoVehicle(body, vehicleId)
 
 Share data to Vehicle
 
@@ -1312,10 +1455,10 @@ Sends Data to Vehicle (v10 only)
 
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
-String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 ShareRequest body = new ShareRequest(); // ShareRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    CommandResponse result = apiInstance.sharetoVehicle(vehicleId, body);
+    CommandResponse result = apiInstance.sharetoVehicle(body, vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#sharetoVehicle");
@@ -1327,8 +1470,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**ShareRequest**](ShareRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -1385,7 +1528,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="startHVAC"></a>
@@ -1430,7 +1573,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="startSoftwareUpdate"></a>
@@ -1475,7 +1618,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="stopCharge"></a>
@@ -1520,7 +1663,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="stopHVAC"></a>
@@ -1565,16 +1708,16 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="toggleValetMode"></a>
 # **toggleValetMode**
-> CommandResponse toggleValetMode(vehicleId, body)
+> CommandResponse toggleValetMode(body, vehicleId)
 
 Set Valet Mode
 
-Sets valet mode on or off with a PIN to disable it from within the car. Reuses last PIN from previous valet session. Valet Mode limits the car&#39;s top speed to 70MPH and 80kW of acceleration power. It also disables Homelink, Bluetooth and Wifi settings, and the ability to disable mobile access to the car. It also hides your favorites, home, and work locations in navigation.
+Sets valet mode on or off with a PIN to disable it from within the car. Reuses last PIN from previous valet session. Valet Mode limits the car&#x27;s top speed to 70MPH and 80kW of acceleration power. It also disables Homelink, Bluetooth and Wifi settings, and the ability to disable mobile access to the car. It also hides your favorites, home, and work locations in navigation.
 
 ### Example
 ```java
@@ -1584,10 +1727,10 @@ Sets valet mode on or off with a PIN to disable it from within the car. Reuses l
 
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
-String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 SetValetRequest body = new SetValetRequest(); // SetValetRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    CommandResponse result = apiInstance.toggleValetMode(vehicleId, body);
+    CommandResponse result = apiInstance.toggleValetMode(body, vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#toggleValetMode");
@@ -1599,8 +1742,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**SetValetRequest**](SetValetRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -1617,7 +1760,7 @@ No authorization required
 
 <a name="triggerHomelink"></a>
 # **triggerHomelink**
-> CommandResponse triggerHomelink(vehicleId, body)
+> CommandResponse triggerHomelink(body, vehicleId)
 
 Trigger Homelink
 
@@ -1631,10 +1774,10 @@ Trigger Homelink
 
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
-String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 TriggerHomelinkRequest body = new TriggerHomelinkRequest(); // TriggerHomelinkRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    CommandResponse result = apiInstance.triggerHomelink(vehicleId, body);
+    CommandResponse result = apiInstance.triggerHomelink(body, vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#triggerHomelink");
@@ -1646,8 +1789,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**TriggerHomelinkRequest**](TriggerHomelinkRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 
@@ -1668,7 +1811,7 @@ No authorization required
 
 Unlock Doors
 
-Unlock the car&#39;s doors.
+Unlock the car&#x27;s doors.
 
 ### Example
 ```java
@@ -1704,7 +1847,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="wakeUpVehicle"></a>
@@ -1749,7 +1892,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="wakeUpVehicleCommand"></a>
@@ -1794,12 +1937,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="windowControl"></a>
 # **windowControl**
-> CommandResponse windowControl(vehicleId, body)
+> CommandResponse windowControl(body, vehicleId)
 
 Window Control
 
@@ -1813,10 +1956,10 @@ Window Control
 
 
 VehicleCommandsApi apiInstance = new VehicleCommandsApi();
-String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 WindowControlRequest body = new WindowControlRequest(); // WindowControlRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
 try {
-    CommandResponse result = apiInstance.windowControl(vehicleId, body);
+    CommandResponse result = apiInstance.windowControl(body, vehicleId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehicleCommandsApi#windowControl");
@@ -1828,8 +1971,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vehicleId** | **String**| The id of the Vehicle. |
  **body** | [**WindowControlRequest**](WindowControlRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
 

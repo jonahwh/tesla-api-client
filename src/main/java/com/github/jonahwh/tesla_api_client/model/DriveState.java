@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
@@ -20,15 +19,14 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.math.BigDecimal;
-
 /**
  * DriveState
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:40:14.443-07:00[America/Los_Angeles]")
 public class DriveState {
   @SerializedName("shift_state")
   private String shiftState = null;
@@ -75,7 +73,7 @@ public class DriveState {
    * Get shiftState
    * @return shiftState
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getShiftState() {
     return shiftState;
   }
@@ -93,7 +91,7 @@ public class DriveState {
    * Get speed
    * @return speed
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Double getSpeed() {
     return speed;
   }
@@ -111,7 +109,7 @@ public class DriveState {
    * Get power
    * @return power
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Double getPower() {
     return power;
   }
@@ -129,7 +127,7 @@ public class DriveState {
    * Get latitude
    * @return latitude
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Double getLatitude() {
     return latitude;
   }
@@ -147,7 +145,7 @@ public class DriveState {
    * Get longitude
    * @return longitude
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Double getLongitude() {
     return longitude;
   }
@@ -165,7 +163,7 @@ public class DriveState {
    * Get heading
    * @return heading
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getHeading() {
     return heading;
   }
@@ -183,7 +181,7 @@ public class DriveState {
    * Get gpsAsOf
    * @return gpsAsOf
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public BigDecimal getGpsAsOf() {
     return gpsAsOf;
   }
@@ -201,7 +199,7 @@ public class DriveState {
    * Get nativeLocationSupported
    * @return nativeLocationSupported
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Integer getNativeLocationSupported() {
     return nativeLocationSupported;
   }
@@ -219,7 +217,7 @@ public class DriveState {
    * Get nativeLatitude
    * @return nativeLatitude
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Double getNativeLatitude() {
     return nativeLatitude;
   }
@@ -237,7 +235,7 @@ public class DriveState {
    * Get nativeLongitude
    * @return nativeLongitude
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Double getNativeLongitude() {
     return nativeLongitude;
   }
@@ -255,7 +253,7 @@ public class DriveState {
    * Get nativeType
    * @return nativeType
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getNativeType() {
     return nativeType;
   }
@@ -273,7 +271,7 @@ public class DriveState {
    * Get timestamp
    * @return timestamp
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public BigDecimal getTimestamp() {
     return timestamp;
   }
@@ -345,4 +343,3 @@ public class DriveState {
   }
 
 }
-

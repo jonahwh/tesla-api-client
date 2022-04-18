@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
@@ -20,14 +19,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-
 /**
  * CreateAccessTokenResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:40:14.443-07:00[America/Los_Angeles]")
 public class CreateAccessTokenResponse {
   @SerializedName("access_token")
   private String accessToken = null;
@@ -50,10 +48,10 @@ public class CreateAccessTokenResponse {
   }
 
    /**
-   * 
+   * Get accessToken
    * @return accessToken
   **/
-  @ApiModelProperty(example = "abc123", required = true, value = "")
+  @Schema(example = "abc123", required = true, description = "")
   public String getAccessToken() {
     return accessToken;
   }
@@ -68,10 +66,10 @@ public class CreateAccessTokenResponse {
   }
 
    /**
-   * 
+   * Get tokenType
    * @return tokenType
   **/
-  @ApiModelProperty(example = "bearer", required = true, value = "")
+  @Schema(example = "bearer", required = true, description = "")
   public String getTokenType() {
     return tokenType;
   }
@@ -86,10 +84,10 @@ public class CreateAccessTokenResponse {
   }
 
    /**
-   * 
+   * Get expiresIn
    * @return expiresIn
   **/
-  @ApiModelProperty(example = "7776000", required = true, value = "")
+  @Schema(example = "7776000", required = true, description = "")
   public Integer getExpiresIn() {
     return expiresIn;
   }
@@ -104,10 +102,10 @@ public class CreateAccessTokenResponse {
   }
 
    /**
-   * 
+   * Get createdAt
    * @return createdAt
   **/
-  @ApiModelProperty(example = "1457385291", required = true, value = "")
+  @Schema(example = "1457385291", required = true, description = "")
   public Integer getCreatedAt() {
     return createdAt;
   }
@@ -122,10 +120,10 @@ public class CreateAccessTokenResponse {
   }
 
    /**
-   * 
+   * Get refreshToken
    * @return refreshToken
   **/
-  @ApiModelProperty(example = "cba321", required = true, value = "")
+  @Schema(example = "cba321", required = true, description = "")
   public String getRefreshToken() {
     return refreshToken;
   }
@@ -183,4 +181,3 @@ public class CreateAccessTokenResponse {
   }
 
 }
-

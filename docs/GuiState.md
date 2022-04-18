@@ -1,4 +1,3 @@
-
 # GuiState
 
 ## Properties
@@ -10,6 +9,3 @@ Name | Type | Description | Notes
 **gui24HourTime** | **Boolean** |  |  [optional]
 **guiRangeDisplay** | **String** |  |  [optional]
 **timestamp** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-
-
-

@@ -1,4 +1,3 @@
-
 # VehicleStateSpeedLimitMode
 
 ## Properties
@@ -9,6 +8,3 @@ Name | Type | Description | Notes
 **maxLimitMph** | **Double** |  |  [optional]
 **minLimitMph** | **Double** |  |  [optional]
 **pinCodeSet** | **Boolean** |  |  [optional]
-
-
-

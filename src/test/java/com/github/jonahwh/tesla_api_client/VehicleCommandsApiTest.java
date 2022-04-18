@@ -6,6 +6,7 @@ import com.github.jonahwh.tesla_api_client.model.MaxDefrostRequest;
 import com.github.jonahwh.tesla_api_client.model.MovePanoRoofRequest;
 import com.github.jonahwh.tesla_api_client.model.NavigationRequestRequest;
 import com.github.jonahwh.tesla_api_client.model.OpenTrunkRequest;
+import com.github.jonahwh.tesla_api_client.model.RemoteSeatCoolerRequest;
 import com.github.jonahwh.tesla_api_client.model.RemoteSeatHeaterRequest;
 import com.github.jonahwh.tesla_api_client.model.RemoteStartRequest;
 import com.github.jonahwh.tesla_api_client.model.RemoteSteeringWheelHeaterRequest;
@@ -13,8 +14,10 @@ import com.github.jonahwh.tesla_api_client.model.ScheduledChargingRequest;
 import com.github.jonahwh.tesla_api_client.model.ScheduledDepartureRequest;
 import com.github.jonahwh.tesla_api_client.model.SentryModeRequest;
 import com.github.jonahwh.tesla_api_client.model.SetBioweaponModeRequest;
+import com.github.jonahwh.tesla_api_client.model.SetCabinOverheatProtectionRequest;
 import com.github.jonahwh.tesla_api_client.model.SetChargeLimitRequest;
 import com.github.jonahwh.tesla_api_client.model.SetChargingAmpsRequest;
+import com.github.jonahwh.tesla_api_client.model.SetClimateKeeperRequest;
 import com.github.jonahwh.tesla_api_client.model.SetSpeedLimitRequest;
 import com.github.jonahwh.tesla_api_client.model.SetTempsRequest;
 import com.github.jonahwh.tesla_api_client.model.SetValetRequest;
@@ -26,10 +29,12 @@ import com.github.jonahwh.tesla_api_client.model.WindowControlRequest;
 import org.junit.Before;
 import org.junit.Test;
 
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 /**
  * API tests for VehicleCommandsApi
@@ -43,6 +48,7 @@ public class VehicleCommandsApiTest {
         api = new ApiClient().createService(VehicleCommandsApi.class);
     }
 
+
     /**
      * Activate Speed Limit
      *
@@ -50,12 +56,13 @@ public class VehicleCommandsApiTest {
      */
     @Test
     public void activateSpeedLimitTest() {
-        String vehicleId = null;
         SpeedLimitRequest body = null;
-        // CommandResponse response = api.activateSpeedLimit(vehicleId, body);
+        String vehicleId = null;
+        // CommandResponse response = api.activateSpeedLimit(body, vehicleId);
 
         // TODO: test validations
     }
+
     /**
      * Toggle Bioweapon Defense Mode
      *
@@ -63,12 +70,27 @@ public class VehicleCommandsApiTest {
      */
     @Test
     public void bioweaponDefenseTest() {
-        String vehicleId = null;
         SetBioweaponModeRequest body = null;
-        // CommandResponse response = api.bioweaponDefense(vehicleId, body);
+        String vehicleId = null;
+        // CommandResponse response = api.bioweaponDefense(body, vehicleId);
 
         // TODO: test validations
     }
+
+    /**
+     * Enable or Disable Cabin Overheat Protection
+     *
+     * Enable or Disable Cabin Overheat Protection
+     */
+    @Test
+    public void cabinOverheatProtectionTest() {
+        SetCabinOverheatProtectionRequest body = null;
+        String vehicleId = null;
+        // CommandResponse response = api.cabinOverheatProtection(body, vehicleId);
+
+        // TODO: test validations
+    }
+
     /**
      * Cancel Software Update
      *
@@ -81,6 +103,7 @@ public class VehicleCommandsApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Clear Speed Limit Pin
      *
@@ -88,12 +111,27 @@ public class VehicleCommandsApiTest {
      */
     @Test
     public void clearSpeedLimitPinTest() {
-        String vehicleId = null;
         SpeedLimitRequest body = null;
-        // CommandResponse response = api.clearSpeedLimitPin(vehicleId, body);
+        String vehicleId = null;
+        // CommandResponse response = api.clearSpeedLimitPin(body, vehicleId);
 
         // TODO: test validations
     }
+
+    /**
+     * Set the Climate Keeper mode
+     *
+     * Set the Climate Keeper mode.
+     */
+    @Test
+    public void climateKeeperTest() {
+        SetClimateKeeperRequest body = null;
+        String vehicleId = null;
+        // CommandResponse response = api.climateKeeper(body, vehicleId);
+
+        // TODO: test validations
+    }
+
     /**
      * Close Charge Port
      *
@@ -106,6 +144,7 @@ public class VehicleCommandsApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Deactivate Speed Limit
      *
@@ -113,12 +152,13 @@ public class VehicleCommandsApiTest {
      */
     @Test
     public void deactivateSpeedLimitTest() {
-        String vehicleId = null;
         SpeedLimitRequest body = null;
-        // CommandResponse response = api.deactivateSpeedLimit(vehicleId, body);
+        String vehicleId = null;
+        // CommandResponse response = api.deactivateSpeedLimit(body, vehicleId);
 
         // TODO: test validations
     }
+
     /**
      * Flash Lights
      *
@@ -131,6 +171,7 @@ public class VehicleCommandsApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Honk Horn
      *
@@ -143,10 +184,11 @@ public class VehicleCommandsApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Lock Doors
      *
-     * Lock the car&#39;s doors.
+     * Lock the car&#x27;s doors.
      */
     @Test
     public void lockDoorsTest() {
@@ -155,6 +197,7 @@ public class VehicleCommandsApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Send Navigation Request
      *
@@ -162,12 +205,13 @@ public class VehicleCommandsApiTest {
      */
     @Test
     public void navigationRequestTest() {
-        String vehicleId = null;
         NavigationRequestRequest body = null;
-        // CommandResponse response = api.navigationRequest(vehicleId, body);
+        String vehicleId = null;
+        // CommandResponse response = api.navigationRequest(body, vehicleId);
 
         // TODO: test validations
     }
+
     /**
      * Open Charge Port
      *
@@ -180,19 +224,21 @@ public class VehicleCommandsApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Move Pano Roof
      *
-     * Controls the car&#39;s panoramic roof, if installed.
+     * Controls the car&#x27;s panoramic roof, if installed.
      */
     @Test
     public void openSunroofTest() {
-        String vehicleId = null;
         MovePanoRoofRequest body = null;
-        // CommandResponse response = api.openSunroof(vehicleId, body);
+        String vehicleId = null;
+        // CommandResponse response = api.openSunroof(body, vehicleId);
 
         // TODO: test validations
     }
+
     /**
      * Open Trunk/Frunk
      *
@@ -200,12 +246,27 @@ public class VehicleCommandsApiTest {
      */
     @Test
     public void openTrunkTest() {
-        String vehicleId = null;
         OpenTrunkRequest body = null;
-        // CommandResponse response = api.openTrunk(vehicleId, body);
+        String vehicleId = null;
+        // CommandResponse response = api.openTrunk(body, vehicleId);
 
         // TODO: test validations
     }
+
+    /**
+     * Set Seat Cooler Level
+     *
+     * Set the cooling level of a seat heater
+     */
+    @Test
+    public void remoteSeatCoolerRequestTest() {
+        RemoteSeatCoolerRequest body = null;
+        String vehicleId = null;
+        // CommandResponse response = api.remoteSeatCoolerRequest(body, vehicleId);
+
+        // TODO: test validations
+    }
+
     /**
      * Set Seat Heater Level
      *
@@ -213,12 +274,13 @@ public class VehicleCommandsApiTest {
      */
     @Test
     public void remoteSeatHeaterRequestTest() {
-        String vehicleId = null;
         RemoteSeatHeaterRequest body = null;
-        // CommandResponse response = api.remoteSeatHeaterRequest(vehicleId, body);
+        String vehicleId = null;
+        // CommandResponse response = api.remoteSeatHeaterRequest(body, vehicleId);
 
         // TODO: test validations
     }
+
     /**
      * Remote Start
      *
@@ -226,12 +288,13 @@ public class VehicleCommandsApiTest {
      */
     @Test
     public void remoteStartTest() {
-        String vehicleId = null;
         RemoteStartRequest body = null;
-        // CommandResponse response = api.remoteStart(vehicleId, body);
+        String vehicleId = null;
+        // CommandResponse response = api.remoteStart(body, vehicleId);
 
         // TODO: test validations
     }
+
     /**
      * Toggle Steering Wheel Heater
      *
@@ -239,12 +302,13 @@ public class VehicleCommandsApiTest {
      */
     @Test
     public void remoteSteeringWheelHeaterRequestTest() {
-        String vehicleId = null;
         RemoteSteeringWheelHeaterRequest body = null;
-        // CommandResponse response = api.remoteSteeringWheelHeaterRequest(vehicleId, body);
+        String vehicleId = null;
+        // CommandResponse response = api.remoteSteeringWheelHeaterRequest(body, vehicleId);
 
         // TODO: test validations
     }
+
     /**
      * Reset Valet PIN
      *
@@ -257,6 +321,7 @@ public class VehicleCommandsApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Set Charge Limit to Standard
      *
@@ -269,6 +334,7 @@ public class VehicleCommandsApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Set Charge Limit
      *
@@ -276,12 +342,13 @@ public class VehicleCommandsApiTest {
      */
     @Test
     public void setChargeLimitTest() {
-        String vehicleId = null;
         SetChargeLimitRequest body = null;
-        // CommandResponse response = api.setChargeLimit(vehicleId, body);
+        String vehicleId = null;
+        // CommandResponse response = api.setChargeLimit(body, vehicleId);
 
         // TODO: test validations
     }
+
     /**
      * Set Charge Current
      *
@@ -289,12 +356,13 @@ public class VehicleCommandsApiTest {
      */
     @Test
     public void setChargingAmpsTest() {
-        String vehicleId = null;
         SetChargingAmpsRequest body = null;
-        // CommandResponse response = api.setChargingAmps(vehicleId, body);
+        String vehicleId = null;
+        // CommandResponse response = api.setChargingAmps(body, vehicleId);
 
         // TODO: test validations
     }
+
     /**
      * Set Charge Limit to Max Range
      *
@@ -307,6 +375,7 @@ public class VehicleCommandsApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Set Max Defrost
      *
@@ -314,12 +383,13 @@ public class VehicleCommandsApiTest {
      */
     @Test
     public void setMaxDefrostTest() {
-        String vehicleId = null;
         MaxDefrostRequest body = null;
-        // CommandResponse response = api.setMaxDefrost(vehicleId, body);
+        String vehicleId = null;
+        // CommandResponse response = api.setMaxDefrost(body, vehicleId);
 
         // TODO: test validations
     }
+
     /**
      * Set Scheduled Charging
      *
@@ -327,12 +397,13 @@ public class VehicleCommandsApiTest {
      */
     @Test
     public void setScheduledChargingTest() {
-        String vehicleId = null;
         ScheduledChargingRequest body = null;
-        // CommandResponse response = api.setScheduledCharging(vehicleId, body);
+        String vehicleId = null;
+        // CommandResponse response = api.setScheduledCharging(body, vehicleId);
 
         // TODO: test validations
     }
+
     /**
      * Set Scheduled Departure
      *
@@ -340,12 +411,13 @@ public class VehicleCommandsApiTest {
      */
     @Test
     public void setScheduledDepartureTest() {
-        String vehicleId = null;
         ScheduledDepartureRequest body = null;
-        // CommandResponse response = api.setScheduledDeparture(vehicleId, body);
+        String vehicleId = null;
+        // CommandResponse response = api.setScheduledDeparture(body, vehicleId);
 
         // TODO: test validations
     }
+
     /**
      * Toggle Sentry Mode
      *
@@ -353,12 +425,13 @@ public class VehicleCommandsApiTest {
      */
     @Test
     public void setSentryModeTest() {
-        String vehicleId = null;
         SentryModeRequest body = null;
-        // CommandResponse response = api.setSentryMode(vehicleId, body);
+        String vehicleId = null;
+        // CommandResponse response = api.setSentryMode(body, vehicleId);
 
         // TODO: test validations
     }
+
     /**
      * Set Speed Limit
      *
@@ -366,12 +439,13 @@ public class VehicleCommandsApiTest {
      */
     @Test
     public void setSpeedLimitTest() {
-        String vehicleId = null;
         SetSpeedLimitRequest body = null;
-        // CommandResponse response = api.setSpeedLimit(vehicleId, body);
+        String vehicleId = null;
+        // CommandResponse response = api.setSpeedLimit(body, vehicleId);
 
         // TODO: test validations
     }
+
     /**
      * Set Temperature
      *
@@ -379,12 +453,13 @@ public class VehicleCommandsApiTest {
      */
     @Test
     public void setTemperaturesTest() {
-        String vehicleId = null;
         SetTempsRequest body = null;
-        // CommandResponse response = api.setTemperatures(vehicleId, body);
+        String vehicleId = null;
+        // CommandResponse response = api.setTemperatures(body, vehicleId);
 
         // TODO: test validations
     }
+
     /**
      * Share data to Vehicle
      *
@@ -392,12 +467,13 @@ public class VehicleCommandsApiTest {
      */
     @Test
     public void sharetoVehicleTest() {
-        String vehicleId = null;
         ShareRequest body = null;
-        // CommandResponse response = api.sharetoVehicle(vehicleId, body);
+        String vehicleId = null;
+        // CommandResponse response = api.sharetoVehicle(body, vehicleId);
 
         // TODO: test validations
     }
+
     /**
      * Start Charging
      *
@@ -410,6 +486,7 @@ public class VehicleCommandsApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Start HVAC System
      *
@@ -422,6 +499,7 @@ public class VehicleCommandsApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Start Software Update
      *
@@ -434,6 +512,7 @@ public class VehicleCommandsApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Stop Charging
      *
@@ -446,6 +525,7 @@ public class VehicleCommandsApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Stop HVAC System
      *
@@ -458,19 +538,21 @@ public class VehicleCommandsApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Set Valet Mode
      *
-     * Sets valet mode on or off with a PIN to disable it from within the car. Reuses last PIN from previous valet session. Valet Mode limits the car&#39;s top speed to 70MPH and 80kW of acceleration power. It also disables Homelink, Bluetooth and Wifi settings, and the ability to disable mobile access to the car. It also hides your favorites, home, and work locations in navigation.
+     * Sets valet mode on or off with a PIN to disable it from within the car. Reuses last PIN from previous valet session. Valet Mode limits the car&#x27;s top speed to 70MPH and 80kW of acceleration power. It also disables Homelink, Bluetooth and Wifi settings, and the ability to disable mobile access to the car. It also hides your favorites, home, and work locations in navigation.
      */
     @Test
     public void toggleValetModeTest() {
-        String vehicleId = null;
         SetValetRequest body = null;
-        // CommandResponse response = api.toggleValetMode(vehicleId, body);
+        String vehicleId = null;
+        // CommandResponse response = api.toggleValetMode(body, vehicleId);
 
         // TODO: test validations
     }
+
     /**
      * Trigger Homelink
      *
@@ -478,16 +560,17 @@ public class VehicleCommandsApiTest {
      */
     @Test
     public void triggerHomelinkTest() {
-        String vehicleId = null;
         TriggerHomelinkRequest body = null;
-        // CommandResponse response = api.triggerHomelink(vehicleId, body);
+        String vehicleId = null;
+        // CommandResponse response = api.triggerHomelink(body, vehicleId);
 
         // TODO: test validations
     }
+
     /**
      * Unlock Doors
      *
-     * Unlock the car&#39;s doors.
+     * Unlock the car&#x27;s doors.
      */
     @Test
     public void unlockDoorsTest() {
@@ -496,6 +579,7 @@ public class VehicleCommandsApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Wake Up Car
      *
@@ -508,6 +592,7 @@ public class VehicleCommandsApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Wake Up Car
      *
@@ -520,6 +605,7 @@ public class VehicleCommandsApiTest {
 
         // TODO: test validations
     }
+
     /**
      * Window Control
      *
@@ -527,9 +613,9 @@ public class VehicleCommandsApiTest {
      */
     @Test
     public void windowControlTest() {
-        String vehicleId = null;
         WindowControlRequest body = null;
-        // CommandResponse response = api.windowControl(vehicleId, body);
+        String vehicleId = null;
+        // CommandResponse response = api.windowControl(body, vehicleId);
 
         // TODO: test validations
     }

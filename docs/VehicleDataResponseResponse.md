@@ -1,4 +1,3 @@
-
 # VehicleDataResponseResponse
 
 ## Properties
@@ -24,6 +23,3 @@ Name | Type | Description | Notes
 **vehicleState** | [**VehicleState**](VehicleState.md) |  |  [optional]
 **chargeState** | [**ChargeState**](ChargeState.md) |  |  [optional]
 **vehicleConfig** | [**VehicleConfig**](VehicleConfig.md) |  |  [optional]
-
-
-

@@ -1,4 +1,3 @@
-
 # CreateAccessTokenResponse
 
 ## Properties
@@ -9,6 +8,3 @@ Name | Type | Description | Notes
 **expiresIn** | **Integer** |  | 
 **createdAt** | **Integer** |  | 
 **refreshToken** | **String** |  | 
-
-
-

@@ -1,4 +1,3 @@
-
 # VehicleState
 
 ## Properties
@@ -41,6 +40,3 @@ Name | Type | Description | Notes
 **rpWindow** | **Integer** |  |  [optional]
 **smartSummonAvailable** | **Boolean** |  |  [optional]
 **summonStandbyModeEnabled** | **Boolean** |  |  [optional]
-
-
-

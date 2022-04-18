@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
@@ -21,14 +20,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-
 /**
  * DestinationCharger
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:40:14.443-07:00[America/Los_Angeles]")
 public class DestinationCharger {
   @SerializedName("location")
   private DestinationChargerLocation location = null;
@@ -51,7 +49,7 @@ public class DestinationCharger {
    * Get location
    * @return location
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public DestinationChargerLocation getLocation() {
     return location;
   }
@@ -69,7 +67,7 @@ public class DestinationCharger {
    * Get name
    * @return name
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getName() {
     return name;
   }
@@ -87,7 +85,7 @@ public class DestinationCharger {
    * Get type
    * @return type
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public String getType() {
     return type;
   }
@@ -105,7 +103,7 @@ public class DestinationCharger {
    * Get distanceMiles
    * @return distanceMiles
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Double getDistanceMiles() {
     return distanceMiles;
   }
@@ -161,4 +159,3 @@ public class DestinationCharger {
   }
 
 }
-

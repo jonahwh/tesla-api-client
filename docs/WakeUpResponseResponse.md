@@ -1,4 +1,3 @@
-
 # WakeUpResponseResponse
 
 ## Properties
@@ -19,6 +18,3 @@ Name | Type | Description | Notes
 **apiVersion** | **String** |  |  [optional]
 **backseatToken** | **String** |  |  [optional]
 **backseatTokenUpdatedAt** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-
-
-

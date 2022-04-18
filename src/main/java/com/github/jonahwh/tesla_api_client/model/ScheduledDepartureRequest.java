@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
@@ -20,14 +19,13 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-
 /**
  * ScheduledDepartureRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-10-21T23:18:16.119-07:00")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:40:14.443-07:00[America/Los_Angeles]")
 public class ScheduledDepartureRequest {
   @SerializedName("departure_time")
   private Integer departureTime = null;
@@ -59,7 +57,7 @@ public class ScheduledDepartureRequest {
    * Integer representing the desired departure time. Value is number of minutes from midnight in intervals of 15
    * @return departureTime
   **/
-  @ApiModelProperty(value = "Integer representing the desired departure time. Value is number of minutes from midnight in intervals of 15")
+  @Schema(description = "Integer representing the desired departure time. Value is number of minutes from midnight in intervals of 15")
   public Integer getDepartureTime() {
     return departureTime;
   }
@@ -77,7 +75,7 @@ public class ScheduledDepartureRequest {
    * Get enable
    * @return enable
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isEnable() {
     return enable;
   }
@@ -95,7 +93,7 @@ public class ScheduledDepartureRequest {
    * Get preconditioningEnabled
    * @return preconditioningEnabled
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isPreconditioningEnabled() {
     return preconditioningEnabled;
   }
@@ -113,7 +111,7 @@ public class ScheduledDepartureRequest {
    * Get preconditioningWeekdaysOnly
    * @return preconditioningWeekdaysOnly
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isPreconditioningWeekdaysOnly() {
     return preconditioningWeekdaysOnly;
   }
@@ -131,7 +129,7 @@ public class ScheduledDepartureRequest {
    * Get offPeakChargingEnabled
    * @return offPeakChargingEnabled
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isOffPeakChargingEnabled() {
     return offPeakChargingEnabled;
   }
@@ -149,7 +147,7 @@ public class ScheduledDepartureRequest {
    * Get offPeakChargingWeekdaysOnly
    * @return offPeakChargingWeekdaysOnly
   **/
-  @ApiModelProperty(value = "")
+  @Schema(description = "")
   public Boolean isOffPeakChargingWeekdaysOnly() {
     return offPeakChargingWeekdaysOnly;
   }
@@ -167,7 +165,7 @@ public class ScheduledDepartureRequest {
    * Integer representing the desired off peak end time. Value is number of minutes from midnight in intervals of 15
    * @return endOffPeakTime
   **/
-  @ApiModelProperty(value = "Integer representing the desired off peak end time. Value is number of minutes from midnight in intervals of 15")
+  @Schema(description = "Integer representing the desired off peak end time. Value is number of minutes from midnight in intervals of 15")
   public Integer getEndOffPeakTime() {
     return endOffPeakTime;
   }
@@ -229,4 +227,3 @@ public class ScheduledDepartureRequest {
   }
 
 }
-

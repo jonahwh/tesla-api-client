@@ -1,4 +1,3 @@
-
 # Vehicle
 
 ## Properties
@@ -12,6 +11,3 @@ Name | Type | Description | Notes
 **vin** | **String** |  |  [optional]
 **tokens** | **List&lt;String&gt;** |  |  [optional]
 **state** | **String** |  |  [optional]
-
-
-

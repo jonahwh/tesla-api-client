@@ -1,0 +1,7 @@
+{
+  "lang": "java",
+  "output": ".",
+  "library": "retrofit2",
+  "apiPackage": "com.github.jonahwh.tesla-api-client",
+  "modelPackage": "com.github.jonahwh.tesla-api-client.model"
+}

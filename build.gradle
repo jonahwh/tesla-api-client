@@ -7,7 +7,7 @@ apply plugin: 'java-library'
 
 group = 'com.github.jonahwh'
 archivesBaseName = 'tesla-api-client'
-version = '1.17.1'
+version = '2.0.0'
 
 buildscript {
     repositories {
@@ -111,11 +111,11 @@ if(hasProperty('target') && target == 'android') {
 }
 
 ext {
-    oltu_version = "1.0.1"
+    oltu_version = "1.0.2"
     retrofit_version = "2.9.0"
-    swagger_annotations_version = "1.6.3"
+    swagger_annotations_version = "2.1.13"
     junit_version = "4.13.2"
-    threetenbp_version = "1.5.1"
+    threetenbp_version = "1.6.0"
     json_fire_version = "1.8.5"
 
 }
@@ -124,7 +124,7 @@ dependencies {
     api "com.squareup.retrofit2:retrofit:$retrofit_version"
     api "com.squareup.retrofit2:converter-scalars:$retrofit_version"
     api "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    api "io.swagger:swagger-annotations:$swagger_annotations_version"
+    api "io.swagger.core.v3:swagger-annotations:$swagger_annotations_version"
     api "org.apache.oltu.oauth2:org.apache.oltu.oauth2.client:$oltu_version"
     api "io.gsonfire:gson-fire:$json_fire_version"
     api "org.threeten:threetenbp:$threetenbp_version"
