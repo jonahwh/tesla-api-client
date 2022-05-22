@@ -1,6 +1,6 @@
 /*
- * Tesla Model S JSON API
- * TODO: Add a description
+ * Tesla JSON API
+ * API for controlling Tesla vehicles
  *
  * OpenAPI spec version: 1.0
  * 

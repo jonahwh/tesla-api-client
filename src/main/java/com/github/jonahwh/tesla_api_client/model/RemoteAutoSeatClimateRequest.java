@@ -22,13 +22,13 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * RemoteSeatCoolerRequest
+ * RemoteAutoSeatClimateRequest
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-05-22T15:27:38.085-07:00[America/Los_Angeles]")
-public class RemoteSeatCoolerRequest {
+public class RemoteAutoSeatClimateRequest {
   /**
-   * The desired seat to adjust the cooler for.  SeatHeaterFrontLeft: 0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack: 3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack: 6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8
+   * The desired seat to toggle auto mode for.  SeatHeaterFrontLeft: 0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack: 3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack: 6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8
    */
   @JsonAdapter(SeatPositionEnum.Adapter.class)
   public enum SeatPositionEnum {
@@ -78,61 +78,19 @@ public class RemoteSeatCoolerRequest {
   }  @SerializedName("seat_position")
   private SeatPositionEnum seatPosition = null;
 
-  /**
-   * Seat cooler level
-   */
-  @JsonAdapter(SeatCoolerLevelEnum.Adapter.class)
-  public enum SeatCoolerLevelEnum {
-    NUMBER_1(1),
-    NUMBER_2(2),
-    NUMBER_3(3);
+  @SerializedName("auto_climate_on")
+  private Boolean autoClimateOn = null;
 
-    private Integer value;
-
-    SeatCoolerLevelEnum(Integer value) {
-      this.value = value;
-    }
-    public Integer getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-    public static SeatCoolerLevelEnum fromValue(Integer input) {
-      for (SeatCoolerLevelEnum b : SeatCoolerLevelEnum.values()) {
-        if (b.value.equals(input)) {
-          return b;
-        }
-      }
-      return null;
-    }
-    public static class Adapter extends TypeAdapter<SeatCoolerLevelEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final SeatCoolerLevelEnum enumeration) throws IOException {
-        jsonWriter.value(String.valueOf(enumeration.getValue()));
-      }
-
-      @Override
-      public SeatCoolerLevelEnum read(final JsonReader jsonReader) throws IOException {
-        Object value = jsonReader.nextInt();
-        return SeatCoolerLevelEnum.fromValue((Integer)(value));
-      }
-    }
-  }  @SerializedName("seat_cooler_level")
-  private SeatCoolerLevelEnum seatCoolerLevel = null;
-
-  public RemoteSeatCoolerRequest seatPosition(SeatPositionEnum seatPosition) {
+  public RemoteAutoSeatClimateRequest seatPosition(SeatPositionEnum seatPosition) {
     this.seatPosition = seatPosition;
     return this;
   }
 
    /**
-   * The desired seat to adjust the cooler for.  SeatHeaterFrontLeft: 0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack: 3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack: 6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8
+   * The desired seat to toggle auto mode for.  SeatHeaterFrontLeft: 0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack: 3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack: 6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8
    * @return seatPosition
   **/
-  @Schema(description = "The desired seat to adjust the cooler for.  SeatHeaterFrontLeft: 0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack: 3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack: 6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8")
+  @Schema(description = "The desired seat to toggle auto mode for.  SeatHeaterFrontLeft: 0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack: 3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack: 6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8")
   public SeatPositionEnum getSeatPosition() {
     return seatPosition;
   }
@@ -141,22 +99,22 @@ public class RemoteSeatCoolerRequest {
     this.seatPosition = seatPosition;
   }
 
-  public RemoteSeatCoolerRequest seatCoolerLevel(SeatCoolerLevelEnum seatCoolerLevel) {
-    this.seatCoolerLevel = seatCoolerLevel;
+  public RemoteAutoSeatClimateRequest autoClimateOn(Boolean autoClimateOn) {
+    this.autoClimateOn = autoClimateOn;
     return this;
   }
 
    /**
-   * Seat cooler level
-   * @return seatCoolerLevel
+   * Whether to enable or disable auto climate mode
+   * @return autoClimateOn
   **/
-  @Schema(description = "Seat cooler level")
-  public SeatCoolerLevelEnum getSeatCoolerLevel() {
-    return seatCoolerLevel;
+  @Schema(description = "Whether to enable or disable auto climate mode")
+  public Boolean isAutoClimateOn() {
+    return autoClimateOn;
   }
 
-  public void setSeatCoolerLevel(SeatCoolerLevelEnum seatCoolerLevel) {
-    this.seatCoolerLevel = seatCoolerLevel;
+  public void setAutoClimateOn(Boolean autoClimateOn) {
+    this.autoClimateOn = autoClimateOn;
   }
 
 
@@ -168,24 +126,24 @@ public class RemoteSeatCoolerRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    RemoteSeatCoolerRequest remoteSeatCoolerRequest = (RemoteSeatCoolerRequest) o;
-    return Objects.equals(this.seatPosition, remoteSeatCoolerRequest.seatPosition) &&
-        Objects.equals(this.seatCoolerLevel, remoteSeatCoolerRequest.seatCoolerLevel);
+    RemoteAutoSeatClimateRequest remoteAutoSeatClimateRequest = (RemoteAutoSeatClimateRequest) o;
+    return Objects.equals(this.seatPosition, remoteAutoSeatClimateRequest.seatPosition) &&
+        Objects.equals(this.autoClimateOn, remoteAutoSeatClimateRequest.autoClimateOn);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(seatPosition, seatCoolerLevel);
+    return Objects.hash(seatPosition, autoClimateOn);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class RemoteSeatCoolerRequest {\n");
+    sb.append("class RemoteAutoSeatClimateRequest {\n");
     
     sb.append("    seatPosition: ").append(toIndentedString(seatPosition)).append("\n");
-    sb.append("    seatCoolerLevel: ").append(toIndentedString(seatCoolerLevel)).append("\n");
+    sb.append("    autoClimateOn: ").append(toIndentedString(autoClimateOn)).append("\n");
     sb.append("}");
     return sb.toString();
   }

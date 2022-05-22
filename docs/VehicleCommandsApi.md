@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**openChargePort**](VehicleCommandsApi.md#openChargePort) | **POST** api/1/vehicles/{vehicle_id}/command/charge_port_door_open | Open Charge Port
 [**openSunroof**](VehicleCommandsApi.md#openSunroof) | **POST** api/1/vehicles/{vehicle_id}/command/sun_roof_control | Move Pano Roof
 [**openTrunk**](VehicleCommandsApi.md#openTrunk) | **POST** api/1/vehicles/{vehicle_id}/command/actuate_trunk | Open Trunk/Frunk
+[**remoteAutoSeatClimateRequest**](VehicleCommandsApi.md#remoteAutoSeatClimateRequest) | **POST** api/1/vehicles/{vehicle_id}/command/remote_auto_seat_climate_request | Toggle Automatic Seat Heater/Cooler
 [**remoteSeatCoolerRequest**](VehicleCommandsApi.md#remoteSeatCoolerRequest) | **POST** api/1/vehicles/{vehicle_id}/command/remote_seat_cooler_request | Set Seat Cooler Level
 [**remoteSeatHeaterRequest**](VehicleCommandsApi.md#remoteSeatHeaterRequest) | **POST** api/1/vehicles/{vehicle_id}/command/remote_seat_heater_request | Set Seat Heater Level
 [**remoteStart**](VehicleCommandsApi.md#remoteStart) | **POST** api/1/vehicles/{vehicle_id}/command/remote_start_drive | Remote Start
@@ -725,6 +726,53 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**OpenTrunkRequest**](OpenTrunkRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
+
+### Return type
+
+[**CommandResponse**](CommandResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="remoteAutoSeatClimateRequest"></a>
+# **remoteAutoSeatClimateRequest**
+> CommandResponse remoteAutoSeatClimateRequest(body, vehicleId)
+
+Toggle Automatic Seat Heater/Cooler
+
+Enables or disables automatic control of a seat heater/coooler
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+RemoteAutoSeatClimateRequest body = new RemoteAutoSeatClimateRequest(); // RemoteAutoSeatClimateRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+try {
+    CommandResponse result = apiInstance.remoteAutoSeatClimateRequest(body, vehicleId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#remoteAutoSeatClimateRequest");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**RemoteAutoSeatClimateRequest**](RemoteAutoSeatClimateRequest.md)|  |
  **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type

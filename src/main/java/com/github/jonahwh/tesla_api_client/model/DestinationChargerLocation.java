@@ -1,6 +1,6 @@
 /*
- * Tesla Model S JSON API
- * TODO: Add a description
+ * Tesla JSON API
+ * API for controlling Tesla vehicles
  *
  * OpenAPI spec version: 1.0
  * 
@@ -25,7 +25,7 @@ import java.io.IOException;
  * DestinationChargerLocation
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-04-17T20:40:14.443-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-05-22T15:27:38.085-07:00[America/Los_Angeles]")
 public class DestinationChargerLocation {
   @SerializedName("lat")
   private Double lat = null;

@@ -13,6 +13,7 @@ import com.github.jonahwh.tesla_api_client.model.MaxDefrostRequest;
 import com.github.jonahwh.tesla_api_client.model.MovePanoRoofRequest;
 import com.github.jonahwh.tesla_api_client.model.NavigationRequestRequest;
 import com.github.jonahwh.tesla_api_client.model.OpenTrunkRequest;
+import com.github.jonahwh.tesla_api_client.model.RemoteAutoSeatClimateRequest;
 import com.github.jonahwh.tesla_api_client.model.RemoteSeatCoolerRequest;
 import com.github.jonahwh.tesla_api_client.model.RemoteSeatHeaterRequest;
 import com.github.jonahwh.tesla_api_client.model.RemoteStartRequest;
@@ -239,6 +240,21 @@ public interface VehicleCommandsApi {
   @POST("api/1/vehicles/{vehicle_id}/command/actuate_trunk")
   Call<CommandResponse> openTrunk(
     @retrofit2.http.Body OpenTrunkRequest body, @retrofit2.http.Path("vehicle_id") String vehicleId
+  );
+
+  /**
+   * Toggle Automatic Seat Heater/Cooler
+   * Enables or disables automatic control of a seat heater/coooler
+   * @param body  (required)
+   * @param vehicleId The id of the Vehicle. (required)
+   * @return Call&lt;CommandResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/command/remote_auto_seat_climate_request")
+  Call<CommandResponse> remoteAutoSeatClimateRequest(
+    @retrofit2.http.Body RemoteAutoSeatClimateRequest body, @retrofit2.http.Path("vehicle_id") String vehicleId
   );
 
   /**
