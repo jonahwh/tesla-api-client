@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
-  title: Tesla Model S JSON API
-  description: 'TODO: Add a description'
+  title: Tesla JSON API
+  description: API for controlling Tesla vehicles
   version: "1.0"
 servers:
   - url: https://owner-api.teslamotors.com/
@@ -901,6 +901,34 @@ paths:
               schema:
                 $ref: '#/components/schemas/CommandResponse'
       x-codegen-request-body-name: body
+  /api/1/vehicles/{vehicle_id}/command/remote_auto_seat_climate_request:
+    post:
+      tags:
+        - Vehicle Commands
+      summary: Toggle Automatic Seat Heater/Cooler
+      description: Enables or disables automatic control of a seat heater/coooler
+      operationId: RemoteAutoSeatClimateRequest
+      parameters:
+        - name: vehicle_id
+          in: path
+          description: The id of the Vehicle.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RemoteAutoSeatClimateRequest'
+        required: true
+      responses:
+        200:
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommandResponse'
+      x-codegen-request-body-name: body
   /api/1/vehicles/{vehicle_id}/command/remote_steering_wheel_heater_request:
     post:
       tags:
@@ -1685,6 +1713,33 @@ components:
       example:
         seat_position: 0
         seat_cooler_level: 2
+    RemoteAutoSeatClimateRequest:
+      title: Remote Auto Seat Climate
+      type: object
+      properties:
+        seat_position:
+          type: integer
+          description: 'The desired seat to toggle auto mode for.  SeatHeaterFrontLeft:
+            0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack:
+            3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack:
+            6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8'
+          format: int32
+          enum:
+            - 0
+            - 1
+            - 2
+            - 3
+            - 4
+            - 5
+            - 6
+            - 7
+            - 8
+        auto_climate_on:
+          type: boolean
+          description: Whether to enable or disable auto climate mode
+      example:
+        seat_position: 0
+        auto_climate_on: true
     RemoteSteeringWheelHeaterRequest:
       title: Remote Steering Wheel Heater
       type: object
