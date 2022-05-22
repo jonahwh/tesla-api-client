@@ -7,7 +7,7 @@ apply plugin: 'java-library'
 
 group = 'com.github.jonahwh'
 archivesBaseName = 'tesla-api-client'
-version = '2.0.0'
+version = '2.1.0'
 
 buildscript {
     repositories {

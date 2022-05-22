@@ -21,13 +21,13 @@ See [swagger.yml](swagger.yml) to view the Swagger document used to generate the
    
 ## Installation
 ### Gradle
-    compile 'com.github.jonahwh:tesla-api-client:2.0.0'
+    compile 'com.github.jonahwh:tesla-api-client:2.1.0'
 
 ### Maven
     <dependency>
         <groupId>com.github.jonahwh</groupId>
         <artifactId>tesla-api-client</artifactId>
-        <version>2.0.0</version>
+        <version>2.1.0</version>
     </dependency>
     
 
