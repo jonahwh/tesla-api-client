@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**seatPosition** | [**SeatPositionEnum**](#SeatPositionEnum) | The desired seat to toggle auto mode for.  SeatHeaterFrontLeft: 0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack: 3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack: 6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8 |  [optional]
+**autoSeatPosition** | [**AutoSeatPositionEnum**](#AutoSeatPositionEnum) | The desired seat to toggle auto mode for.  SeatHeaterFrontLeft: 0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack: 3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack: 6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8 |  [optional]
 **autoClimateOn** | **Boolean** | Whether to enable or disable auto climate mode |  [optional]
 
-<a name="SeatPositionEnum"></a>
-## Enum: SeatPositionEnum
+<a name="AutoSeatPositionEnum"></a>
+## Enum: AutoSeatPositionEnum
 Name | Value
 ---- | -----
 NUMBER_0 | 0

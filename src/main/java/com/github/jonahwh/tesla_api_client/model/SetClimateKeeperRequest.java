@@ -25,7 +25,7 @@ import java.io.IOException;
  * SetClimateKeeperRequest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-05-22T15:27:38.085-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-05-22T21:54:48.185-07:00[America/Los_Angeles]")
 public class SetClimateKeeperRequest {
   /**
    * 0 &#x3D; off, 1 &#x3D; Climate Keeper, 2 &#x3D; Dog Mode, 3 &#x3D; Camp Mode

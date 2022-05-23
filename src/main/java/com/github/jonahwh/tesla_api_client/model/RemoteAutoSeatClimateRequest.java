@@ -25,13 +25,13 @@ import java.io.IOException;
  * RemoteAutoSeatClimateRequest
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-05-22T15:27:38.085-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-05-22T21:54:48.185-07:00[America/Los_Angeles]")
 public class RemoteAutoSeatClimateRequest {
   /**
    * The desired seat to toggle auto mode for.  SeatHeaterFrontLeft: 0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack: 3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack: 6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8
    */
-  @JsonAdapter(SeatPositionEnum.Adapter.class)
-  public enum SeatPositionEnum {
+  @JsonAdapter(AutoSeatPositionEnum.Adapter.class)
+  public enum AutoSeatPositionEnum {
     NUMBER_0(0),
     NUMBER_1(1),
     NUMBER_2(2),
@@ -44,7 +44,7 @@ public class RemoteAutoSeatClimateRequest {
 
     private Integer value;
 
-    SeatPositionEnum(Integer value) {
+    AutoSeatPositionEnum(Integer value) {
       this.value = value;
     }
     public Integer getValue() {
@@ -55,48 +55,48 @@ public class RemoteAutoSeatClimateRequest {
     public String toString() {
       return String.valueOf(value);
     }
-    public static SeatPositionEnum fromValue(Integer input) {
-      for (SeatPositionEnum b : SeatPositionEnum.values()) {
+    public static AutoSeatPositionEnum fromValue(Integer input) {
+      for (AutoSeatPositionEnum b : AutoSeatPositionEnum.values()) {
         if (b.value.equals(input)) {
           return b;
         }
       }
       return null;
     }
-    public static class Adapter extends TypeAdapter<SeatPositionEnum> {
+    public static class Adapter extends TypeAdapter<AutoSeatPositionEnum> {
       @Override
-      public void write(final JsonWriter jsonWriter, final SeatPositionEnum enumeration) throws IOException {
+      public void write(final JsonWriter jsonWriter, final AutoSeatPositionEnum enumeration) throws IOException {
         jsonWriter.value(String.valueOf(enumeration.getValue()));
       }
 
       @Override
-      public SeatPositionEnum read(final JsonReader jsonReader) throws IOException {
+      public AutoSeatPositionEnum read(final JsonReader jsonReader) throws IOException {
         Object value = jsonReader.nextInt();
-        return SeatPositionEnum.fromValue((Integer)(value));
+        return AutoSeatPositionEnum.fromValue((Integer)(value));
       }
     }
-  }  @SerializedName("seat_position")
-  private SeatPositionEnum seatPosition = null;
+  }  @SerializedName("auto_seat_position")
+  private AutoSeatPositionEnum autoSeatPosition = null;
 
   @SerializedName("auto_climate_on")
   private Boolean autoClimateOn = null;
 
-  public RemoteAutoSeatClimateRequest seatPosition(SeatPositionEnum seatPosition) {
-    this.seatPosition = seatPosition;
+  public RemoteAutoSeatClimateRequest autoSeatPosition(AutoSeatPositionEnum autoSeatPosition) {
+    this.autoSeatPosition = autoSeatPosition;
     return this;
   }
 
    /**
    * The desired seat to toggle auto mode for.  SeatHeaterFrontLeft: 0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack: 3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack: 6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8
-   * @return seatPosition
+   * @return autoSeatPosition
   **/
   @Schema(description = "The desired seat to toggle auto mode for.  SeatHeaterFrontLeft: 0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack: 3, SeatHeaterRearCenter: 4, SeatHeaterRearRight: 5, SeatHeaterRearRightBack: 6, SeatHeater3rdRowLeft: 7, SeatHeater3rdRowRight: 8")
-  public SeatPositionEnum getSeatPosition() {
-    return seatPosition;
+  public AutoSeatPositionEnum getAutoSeatPosition() {
+    return autoSeatPosition;
   }
 
-  public void setSeatPosition(SeatPositionEnum seatPosition) {
-    this.seatPosition = seatPosition;
+  public void setAutoSeatPosition(AutoSeatPositionEnum autoSeatPosition) {
+    this.autoSeatPosition = autoSeatPosition;
   }
 
   public RemoteAutoSeatClimateRequest autoClimateOn(Boolean autoClimateOn) {
@@ -127,13 +127,13 @@ public class RemoteAutoSeatClimateRequest {
       return false;
     }
     RemoteAutoSeatClimateRequest remoteAutoSeatClimateRequest = (RemoteAutoSeatClimateRequest) o;
-    return Objects.equals(this.seatPosition, remoteAutoSeatClimateRequest.seatPosition) &&
+    return Objects.equals(this.autoSeatPosition, remoteAutoSeatClimateRequest.autoSeatPosition) &&
         Objects.equals(this.autoClimateOn, remoteAutoSeatClimateRequest.autoClimateOn);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(seatPosition, autoClimateOn);
+    return Objects.hash(autoSeatPosition, autoClimateOn);
   }
 
 
@@ -142,7 +142,7 @@ public class RemoteAutoSeatClimateRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class RemoteAutoSeatClimateRequest {\n");
     
-    sb.append("    seatPosition: ").append(toIndentedString(seatPosition)).append("\n");
+    sb.append("    autoSeatPosition: ").append(toIndentedString(autoSeatPosition)).append("\n");
     sb.append("    autoClimateOn: ").append(toIndentedString(autoClimateOn)).append("\n");
     sb.append("}");
     return sb.toString();

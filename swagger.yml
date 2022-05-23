@@ -1717,7 +1717,7 @@ components:
       title: Remote Auto Seat Climate
       type: object
       properties:
-        seat_position:
+        auto_seat_position:
           type: integer
           description: 'The desired seat to toggle auto mode for.  SeatHeaterFrontLeft:
             0, SeatHeaterFrontRight: 1, SeatHeaterRearLeft: 2, SeatHeaterRearLeftBack:
@@ -1738,7 +1738,7 @@ components:
           type: boolean
           description: Whether to enable or disable auto climate mode
       example:
-        seat_position: 0
+        auto_seat_position: 0
         auto_climate_on: true
     RemoteSteeringWheelHeaterRequest:
       title: Remote Steering Wheel Heater
