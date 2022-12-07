@@ -14,7 +14,6 @@ package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.github.jonahwh.tesla_api_client.model.NearbyChargerResponseResponse;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,31 +21,32 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.math.BigDecimal;
 /**
- * NearbyChargerResponse
+ * AdjustVolumeRequest
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-12-06T22:38:49.853-08:00[America/Los_Angeles]")
-public class NearbyChargerResponse {
-  @SerializedName("response")
-  private NearbyChargerResponseResponse response = null;
+public class AdjustVolumeRequest {
+  @SerializedName("volume")
+  private BigDecimal volume = null;
 
-  public NearbyChargerResponse response(NearbyChargerResponseResponse response) {
-    this.response = response;
+  public AdjustVolumeRequest volume(BigDecimal volume) {
+    this.volume = volume;
     return this;
   }
 
    /**
-   * Get response
-   * @return response
+   * Volume level, from 0-11
+   * @return volume
   **/
-  @Schema(description = "")
-  public NearbyChargerResponseResponse getResponse() {
-    return response;
+  @Schema(example = "1", description = "Volume level, from 0-11")
+  public BigDecimal getVolume() {
+    return volume;
   }
 
-  public void setResponse(NearbyChargerResponseResponse response) {
-    this.response = response;
+  public void setVolume(BigDecimal volume) {
+    this.volume = volume;
   }
 
 
@@ -58,22 +58,22 @@ public class NearbyChargerResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    NearbyChargerResponse nearbyChargerResponse = (NearbyChargerResponse) o;
-    return Objects.equals(this.response, nearbyChargerResponse.response);
+    AdjustVolumeRequest adjustVolumeRequest = (AdjustVolumeRequest) o;
+    return Objects.equals(this.volume, adjustVolumeRequest.volume);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(response);
+    return Objects.hash(volume);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class NearbyChargerResponse {\n");
+    sb.append("class AdjustVolumeRequest {\n");
     
-    sb.append("    response: ").append(toIndentedString(response)).append("\n");
+    sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
     sb.append("}");
     return sb.toString();
   }

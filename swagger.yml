@@ -1361,6 +1361,34 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CommandResponse'
+  /api/1/vehicles/{vehicle_id}/command/adjust_volume:
+    post:
+      tags:
+        - Media Control
+      summary: Adjust Volume
+      description: Adjust Volume
+      operationId: MediaAdjustVolume
+      parameters:
+        - name: vehicle_id
+          in: path
+          description: The id of the Vehicle.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdjustVolumeRequest'
+        required: true
+      responses:
+        200:
+          description: ""
+          content:
+            application/josn:
+              schema:
+                $ref: '#/components/schemas/CommandResponse'
+      x-codegen-request-body-name: body
   /api/1/vehicles/{vehicle_id}/command/schedule_software_update:
     post:
       tags:
@@ -1506,6 +1534,34 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/TriggerHomelinkRequest'
+        required: true
+      responses:
+        200:
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommandResponse'
+      x-codegen-request-body-name: body
+  /api/1/vehicles/{vehicle_id}/command/set_vehicle_name:
+    post:
+      tags:
+        - Vehicle Commands
+      summary: Set Vehicle Name
+      description: Set Vehicle Name
+      operationId: SetVehicleName
+      parameters:
+        - name: vehicle_id
+          in: path
+          description: The id of the Vehicle.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetVehicleNameRequest'
         required: true
       responses:
         200:
@@ -1908,6 +1964,23 @@ components:
           type: number
           description: UNIX timestamp indicating when this request was sent
           example: 1574041714569
+    AdjustVolumeRequest:
+      title: Adjust Volume request
+      type: object
+      properties:
+        volume:
+          type: number
+          description: Volume level, from 0-11
+          format: int32
+          example: 1
+    SetVehicleNameRequest:
+      title: Set Vehicle Name
+      type: object
+      properties:
+        vehicle_name:
+          type: string
+          description: Vehicle name
+          example: My Cool Car
     SentryModeRequest:
       title: Sentry Mode
       type: object

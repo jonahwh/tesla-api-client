@@ -29,6 +29,7 @@ import com.github.jonahwh.tesla_api_client.model.SetClimateKeeperRequest;
 import com.github.jonahwh.tesla_api_client.model.SetSpeedLimitRequest;
 import com.github.jonahwh.tesla_api_client.model.SetTempsRequest;
 import com.github.jonahwh.tesla_api_client.model.SetValetRequest;
+import com.github.jonahwh.tesla_api_client.model.SetVehicleNameRequest;
 import com.github.jonahwh.tesla_api_client.model.ShareRequest;
 import com.github.jonahwh.tesla_api_client.model.SpeedLimitRequest;
 import com.github.jonahwh.tesla_api_client.model.TriggerHomelinkRequest;
@@ -468,6 +469,21 @@ public interface VehicleCommandsApi {
   @POST("api/1/vehicles/{vehicle_id}/command/set_temps")
   Call<CommandResponse> setTemperatures(
     @retrofit2.http.Body SetTempsRequest body, @retrofit2.http.Path("vehicle_id") String vehicleId
+  );
+
+  /**
+   * Set Vehicle Name
+   * Set Vehicle Name
+   * @param body  (required)
+   * @param vehicleId The id of the Vehicle. (required)
+   * @return Call&lt;CommandResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/command/set_vehicle_name")
+  Call<CommandResponse> setVehicleName(
+    @retrofit2.http.Body SetVehicleNameRequest body, @retrofit2.http.Path("vehicle_id") String vehicleId
   );
 
   /**

@@ -35,6 +35,7 @@ Method | HTTP request | Description
 [**setSentryMode**](VehicleCommandsApi.md#setSentryMode) | **POST** api/1/vehicles/{vehicle_id}/command/set_sentry_mode | Toggle Sentry Mode
 [**setSpeedLimit**](VehicleCommandsApi.md#setSpeedLimit) | **POST** api/1/vehicles/{vehicle_id}/command/speed_limit_set_limit | Set Speed Limit
 [**setTemperatures**](VehicleCommandsApi.md#setTemperatures) | **POST** api/1/vehicles/{vehicle_id}/command/set_temps | Set Temperature
+[**setVehicleName**](VehicleCommandsApi.md#setVehicleName) | **POST** api/1/vehicles/{vehicle_id}/command/set_vehicle_name | Set Vehicle Name
 [**sharetoVehicle**](VehicleCommandsApi.md#sharetoVehicle) | **POST** api/1/vehicles/{vehicle_id}/command/share | Share data to Vehicle
 [**startCharge**](VehicleCommandsApi.md#startCharge) | **POST** api/1/vehicles/{vehicle_id}/command/charge_start | Start Charging
 [**startHVAC**](VehicleCommandsApi.md#startHVAC) | **POST** api/1/vehicles/{vehicle_id}/command/auto_conditioning_start | Start HVAC System
@@ -1472,6 +1473,53 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**SetTempsRequest**](SetTempsRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
+
+### Return type
+
+[**CommandResponse**](CommandResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="setVehicleName"></a>
+# **setVehicleName**
+> CommandResponse setVehicleName(body, vehicleId)
+
+Set Vehicle Name
+
+Set Vehicle Name
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+SetVehicleNameRequest body = new SetVehicleNameRequest(); // SetVehicleNameRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+try {
+    CommandResponse result = apiInstance.setVehicleName(body, vehicleId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#setVehicleName");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SetVehicleNameRequest**](SetVehicleNameRequest.md)|  |
  **vehicleId** | **String**| The id of the Vehicle. |
 
 ### Return type
