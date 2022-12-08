@@ -8,6 +8,7 @@ import retrofit2.http.*;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 
+import com.github.jonahwh.tesla_api_client.model.AdjustVolumeRequest;
 import com.github.jonahwh.tesla_api_client.model.CommandResponse;
 
 import java.util.ArrayList;
@@ -16,6 +17,21 @@ import java.util.List;
 import java.util.Map;
 
 public interface MediaControlApi {
+  /**
+   * Adjust Volume
+   * Adjust Volume
+   * @param body  (required)
+   * @param vehicleId The id of the Vehicle. (required)
+   * @return Call&lt;CommandResponse&gt;
+   */
+  @Headers({
+    "Content-Type:application/json"
+  })
+  @POST("api/1/vehicles/{vehicle_id}/command/adjust_volume")
+  Call<CommandResponse> mediaAdjustVolume(
+    @retrofit2.http.Body AdjustVolumeRequest body, @retrofit2.http.Path("vehicle_id") String vehicleId
+  );
+
   /**
    * Next Favorite
    * Next Favorite

@@ -29,7 +29,7 @@ import java.math.BigDecimal;
  * VehicleState
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-05-22T21:54:48.185-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-12-06T22:38:49.853-08:00[America/Los_Angeles]")
 public class VehicleState {
   @SerializedName("api_version")
   private Integer apiVersion = null;

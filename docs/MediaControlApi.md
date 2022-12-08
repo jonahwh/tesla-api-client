@@ -4,6 +4,7 @@ All URIs are relative to *https://owner-api.teslamotors.com/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**mediaAdjustVolume**](MediaControlApi.md#mediaAdjustVolume) | **POST** api/1/vehicles/{vehicle_id}/command/adjust_volume | Adjust Volume
 [**mediaNextFavorite**](MediaControlApi.md#mediaNextFavorite) | **POST** api/1/vehicles/{vehicle_id}/command/media_next_fav | Next Favorite
 [**mediaNextTrack**](MediaControlApi.md#mediaNextTrack) | **POST** api/1/vehicles/{vehicle_id}/command/media_next_track | Next Track
 [**mediaPrevFavorite**](MediaControlApi.md#mediaPrevFavorite) | **POST** api/1/vehicles/{vehicle_id}/command/media_prev_fav | Previous Favorite
@@ -11,6 +12,53 @@ Method | HTTP request | Description
 [**mediaTogglePlayback**](MediaControlApi.md#mediaTogglePlayback) | **POST** api/1/vehicles/{vehicle_id}/command/media_toggle_playback | Pause/Play Media
 [**mediaVolumeDown**](MediaControlApi.md#mediaVolumeDown) | **POST** api/1/vehicles/{vehicle_id}/command/media_volume_down | Volume Down
 [**mediaVolumeUp**](MediaControlApi.md#mediaVolumeUp) | **POST** api/1/vehicles/{vehicle_id}/command/media_volume_up | Volume Up
+
+<a name="mediaAdjustVolume"></a>
+# **mediaAdjustVolume**
+> CommandResponse mediaAdjustVolume(body, vehicleId)
+
+Adjust Volume
+
+Adjust Volume
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.MediaControlApi;
+
+
+MediaControlApi apiInstance = new MediaControlApi();
+AdjustVolumeRequest body = new AdjustVolumeRequest(); // AdjustVolumeRequest | 
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+try {
+    CommandResponse result = apiInstance.mediaAdjustVolume(body, vehicleId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MediaControlApi#mediaAdjustVolume");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**AdjustVolumeRequest**](AdjustVolumeRequest.md)|  |
+ **vehicleId** | **String**| The id of the Vehicle. |
+
+### Return type
+
+[**CommandResponse**](CommandResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/josn
 
 <a name="mediaNextFavorite"></a>
 # **mediaNextFavorite**

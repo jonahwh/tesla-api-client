@@ -14,7 +14,6 @@ package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.github.jonahwh.tesla_api_client.model.NearbyChargerResponseResponse;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,30 +22,30 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 /**
- * NearbyChargerResponse
+ * SetVehicleNameRequest
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-12-06T22:38:49.853-08:00[America/Los_Angeles]")
-public class NearbyChargerResponse {
-  @SerializedName("response")
-  private NearbyChargerResponseResponse response = null;
+public class SetVehicleNameRequest {
+  @SerializedName("vehicle_name")
+  private String vehicleName = null;
 
-  public NearbyChargerResponse response(NearbyChargerResponseResponse response) {
-    this.response = response;
+  public SetVehicleNameRequest vehicleName(String vehicleName) {
+    this.vehicleName = vehicleName;
     return this;
   }
 
    /**
-   * Get response
-   * @return response
+   * Vehicle name
+   * @return vehicleName
   **/
-  @Schema(description = "")
-  public NearbyChargerResponseResponse getResponse() {
-    return response;
+  @Schema(example = "My Cool Car", description = "Vehicle name")
+  public String getVehicleName() {
+    return vehicleName;
   }
 
-  public void setResponse(NearbyChargerResponseResponse response) {
-    this.response = response;
+  public void setVehicleName(String vehicleName) {
+    this.vehicleName = vehicleName;
   }
 
 
@@ -58,22 +57,22 @@ public class NearbyChargerResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    NearbyChargerResponse nearbyChargerResponse = (NearbyChargerResponse) o;
-    return Objects.equals(this.response, nearbyChargerResponse.response);
+    SetVehicleNameRequest setVehicleNameRequest = (SetVehicleNameRequest) o;
+    return Objects.equals(this.vehicleName, setVehicleNameRequest.vehicleName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(response);
+    return Objects.hash(vehicleName);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class NearbyChargerResponse {\n");
+    sb.append("class SetVehicleNameRequest {\n");
     
-    sb.append("    response: ").append(toIndentedString(response)).append("\n");
+    sb.append("    vehicleName: ").append(toIndentedString(vehicleName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
