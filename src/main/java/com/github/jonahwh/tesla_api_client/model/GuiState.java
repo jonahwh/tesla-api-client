@@ -26,7 +26,7 @@ import java.math.BigDecimal;
  * GuiState
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2022-12-06T22:38:49.853-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-02-20T17:21:45.734-08:00[America/Los_Angeles]")
 public class GuiState {
   @SerializedName("gui_distance_units")
   private String guiDistanceUnits = null;
@@ -42,6 +42,9 @@ public class GuiState {
 
   @SerializedName("gui_range_display")
   private String guiRangeDisplay = null;
+
+  @SerializedName("gui_tirepressure_units")
+  private String guiTirepressureUnits = null;
 
   @SerializedName("timestamp")
   private BigDecimal timestamp = null;
@@ -136,6 +139,24 @@ public class GuiState {
     this.guiRangeDisplay = guiRangeDisplay;
   }
 
+  public GuiState guiTirepressureUnits(String guiTirepressureUnits) {
+    this.guiTirepressureUnits = guiTirepressureUnits;
+    return this;
+  }
+
+   /**
+   * Get guiTirepressureUnits
+   * @return guiTirepressureUnits
+  **/
+  @Schema(description = "")
+  public String getGuiTirepressureUnits() {
+    return guiTirepressureUnits;
+  }
+
+  public void setGuiTirepressureUnits(String guiTirepressureUnits) {
+    this.guiTirepressureUnits = guiTirepressureUnits;
+  }
+
   public GuiState timestamp(BigDecimal timestamp) {
     this.timestamp = timestamp;
     return this;
@@ -169,12 +190,13 @@ public class GuiState {
         Objects.equals(this.guiChargeRateUnits, guiState.guiChargeRateUnits) &&
         Objects.equals(this.gui24HourTime, guiState.gui24HourTime) &&
         Objects.equals(this.guiRangeDisplay, guiState.guiRangeDisplay) &&
+        Objects.equals(this.guiTirepressureUnits, guiState.guiTirepressureUnits) &&
         Objects.equals(this.timestamp, guiState.timestamp);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(guiDistanceUnits, guiTemperatureUnits, guiChargeRateUnits, gui24HourTime, guiRangeDisplay, timestamp);
+    return Objects.hash(guiDistanceUnits, guiTemperatureUnits, guiChargeRateUnits, gui24HourTime, guiRangeDisplay, guiTirepressureUnits, timestamp);
   }
 
 
@@ -188,6 +210,7 @@ public class GuiState {
     sb.append("    guiChargeRateUnits: ").append(toIndentedString(guiChargeRateUnits)).append("\n");
     sb.append("    gui24HourTime: ").append(toIndentedString(gui24HourTime)).append("\n");
     sb.append("    guiRangeDisplay: ").append(toIndentedString(guiRangeDisplay)).append("\n");
+    sb.append("    guiTirepressureUnits: ").append(toIndentedString(guiTirepressureUnits)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("}");
     return sb.toString();

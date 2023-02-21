@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**openSunroof**](VehicleCommandsApi.md#openSunroof) | **POST** api/1/vehicles/{vehicle_id}/command/sun_roof_control | Move Pano Roof
 [**openTrunk**](VehicleCommandsApi.md#openTrunk) | **POST** api/1/vehicles/{vehicle_id}/command/actuate_trunk | Open Trunk/Frunk
 [**remoteAutoSeatClimateRequest**](VehicleCommandsApi.md#remoteAutoSeatClimateRequest) | **POST** api/1/vehicles/{vehicle_id}/command/remote_auto_seat_climate_request | Toggle Automatic Seat Heater/Cooler
+[**remoteBoombox**](VehicleCommandsApi.md#remoteBoombox) | **POST** api/1/vehicles/{vehicle_id}/command/remote_boombox | Remote Boombox
 [**remoteSeatCoolerRequest**](VehicleCommandsApi.md#remoteSeatCoolerRequest) | **POST** api/1/vehicles/{vehicle_id}/command/remote_seat_cooler_request | Set Seat Cooler Level
 [**remoteSeatHeaterRequest**](VehicleCommandsApi.md#remoteSeatHeaterRequest) | **POST** api/1/vehicles/{vehicle_id}/command/remote_seat_heater_request | Set Seat Heater Level
 [**remoteStart**](VehicleCommandsApi.md#remoteStart) | **POST** api/1/vehicles/{vehicle_id}/command/remote_start_drive | Remote Start
@@ -787,6 +788,51 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="remoteBoombox"></a>
+# **remoteBoombox**
+> CommandResponse remoteBoombox(vehicleId)
+
+Remote Boombox
+
+Remote Boombox
+
+### Example
+```java
+// Import classes:
+//import com.github.jonahwh.ApiException;
+//import com.github.jonahwh.tesla_api_client.VehicleCommandsApi;
+
+
+VehicleCommandsApi apiInstance = new VehicleCommandsApi();
+String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+try {
+    CommandResponse result = apiInstance.remoteBoombox(vehicleId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling VehicleCommandsApi#remoteBoombox");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **String**| The id of the Vehicle. |
+
+### Return type
+
+[**CommandResponse**](CommandResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="remoteSeatCoolerRequest"></a>

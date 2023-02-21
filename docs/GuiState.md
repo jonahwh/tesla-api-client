@@ -8,4 +8,5 @@ Name | Type | Description | Notes
 **guiChargeRateUnits** | **String** |  |  [optional]
 **gui24HourTime** | **Boolean** |  |  [optional]
 **guiRangeDisplay** | **String** |  |  [optional]
+**guiTirepressureUnits** | **String** |  |  [optional]
 **timestamp** | [**BigDecimal**](BigDecimal.md) |  |  [optional]

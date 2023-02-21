@@ -1571,6 +1571,28 @@ paths:
               schema:
                 $ref: '#/components/schemas/CommandResponse'
       x-codegen-request-body-name: body
+  /api/1/vehicles/{vehicle_id}/command/remote_boombox:
+    post:
+      tags:
+        - Vehicle Commands
+      summary: Remote Boombox
+      description: Remote Boombox
+      operationId: RemoteBoombox
+      parameters:
+        - name: vehicle_id
+          in: path
+          description: The id of the Vehicle.
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommandResponse'
+      x-codegen-request-body-name: body
 components:
   schemas:
     CreateAccessTokenRequest:
@@ -2367,6 +2389,8 @@ components:
         gui_24_hour_time:
           type: boolean
         gui_range_display:
+          type: string
+        gui_tirepressure_units:
           type: string
         timestamp:
           type: number

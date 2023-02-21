@@ -259,6 +259,17 @@ public interface VehicleCommandsApi {
   );
 
   /**
+   * Remote Boombox
+   * Remote Boombox
+   * @param vehicleId The id of the Vehicle. (required)
+   * @return Call&lt;CommandResponse&gt;
+   */
+  @POST("api/1/vehicles/{vehicle_id}/command/remote_boombox")
+  Call<CommandResponse> remoteBoombox(
+    @retrofit2.http.Path("vehicle_id") String vehicleId
+  );
+
+  /**
    * Set Seat Cooler Level
    * Set the cooling level of a seat heater
    * @param body  (required)
