@@ -74,11 +74,12 @@ public interface VehiclesApi {
    * Vehicle Data
    * Returns all vehicle ∂ata, potentially cached
    * @param vehicleId The id of the Vehicle. (required)
+   * @param endpoints  (optional)
    * @return Call&lt;VehicleDataResponse&gt;
    */
   @GET("api/1/vehicles/{vehicle_id}/vehicle_data")
   Call<VehicleDataResponse> getVehicleData(
-    @retrofit2.http.Path("vehicle_id") String vehicleId
+    @retrofit2.http.Path("vehicle_id") String vehicleId, @retrofit2.http.Query("endpoints") String endpoints
   );
 
   /**

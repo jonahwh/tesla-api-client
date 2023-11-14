@@ -198,7 +198,7 @@ No authorization required
 
 <a name="getVehicleData"></a>
 # **getVehicleData**
-> VehicleDataResponse getVehicleData(vehicleId)
+> VehicleDataResponse getVehicleData(vehicleId, endpoints)
 
 Vehicle Data
 
@@ -213,8 +213,9 @@ Returns all vehicle ∂ata, potentially cached
 
 VehiclesApi apiInstance = new VehiclesApi();
 String vehicleId = "vehicleId_example"; // String | The id of the Vehicle.
+String endpoints = "endpoints_example"; // String | 
 try {
-    VehicleDataResponse result = apiInstance.getVehicleData(vehicleId);
+    VehicleDataResponse result = apiInstance.getVehicleData(vehicleId, endpoints);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling VehiclesApi#getVehicleData");
@@ -227,6 +228,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vehicleId** | **String**| The id of the Vehicle. |
+ **endpoints** | **String**|  | [optional]
 
 ### Return type
 

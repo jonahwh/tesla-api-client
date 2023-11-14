@@ -27,7 +27,7 @@ import java.math.BigDecimal;
  * Supercharger
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-02-20T17:21:45.734-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-13T20:41:51.979-08:00[America/Los_Angeles]")
 public class Supercharger {
   @SerializedName("location")
   private DestinationChargerLocation location = null;
