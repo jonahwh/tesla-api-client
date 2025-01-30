@@ -3,5 +3,5 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**response** | [**List&lt;Vehicle&gt;**](Vehicle.md) |  | 
+**response** | [**GetVehiclesResponseResponse**](GetVehiclesResponseResponse.md) |  | 
 **count** | **Integer** |  | 

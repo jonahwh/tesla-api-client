@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**getVehicleDriveState**](VehiclesApi.md#getVehicleDriveState) | **GET** api/1/vehicles/{vehicle_id}/data_request/drive_state | Driving and Position
 [**getVehicleMobileEnabled**](VehiclesApi.md#getVehicleMobileEnabled) | **GET** api/1/vehicles/{vehicle_id}/mobile_enabled | Mobile Access
 [**getVehicleState**](VehiclesApi.md#getVehicleState) | **GET** api/1/vehicles/{vehicle_id}/data_request/vehicle_state | Vehicle State
-[**getVehicles**](VehiclesApi.md#getVehicles) | **GET** api/1/vehicles | List all Vehicles
+[**getVehicles**](VehiclesApi.md#getVehicles) | **GET** api/1/products | List all Vehicles
 [**getVehilceGuiSettings**](VehiclesApi.md#getVehilceGuiSettings) | **GET** api/1/vehicles/{vehicle_id}/data_request/gui_settings | GUI Settings
 [**nearbyChargers**](VehiclesApi.md#nearbyChargers) | **GET** api/1/vehicles/{vehicle_id}/nearby_charging_sites | Get Nearby Chargers
 

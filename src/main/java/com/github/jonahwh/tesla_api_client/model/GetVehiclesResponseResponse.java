@@ -14,7 +14,7 @@ package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.github.jonahwh.tesla_api_client.model.VehicleState;
+import com.github.jonahwh.tesla_api_client.model.Vehicle;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,17 +22,27 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 /**
- * VehicleStateResponse
+ * GetVehiclesResponseResponse
  */
 
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-30T09:29:07.245033-08:00[America/Los_Angeles]")
-public class VehicleStateResponse {
+public class GetVehiclesResponseResponse {
   @SerializedName("response")
-  private VehicleState response = null;
+  private List<Vehicle> response = null;
 
-  public VehicleStateResponse response(VehicleState response) {
+  public GetVehiclesResponseResponse response(List<Vehicle> response) {
     this.response = response;
+    return this;
+  }
+
+  public GetVehiclesResponseResponse addResponseItem(Vehicle responseItem) {
+    if (this.response == null) {
+      this.response = new ArrayList<Vehicle>();
+    }
+    this.response.add(responseItem);
     return this;
   }
 
@@ -40,12 +50,12 @@ public class VehicleStateResponse {
    * Get response
    * @return response
   **/
-  @Schema(required = true, description = "")
-  public VehicleState getResponse() {
+  @Schema(description = "")
+  public List<Vehicle> getResponse() {
     return response;
   }
 
-  public void setResponse(VehicleState response) {
+  public void setResponse(List<Vehicle> response) {
     this.response = response;
   }
 
@@ -58,8 +68,8 @@ public class VehicleStateResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    VehicleStateResponse vehicleStateResponse = (VehicleStateResponse) o;
-    return Objects.equals(this.response, vehicleStateResponse.response);
+    GetVehiclesResponseResponse getVehiclesResponseResponse = (GetVehiclesResponseResponse) o;
+    return Objects.equals(this.response, getVehiclesResponseResponse.response);
   }
 
   @Override
@@ -71,7 +81,7 @@ public class VehicleStateResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class VehicleStateResponse {\n");
+    sb.append("class GetVehiclesResponseResponse {\n");
     
     sb.append("    response: ").append(toIndentedString(response)).append("\n");
     sb.append("}");

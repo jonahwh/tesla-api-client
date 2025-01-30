@@ -120,7 +120,7 @@ public interface VehiclesApi {
    * Retrieve a list of your owned vehicles (includes vehicles not yet shipped!)
    * @return Call&lt;GetVehiclesResponse&gt;
    */
-  @GET("api/1/vehicles")
+  @GET("api/1/products")
   Call<GetVehiclesResponse> getVehicles();
     
 

@@ -14,7 +14,7 @@ package com.github.jonahwh.tesla_api_client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.github.jonahwh.tesla_api_client.model.Vehicle;
+import com.github.jonahwh.tesla_api_client.model.GetVehiclesResponseResponse;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,27 +22,20 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 /**
  * GetVehiclesResponse
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-13T20:41:51.979-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-01-30T09:29:07.245033-08:00[America/Los_Angeles]")
 public class GetVehiclesResponse {
   @SerializedName("response")
-  private List<Vehicle> response = new ArrayList<Vehicle>();
+  private GetVehiclesResponseResponse response = null;
 
   @SerializedName("count")
   private Integer count = null;
 
-  public GetVehiclesResponse response(List<Vehicle> response) {
+  public GetVehiclesResponse response(GetVehiclesResponseResponse response) {
     this.response = response;
-    return this;
-  }
-
-  public GetVehiclesResponse addResponseItem(Vehicle responseItem) {
-    this.response.add(responseItem);
     return this;
   }
 
@@ -51,11 +44,11 @@ public class GetVehiclesResponse {
    * @return response
   **/
   @Schema(required = true, description = "")
-  public List<Vehicle> getResponse() {
+  public GetVehiclesResponseResponse getResponse() {
     return response;
   }
 
-  public void setResponse(List<Vehicle> response) {
+  public void setResponse(GetVehiclesResponseResponse response) {
     this.response = response;
   }
 
