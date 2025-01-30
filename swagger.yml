@@ -31,7 +31,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/CreateAccessTokenResponse'
       x-codegen-request-body-name: body
-  /api/1/vehicles:
+  /api/1/products:
     get:
       tags:
         - Vehicles
@@ -2099,9 +2099,12 @@ components:
       type: object
       properties:
         response:
-          type: array
-          items:
-            $ref: '#/components/schemas/Vehicle'
+          type: object
+          properties:
+            response:
+              type: array
+              items:
+                $ref: '#/components/schemas/Vehicle'
         count:
           type: integer
           description: ""
